@@ -1,3 +1,5 @@
+import { CurrentYear } from "./CurrentYear";
+
 const FOOTER_COLUMNS = [
   {
     title: "Solutions",
@@ -89,13 +91,18 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="nautix-site-footer__bottom">
-          <p className="nautix-site-footer__copyright mb-0">© 2025 Nautix. All rights reserved.</p>
+          <p className="nautix-site-footer__copyright mb-0">
+            © <CurrentYear /> Nautix. All rights reserved.
+          </p>
           <ul className="nav-x gap-3 fw-medium nautix-footer-legal">
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="/privacy">Privacy Policy</a>
             </li>
             <li>
-              <a href="#">Terms of Service</a>
+              <a href="/terms">Terms of Service</a>
+            </li>
+            <li>
+              <a href="/data-deletion">Data Deletion</a>
             </li>
           </ul>
         </div>

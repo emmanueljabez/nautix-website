@@ -1,4 +1,7 @@
 export function SiteHeader() {
+  const loginUrl = "https://app.nautix.io/login";
+  const registerUrl = "https://app.nautix.io/register";
+
   return (
     <>
       <div className="backtotop-wrap position-fixed bottom-0 end-0 z-999 m-2 vstack">
@@ -549,10 +552,10 @@ export function SiteHeader() {
                             <div className="uc-navbar-right">
                               <ul className="nav-x d-none lg:d-flex">
                                 <li className="d-none xl:d-inline-flex">
-                                  <a className="nautix-login-link" href="https://app.nautix.ai/login">Log In</a>
+                                  <a className="nautix-login-link" href={loginUrl}>Log In</a>
                                 </li>
                               </ul>
-                              <a className="btn btn-sm btn-primary text-white fw-bold rounded-pill lg:px-2 text-none hover:contrast-shadow d-none lg:d-inline-flex" href="/demo">Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
+                              <a className="btn btn-sm btn-primary text-white fw-bold rounded-pill lg:px-2 text-none hover:contrast-shadow d-none lg:d-inline-flex" href={registerUrl}>Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
                               <a className="d-block lg:d-none" href="#uc-menu-panel" data-uc-navbar-toggle-icon data-uc-toggle />
                             </div>
                           </div>
@@ -573,7 +576,7 @@ export function SiteHeader() {
                         </button>
                       </header>
                       <div className="panel">
-                        <a className="nautix-mobile-login d-inline-flex fw-medium mb-3" href="https://app.nautix.ai/login">Log In</a>
+                        <a className="nautix-mobile-login d-inline-flex fw-medium mb-3" href={loginUrl}>Log In</a>
                         <ul id="menu-2-a723796" className="nav-y gap-narrow fw-medium fs-6 uc-nav nautix-mobile-nav" data-uc-nav><li id="menu-item-5055" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-5055 nav-item"><a title="Solutions" href="#" className="nav-links">Solutions</a>
                             <ul className="uc-nav-sub" role="menu" data-uc-nav>
                               <li id="menu-item-6045" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6045 nav-item"><a title="Marketing" href="/#solutions" className="dropdown-items">Marketing</a></li>
@@ -613,7 +616,7 @@ export function SiteHeader() {
                           </li>
                         </ul>
                         <div className="nautix-mobile-cta pt-3 mt-4 bg-transparent" data-uc-sticky="position: bottom">
-                          <a className="btn btn-primary text-white fw-bold rounded-pill w-100 justify-center text-none" href="/demo">Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
+                          <a className="btn btn-primary text-white fw-bold rounded-pill w-100 justify-center text-none" href={registerUrl}>Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
                         </div>
                       </div>
                     </div>
