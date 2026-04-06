@@ -2,8 +2,8 @@
 
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { Footer } from "@/components/layout/Footer";
-import { Navbar } from "@/components/layout/Navbar";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { SiteHeader } from "@/components/site/SiteHeader";
 
 interface RouteChromeProps {
   children: ReactNode;
@@ -15,10 +15,10 @@ export function RouteChrome({ children }: RouteChromeProps) {
 
   return (
     <>
-      {!hideChrome && <Navbar />}
+      {!hideChrome && <SiteHeader />}
       <div className="flex min-h-screen flex-col">
         <div className="flex-1 flex flex-col">{children}</div>
-        {!hideChrome && <Footer />}
+        {!hideChrome && <SiteFooter />}
       </div>
     </>
   );

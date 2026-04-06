@@ -46,7 +46,7 @@ function shouldKeepLink(rel: string | undefined) {
     return false;
   }
 
-  return rel === "stylesheet" || rel === "icon" || rel === "apple-touch-icon";
+  return rel === "stylesheet";
 }
 
 function isJavaScriptType(type: string | undefined) {
