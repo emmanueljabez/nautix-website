@@ -1470,6 +1470,66 @@
   padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
 }
 
+.nautix-mobile-trigger {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #091624;
+}
+
+.nautix-mobile-trigger span {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  margin: 0.22rem auto;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.nautix-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nautix-mobile-menu.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nautix-mobile-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(9, 22, 36, 0.42);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.nautix-mobile-menu.is-open .nautix-mobile-menu-backdrop {
+  opacity: 1;
+}
+
+.nautix-mobile-menu .nautix-mobile-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(100vw, 24rem);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 220ms ease;
+  box-shadow: -18px 0 42px rgba(9, 22, 36, 0.14);
+}
+
+.nautix-mobile-menu.is-open .nautix-mobile-panel {
+  transform: translateX(0);
+}
+
 .nautix-mobile-panel .panel {
   padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
 }
@@ -1515,13 +1575,38 @@
   color: #091624 !important;
 }
 
+.nautix-mobile-section-toggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.nautix-mobile-section-toggle i {
+  transition: transform 180ms ease;
+}
+
+.nautix-mobile-section-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
 .nautix-mobile-nav > li {
   border-bottom: 1px solid rgba(9, 22, 36, 0.08);
 }
 
 .nautix-mobile-nav .uc-nav-sub {
+  display: none;
   margin-top: 0.5rem;
   padding-bottom: 0.75rem;
+}
+
+.nautix-mobile-nav .uc-nav-sub.is-open {
+  display: block;
 }
 
 .nautix-mobile-nav .uc-nav-sub a {

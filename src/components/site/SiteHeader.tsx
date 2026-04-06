@@ -1,6 +1,40 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 export function SiteHeader() {
   const loginUrl = "https://app.nautix.io/login";
   const registerUrl = "https://app.nautix.io/register";
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      document.body.style.removeProperty("overflow");
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isMobileMenuOpen]);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const toggleMobileSection = (section: string) => {
+    setOpenMobileSection((current) => (current === section ? null : section));
+  };
 
   return (
     <>
@@ -556,67 +590,127 @@ export function SiteHeader() {
                                 </li>
                               </ul>
                               <a className="btn btn-sm btn-primary text-white fw-bold rounded-pill lg:px-2 text-none hover:contrast-shadow d-none lg:d-inline-flex" href={registerUrl}>Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
-                              <a className="d-block lg:d-none" href="#uc-menu-panel" data-uc-navbar-toggle-icon data-uc-toggle />
+                              <button
+                                type="button"
+                                className="nautix-mobile-trigger d-block lg:d-none"
+                                aria-label="Open menu"
+                                aria-expanded={isMobileMenuOpen}
+                                onClick={() => setIsMobileMenuOpen(true)}
+                              >
+                                <span />
+                                <span />
+                                <span />
+                              </button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </nav>
                   </header>
-                  <div id="uc-menu-panel" data-uc-offcanvas="overlay: true;">
-                    <div className="uc-offcanvas-bar nautix-mobile-panel bg-gray-900 text-white dark:bg-gray-900 dark:text-white">
+                  <div
+                    className={`nautix-mobile-menu lg:d-none${isMobileMenuOpen ? " is-open" : ""}`}
+                    aria-hidden={!isMobileMenuOpen}
+                  >
+                    <button
+                      type="button"
+                      className="nautix-mobile-menu-backdrop"
+                      aria-label="Close menu"
+                      onClick={closeMobileMenu}
+                    />
+                    <div className="nautix-mobile-panel bg-gray-900 text-white dark:bg-gray-900 dark:text-white">
                       <header className="uc-offcanvas-header hstack justify-between items-center pb-2 bg-gray-900 dark:bg-gray-900">
                         <div className="uc-logo mobile-logo text-dark dark:text-white">
-                          <a href="/" className="h5 text-none text-white">
+                          <a href="/" className="h5 text-none text-white" onClick={closeMobileMenu}>
                             <img className="d-block" src="/wp-content/uploads/2025/04/logo-new-light.svg" alt="Nautix" />
                           </a>
                         </div>
-                        <button className="uc-offcanvas-close rtl:end-auto rtl:start-0 m-1 mt-2 icon-3 btn border-0 text-white hover:text-primary hover:rotate-90 duration-150 transition-all" type="button">
+                        <button
+                          className="uc-offcanvas-close rtl:end-auto rtl:start-0 m-1 mt-2 icon-3 btn border-0 text-white hover:text-primary hover:rotate-90 duration-150 transition-all"
+                          type="button"
+                          onClick={closeMobileMenu}
+                        >
                           <i className="unicon-close" />
                         </button>
                       </header>
                       <div className="panel">
-                        <a className="nautix-mobile-login d-inline-flex fw-medium mb-3" href={loginUrl}>Log In</a>
-                        <ul id="menu-2-a723796" className="nav-y gap-narrow fw-medium fs-6 uc-nav nautix-mobile-nav" data-uc-nav><li id="menu-item-5055" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-5055 nav-item"><a title="Solutions" href="#" className="nav-links">Solutions</a>
-                            <ul className="uc-nav-sub" role="menu" data-uc-nav>
-                              <li id="menu-item-6045" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6045 nav-item"><a title="Marketing" href="/#solutions" className="dropdown-items">Marketing</a></li>
-                              <li id="menu-item-6046" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6046 nav-item"><a title="Sales" href="/#solutions" className="dropdown-items">Sales</a></li>
-                              <li id="menu-item-6047" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6047 nav-item"><a title="Customer Support" href="/#solutions" className="dropdown-items">Customer Support</a></li>
-                              <li id="menu-item-6048" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6048 nav-item"><a title="See full platform" href="/#solutions" className="dropdown-items">See full platform →</a></li>
+                        <a className="nautix-mobile-login d-inline-flex fw-medium mb-3" href={loginUrl} onClick={closeMobileMenu}>Log In</a>
+                        <ul id="menu-2-a723796" className="nav-y gap-narrow fw-medium fs-6 uc-nav nautix-mobile-nav">
+                          <li id="menu-item-5055" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-5055 nav-item">
+                            <button
+                              type="button"
+                              className="nav-links nautix-mobile-section-toggle"
+                              aria-expanded={openMobileSection === "solutions"}
+                              onClick={() => toggleMobileSection("solutions")}
+                            >
+                              <span>Solutions</span>
+                              <i className="unicon-angle-down" />
+                            </button>
+                            <ul className={`uc-nav-sub${openMobileSection === "solutions" ? " is-open" : ""}`} role="menu">
+                              <li id="menu-item-6045" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6045 nav-item"><a title="Marketing" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>Marketing</a></li>
+                              <li id="menu-item-6046" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6046 nav-item"><a title="Sales" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>Sales</a></li>
+                              <li id="menu-item-6047" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6047 nav-item"><a title="Customer Support" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>Customer Support</a></li>
+                              <li id="menu-item-6048" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6048 nav-item"><a title="See full platform" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>See full platform →</a></li>
                             </ul>
                           </li>
-                          <li id="menu-item-5056" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-5056 nav-item"><a title="Product" href="#" className="nav-links">Product</a>
-                            <ul className="uc-nav-sub" role="menu" data-uc-nav>
-                              <li id="menu-item-6049" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6049 nav-item"><a title="Channels & Inbox" href="/#product" className="dropdown-items">Channels &amp; Inbox</a></li>
-                              <li id="menu-item-6050" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6050 nav-item"><a title="AI Resolution Engine" href="/#product" className="dropdown-items">AI Resolution Engine</a></li>
-                              <li id="menu-item-6051" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6051 nav-item"><a title="Sales & Growth" href="/#product" className="dropdown-items">Sales &amp; Growth</a></li>
-                              <li id="menu-item-6052" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6052 nav-item"><a title="Payments" href="/#product" className="dropdown-items">Payments</a></li>
-                              <li id="menu-item-6053" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6053 nav-item"><a title="Analytics & Reporting" href="/#product" className="dropdown-items">Analytics &amp; Reporting</a></li>
-                              <li id="menu-item-6054" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6054 nav-item"><a title="See full platform" href="/#product" className="dropdown-items">See full platform →</a></li>
+                          <li id="menu-item-5056" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-5056 nav-item">
+                            <button
+                              type="button"
+                              className="nav-links nautix-mobile-section-toggle"
+                              aria-expanded={openMobileSection === "product"}
+                              onClick={() => toggleMobileSection("product")}
+                            >
+                              <span>Product</span>
+                              <i className="unicon-angle-down" />
+                            </button>
+                            <ul className={`uc-nav-sub${openMobileSection === "product" ? " is-open" : ""}`} role="menu">
+                              <li id="menu-item-6049" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6049 nav-item"><a title="Channels & Inbox" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Channels &amp; Inbox</a></li>
+                              <li id="menu-item-6050" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6050 nav-item"><a title="AI Resolution Engine" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>AI Resolution Engine</a></li>
+                              <li id="menu-item-6051" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6051 nav-item"><a title="Sales & Growth" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Sales &amp; Growth</a></li>
+                              <li id="menu-item-6052" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6052 nav-item"><a title="Payments" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Payments</a></li>
+                              <li id="menu-item-6053" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6053 nav-item"><a title="Analytics & Reporting" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Analytics &amp; Reporting</a></li>
+                              <li id="menu-item-6054" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6054 nav-item"><a title="See full platform" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>See full platform →</a></li>
                             </ul>
                           </li>
-                          <li id="menu-item-6055" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-6055 nav-item"><a title="Industries" href="#" className="nav-links">Industries</a>
-                            <ul className="uc-nav-sub" role="menu" data-uc-nav>
-                              <li id="menu-item-6056" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6056 nav-item"><a title="ISPs" href="/#industries" className="dropdown-items">ISPs</a></li>
-                              <li id="menu-item-6057" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6057 nav-item"><a title="Real Estate" href="/#industries" className="dropdown-items">Real Estate</a></li>
-                              <li id="menu-item-6058" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6058 nav-item"><a title="Ecommerce" href="/#industries" className="dropdown-items">Ecommerce</a></li>
-                              <li id="menu-item-6059" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6059 nav-item"><a title="Finance" href="/#industries" className="dropdown-items">Finance</a></li>
-                              <li id="menu-item-6060" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6060 nav-item"><a title="All industries" href="/#industries" className="dropdown-items">All industries →</a></li>
+                          <li id="menu-item-6055" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-6055 nav-item">
+                            <button
+                              type="button"
+                              className="nav-links nautix-mobile-section-toggle"
+                              aria-expanded={openMobileSection === "industries"}
+                              onClick={() => toggleMobileSection("industries")}
+                            >
+                              <span>Industries</span>
+                              <i className="unicon-angle-down" />
+                            </button>
+                            <ul className={`uc-nav-sub${openMobileSection === "industries" ? " is-open" : ""}`} role="menu">
+                              <li id="menu-item-6056" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6056 nav-item"><a title="ISPs" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>ISPs</a></li>
+                              <li id="menu-item-6057" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6057 nav-item"><a title="Real Estate" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>Real Estate</a></li>
+                              <li id="menu-item-6058" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6058 nav-item"><a title="Ecommerce" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>Ecommerce</a></li>
+                              <li id="menu-item-6059" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6059 nav-item"><a title="Finance" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>Finance</a></li>
+                              <li id="menu-item-6060" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6060 nav-item"><a title="All industries" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>All industries →</a></li>
                             </ul>
                           </li>
-                          <li id="menu-item-6062" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6062 nav-item"><a title="Pricing" href="/pricing" className="nav-links">Pricing</a></li>
-                          <li id="menu-item-6063" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-6063 nav-item"><a title="Resources" href="#" className="nav-links">Resources</a>
-                            <ul className="uc-nav-sub" role="menu" data-uc-nav>
-                              <li id="menu-item-6064" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6064 nav-item"><a title="Blog & Insights" href="/#resources" className="dropdown-items">Blog &amp; Insights</a></li>
-                              <li id="menu-item-6065" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6065 nav-item"><a title="Case Studies" href="/#resources" className="dropdown-items">Case Studies</a></li>
-                              <li id="menu-item-6066" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6066 nav-item"><a title="Engine Playbooks" href="/#resources" className="dropdown-items">Engine Playbooks</a></li>
-                              <li id="menu-item-6067" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6067 nav-item"><a title="Demo Library" href="/#resources" className="dropdown-items">Demo Library</a></li>
-                              <li id="menu-item-6068" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6068 nav-item"><a title="Product Updates" href="/#resources" className="dropdown-items">Product Updates</a></li>
+                          <li id="menu-item-6062" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6062 nav-item"><a title="Pricing" href="/pricing" className="nav-links" onClick={closeMobileMenu}>Pricing</a></li>
+                          <li id="menu-item-6063" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-6063 nav-item">
+                            <button
+                              type="button"
+                              className="nav-links nautix-mobile-section-toggle"
+                              aria-expanded={openMobileSection === "resources"}
+                              onClick={() => toggleMobileSection("resources")}
+                            >
+                              <span>Resources</span>
+                              <i className="unicon-angle-down" />
+                            </button>
+                            <ul className={`uc-nav-sub${openMobileSection === "resources" ? " is-open" : ""}`} role="menu">
+                              <li id="menu-item-6064" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6064 nav-item"><a title="Blog & Insights" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Blog &amp; Insights</a></li>
+                              <li id="menu-item-6065" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6065 nav-item"><a title="Case Studies" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Case Studies</a></li>
+                              <li id="menu-item-6066" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6066 nav-item"><a title="Engine Playbooks" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Engine Playbooks</a></li>
+                              <li id="menu-item-6067" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6067 nav-item"><a title="Demo Library" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Demo Library</a></li>
+                              <li id="menu-item-6068" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6068 nav-item"><a title="Product Updates" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Product Updates</a></li>
                             </ul>
                           </li>
                         </ul>
                         <div className="nautix-mobile-cta pt-3 mt-4 bg-transparent" data-uc-sticky="position: bottom">
-                          <a className="btn btn-primary text-white fw-bold rounded-pill w-100 justify-center text-none" href={registerUrl}>Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
+                          <a className="btn btn-primary text-white fw-bold rounded-pill w-100 justify-center text-none" href={registerUrl} onClick={closeMobileMenu}>Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
                         </div>
                       </div>
                     </div>
