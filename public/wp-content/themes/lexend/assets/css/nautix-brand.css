@@ -137,6 +137,20 @@
 .hero-header,
 .elementor-3841 .elementor-element.elementor-element-f152d04 {
   background: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 1.25rem !important;
+}
+
+.elementor-3841 .elementor-element.elementor-element-2438a1e:not(.elementor-motion-effects-element-type-background),
+.elementor-3841 .elementor-element.elementor-element-2438a1e > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.elementor-3841 .elementor-element.elementor-element-f42f923 {
+  position: relative;
+  z-index: 1;
 }
 
 .elementor-3841 .elementor-element.elementor-element-067855a > .elementor-widget-container {
@@ -278,7 +292,7 @@
 
 .nautix-proof-strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   width: 100%;
 }
@@ -319,9 +333,25 @@
 }
 
 .nautix-client-marquee {
-  margin-top: 1.05rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(9, 22, 36, 0.08);
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.nautix-hero-marquee {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0.9rem auto 0;
+  padding-inline: 0.5rem;
+}
+
+.nautix-hero-marquee-title {
+  margin-bottom: 0.6rem !important;
+  color: #5c6773;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .nautix-client-marquee .element-brands {
@@ -352,7 +382,7 @@
 .nautix-pillars-section {
   max-width: 1288px;
   margin: 0 auto;
-  padding: 5.5rem 15px 4.5rem;
+  padding: 2.6rem 15px 4.5rem;
 }
 
 .nautix-pillars-head {
@@ -1014,6 +1044,20 @@
   box-shadow: none !important;
 }
 
+.home .uc-header.header-seven .uc-navbar-container,
+.home .uc-header.header-seven .uc-navbar-container.uc-navbar-sticky {
+  background: #ffffff !important;
+}
+
+body.home {
+  background: #ffffff !important;
+}
+
+.home .uc-header.header-seven .uc-navbar-main,
+.home .uc-header.header-seven .uc-navbar {
+  background: transparent !important;
+}
+
 .uc-header.header-seven,
 .uc-header.header-seven .uc-navbar-main,
 .uc-header.header-seven .uc-navbar-main::before,
@@ -1037,7 +1081,7 @@
 
 @media (max-width: 1024px) {
   .nautix-pillars-section {
-    padding-top: 4.25rem;
+    padding-top: 2.9rem;
     padding-bottom: 3.5rem;
   }
 
@@ -1083,11 +1127,20 @@
   .nautix-proof-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .nautix-hero-marquee {
+    margin-top: 0.75rem;
+  }
 }
 
 @media (max-width: 767px) {
+  .hero-header,
+  .elementor-3841 .elementor-element.elementor-element-f152d04 {
+    padding-bottom: 0.75rem !important;
+  }
+
   .nautix-pillars-section {
-    padding-top: 3.5rem;
+    padding-top: 1.6rem;
     padding-bottom: 3rem;
   }
 
@@ -1250,6 +1303,16 @@
   .nautix-social-proof-band {
     padding: 0.9rem;
     border-radius: 1.25rem;
+  }
+
+  .nautix-hero-marquee {
+    margin-top: 0.6rem;
+    padding-inline: 0;
+  }
+
+  .nautix-hero-marquee-title {
+    margin-bottom: 0.45rem !important;
+    font-size: 0.8rem;
   }
 
   .nautix-proof-stat {

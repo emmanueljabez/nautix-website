@@ -7,21 +7,21 @@ export function Homepage() {
     <div>
       <SiteHeader />
       <main className="main-area">
-              <div data-elementor-type="wp-page" data-elementor-id={3841} className="elementor elementor-3841">
+                <div data-elementor-type="wp-page" data-elementor-id={3841} className="elementor elementor-3841">
                 <div className="elementor-element elementor-element-f152d04 e-con-full hero-header e-flex animejs-disable e-con e-parent" data-id="f152d04" data-element_type="container">
                   <div className="elementor-element elementor-element-f008070 elementor-absolute h-100 w-100 animejs-disable elementor-widget elementor-widget-tg-shapes" data-id="f008070" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="tg-shapes.default">
                     <div className="elementor-widget-container">
                       <div className="d-none lg:d-block" data-anime="targets: >*; scale: [0, 1]; opacity: [0, 1]; easing: easeOutCubic; duration: 750; delay: anime.stagger(150, {start: 500});">
-                        <img decoding="async" src="/wp-content/uploads/2025/04/marketing.svg" alt="Icon" className="d-inline-block position-absolute w-72px dark:d-none" style={{top: '15%', left: '10%'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/marketing-dark.svg" alt="Icon" className="d-inline-block position-absolute w-72px d-none dark:d-block" style={{top: '15%', left: '10%'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/charts-pc.svg" alt="Icon" className="d-inline-block position-absolute w-72px dark:d-none" style={{top: '15%', right: '10%'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/charts-pc-dark.svg" alt="Icon" className="d-inline-block position-absolute w-72px d-none dark:d-block" style={{top: '15%', right: '10%'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/group.svg" alt="Icon" className="d-inline-block position-absolute w-64px dark:d-none" style={{top: '35%', right: '-1%', transform: 'rotate(45deg)'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/group-dark.svg" alt="Icon" className="d-inline-block position-absolute w-64px d-none dark:d-block" style={{top: '35%', right: '-1%', transform: 'rotate(45deg)'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/idea.svg" alt="Icon" className="d-inline-block position-absolute w-48px dark:d-none" style={{top: '40%', left: '15%'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/idea-dark.svg" alt="Icon" className="d-inline-block position-absolute w-48px d-none dark:d-block" style={{top: '40%', left: '15%'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/group.svg" alt="Icon" className="d-inline-block position-absolute w-64px dark:d-none" style={{top: '30%', left: '-1%'}} />
-                        <img decoding="async" src="/wp-content/uploads/2025/04/group-dark.svg" alt="Icon" className="d-inline-block position-absolute w-64px d-none dark:d-block" style={{top: '30%', left: '-1%'}} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/marketing.svg" alt="Icon" className="d-inline-block position-absolute w-72px dark:d-none" style={{ top: "15%", left: "10%" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/marketing-dark.svg" alt="Icon" className="d-inline-block position-absolute w-72px d-none dark:d-block" style={{ top: "15%", left: "10%" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/charts-pc.svg" alt="Icon" className="d-inline-block position-absolute w-72px dark:d-none" style={{ top: "15%", right: "10%" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/charts-pc-dark.svg" alt="Icon" className="d-inline-block position-absolute w-72px d-none dark:d-block" style={{ top: "15%", right: "10%" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/group.svg" alt="Icon" className="d-inline-block position-absolute w-64px dark:d-none" style={{ top: "35%", right: "-1%", transform: "rotate(45deg)" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/group-dark.svg" alt="Icon" className="d-inline-block position-absolute w-64px d-none dark:d-block" style={{ top: "35%", right: "-1%", transform: "rotate(45deg)" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/idea.svg" alt="Icon" className="d-inline-block position-absolute w-48px dark:d-none" style={{ top: "40%", left: "15%" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/idea-dark.svg" alt="Icon" className="d-inline-block position-absolute w-48px d-none dark:d-block" style={{ top: "40%", left: "15%" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/group.svg" alt="Icon" className="d-inline-block position-absolute w-64px dark:d-none" style={{ top: "30%", left: "-1%" }} />
+                        <img decoding="async" src="/wp-content/uploads/2025/04/group-dark.svg" alt="Icon" className="d-inline-block position-absolute w-64px d-none dark:d-block" style={{ top: "30%", left: "-1%" }} />
                       </div>
                     </div>
                   </div>
@@ -71,62 +71,36 @@ export function Homepage() {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="elementor-element elementor-element-b42cd15 animejs-onview e-flex e-con-boxed animejs-element e-con e-parent" data-id="b42cd15" data-element_type="container" data-anime="onview: -200; loop: false; targets: .e-con-inner > *; opacity: [0, 1]; translateY: [-16, 0]; easing: 'easeOutCubic'; duration: 500; delay: 350; delay: anime.stagger(100, {start: 200})" data-anime-devices="mobile,tablet,desktop">
-                  <div className="e-con-inner">
-                    <div className="nautix-social-proof-band">
-                      <div className="elementor-element elementor-element-f4974b2 animejs-disable elementor-widget elementor-widget-tg-brand" data-id="f4974b2" data-element_type="widget" data-widget_type="tg-brand.default">
-                        <div className="elementor-widget-container">
-                          <div className="nautix-proof-strip">
-                            <div className="nautix-proof-stat">
-                              <span className="nautix-proof-value">60 sec</span>
-                              <p className="nautix-proof-copy mb-0">Average response time across all channels</p>
-                            </div>
-                            <div className="nautix-proof-stat">
-                              <span className="nautix-proof-value">60–80%</span>
-                              <p className="nautix-proof-copy mb-0">Of Tier 1 queries resolved without agent involvement</p>
-                            </div>
-                            <div className="nautix-proof-stat">
-                              <span className="nautix-proof-value">24/7</span>
-                              <p className="nautix-proof-copy mb-0">Coverage across WhatsApp, Instagram, and Facebook</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="elementor-element elementor-element-08f34da animejs-disable elementor-widget elementor-widget-tg-heading" data-id="08f34da" data-element_type="widget" data-widget_type="tg-heading.default">
-                        <div className="elementor-widget-container">
-                          <p className="title tg-element-title mb-0 nautix-proof-trust">Deployed across ISPs · Real Estate · Ecommerce · SACCOs · Microfinance · Insurance</p>
-                        </div>
-                      </div>
-                      <div className="nautix-client-marquee">
-                        <div className="element-brands text-primary dark:text-white mask-x">
-                          <div className="brand-swiper-active swiper" data-uc-swiper="items: 2; center: true; center-bounds: true; autoplay: 7000; loop: true; speed: 7000; autoplay-delay: -1; allowTouchMove: false; disableOnInteraction: true;" data-uc-swiper-s="items: 4; center: false; center-bounds: false;" data-uc-swiper-m="items: 6; gap: 72;">
-                            <div className="swiper-wrapper items-center ease-linear">
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/vsquared-networks.png" loading="lazy" alt="Vsquared Networks" />
-                              </div>
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/p-cash.png" loading="lazy" alt="P-Cash" />
-                              </div>
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/rewards.png" loading="lazy" alt="Rewards" />
-                              </div>
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/kings-mabati.png" loading="lazy" alt="Kings Mabati" />
-                              </div>
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/vsquared-networks.png" loading="lazy" alt="Vsquared Networks" />
-                              </div>
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/p-cash.png" loading="lazy" alt="P-Cash" />
-                              </div>
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/rewards.png" loading="lazy" alt="Rewards" />
-                              </div>
-                              <div className="brand-item swiper-slide text-center">
-                                <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/kings-mabati.png" loading="lazy" alt="Kings Mabati" />
+                      <div className="nautix-hero-marquee">
+                        <p className="nautix-hero-marquee-title mb-0">Trusted by leading teams across industries</p>
+                        <div className="nautix-client-marquee">
+                          <div className="element-brands text-primary dark:text-white mask-x">
+                            <div className="brand-swiper-active swiper" data-uc-swiper="items: 2; center: true; center-bounds: true; autoplay: 7000; loop: true; speed: 7000; autoplay-delay: -1; allowTouchMove: false; disableOnInteraction: true;" data-uc-swiper-s="items: 4; center: false; center-bounds: false;" data-uc-swiper-m="items: 6; gap: 72;">
+                              <div className="swiper-wrapper items-center ease-linear">
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/vsquared-networks.png" loading="lazy" alt="Vsquared Networks" />
+                                </div>
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/p-cash.png" loading="lazy" alt="P-Cash" />
+                                </div>
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/rewards.png" loading="lazy" alt="Rewards" />
+                                </div>
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/kings-mabati.png" loading="lazy" alt="Kings Mabati" />
+                                </div>
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/vsquared-networks.png" loading="lazy" alt="Vsquared Networks" />
+                                </div>
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/p-cash.png" loading="lazy" alt="P-Cash" />
+                                </div>
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/rewards.png" loading="lazy" alt="Rewards" />
+                                </div>
+                                <div className="brand-item swiper-slide text-center">
+                                  <img decoding="async" className="brand-item-image nautix-client-logo" src="/nautix-clients/kings-mabati.png" loading="lazy" alt="Kings Mabati" />
+                                </div>
                               </div>
                             </div>
                           </div>
