@@ -1592,37 +1592,37 @@ export function Homepage() {
                             <li className="uc-open">
                               <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Is Nautix a chatbot?</a>
                               <div className="uc-accordion-content">
-                                <p>No. Chatbots follow pre-set scripts. Nautix reads the customer's message, checks your live systems, and takes action across marketing, sales, and support. It can qualify a lead, resolve a service issue, collect a payment, trigger a workflow, or escalate with full context when needed.</p>
+                                <p>No. Chatbots follow pre-set scripts. Nautix reads customer messages, uses the business context available to it, and takes action across marketing, sales, and support. It can qualify leads, resolve service issues, collect payments, trigger workflows, and escalate with full context when needed.</p>
                               </div>
                             </li>
                             <li>
                               <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Which channels does Nautix work on?</a>
                               <div className="uc-accordion-content">
-                                <p>Nautix works across WhatsApp, Instagram DMs and comments, Facebook Messenger, and Facebook comments. It can engage, qualify, support, and resolve on the channel the customer used, while keeping full context across channels whenever a workflow needs to continue elsewhere. No inbox switching. No lost conversation history.</p>
+                                <p>Nautix works across WhatsApp, Instagram DMs and comments, Facebook Messenger, and Facebook comments. It can engage, qualify, support, and resolve on the channel the customer used, while preserving context across the full customer journey. No inbox switching. No lost conversation history.</p>
                               </div>
                             </li>
                             <li>
                               <a className="uc-accordion-title fs-5 sm:fs-4" href="#">How long does setup take?</a>
                               <div className="uc-accordion-content">
-                                <p>The Starter plan goes live in 48 hours. The Growth plan takes 5 working days. The Scale plan takes 7-10 working days. Setup includes connecting your channels, configuring the workflows for your use cases, integrating your backend systems, and testing with real interactions before going live. You do not need a developer on your team.</p>
+                                <p>The Starter plan can go live in 48 hours. The Growth plan typically takes 5 working days. The Scale plan usually takes 7 to 10 working days. Timing depends on your channels, workflows, and integration requirements. Setup includes channel connection, workflow configuration, integration work where needed, and testing with real interactions before launch.</p>
                               </div>
                             </li>
                             <li>
                               <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Can Nautix work with our current setup?</a>
                               <div className="uc-accordion-content">
-                                <p>Yes. Nautix works with the tools your business already relies on across operations, support, payments, and customer records. If you do not yet have a structured backend, Nautix can still start from a CSV or another regularly updated data source.</p>
+                                <p>Yes. Nautix can work with the tools and data sources your business already uses across operations, support, payments, and customer records. If you do not yet have a structured backend, Nautix can still start from a CSV or another regularly updated data source. Some integrations are straightforward, while others may require technical work depending on your stack.</p>
                               </div>
                             </li>
                             <li>
                               <a className="uc-accordion-title fs-5 sm:fs-4" href="#">What happens when Nautix cannot resolve something?</a>
                               <div className="uc-accordion-content">
-                                <p>Nautix escalates to a human agent with full context. Every escalation includes the full conversation transcript, live system data at the time of escalation, the steps the AI already took, and the customer's sentiment. Your agent starts solving immediately and never asks the customer to repeat their problem.</p>
+                                <p>Nautix escalates to a human agent with the relevant context from the conversation and the actions it has already taken. Your team can pick up from there without forcing the customer to start over.</p>
                               </div>
                             </li>
                             <li>
                               <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Is payment integration included in all plans?</a>
                               <div className="uc-accordion-content">
-                                <p>Yes. Payment integration is included in all Nautix plans, supporting card payments, mobile money including M-Pesa and equivalent local rails, and bank transfer where applicable. Nautix can initiate payment from the active conversation flow, confirm it in real time, update the account or ledger, and send a receipt automatically.</p>
+                                <p>Yes. Payment integration is available across all Nautix plans. Supported payment methods depend on your market and implementation. Nautix can initiate payment in the active conversation, confirm status in real time, update the workflow, and send confirmation automatically.</p>
                               </div>
                             </li>
                             <li>
@@ -1634,7 +1634,7 @@ export function Homepage() {
                             <li>
                               <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Is our customer data safe?</a>
                               <div className="uc-accordion-content">
-                                <p>Nautix does not store financial data. Backend queries are made in real time and sensitive data is not retained on Nautix servers. Conversation logs are encrypted and can be accessed by your team through the admin dashboard with the right permissions. Interactions comply with applicable data protection regulations in your market.</p>
+                                <p>Nautix is designed to minimize sensitive data exposure. Sensitive checks and actions can be handled in real time, conversation logs are encrypted, and access is permission-based. Data-handling requirements can be configured to match your market and compliance needs.</p>
                               </div>
                             </li>
                             <li>
