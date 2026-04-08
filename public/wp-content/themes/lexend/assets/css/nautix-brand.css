@@ -175,13 +175,13 @@
 }
 
 .elementor-3841 .elementor-element.elementor-element-f9e6c88 .animated-title {
-  color: #ffffff !important;
-  background: #7e10a2 !important;
+  color: #22303f !important;
+  background: #e2fe5e !important;
 }
 
 .elementor-3841 .elementor-element.elementor-element-f9e6c88 .animated-title *,
 .elementor-3841 .elementor-element.elementor-element-f9e6c88 .typed-cursor {
-  color: #ffffff !important;
+  color: #22303f !important;
 }
 
 .elementor-3841 .elementor-element.elementor-element-f9e6c88 .title {
@@ -462,6 +462,12 @@
   gap: 1.5rem;
 }
 
+.nautix-pillars-section .nautix-section-title-focus {
+  background: #e2fe5e;
+  color: #22303f;
+  box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
+}
+
 .nautix-pillars-tabs {
   width: fit-content;
   flex-wrap: nowrap;
@@ -687,8 +693,8 @@
 }
 
 .nautix-workflows-section .nautix-section-title .px-1 {
-  color: #7e10a2;
-  background-color: #edd8f7;
+  color: #22303f;
+  background-color: #e2fe5e;
   border-radius: 0.35rem;
   padding-inline: 0.35rem;
 }
@@ -771,7 +777,9 @@
 
 .nautix-industry-section .nautix-section-title-focus {
   margin-top: 0.22em;
-  color: #7e10a2;
+  color: #22303f;
+  background: #e2fe5e;
+  box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
   font-size: 0.62em;
   line-height: 1.12;
 }
@@ -2025,9 +2033,9 @@ body.home {
 }
 
 .elementor-element.elementor-element-2efcd81 .elementor-element.elementor-element-ea0528e .px-1 {
-  background: #7e10a2;
+  background: #e2fe5e;
   border-radius: 999px;
-  color: #ffffff;
+  color: #22303f;
   display: inline-block;
   padding: 0.08em 0.42em;
 }
@@ -2049,6 +2057,12 @@ body.home {
   flex: 0 0 100% !important;
   max-width: 100% !important;
   width: 100% !important;
+}
+
+.elementor-element.elementor-element-c944443 .nautix-section-title-focus {
+  background: #e2fe5e;
+  box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
+  color: #22303f;
 }
 
 .elementor-element.elementor-element-251f93d {
@@ -2246,11 +2260,11 @@ body.home {
 
 .nautix-final-cta-focus {
   display: inline-block;
-  border: 1px solid rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(34, 48, 63, 0.06);
   border-radius: 999px;
-  background-color: #ffffff !important;
-  background-image: linear-gradient(135deg, #f6eeff 0%, #ffffff 100%) !important;
-  color: #5f1380;
+  background-color: #e2fe5e !important;
+  background-image: none !important;
+  color: #22303f;
   padding: 0.08em 0.35em;
 }
 

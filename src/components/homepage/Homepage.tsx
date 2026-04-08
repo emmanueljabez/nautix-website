@@ -397,7 +397,7 @@ export function Homepage() {
                 <div className="e-con-inner">
                   <div className="elementor-element elementor-element-ea0528e animejs-disable elementor-widget elementor-widget-tg-heading" data-id="ea0528e" data-element_type="widget" data-widget_type="tg-heading.default">
                     <div className="elementor-widget-container">
-                      <h2 className="title tg-element-title mb-0 ">What our customers say about Nautix</h2>
+                      <h2 className="title tg-element-title mb-0 nautix-testimonials-heading">What our <span className="px-1">customers</span> say about Nautix</h2>
                     </div>
                   </div>
                 </div>
