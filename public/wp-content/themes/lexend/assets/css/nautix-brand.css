@@ -1543,6 +1543,47 @@ body.home {
   box-shadow: 0 18px 40px rgba(9, 22, 36, 0.12);
 }
 
+@media (min-width: 992px) {
+  .nautix-resources-item {
+    position: relative;
+  }
+
+  .nautix-resources-submenu {
+    display: block;
+    min-width: 14.5rem;
+    padding: 0.5rem;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 6px);
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+  }
+
+  .nautix-resources-item:hover > .nautix-resources-submenu,
+  .nautix-resources-item:focus-within > .nautix-resources-submenu {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nautix-resources-submenu > li > a {
+    display: block;
+    padding: 0.55rem 0.8rem;
+    border-radius: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .nautix-resources-submenu > li > a:hover,
+  .nautix-resources-submenu > li > a:focus-visible {
+    background: #f4edf8;
+  }
+}
+
 .uc-navbar-nav .uc-nav-sub a {
   color: #091624 !important;
 }
@@ -1550,6 +1591,87 @@ body.home {
 .uc-navbar-nav .uc-nav-sub a:hover,
 .uc-navbar-nav .uc-nav-sub a:focus-visible {
   color: var(--color-primary) !important;
+}
+
+.nautix-blog-hero {
+  max-width: 1008px;
+  margin: 0 auto;
+  padding: 0.5rem 0 1rem;
+  text-align: center;
+}
+
+.nautix-blog-hero-pill {
+  display: inline-flex;
+  margin-bottom: 1rem;
+}
+
+.nautix-blog-hero-pill > .title {
+  color: var(--e-global-color-secondary);
+  font-family: "Mabry Pro", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.3;
+  padding: 0.25rem 1rem;
+}
+
+.nautix-blog-hero-title {
+  color: #20242d;
+  font-family: "Sharp Grotesk", sans-serif;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.06rem;
+}
+
+.nautix-blog-hero-title .px-1 {
+  background: #e2fe5e;
+  color: #22303f;
+}
+
+.nautix-blog-hero-copy {
+  max-width: 760px;
+  margin: 0.85rem auto 0 !important;
+  color: #4f5668;
+  font-family: "Mabry Pro", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .nautix-blog-hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nautix-blog-hero {
+    padding-top: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .nautix-blog-hero-title {
+    font-size: 2rem;
+  }
+
+  .nautix-blog-hero-copy {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .nautix-blog-hero {
+    padding-top: 0;
+    padding-bottom: 0.25rem;
+  }
+
+  .nautix-blog-hero-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .nautix-blog-hero-copy {
+    line-height: 1.55;
+  }
 }
 
 .nautix-mobile-panel {

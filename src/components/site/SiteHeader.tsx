@@ -575,7 +575,17 @@ export function SiteHeader() {
                                     </div>
                                   </div></li>
                                 <li id="menu-item-4915" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-4915 nav-item"><a title="Pricing" href="/pricing" className="nav-links">Pricing</a></li>
-                                <li id="menu-item-4916" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-4916 nav-item"><a title="Resources" href="/#resources" className="nav-links">Resources</a></li>
+                                <li id="menu-item-4916" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-4916 nav-item nautix-resources-item">
+                                  <a title="Resources" href="#" className="nav-links">Resources</a>
+                                  <ul className="uc-nav-sub nautix-resources-submenu">
+                                    <li id="menu-item-4917" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-4917 nav-item">
+                                      <a title="Blog" href="/resources/blog" className="dropdown-items">Blog</a>
+                                    </li>
+                                    <li id="menu-item-4918" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-4918 nav-item">
+                                      <a title="Product Updates" href="/resources/product-updates" className="dropdown-items">Product Updates</a>
+                                    </li>
+                                  </ul>
+                                </li>
                               </ul>                              </div>
                             <div className="uc-navbar-right">
                               <ul className="nav-x d-none lg:d-flex">
@@ -695,11 +705,8 @@ export function SiteHeader() {
                               <i className="unicon-angle-down" />
                             </button>
                             <ul className={`uc-nav-sub${openMobileSection === "resources" ? " is-open" : ""}`} role="menu">
-                              <li id="menu-item-6064" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6064 nav-item"><a title="Blog & Insights" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Blog &amp; Insights</a></li>
-                              <li id="menu-item-6065" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6065 nav-item"><a title="Case Studies" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Case Studies</a></li>
-                              <li id="menu-item-6066" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6066 nav-item"><a title="Engine Playbooks" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Engine Playbooks</a></li>
-                              <li id="menu-item-6067" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6067 nav-item"><a title="Demo Library" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Demo Library</a></li>
-                              <li id="menu-item-6068" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6068 nav-item"><a title="Product Updates" href="/#resources" className="dropdown-items" onClick={closeMobileMenu}>Product Updates</a></li>
+                              <li id="menu-item-6064" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6064 nav-item"><a title="Blog" href="/resources/blog" className="dropdown-items" onClick={closeMobileMenu}>Blog</a></li>
+                              <li id="menu-item-6068" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6068 nav-item"><a title="Product Updates" href="/resources/product-updates" className="dropdown-items" onClick={closeMobileMenu}>Product Updates</a></li>
                             </ul>
                           </li>
                         </ul>
