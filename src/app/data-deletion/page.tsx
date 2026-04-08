@@ -1,26 +1,35 @@
 import Link from "next/link";
-import type { Metadata } from "next";
 import { LegalCard, LegalPageShell } from "@/components/legal/LegalPageShell";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildBreadcrumbSchema, buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Data Deletion Instructions | Nautix",
   description: "Learn how to request deletion of your personal data from Nautix.",
-};
+  path: "/data-deletion",
+});
+
+const dataDeletionBreadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Data Deletion", path: "/data-deletion" },
+]);
 
 export default function DataDeletionPage() {
   return (
-    <LegalPageShell
-      badge="Privacy"
-      title="Data Deletion Instructions"
-      lead="Learn how to request deletion of your personal data from Nautix. We respect your privacy rights and make it easy to remove your information."
-      meta={["Processing time: Within 30 days", "Last updated: November 30, 2025"]}
-    >
-      <LegalCard title="How to Request Data Deletion">
-        <p>
-          You can request deletion of your personal data directly from the Nautix app or by contacting our support
-          team. Follow the instructions below based on your preferred method.
-        </p>
-      </LegalCard>
+    <>
+      <JsonLd data={dataDeletionBreadcrumbSchema} />
+      <LegalPageShell
+        badge="Privacy"
+        title="Data Deletion Instructions"
+        lead="Learn how to request deletion of your personal data from Nautix. We respect your privacy rights and make it easy to remove your information."
+        meta={["Processing time: Within 30 days", "Last updated: November 30, 2025"]}
+      >
+        <LegalCard title="How to Request Data Deletion">
+          <p>
+            You can request deletion of your personal data directly from the Nautix app or by contacting our support
+            team. Follow the instructions below based on your preferred method.
+          </p>
+        </LegalCard>
 
       <LegalCard title="Option 1: In-App Deletion Request (Recommended)" tone="highlight">
         <ol>
@@ -138,13 +147,14 @@ export default function DataDeletionPage() {
         <p>We typically respond to data deletion inquiries within 2 business days.</p>
       </LegalCard>
 
-      <LegalCard title="Related Policies">
-        <p>For more information about how we handle your data:</p>
-        <ul>
-          <li><Link href="/privacy">Privacy Policy</Link> - How we collect, use, and protect your data</li>
-          <li><Link href="/terms">Terms &amp; Conditions</Link> - Rules for using Nautix services</li>
-        </ul>
-      </LegalCard>
-    </LegalPageShell>
+        <LegalCard title="Related Policies">
+          <p>For more information about how we handle your data:</p>
+          <ul>
+            <li><Link href="/privacy">Privacy Policy</Link> - How we collect, use, and protect your data</li>
+            <li><Link href="/terms">Terms &amp; Conditions</Link> - Rules for using Nautix services</li>
+          </ul>
+        </LegalCard>
+      </LegalPageShell>
+    </>
   );
 }

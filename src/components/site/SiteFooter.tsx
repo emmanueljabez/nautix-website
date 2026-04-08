@@ -6,19 +6,20 @@ const FOOTER_COLUMNS = [
   {
     title: "Solutions",
     links: [
-      { href: "/#solutions", label: "Marketing" },
-      { href: "/#solutions", label: "Sales" },
-      { href: "/#solutions", label: "Customer Support" },
-      { href: "/#product", label: "AI Agent Builder" },
+      { href: "/solutions/marketing", label: "Marketing" },
+      { href: "/solutions/sales", label: "Sales" },
+      { href: "/solutions/customer-support", label: "Customer Support" },
+      { href: "/demo", label: "Book a Demo" },
       { href: "/pricing", label: "Pricing" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { href: "/#hero-overview", label: "Overview" },
-      { href: "/#resources", label: "Testimonials" },
-      { href: DEMO_EMAIL_URL, label: "Book a Demo" },
+      { href: "/features", label: "Features" },
+      { href: "/compare/nautix-vs-wati", label: "Nautix vs Wati" },
+      { href: "/compare/nautix-vs-respond-io", label: "Nautix vs Respond.io" },
+      { href: "/demo", label: "Book a Demo" },
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Service" },
     ],
@@ -26,10 +27,10 @@ const FOOTER_COLUMNS = [
   {
     title: "Industries",
     links: [
-      { href: "/#industries", label: "Internet Service Providers" },
-      { href: "/#industries", label: "Real Estate" },
-      { href: "/#industries", label: "Ecommerce" },
-      { href: "/#industries", label: "Finance" },
+      { href: "/industries/isps", label: "Internet Service Providers" },
+      { href: "/industries/real-estate", label: "Real Estate" },
+      { href: "/industries/ecommerce", label: "Ecommerce" },
+      { href: "/industries/finance", label: "Finance" },
       { href: DEMO_EMAIL_URL, label: "Contact Us" },
     ],
   },

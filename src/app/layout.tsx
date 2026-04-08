@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Outfit } from "next/font/google";
 import { RouteChrome } from "@/components/layout/RouteChrome";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  SITE_DESCRIPTION,
+  SITE_LOCALE,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+  absoluteUrl,
+  buildOrganizationSchema,
+  buildWebsiteSchema,
+} from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,8 +26,62 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Nautix | Omnichannel AI Messaging Platform",
-  description: "Connect WhatsApp, Instagram, SMS & more to automate campaigns, leads and support.",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  keywords: [
+    "whatsapp automation",
+    "instagram dm automation",
+    "facebook messenger automation",
+    "ai customer support software",
+    "lead qualification software",
+    "omnichannel messaging platform",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    locale: SITE_LOCALE,
+    images: [
+      {
+        url: absoluteUrl("/icon.png"),
+        width: 1024,
+        height: 1024,
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [absoluteUrl("/icon.png")],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/icon.png" }],
+  },
 };
 
 const GOOGLE_ANALYTICS_ID = "G-S7RXCGKKP4";
@@ -119,6 +184,8 @@ export default function RootLayout({
             gtag('config', '${GOOGLE_ANALYTICS_ID}');
           `}
         </Script>
+        <JsonLd data={buildOrganizationSchema()} />
+        <JsonLd data={buildWebsiteSchema()} />
         <RouteChrome>{children}</RouteChrome>
         {GLOBAL_FOOTER_SCRIPTS.map((script) => (
           <script key={script.id} id={script.id} src={script.src} />

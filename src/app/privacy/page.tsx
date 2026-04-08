@@ -1,25 +1,34 @@
-import type { Metadata } from "next";
 import { LegalCard, LegalPageShell } from "@/components/legal/LegalPageShell";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildBreadcrumbSchema, buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Privacy Policy | Nautix",
   description: "How Nautix collects, uses, stores, and protects your data across our products and services.",
-};
+  path: "/privacy",
+});
+
+const privacyBreadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Privacy Policy", path: "/privacy" },
+]);
 
 export default function PrivacyPage() {
   return (
-    <LegalPageShell
-      badge="Privacy"
-      title="Privacy Policy"
-      lead="How Nautix collects, uses, stores, and protects your data across our products and services."
-      meta={["Effective date: November 16, 2025", "Last updated: November 16, 2025"]}
-    >
-      <LegalCard title="1. Who we are">
-        <p>
-          Nautix helps teams communicate with customers on WhatsApp. This policy covers data handled by our website,
-          products, APIs, and support channels.
-        </p>
-      </LegalCard>
+    <>
+      <JsonLd data={privacyBreadcrumbSchema} />
+      <LegalPageShell
+        badge="Privacy"
+        title="Privacy Policy"
+        lead="How Nautix collects, uses, stores, and protects your data across our products and services."
+        meta={["Effective date: November 16, 2025", "Last updated: November 16, 2025"]}
+      >
+        <LegalCard title="1. Who we are">
+          <p>
+            Nautix helps teams communicate with customers on WhatsApp. This policy covers data handled by our website,
+            products, APIs, and support channels.
+          </p>
+        </LegalCard>
 
       <LegalCard title="2. Data we collect">
         <ul>
@@ -145,12 +154,13 @@ export default function PrivacyPage() {
         </p>
       </LegalCard>
 
-      <LegalCard title="16. Contact">
-        <p>
-          Email <a href="mailto:privacy@nautix.io">privacy@nautix.io</a> or write to Nautix Privacy, The Piano, 8th
-          Floor, Brookside Drive, Westlands, Nairobi.
-        </p>
-      </LegalCard>
-    </LegalPageShell>
+        <LegalCard title="16. Contact">
+          <p>
+            Email <a href="mailto:privacy@nautix.io">privacy@nautix.io</a> or write to Nautix Privacy, The Piano, 8th
+            Floor, Brookside Drive, Westlands, Nairobi.
+          </p>
+        </LegalCard>
+      </LegalPageShell>
+    </>
   );
 }

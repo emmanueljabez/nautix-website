@@ -1,26 +1,35 @@
-import type { Metadata } from "next";
 import { LegalCard, LegalPageShell } from "@/components/legal/LegalPageShell";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildBreadcrumbSchema, buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Terms & Conditions | Nautix",
   description: "The rules for using Nautix products, services, APIs, and content.",
-};
+  path: "/terms",
+});
+
+const termsBreadcrumbSchema = buildBreadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Terms & Conditions", path: "/terms" },
+]);
 
 export default function TermsPage() {
   return (
-    <LegalPageShell
-      badge="Legal"
-      title="Terms & Conditions"
-      lead="The rules for using Nautix products, services, APIs, and content."
-      meta={["Effective date: November 16, 2025", "Last updated: November 16, 2025"]}
-    >
-      <LegalCard title="1. Acceptance of terms">
-        <p>
-          By accessing or using Nautix, you agree to these Terms and all referenced policies (Privacy Policy, DPA,
-          Acceptable Use). If you use Nautix on behalf of an organization, you represent that you are authorized to
-          bind that entity and that it accepts these Terms.
-        </p>
-      </LegalCard>
+    <>
+      <JsonLd data={termsBreadcrumbSchema} />
+      <LegalPageShell
+        badge="Legal"
+        title="Terms & Conditions"
+        lead="The rules for using Nautix products, services, APIs, and content."
+        meta={["Effective date: November 16, 2025", "Last updated: November 16, 2025"]}
+      >
+        <LegalCard title="1. Acceptance of terms">
+          <p>
+            By accessing or using Nautix, you agree to these Terms and all referenced policies (Privacy Policy, DPA,
+            Acceptable Use). If you use Nautix on behalf of an organization, you represent that you are authorized to
+            bind that entity and that it accepts these Terms.
+          </p>
+        </LegalCard>
 
       <LegalCard title="2. Eligibility and accounts">
         <p>
@@ -140,12 +149,13 @@ export default function TermsPage() {
         </p>
       </LegalCard>
 
-      <LegalCard title="17. Contact">
-        <p>
-          Email <a href="mailto:legal@nautix.io">legal@nautix.io</a> or write to Nautix Legal, The Piano, 8th Floor,
-          Brookside Drive, Westlands, Nairobi.
-        </p>
-      </LegalCard>
-    </LegalPageShell>
+        <LegalCard title="17. Contact">
+          <p>
+            Email <a href="mailto:legal@nautix.io">legal@nautix.io</a> or write to Nautix Legal, The Piano, 8th Floor,
+            Brookside Drive, Westlands, Nairobi.
+          </p>
+        </LegalCard>
+      </LegalPageShell>
+    </>
   );
 }

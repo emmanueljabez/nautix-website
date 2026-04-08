@@ -2,6 +2,7 @@ import { FinalCtaSection } from "@/components/homepage/FinalCtaSection";
 import { HomepageBodyClass } from "@/components/homepage/HomepageBodyClass";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { HOMEPAGE_FAQS } from "@/lib/faq-data";
 
 const DEMO_EMAIL_URL = "mailto:support@nautix.io?subject=Book%20a%20Nautix%20Demo";
 const CLIENT_LOGOS = [
@@ -472,66 +473,14 @@ export function Homepage() {
                 <div className="elementor-element elementor-element-3109d59 elementor-widget__width-initial animejs-disable elementor-widget elementor-widget-genix-faq" data-id="3109d59" data-element_type="widget" data-widget_type="genix-faq.default">
                   <div className="elementor-widget-container">
                     <ul className="uc-accordion-divider gap-5 " data-uc-accordion="targets: > li; multiple: true;">
-                      <li className="uc-open">
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Is Nautix a chatbot?</a>
-                        <div className="uc-accordion-content">
-                          <p>No. Chatbots follow pre-set scripts. Nautix reads customer messages, uses the business context available to it, and takes action across marketing, sales, and support. It can qualify leads, resolve service issues, collect payments, trigger workflows, and escalate with full context when needed.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Which channels does Nautix work on?</a>
-                        <div className="uc-accordion-content">
-                          <p>Nautix works across WhatsApp, Instagram DMs and comments, Facebook Messenger, and Facebook comments. It can engage, qualify, support, and resolve on the channel the customer used, while preserving context across the full customer journey. No inbox switching. No lost conversation history.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">How long does setup take?</a>
-                        <div className="uc-accordion-content">
-                          <p>The Starter plan can go live in 48 hours. The Growth plan typically takes 5 working days. The Scale plan usually takes 7 to 10 working days. Timing depends on your channels, workflows, and integration requirements. Setup includes channel connection, workflow configuration, integration work where needed, and testing with real interactions before launch.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Can Nautix work with our current setup?</a>
-                        <div className="uc-accordion-content">
-                          <p>Yes. Nautix can fit into the channels, workflows, and operational data your team already uses. If your setup is still manual, Nautix can also start from a structured spreadsheet or another regularly updated data source. The exact setup depends on what needs to be connected and how much automation you want from day one.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">What happens when Nautix cannot resolve something?</a>
-                        <div className="uc-accordion-content">
-                          <p>Nautix escalates to a human agent with the relevant context from the conversation and the actions it has already taken. Your team can pick up from there without forcing the customer to start over.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Is payment integration included in all plans?</a>
-                        <div className="uc-accordion-content">
-                          <p>Yes. Payment integration is available across all Nautix plans. Supported payment methods depend on your market and implementation. Nautix can initiate payment in the active conversation, confirm status in real time, update the workflow, and send confirmation automatically.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">What if our customers prefer talking to a human?</a>
-                        <div className="uc-accordion-content">
-                          <p>Most customers prefer getting their problem solved quickly. When a customer explicitly requests a human, Nautix escalates immediately with full context. Human interaction is preserved for the moments where it genuinely adds value.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Is our customer data safe?</a>
-                        <div className="uc-accordion-content">
-                          <p>Nautix is designed to minimize sensitive data exposure. Sensitive checks and actions can be handled in real time, conversation logs are encrypted, and access is permission-based. Data-handling requirements can be configured to match your market and compliance needs.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">Do you offer a trial or pilot?</a>
-                        <div className="uc-accordion-content">
-                          <p>Yes. We offer a 30-day performance pilot for new clients. If Nautix does not measurably improve your response time, resolution rate, or lead follow-up consistency within 30 days, you do not pay for that period.</p>
-                        </div>
-                      </li>
-                      <li>
-                        <a className="uc-accordion-title fs-5 sm:fs-4" href="#">How is Nautix different from Wati or Respond.io?</a>
-                        <div className="uc-accordion-content">
-                          <p>Tools like Wati and Respond.io help teams organize and route conversations. Nautix is built to do the work inside the conversation itself: qualify leads, resolve routine issues, trigger backend actions, collect payments, and escalate only when human judgment is needed. It is not just inbox management. It is an execution layer.</p>
-                        </div>
-                      </li>
+                      {HOMEPAGE_FAQS.map((faq, index) => (
+                        <li key={faq.question} className={index === 0 ? "uc-open" : undefined}>
+                          <a className="uc-accordion-title fs-5 sm:fs-4" href="#">{faq.question}</a>
+                          <div className="uc-accordion-content">
+                            <p>{faq.answer}</p>
+                          </div>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>

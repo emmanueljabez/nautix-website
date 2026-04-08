@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Preview | Nautix",
+  description: "Internal preview of the Nautix marketing experience.",
+  path: "/preview",
+  noIndex: true,
+});
 
 export default function PreviewHome() {
   return (
