@@ -45,14 +45,12 @@ function normalizePath(path: string) {
   const match = withLeadingSlash.match(/^([^?#]*)([?#].*)?$/);
   const pathname = match?.[1] ?? withLeadingSlash;
   const suffix = match?.[2] ?? "";
-
-  if (pathname.endsWith("/")) {
-    return `${pathname}${suffix}`;
+  if (pathname === "/") {
+    return `/${suffix}`;
   }
 
-  const lastSegment = pathname.split("/").pop() ?? "";
-  const needsTrailingSlash = lastSegment.length > 0 && !lastSegment.includes(".");
-  return `${pathname}${needsTrailingSlash ? "/" : ""}${suffix}`;
+  const normalizedPathname = pathname.replace(/\/+$/, "");
+  return `${normalizedPathname}${suffix}`;
 }
 
 export function absoluteUrl(path = "/") {

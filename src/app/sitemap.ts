@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return routes.map((path) => ({
-    url: path === "" ? SITE_URL : `${SITE_URL}${path}/`,
+    url: path === "" ? SITE_URL : `${SITE_URL}${path}`,
     lastModified,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : path.startsWith("/compare/") ? 0.6 : 0.7,
