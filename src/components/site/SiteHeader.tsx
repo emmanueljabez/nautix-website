@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 
 export function SiteHeader() {
   const loginUrl = "https://app.nautix.io/login";
-  const registerUrl = "https://app.nautix.io/register";
+  const demoUrl = "mailto:support@nautix.io?subject=Book%20a%20Nautix%20Demo";
+  const productUrl = "/#product";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
 
@@ -217,7 +218,7 @@ export function SiteHeader() {
                                                   <div className="elementor-widget-container">
                                                     <ul className="uc-nav uc-navbar-dropdown-nav vstack gap-2">
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary unicon-checkmark" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -227,7 +228,7 @@ export function SiteHeader() {
                                                         </a>
                                                       </li>
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-chart-pie" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -237,7 +238,7 @@ export function SiteHeader() {
                                                         </a>
                                                       </li>
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-increase-level" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -261,7 +262,7 @@ export function SiteHeader() {
                                                   <div className="elementor-widget-container">
                                                     <ul className="uc-nav uc-navbar-dropdown-nav vstack gap-2">
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-chart-venn-diagram" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -271,7 +272,7 @@ export function SiteHeader() {
                                                         </a>
                                                       </li>
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-chat" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -281,7 +282,7 @@ export function SiteHeader() {
                                                         </a>
                                                       </li>
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-checkmark" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -305,7 +306,7 @@ export function SiteHeader() {
                                                   <div className="elementor-widget-container">
                                                     <ul className="uc-nav uc-navbar-dropdown-nav vstack gap-2">
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-chart-pie" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -315,7 +316,7 @@ export function SiteHeader() {
                                                         </a>
                                                       </li>
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-increase-level" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -325,7 +326,7 @@ export function SiteHeader() {
                                                         </a>
                                                       </li>
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="https://lexend.themegenix.com/features/">
+                                                        <a className="hstack items-start gap-2" href={productUrl}>
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-chart-venn-diagram" aria-hidden="true" />                              </div>
                                                           <span className="vstack gap-narrow mt-nnarrow">
@@ -582,7 +583,7 @@ export function SiteHeader() {
                                   <a className="nautix-login-link" href={loginUrl}>Log In</a>
                                 </li>
                               </ul>
-                              <a className="btn btn-sm btn-primary text-white fw-bold rounded-pill lg:px-2 text-none hover:contrast-shadow d-none lg:d-inline-flex" href={registerUrl}>Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
+                              <a className="btn btn-sm btn-primary text-white fw-bold rounded-pill lg:px-2 text-none hover:contrast-shadow d-none lg:d-inline-flex" href={demoUrl}>Book a Demo <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
                               <button
                                 type="button"
                                 className="nautix-mobile-trigger d-block lg:d-none"
@@ -703,7 +704,7 @@ export function SiteHeader() {
                           </li>
                         </ul>
                         <div className="nautix-mobile-cta pt-3 mt-4 bg-transparent" data-uc-sticky="position: bottom">
-                          <a className="btn btn-primary text-white fw-bold rounded-pill w-100 justify-center text-none" href={registerUrl} onClick={closeMobileMenu}>Get Started <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
+                          <a className="btn btn-primary text-white fw-bold rounded-pill w-100 justify-center text-none" href={demoUrl} onClick={closeMobileMenu}>Book a Demo <i className="fs-8 unicon-arrow-up-right fw-bold" /></a>
                         </div>
                       </div>
                     </div>

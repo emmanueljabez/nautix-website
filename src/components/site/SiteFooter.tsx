@@ -1,33 +1,36 @@
 import { CurrentYear } from "./CurrentYear";
 
+const DEMO_EMAIL_URL = "mailto:support@nautix.io?subject=Book%20a%20Nautix%20Demo";
+
 const FOOTER_COLUMNS = [
   {
     title: "Solutions",
     links: [
-      { href: "#hero-overview", label: "Marketing" },
-      { href: "#hero-overview", label: "Sales" },
-      { href: "#hero-overview", label: "Customer Support" },
-      { href: "#hero-overview", label: "Omnichannel" },
-      { href: "#autonomous-workflows", label: "Integrations" },
+      { href: "/#solutions", label: "Marketing" },
+      { href: "/#solutions", label: "Sales" },
+      { href: "/#solutions", label: "Customer Support" },
+      { href: "/#product", label: "AI Agent Builder" },
+      { href: "/pricing", label: "Pricing" },
     ],
   },
   {
-    title: "Company",
+    title: "Resources",
     links: [
-      { href: "#", label: "About us" },
-      { href: "#", label: "How It Works" },
-      { href: "#", label: "Pricing" },
-      { href: "#", label: "Blog" },
-      { href: "#hero-overview", label: "Contact Us" },
+      { href: "/#hero-overview", label: "Overview" },
+      { href: "/#resources", label: "Testimonials" },
+      { href: DEMO_EMAIL_URL, label: "Book a Demo" },
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Service" },
     ],
   },
   {
     title: "Industries",
     links: [
-      { href: "#industries-section", label: "Internet Service Providers" },
-      { href: "#industries-section", label: "Real Estate" },
-      { href: "#industries-section", label: "Ecommerce" },
-      { href: "#industries-section", label: "Finance" },
+      { href: "/#industries", label: "Internet Service Providers" },
+      { href: "/#industries", label: "Real Estate" },
+      { href: "/#industries", label: "Ecommerce" },
+      { href: "/#industries", label: "Finance" },
+      { href: DEMO_EMAIL_URL, label: "Contact Us" },
     ],
   },
 ] as const;
@@ -57,23 +60,6 @@ export function SiteFooter() {
               <br />
               Resolves - not just responds.
             </p>
-            <ul className="nav-x gap-2 social-btn dark:text-white nautix-footer-social">
-              <li>
-                <a href="#" className="icon-2" target="_blank" aria-label="LinkedIn">
-                  <i aria-hidden="true" className="unicon-logo-linkedin" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="icon-2" target="_blank" aria-label="Instagram">
-                  <i aria-hidden="true" className="genix unicon-logo-instagram" />
-                </a>
-              </li>
-              <li>
-                <a href="#" className="icon-2" target="_blank" aria-label="Facebook">
-                  <i aria-hidden="true" className="genix unicon-logo-facebook" />
-                </a>
-              </li>
-            </ul>
           </div>
           <div className="nautix-site-footer__columns">
             {FOOTER_COLUMNS.map((column) => (

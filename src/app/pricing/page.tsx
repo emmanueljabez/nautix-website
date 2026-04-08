@@ -5,7 +5,7 @@ import { useMemo, useState } from "react";
 import { FinalCtaSection } from "@/components/homepage/FinalCtaSection";
 
 const REGISTER_URL = "https://app.nautix.io/register";
-const DEMO_URL = "https://app.nautix.io/register";
+const DEMO_URL = "mailto:support@nautix.io?subject=Talk%20to%20Nautix%20Sales";
 const PRICING_PAGE_STYLESHEET = "/wp-content/uploads/elementor/css/post-4682.css";
 
 type PricingPlan = {
@@ -27,7 +27,7 @@ const PLATFORM_PLANS = {
       price: "$50",
       suffix: "/mo",
       note: "Perfect for small businesses starting with WhatsApp.",
-      ctaLabel: "Start 7-day free trial",
+      ctaLabel: "Start 30-day pilot",
       ctaHref: REGISTER_URL,
       highlighted: false,
       ctaFootnote: "No credit card required",
@@ -44,7 +44,7 @@ const PLATFORM_PLANS = {
       price: "$170",
       suffix: "/mo",
       note: "For growing teams that need advanced routing, campaigns, and analytics.",
-      ctaLabel: "Start 7-day free trial",
+      ctaLabel: "Start 30-day pilot",
       ctaHref: REGISTER_URL,
       highlighted: true,
       ctaFootnote: "Best for scaling teams",
@@ -80,7 +80,7 @@ const PLATFORM_PLANS = {
       price: "$45",
       suffix: "/mo",
       note: "Perfect for small businesses starting with WhatsApp.",
-      ctaLabel: "Start 7-day free trial",
+      ctaLabel: "Start 30-day pilot",
       ctaHref: REGISTER_URL,
       highlighted: false,
       ctaFootnote: "Billed $540 annually",
@@ -97,7 +97,7 @@ const PLATFORM_PLANS = {
       price: "$153",
       suffix: "/mo",
       note: "For growing teams that need advanced routing, campaigns, and analytics.",
-      ctaLabel: "Start 7-day free trial",
+      ctaLabel: "Start 30-day pilot",
       ctaHref: REGISTER_URL,
       highlighted: true,
       ctaFootnote: "Billed $1,836 annually",
@@ -191,9 +191,9 @@ const FAQS = [
       "Additional service conversations are billed at $0.02 each. You can also upgrade your plan or AI volume tier at any time for better unit economics.",
   },
   {
-    question: "Is the 7-day trial really free?",
+    question: "Is the 30-day pilot really free?",
     answer:
-      "Yes. No credit card is required. You get full access to your selected platform plan and can test the AI agent on a limited volume of live conversations.",
+      "Yes. No credit card is required. You get full access to your selected platform plan and can validate the workflows with live conversations during the 30-day pilot period.",
   },
   {
     question: "Can Nautix be trained on our business data?",
@@ -622,7 +622,7 @@ export default function PricingPage() {
                         href={REGISTER_URL}
                         className="btn btn-md btn-primary dark:bg-tertiary dark:text-primary fw-bold rounded-pill px-3"
                       >
-                        Get started
+                        Start 30-day pilot
                       </a>
                     </div>
                   </div>

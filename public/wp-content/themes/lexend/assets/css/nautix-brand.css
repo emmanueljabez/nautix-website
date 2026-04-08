@@ -338,6 +338,13 @@
   border-top: 0;
 }
 
+.nautix-client-logo-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+}
+
 .nautix-hero-marquee {
   width: 100%;
   max-width: 1080px;
@@ -1131,6 +1138,11 @@ body.home {
   .nautix-hero-marquee {
     margin-top: 0.75rem;
   }
+
+  .nautix-client-logo-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1331,6 +1343,11 @@ body.home {
   .nautix-client-marquee {
     margin-top: 0.85rem;
     padding-top: 0.85rem;
+  }
+
+  .nautix-client-logo-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem 1rem;
   }
 
   .nautix-client-marquee .brand-item {

@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter, Outfit } from "next/font/google";
-import { HomepageBodyClass } from "@/components/homepage/HomepageBodyClass";
 import { RouteChrome } from "@/components/layout/RouteChrome";
-import {
-  type HeadNodeDescriptor,
-  type ScriptDescriptor,
-  getMarketingMirror,
-} from "@/lib/marketingMirror";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,105 +20,92 @@ export const metadata: Metadata = {
 };
 
 const GOOGLE_ANALYTICS_ID = "G-S7RXCGKKP4";
+const GLOBAL_BODY_CLASSES = [
+  "wp-theme-lexend",
+  "theme-lexend",
+  "uni-body",
+  "panel",
+  "bg-white",
+  "text-gray-900",
+  "overflow-x-hidden",
+  "elementor-default",
+  "elementor-template-full-width",
+  "elementor-kit-8",
+  "elementor-page",
+  "min-h-screen",
+].join(" ");
 
-const MARKETING_BODY_BOOTSTRAP = `
-  document.body.classList.add(
-    "home",
-    "wp-singular",
-    "page-template",
-    "page-template-elementor_header_footer",
-    "page",
-    "page-id-3841",
-    "wp-embed-responsive",
-    "wp-theme-lexend",
-    "theme-lexend",
-    "woocommerce-js",
-    "no-sidebar",
-    "uni-body",
-    "panel",
-    "bg-white",
-    "text-gray-900",
-    "dark:bg-gray-900",
-    "dark:text-gray-200",
-    "overflow-x-hidden",
-    "elementor-default",
-    "elementor-template-full-width",
-    "elementor-kit-8",
-    "elementor-page",
-    "elementor-page-3841"
-  );
-`;
+const GLOBAL_STYLE_SHEETS = [
+  "/wp-content/uploads/elementor/css/custom-frontend.min.css",
+  "/wp-content/plugins/lexend-core/lib/templates/css/template-frontend.min.css",
+  "/wp-content/plugins/lexend-core/assets/css/unicons.min.css",
+  "/wp-content/plugins/lexend-core/include/menu/css/style.css",
+  "/wp-content/themes/lexend/assets/css/lexend-custom.css",
+  "/wp-content/themes/lexend/assets/css/lexend-fonts.css",
+  "/wp-content/themes/lexend/assets/css/uni-core.min.css",
+  "/wp-content/themes/lexend/assets/css/unicons.min.css",
+  "/wp-content/themes/lexend/assets/css/fontawesome-all.min.css",
+  "/wp-content/themes/lexend/assets/css/swiper-bundle.min.css",
+  "/wp-content/themes/lexend/assets/css/prettify.min.css",
+  "/wp-content/themes/lexend/assets/css/lexend-core.min.css",
+  "/wp-content/themes/lexend/assets/css/lexend-unit.css",
+  "/wp-content/themes/lexend/assets/css/lexend-woo.css",
+  "/wp-content/themes/lexend/style.css",
+  "/wp-content/uploads/elementor/css/post-8.css",
+  "/wp-content/plugins/elementor/assets/css/widget-image.min.css",
+  "/wp-content/uploads/elementor/css/post-3841.css",
+  "/wp-content/themes/lexend/assets/css/nautix-brand.css",
+];
 
-function renderScriptNode(script: ScriptDescriptor, key: string | number) {
-  if (script.src) {
-    return (
-      <script
-        key={key}
-        id={script.id}
-        src={script.src}
-        defer={script.defer}
-        async={script.async}
-        type={script.type}
-      />
-    );
-  }
+const GLOBAL_FOOTER_SCRIPTS = [
+  { id: "jquery-core-js", src: "/wp-includes/js/jquery/jquery.min.js" },
+  { id: "jquery-migrate-js", src: "/wp-includes/js/jquery/jquery-migrate.min.js" },
+  { id: "lexend-uni-core-js", src: "/wp-content/themes/lexend/assets/js/uni-core-bundle.min.js" },
+  { id: "bootstrap-js", src: "/wp-content/themes/lexend/assets/js/bootstrap.min.js" },
+  { id: "swiper-bundle-js", src: "/wp-content/themes/lexend/assets/js/swiper-bundle.min.js" },
+  { id: "typed-js", src: "/wp-content/themes/lexend/assets/js/typed.min.js" },
+  { id: "data-attr-helper-js", src: "/wp-content/themes/lexend/assets/js/data-attr-helper.js" },
+  { id: "swiper-helper-js", src: "/wp-content/themes/lexend/assets/js/swiper-helper.js" },
+  { id: "typed-helper-js", src: "/wp-content/themes/lexend/assets/js/typed-helper.js" },
+  { id: "uikit-components-bs-js", src: "/wp-content/themes/lexend/assets/js/uikit-components-bs.js" },
+  { id: "lexend-app-js", src: "/wp-content/themes/lexend/assets/js/app.js" },
+  { id: "lexend-main-js", src: "/wp-content/themes/lexend/assets/js/main.js" },
+  { id: "animejs-main-js", src: "/wp-content/plugins/lexend-core/include/animejs/js/animejs.min.js" },
+  {
+    id: "animejs-scrollmagic-js",
+    src: "/wp-content/plugins/lexend-core/include/animejs/js/animejs-scrollmagic.min.js",
+  },
+  {
+    id: "animejs-data-attr-helper-js",
+    src: "/wp-content/plugins/lexend-core/include/animejs/js/animejs-data-attr-helper.js",
+  },
+  {
+    id: "animejs-helper-js",
+    src: "/wp-content/plugins/lexend-core/include/animejs/js/animejs-helper.js",
+  },
+] as const;
 
-  if (!script.content) {
-    return null;
-  }
-
-  return (
-    <script
-      key={key}
-      id={script.id}
-      type={script.type}
-      dangerouslySetInnerHTML={{ __html: script.content }}
-    />
-  );
-}
-
-function renderHeadNode(node: HeadNodeDescriptor, index: number) {
-  const key = `${node.kind}-${node.id ?? index}`;
-
-  if (node.kind === "link") {
-    return (
-      <link
-        key={key}
-        id={node.id}
-        rel={node.rel}
-        href={node.href}
-        media={node.media}
-        sizes={node.sizes}
-        type={node.type}
-      />
-    );
-  }
-
-  if (node.kind === "style") {
-    return (
-      <style
-        key={key}
-        id={node.id}
-        type={node.type}
-        dangerouslySetInnerHTML={{ __html: node.content }}
-      />
-    );
-  }
-
-  return renderScriptNode(node, key);
-}
-
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { headNodes, bodyScripts } = await getMarketingMirror();
-
   return (
     <html lang="en" className="scroll-smooth">
-      <head>{headNodes.map(renderHeadNode)}</head>
-      <body className={`${inter.variable} ${outfit.variable} min-h-screen`}>
+      <head>
+        {GLOBAL_STYLE_SHEETS.map((href) => (
+          <link key={href} rel="stylesheet" href={href} />
+        ))}
+        <script
+          id="preloader-controller"
+          dangerouslySetInnerHTML={{
+            __html:
+              'var PRELOADER_CONTROLLER = {"ENABLE_PAGE_PRELOADER":"1","DEFAULT_DARK_MODE":"0","USE_SYSTEM_PREFERENCES":"0"};',
+          }}
+        />
+        <script id="app-head-bs-js" src="/wp-content/themes/lexend/assets/js/app-head-bs.js" />
+      </head>
+      <body className={`${inter.variable} ${outfit.variable} ${GLOBAL_BODY_CLASSES}`}>
         <Script
           id="google-tag-manager"
           src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
@@ -138,15 +119,10 @@ export default async function RootLayout({
             gtag('config', '${GOOGLE_ANALYTICS_ID}');
           `}
         </Script>
-        <script
-          id="marketing-body-bootstrap"
-          dangerouslySetInnerHTML={{ __html: MARKETING_BODY_BOOTSTRAP }}
-        />
-        <HomepageBodyClass />
         <RouteChrome>{children}</RouteChrome>
-        {bodyScripts.map((script, index) =>
-          renderScriptNode(script, `body-script-${script.id ?? index}`),
-        )}
+        {GLOBAL_FOOTER_SCRIPTS.map((script) => (
+          <script key={script.id} id={script.id} src={script.src} />
+        ))}
       </body>
     </html>
   );

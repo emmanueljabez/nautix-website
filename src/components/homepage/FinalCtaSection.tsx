@@ -1,3 +1,6 @@
+const DEMO_EMAIL_URL = "mailto:support@nautix.io?subject=Book%20a%20Nautix%20Demo";
+const REGISTER_URL = "https://app.nautix.io/register";
+
 export function FinalCtaSection() {
   return (
     <section className="nautix-final-cta-section">
@@ -45,16 +48,16 @@ export function FinalCtaSection() {
             back-and-forth.
           </p>
           <div className="nautix-final-cta-actions">
-            <a className="nautix-final-cta-button nautix-final-cta-button--primary" href="/demo">
+            <a className="nautix-final-cta-button nautix-final-cta-button--primary" href={DEMO_EMAIL_URL}>
               Book a Demo
             </a>
-            <a className="nautix-final-cta-button nautix-final-cta-button--secondary" href="/demo">
+            <a className="nautix-final-cta-button nautix-final-cta-button--secondary" href={REGISTER_URL}>
               Start For Free
             </a>
           </div>
           <p className="nautix-final-cta-note mb-0">
-            7-day pilot - If Nautix does not work the way we showed you, you do not pay
-            for that period.
+            30-day pilot - If Nautix does not work the way we showed you, you do not
+            pay for that period.
           </p>
         </div>
       </div>
