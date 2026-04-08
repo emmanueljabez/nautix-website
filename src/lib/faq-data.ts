@@ -47,7 +47,7 @@ export const HOMEPAGE_FAQS: readonly FaqItem[] = [
   {
     question: "Do you offer a trial or pilot?",
     answer:
-      "Yes. We offer a 30-day performance pilot for new clients. If Nautix does not measurably improve your response time, resolution rate, or lead follow-up consistency within 30 days, you do not pay for that period.",
+      "Yes. We offer a 14-day performance pilot for new clients. If Nautix does not measurably improve your response time, resolution rate, or lead follow-up consistency within 14 days, you do not pay for that period.",
   },
   {
     question: "How is Nautix different from Wati or Respond.io?",
@@ -88,9 +88,9 @@ export const PRICING_FAQS: readonly FaqItem[] = [
       "Additional service conversations are billed at $0.02 each. You can also upgrade your plan or AI volume tier at any time for better unit economics.",
   },
   {
-    question: "Is the 30-day pilot really free?",
+    question: "Is the 14-day pilot really free?",
     answer:
-      "Yes. No credit card is required. You get full access to your selected platform plan and can validate the workflows with live conversations during the 30-day pilot period.",
+      "Yes. No credit card is required. You get full access to your selected platform plan and can validate the workflows with live conversations during the 14-day pilot period.",
   },
   {
     question: "Can Nautix be trained on our business data?",

@@ -56,7 +56,7 @@ export function FinalCtaSection() {
             </a>
           </div>
           <p className="nautix-final-cta-note mb-0">
-            30-day pilot - If Nautix does not work the way we showed you, you do not
+            14-day pilot - If Nautix does not work the way we showed you, you do not
             pay for that period.
           </p>
         </div>

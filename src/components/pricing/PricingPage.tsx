@@ -428,7 +428,7 @@ export function PricingPage() {
                         href={PRICING_REGISTER_URL}
                         className="btn btn-md btn-primary dark:bg-tertiary dark:text-primary fw-bold rounded-pill px-3"
                       >
-                        Start 30-day pilot
+                        Start 14-day pilot
                       </a>
                     </div>
                   </div>
