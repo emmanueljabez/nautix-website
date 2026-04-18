@@ -11,7 +11,10 @@ interface RouteChromeProps {
 
 export function RouteChrome({ children }: RouteChromeProps) {
   const pathname = usePathname();
-  const hideChrome = pathname === "/";
+  const hideChrome =
+    pathname === "/" ||
+    pathname === "/alt-home" ||
+    pathname === "/home-enhanced";
 
   return (
     <>

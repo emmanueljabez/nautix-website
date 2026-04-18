@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Nautix | AI Operations for WhatsApp, Instagram, and Facebook",
   description:
     "Nautix helps teams capture leads, resolve customer issues, and convert conversations across WhatsApp, Instagram, and Facebook.",
-  path: "/",
+  path: "/home-enhanced",
   keywords: [
     "whatsapp automation software",
     "instagram dm automation",
@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
   ],
 });
 
-export default function Home() {
+export default function HomeEnhancedPage() {
   return (
     <>
       <JsonLd data={buildFaqSchema(HOMEPAGE_FAQS)} />
