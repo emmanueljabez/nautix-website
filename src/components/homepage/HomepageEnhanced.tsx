@@ -1133,8 +1133,8 @@ function Hero() {
               playsInline
               muted
               loop
-              poster="/wp-content/uploads/2025/04/lexend-home-7-scaled.webp"
-              src="/nautix-media/marketing-loop.mp4"
+              poster="/nautix-media/home-hero-0419-poster.jpg"
+              src="/nautix-media/home-hero-0419-optimized.mp4"
               style={{ display: "block", width: "100%", height: "auto" }}
             />
           </div>
