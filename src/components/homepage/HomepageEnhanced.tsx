@@ -353,23 +353,32 @@ function EnhancementStyles() {
         box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
       }
 
-      /* Hero headline — larger than the original */
+      /* "Frequently asked questions" — lime highlight on the focus word */
+      .home-enhanced-root .he-faq .nautix-section-title-focus {
+        background: #e2fe5e;
+        color: #22303f;
+        box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
+      }
+
+      /* Hero headline — matches .nautix-section-title type style ("Everything you need to grow"),
+         just scaled up to hero proportions */
       .home-enhanced-root .hero-header .title.tg-element-title {
+        font-family: "Sharp Grotesk", sans-serif;
+        color: #091624;
         font-size: clamp(2.4rem, 6vw, 4.6rem);
-        line-height: 1.12;
-        letter-spacing: -0.035em;
+        line-height: 1.04;
+        letter-spacing: -0.055em;
       }
       @media (max-width: 1024px) {
         .home-enhanced-root .hero-header .title.tg-element-title {
           font-size: clamp(2.1rem, 5vw, 3.6rem);
-          line-height: 1.16;
+          line-height: 1.06;
         }
       }
       @media (max-width: 640px) {
         .home-enhanced-root .hero-header .title.tg-element-title {
           font-size: clamp(1.9rem, 8vw, 2.6rem);
-          line-height: 1.2;
-          letter-spacing: -0.025em;
+          line-height: 1.08;
         }
       }
 
@@ -1565,7 +1574,7 @@ function FaqSection() {
   const ref = useReveal<HTMLDivElement>();
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <div ref={ref} style={{ maxWidth: 880, margin: "0 auto", padding: "40px 24px 60px" }}>
+    <div ref={ref} className="he-faq" style={{ maxWidth: 880, margin: "0 auto", padding: "40px 24px 60px" }}>
       <div className="nautix-industry-head he-reveal">
         <h2 className="nautix-section-title mb-0">
           <span className="nautix-section-title-line">Frequently asked</span>
