@@ -1,6 +1,8 @@
 import { CurrentYear } from "./CurrentYear";
 
 const DEMO_EMAIL_URL = "mailto:support@nautix.io?subject=Book%20a%20Nautix%20Demo";
+const BOOK_DEMO_URL =
+  "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
 
 const FOOTER_COLUMNS = [
   {
@@ -9,7 +11,7 @@ const FOOTER_COLUMNS = [
       { href: "/solutions/marketing", label: "Marketing" },
       { href: "/solutions/sales", label: "Sales" },
       { href: "/solutions/customer-support", label: "Customer Support" },
-      { href: "/demo", label: "Book a Demo" },
+      { href: BOOK_DEMO_URL, label: "Book a Demo" },
       { href: "/pricing", label: "Pricing" },
     ],
   },
@@ -19,7 +21,7 @@ const FOOTER_COLUMNS = [
       { href: "/features", label: "Features" },
       { href: "/compare/nautix-vs-wati", label: "Nautix vs Wati" },
       { href: "/compare/nautix-vs-respond-io", label: "Nautix vs Respond.io" },
-      { href: "/demo", label: "Book a Demo" },
+      { href: BOOK_DEMO_URL, label: "Book a Demo" },
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms of Service" },
     ],

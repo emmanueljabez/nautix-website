@@ -19,7 +19,8 @@ import { HOMEPAGE_FAQS } from "@/lib/faq-data";
  *   - Workflow cards: subtle purple glow on hover
  * -------------------------------------------------------------------------- */
 
-const DEMO_EMAIL_URL = "mailto:support@nautix.io?subject=Book%20a%20Nautix%20Demo";
+const DEMO_EMAIL_URL =
+  "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
 
 const CLIENT_LOGOS = [
   { src: "/nautix-clients/vsquared-networks.png", alt: "Vsquared Networks" },

@@ -455,7 +455,7 @@ export default function IspAfterHoursArticlePage() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/demo"
+                href="https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp"
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#5b0e7f] no-underline transition hover:bg-[#ece7f4]"
               >
                 Book the ISP Demo

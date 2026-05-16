@@ -47,7 +47,7 @@ export default function ProductUpdatesPage() {
                 Browse Blog
               </Link>
               <Link
-                href="/demo"
+                href="https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp"
                 className="inline-flex items-center justify-center rounded-full border border-[#171717]/12 px-5 py-2.5 text-sm font-semibold text-[#1f2430] no-underline transition hover:bg-black/5"
               >
                 Book a Demo

@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+const BOOK_DEMO_URL =
+  "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
+
 /* -------------------------------------------------------------------------- */
 /*  Inline animation stylesheet                                               */
 /* -------------------------------------------------------------------------- */
@@ -353,7 +356,7 @@ function Hero() {
 
         <div className="reveal mt-10 flex flex-wrap items-center gap-3">
           <Link
-            href="/demo"
+            href={BOOK_DEMO_URL}
             className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-[14px] font-medium text-white"
             style={{
               background: "linear-gradient(92deg,#7C3AED 0%,#EC4899 100%)",
@@ -1766,7 +1769,7 @@ function Pricing() {
                   ))}
                 </ul>
                 <Link
-                  href="/demo"
+                  href={p.cta === "Book a demo" ? BOOK_DEMO_URL : "/demo"}
                   className={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-[13px] font-medium transition ${
                     p.highlight
                       ? "bg-white text-neutral-900 hover:bg-[#FAF8F5]"
@@ -1887,7 +1890,7 @@ function FinalCta() {
             </h2>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link
-                href="/demo"
+                href={BOOK_DEMO_URL}
                 className="group inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-medium text-white"
                 style={{
                   background: "linear-gradient(92deg,#7C3AED 0%,#EC4899 100%)",

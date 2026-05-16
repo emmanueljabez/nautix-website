@@ -9,6 +9,9 @@ export const metadata: Metadata = buildMetadata({
   noIndex: true,
 });
 
+const BOOK_DEMO_URL =
+  "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
+
 export default function PreviewHome() {
   return (
     <>
@@ -39,13 +42,12 @@ export default function PreviewHome() {
             <Button size="lg" className="w-full sm:w-auto text-base h-12 px-8">
               Get Started for Free
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto text-base h-12 px-8 bg-white/50 backdrop-blur-sm"
+            <a
+              href={BOOK_DEMO_URL}
+              className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-md border border-primary-200 bg-white/50 px-8 text-base font-medium text-foreground ring-offset-background backdrop-blur-sm transition-colors hover:bg-primary-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:w-auto"
             >
               Book a Demo
-            </Button>
+            </a>
           </div>
         </div>
 

@@ -356,7 +356,7 @@ export default function RealEstateBuyerArticlePage() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
-                    href="/demo"
+                    href="https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp"
                     className="inline-flex items-center justify-center rounded-full bg-[#7e10a2] px-6 py-3 text-sm font-semibold text-white no-underline transition hover:bg-[#670d87]"
                   >
                     Book the Real Estate Demo

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 
 export function SiteHeader() {
   const loginUrl = "https://app.nautix.io/login";
-  const demoUrl = "mailto:support@nautix.io?subject=Book%20a%20Nautix%20Demo";
+  const demoUrl =
+    "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
   const productUrl = "/#product";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(null);
