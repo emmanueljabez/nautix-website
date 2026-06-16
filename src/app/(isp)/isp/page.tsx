@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/seo";
+﻿import type { Metadata } from "next";
+import { IspLandingPage } from "@/components/isp/IspLandingPage";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildMetadata, buildSoftwareApplicationSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title:
@@ -19,9 +21,17 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function IspPage() {
+  const softwareSchema = buildSoftwareApplicationSchema({
+    name: "Nautix for ISPs — WhatsApp AI Operations Layer",
+    description:
+      "Resolve ISP support issues in under 2 minutes. Nautix automates Tier 1 support, billing, and outage alerts for ISPs running Splynx and SmartOLT.",
+    path: "/isp",
+  });
+
   return (
-    <main className="min-h-screen bg-[#FAF8F5]">
-      <h1 className="text-4xl font-bold p-20">ISP Page Placeholder</h1>
-    </main>
+    <>
+      <JsonLd data={softwareSchema} />
+      <IspLandingPage />
+    </>
   );
 }
