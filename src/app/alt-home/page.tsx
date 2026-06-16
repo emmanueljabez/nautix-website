@@ -1,189 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { AnimStyles } from "@/components/ui/AnimStyles";
+import { ArrowRight } from "@/components/ui/ArrowRight";
+import { Counter } from "@/components/ui/Counter";
+import { Pill } from "@/components/ui/Pill";
+import { Wordmark } from "@/components/ui/Wordmark";
+import { useReveal } from "@/hooks/useReveal";
+import { useEffect, useState } from "react";
 
 const BOOK_DEMO_URL =
   "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
-
-/* -------------------------------------------------------------------------- */
-/*  Inline animation stylesheet                                               */
-/* -------------------------------------------------------------------------- */
-
-function AnimStyles() {
-  return (
-    <style>{`
-      @keyframes float-slow {
-        0%,100% { transform: translate(0,0) scale(1); }
-        50%     { transform: translate(30px,-20px) scale(1.05); }
-      }
-      @keyframes float-med {
-        0%,100% { transform: translate(0,0) scale(1); }
-        50%     { transform: translate(-40px,25px) scale(1.08); }
-      }
-      @keyframes float-fast {
-        0%,100% { transform: translate(0,0) scale(1); }
-        50%     { transform: translate(20px,30px) scale(0.96); }
-      }
-      @keyframes gradient-shift {
-        0%,100% { background-position: 0% 50%; }
-        50%     { background-position: 100% 50%; }
-      }
-      @keyframes marquee {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
-      }
-      @keyframes pulse-ring {
-        0%   { transform: scale(0.8); opacity: 0.6; }
-        100% { transform: scale(1.8); opacity: 0; }
-      }
-      @keyframes dash {
-        to { stroke-dashoffset: -400; }
-      }
-      @keyframes blink {
-        50% { opacity: 0; }
-      }
-      @keyframes msg-in {
-        0%   { opacity: 0; transform: translateY(6px) scale(0.98); }
-        100% { opacity: 1; transform: translateY(0) scale(1); }
-      }
-      @keyframes orbit {
-        from { transform: rotate(0deg) translateX(var(--r)) rotate(0deg); }
-        to   { transform: rotate(360deg) translateX(var(--r)) rotate(-360deg); }
-      }
-      @keyframes fade-up {
-        from { opacity: 0; transform: translateY(16px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-      .reveal { opacity: 0; }
-      .reveal.in { animation: fade-up 0.9s cubic-bezier(.22,.61,.36,1) forwards; }
-      .marquee-track { animation: marquee 38s linear infinite; }
-      .grad-text {
-        background: linear-gradient(92deg,#0B0B0E 0%,#7C3AED 45%,#EC4899 75%,#0B0B0E 100%);
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradient-shift 9s ease-in-out infinite;
-      }
-      .cursor::after {
-        content: "";
-        display: inline-block;
-        width: 3px; height: 0.9em;
-        margin-left: 4px;
-        background: #7C3AED;
-        vertical-align: -0.05em;
-        animation: blink 1s steps(2) infinite;
-      }
-    `}</style>
-  );
-}
-
-/* -------------------------------------------------------------------------- */
-/*  Primitives                                                                */
-/* -------------------------------------------------------------------------- */
-
-function Wordmark({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`font-[var(--font-heading)] text-[20px] font-semibold tracking-[-0.02em] ${className}`}
-    >
-      nautix
-      <span className="ml-[2px] inline-block h-[6px] w-[6px] translate-y-[-10px] rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] align-top" />
-    </span>
-  );
-}
-
-function Pill({ children, tone = "light" }: { children: React.ReactNode; tone?: "light" | "dark" }) {
-  const cls =
-    tone === "light"
-      ? "border-black/10 bg-white text-black/70"
-      : "border-white/15 bg-white/5 text-white/70";
-  return (
-    <span
-      className={`inline-flex items-center gap-2 rounded-full border ${cls} px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] backdrop-blur`}
-    >
-      <span className="relative flex h-1.5 w-1.5">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7C3AED] opacity-75" />
-        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
-      </span>
-      {children}
-    </span>
-  );
-}
-
-function ArrowRight({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-      <path
-        d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-/* Hook: reveal-on-scroll */
-function useReveal<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    el.querySelectorAll<HTMLElement>(".reveal").forEach((n) => io.observe(n));
-    return () => io.disconnect();
-  }, []);
-  return ref;
-}
-
-/* Animated counter */
-function Counter({ to, suffix = "", duration = 1600 }: { to: number; suffix?: string; duration?: number }) {
-  const [v, setV] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting && !started.current) {
-          started.current = true;
-          const start = performance.now();
-          const tick = (now: number) => {
-            const p = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - p, 3);
-            setV(to * eased);
-            if (p < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
-      });
-    });
-    io.observe(el);
-    return () => io.disconnect();
-  }, [to, duration]);
-  const display =
-    to % 1 === 0 ? Math.round(v).toString() : v.toFixed(1);
-  return (
-    <span ref={ref}>
-      {display}
-      {suffix}
-    </span>
-  );
-}
 
 /* -------------------------------------------------------------------------- */
 /*  Nav                                                                        */
@@ -494,7 +321,7 @@ function Stats() {
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="font-[var(--font-heading)] text-[64px] font-semibold leading-none tracking-[-0.04em] md:text-[80px]">
-                <Counter to={it.n} suffix={it.suf} />
+                <Counter target={it.n} suffix={it.suf} />
               </div>
               <p className="mt-5 max-w-[220px] text-[14px] leading-[1.5] text-black/60">
                 {it.l}
