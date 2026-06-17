@@ -14,7 +14,8 @@ export function RouteChrome({ children }: RouteChromeProps) {
   const hideChrome =
     pathname === "/" ||
     pathname === "/alt-home" ||
-    pathname === "/home-enhanced";
+    pathname === "/home-enhanced" ||
+    pathname === "/isp";
 
   return (
     <>
