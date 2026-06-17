@@ -58,7 +58,7 @@ export function IspNav() {
           />
         </Link>
 
-        <nav className="ml-auto mr-auto hidden items-center gap-7 text-[14px] font-medium lg:flex">
+        <nav className="ml-auto mr-auto hidden items-center gap-7 text-[15px] font-medium lg:flex">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -68,8 +68,8 @@ export function IspNav() {
             >
               {link.label}
               <svg
-                width="10"
-                height="6"
+                width="12"
+                height="7"
                 viewBox="0 0 10 6"
                 fill="none"
                 aria-hidden
@@ -88,7 +88,7 @@ export function IspNav() {
 
         <Link
           href={BOOK_DEMO_URL}
-          className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-4 text-[14px] font-bold transition hover:bg-[#670d87]"
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-5 text-[15px] font-bold transition hover:bg-[#670d87]"
           style={{
             minHeight: "2.625rem",
             background: "#7e10a2",
@@ -98,8 +98,8 @@ export function IspNav() {
         >
           Book a Demo
           <svg
-            width="10"
-            height="10"
+            width="12"
+            height="12"
             viewBox="0 0 10 10"
             fill="none"
             aria-hidden
