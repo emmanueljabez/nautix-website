@@ -4,6 +4,7 @@
  * IspLandingPage — orchestrator for the ISP landing page at nautix.io/isp.
  *
  * Section 1: Hero with CSS-based WhatsApp chat animation.
+ * Section 2: Problem validation (pain cards).
  * Future sections scaffolded as placeholders.
  */
 
@@ -12,6 +13,7 @@ import { useEffect, useRef } from "react";
 import { AnimStyles } from "@/components/ui/AnimStyles";
 import { ArrowRight } from "@/components/ui/ArrowRight";
 import { Pill } from "@/components/ui/Pill";
+import { IspProblemCards } from "@/components/isp/IspProblemCards";
 import { HERO_DATA } from "@/lib/isp-data";
 
 const BOOK_DEMO_URL =
@@ -93,11 +95,10 @@ function ChatAnimation() {
       }
       bubble.textContent = msg.text;
 
-      // Timestamp
+      // Timestamp — sits BELOW the bubble on the white chat background
       const timeEl = document.createElement("span");
-      timeEl.className = `mt-1 text-[10px] tracking-[0.04em] ${
-        isCustomer ? "text-black/35 pl-1" : "text-white/55 pr-1"
-      }`;
+      timeEl.className =
+        "mt-1 text-[10px] tracking-[0.04em] text-black/45";
       timeEl.textContent = msg.time;
 
       wrapper.appendChild(bubble);
@@ -327,7 +328,7 @@ export function IspLandingPage() {
     <main className="min-h-screen bg-[#FAF8F5] text-neutral-900">
       <AnimStyles />
       <HeroSection />
-      <PlaceholderSection label="Section 2 — Problem (pain cards)" />
+      <IspProblemCards />
       <PlaceholderSection label="Section 3 — Capabilities" />
       <PlaceholderSection label="Section 4 — Pioneer Moment" />
       <PlaceholderSection label="Section 5 — Numbers" />
