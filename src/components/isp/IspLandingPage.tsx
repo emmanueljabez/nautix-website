@@ -25,13 +25,34 @@ interface ChatMsg {
   id: string;
   sender: "customer" | "ai";
   text: string;
+  time: string;
 }
 
 const CHAT_MSGS: ChatMsg[] = [
-  { id: "c1", sender: "customer", text: "My internet has been down since 10pm 😤" },
-  { id: "a1", sender: "ai", text: "Hi David — I can see your router lost connection at 10:58pm. Rebooting now 🔧" },
-  { id: "a2", sender: "ai", text: "Done ✅ Internet restored. Signal strong at 48 Mbps. All good?" },
-  { id: "c2", sender: "customer", text: "Wow that was fast 🙏" },
+  {
+    id: "c1",
+    sender: "customer",
+    text: "My internet has been down since 10pm 😤",
+    time: "11:47 PM",
+  },
+  {
+    id: "a1",
+    sender: "ai",
+    text: "Hi David — I can see your router lost connection at 10:58pm. Rebooting now 🔧",
+    time: "11:48 PM",
+  },
+  {
+    id: "a2",
+    sender: "ai",
+    text: "Done ✅ Internet restored. Signal strong at 48 Mbps. All good?",
+    time: "11:49 PM",
+  },
+  {
+    id: "c2",
+    sender: "customer",
+    text: "Wow that was fast 🙏",
+    time: "11:49 PM",
+  },
 ];
 
 /* -------------------------------------------------------------------------- */
@@ -44,39 +65,58 @@ function ChatAnimation() {
 
   useEffect(() => {
     activeRef.current = true;
-    const delay = (ms: number) => new Promise<void>((r) => { window.setTimeout(r, ms); });
+    const delay = (ms: number) =>
+      new Promise<void>((r) => {
+        window.setTimeout(r, ms);
+      });
 
     // ——— DOM helpers ———
     function addBubble(msg: ChatMsg, parent: HTMLDivElement) {
+      const isCustomer = msg.sender === "customer";
+
       const wrapper = document.createElement("div");
-      wrapper.className = `flex ${msg.sender === "customer" ? "justify-start" : "justify-end"}`;
+      wrapper.className = `flex flex-col ${
+        isCustomer ? "items-start" : "items-end"
+      }`;
       wrapper.style.animation = "msg-in 0.5s ease both";
 
+      // Bubble
       const bubble = document.createElement("div");
       bubble.className = `max-w-[88%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-[1.45] ${
-        msg.sender === "customer"
+        isCustomer
           ? "rounded-tl-sm bg-neutral-900 text-white"
           : "rounded-tr-sm text-white"
       }`;
-      if (msg.sender !== "customer") {
-        bubble.style.background = "linear-gradient(135deg,#7C3AED,#EC4899)";
+      if (!isCustomer) {
+        bubble.style.background =
+          "linear-gradient(135deg,#7C3AED,#EC4899)";
       }
       bubble.textContent = msg.text;
 
+      // Timestamp
+      const timeEl = document.createElement("span");
+      timeEl.className = `mt-1 text-[10px] tracking-[0.04em] ${
+        isCustomer ? "text-black/35 pl-1" : "text-white/55 pr-1"
+      }`;
+      timeEl.textContent = msg.time;
+
       wrapper.appendChild(bubble);
+      wrapper.appendChild(timeEl);
       parent.appendChild(wrapper);
     }
 
     function addTyping(parent: HTMLDivElement) {
       const wrapper = document.createElement("div");
-      wrapper.className = "flex justify-end typing-indicator";
+      wrapper.className = "flex flex-col items-end typing-indicator";
       wrapper.style.animation = "msg-in 0.3s ease both";
 
       const dots = document.createElement("div");
-      dots.className = "flex gap-1 rounded-2xl bg-white px-3 py-2 shadow-sm ring-1 ring-black/5";
+      dots.className =
+        "flex gap-1 rounded-2xl bg-white px-3 py-2 shadow-sm ring-1 ring-black/5";
       for (let i = 0; i < 3; i++) {
         const dot = document.createElement("span");
-        dot.className = "h-1.5 w-1.5 animate-bounce rounded-full bg-black/40";
+        dot.className =
+          "h-1.5 w-1.5 animate-bounce rounded-full bg-black/40";
         if (i === 1) dot.style.animationDelay = "150ms";
         if (i === 2) dot.style.animationDelay = "300ms";
         dots.appendChild(dot);
@@ -96,12 +136,12 @@ function ChatAnimation() {
     const sequence = async () => {
       const el = containerRef.current;
       if (!el) return;
-      el.innerHTML = "";                // reset
+      el.innerHTML = ""; // reset
 
       if (!activeRef.current || !mounted) return;
       await delay(100);
 
-      // 1) Customer message
+      // 1) Customer message — 11:47 PM
       if (!activeRef.current) return;
       addBubble(CHAT_MSGS[0], el);
       await delay(1000);
@@ -111,18 +151,18 @@ function ChatAnimation() {
       addTyping(el);
       await delay(900);
 
-      // 3) AI reply 1
+      // 3) AI reply 1 — 11:48 PM
       if (!activeRef.current) return;
       removeTyping(el);
       addBubble(CHAT_MSGS[1], el);
       await delay(900);
 
-      // 4) AI reply 2
+      // 4) AI reply 2 — 11:49 PM
       if (!activeRef.current) return;
       addBubble(CHAT_MSGS[2], el);
       await delay(900);
 
-      // 5) Customer ack
+      // 5) Customer ack — 11:49 PM
       if (!activeRef.current) return;
       addBubble(CHAT_MSGS[3], el);
       await delay(1600);
@@ -140,17 +180,17 @@ function ChatAnimation() {
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-white p-4 shadow-[0_20px_60px_-20px_rgba(11,11,14,0.2)] ring-1 ring-black/5 md:p-5">
+    <div className="relative overflow-hidden rounded-3xl bg-white p-3 shadow-[0_20px_60px_-20px_rgba(11,11,14,0.2)] ring-1 ring-black/5 md:p-4">
       {/* Chat header — minimal, no phone frame */}
-      <div className="mb-3 flex items-center gap-2 border-b border-black/5 pb-3">
+      <div className="mb-3 flex items-center gap-2 border-b border-black/5 pb-2">
         <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
-        <span className="text-[11px] font-medium uppercase tracking-[0.12em] text-black/45">
+        <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/45">
           Live · Nautix AI
         </span>
       </div>
 
       {/* Message container */}
-      <div ref={containerRef} className="min-h-[180px] space-y-3">
+      <div ref={containerRef} className="min-h-[180px] space-y-2.5">
         {/* Initial fallback shown before JS hydrates */}
         <div className="flex h-[120px] items-center justify-center text-[12px] text-black/30">
           <span className="animate-pulse">Waiting for message…</span>
@@ -223,7 +263,8 @@ function HeroSection() {
                 href={BOOK_DEMO_URL}
                 className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-7 py-4 text-[15px] font-semibold text-white shadow-lg transition-shadow hover:shadow-xl"
                 style={{
-                  background: "linear-gradient(92deg,#7C3AED 0%,#EC4899 100%)",
+                  background:
+                    "linear-gradient(92deg,#7C3AED 0%,#EC4899 100%)",
                   backgroundSize: "200% auto",
                   animation: "gradient-shift 6s ease-in-out infinite",
                 }}
@@ -236,7 +277,14 @@ function HeroSection() {
                 href="#"
                 className="inline-flex items-center gap-2 text-[14px] font-medium text-black/50 underline underline-offset-4 decoration-black/20 transition hover:text-black/80 hover:decoration-black/40"
               >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden className="shrink-0">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  aria-hidden
+                  className="shrink-0"
+                >
                   <path d="M6 4v8l6-4-6-4Z" />
                 </svg>
                 {secondaryCta}
