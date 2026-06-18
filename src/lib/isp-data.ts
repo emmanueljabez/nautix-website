@@ -386,7 +386,7 @@ export const PILOT_OFFER_DATA: IspPilotOfferData = {
     "Cancel anytime in the first 30 days",
   ],
   scarcityLine: "3 pilot spots remaining this month.",
-  cta: "Book a Demo",
+  cta: "Claim your pilot spot",
 };
 
 // ---------------------------------------------------------------------------
