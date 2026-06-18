@@ -17,6 +17,7 @@ import { AnimStyles } from "@/components/ui/AnimStyles";
 import { IspProblemCards } from "@/components/isp/IspProblemCards";
 import { IspCapabilities } from "@/components/isp/IspCapabilities";
 import { IspPioneerMoment } from "@/components/isp/IspPioneerMoment";
+import { IspNumbers } from "@/components/isp/IspNumbers";
 import { HERO_DATA } from "@/lib/isp-data";
 
 const BOOK_DEMO_URL =
@@ -358,7 +359,7 @@ export function IspLandingPage() {
       <IspProblemCards />
       <IspCapabilities />
       <IspPioneerMoment />
-      <PlaceholderSection label="Section 5 — Numbers" />
+      <IspNumbers />
       <PlaceholderSection label="Section 6 — Integration" />
       <PlaceholderSection label="Section 7 — Pilot Offer" />
       <PlaceholderSection label="Section 8 — FAQ" />
