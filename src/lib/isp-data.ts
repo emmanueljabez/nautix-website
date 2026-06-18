@@ -103,7 +103,7 @@ export const HERO_DATA: IspHeroData = {
     { icon: "\uD83D\uDCCB", text: "Splynx integration" },
     { icon: "\uD83D\uDCAC", text: "WhatsApp + Instagram + Facebook" },
   ],
-  primaryCta: "Book a Demo",
+  primaryCta: "Book a 15-minute live demo",
   secondaryCta: "Or watch a 60-second demo video",
 };
 
