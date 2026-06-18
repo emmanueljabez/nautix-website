@@ -15,6 +15,7 @@ import { ArrowRight } from "@/components/ui/ArrowRight";
 import { Pill } from "@/components/ui/Pill";
 import { IspProblemCards } from "@/components/isp/IspProblemCards";
 import { IspCapabilities } from "@/components/isp/IspCapabilities";
+import { IspPioneerMoment } from "@/components/isp/IspPioneerMoment";
 import { HERO_DATA } from "@/lib/isp-data";
 
 const BOOK_DEMO_URL =
@@ -181,31 +182,49 @@ function ChatAnimation() {
     };
   }, []);
 
-  return (
-    <div className="relative overflow-hidden rounded-3xl bg-white p-3 shadow-[0_20px_60px_-20px_rgba(11,11,14,0.2)] ring-1 ring-black/5 md:p-4">
-      {/* Chat header — minimal, no phone frame */}
-      <div className="mb-3 flex items-center gap-2 border-b border-black/5 pb-2">
-        <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
-        <span className="text-[10px] font-medium uppercase tracking-[0.14em] text-black/45">
-          Live · Nautix AI
+    return (
+    <div className="relative overflow-hidden rounded-3xl shadow-[0_20px_60px_-20px_rgba(11,11,14,0.2)] ring-1 ring-black/5">
+      {/* WhatsApp header — authentic green */}
+      <div className="flex items-center gap-3 bg-[#075E54] px-4 py-3">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-[13px] font-semibold text-white">
+          D
         </span>
+        <div className="min-w-0">
+          <div className="truncate text-[13px] font-medium leading-tight text-white">
+            David
+          </div>
+          <div className="text-[10px] leading-tight text-white/65">online</div>
+        </div>
       </div>
 
-      {/* Message container */}
-      <div ref={containerRef} className="min-h-[180px] space-y-2.5">
-        {/* Initial fallback shown before JS hydrates */}
-        <div className="flex h-[120px] items-center justify-center text-[12px] text-black/30">
-          <span className="animate-pulse">Waiting for message…</span>
+      {/* Chat body — WhatsApp wallpaper bg */}
+      <div
+        className="p-3 md:p-4"
+        style={{
+          backgroundColor: "#E5DDD5",
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c9bc' fill-opacity='0.28'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        }}
+      >
+        {/* Message container */}
+        <div ref={containerRef} className="min-h-[180px] space-y-2.5">
+          {/* Initial fallback shown before JS hydrates */}
+          <div className="flex h-[120px] items-center justify-center text-[12px] text-black/30">
+            <span className="animate-pulse">Waiting for message…</span>
+          </div>
         </div>
       </div>
 
       <noscript>
-        <div className="mt-3 rounded-lg bg-amber-50 p-3 text-[12px] text-amber-800">
+        <div className="rounded-b-3xl bg-amber-50 p-3 text-[12px] text-amber-800">
           Enable JavaScript to see the live chat demo.
         </div>
       </noscript>
     </div>
   );
+    
+
+  
 }
 
 /* -------------------------------------------------------------------------- */
@@ -331,7 +350,7 @@ export function IspLandingPage() {
       <HeroSection />
       <IspProblemCards />
       <IspCapabilities />
-      <PlaceholderSection label="Section 4 — Pioneer Moment" />
+       <IspPioneerMoment />
       <PlaceholderSection label="Section 5 — Numbers" />
       <PlaceholderSection label="Section 6 — Integration" />
       <PlaceholderSection label="Section 7 — Pilot Offer" />
