@@ -67,7 +67,17 @@ export function IspNumbers() {
                 } px-4 md:px-10`}
               >
                 {/* Animated number or static text */}
-                <div className="font-[var(--font-heading)] text-[clamp(48px,8vw,80px)] font-semibold leading-none tracking-[-0.04em] text-primary-950 tabular-nums">
+                <div
+   className="text-[clamp(48px,8vw,80px)] font-semibold leading-none tracking-[-0.04em] tabular-nums"
+   style={{
+     fontFamily: "var(--font-heading), sans-serif",
+     background:
+       "linear-gradient(135deg, #7e10a2 0%, #b52ed1 100%)",
+     WebkitBackgroundClip: "text",
+     backgroundClip: "text",
+     color: "transparent",
+   }}
+ >
                   {counterProps ? (
                     <Counter
                       target={counterProps.target}
@@ -79,7 +89,7 @@ export function IspNumbers() {
                 </div>
 
                 {/* Label */}
-                <p className="mt-3 max-w-[220px] text-[14px] leading-[1.6] text-foreground/60">
+                 <p className="mt-2.5 max-w-[220px] text-[15px] font-medium leading-[1.6] text-neutral-900">
                   {stat.label}
                 </p>
               </div>
@@ -89,7 +99,7 @@ export function IspNumbers() {
 
         {/* Supporting copy */}
         <div className="reveal mt-12 text-center">
-          <p className="text-[13px] leading-[1.7] text-foreground/45">
+           <p className="text-[13px] leading-[1.7] text-neutral-900/55">
             {supportingCopy.join("  ·  ")}
           </p>
         </div>
