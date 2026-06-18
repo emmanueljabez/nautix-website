@@ -1,0 +1,99 @@
+"use client";
+
+import { NUMBERS_DATA } from "@/lib/isp-data";
+import { useReveal } from "@/hooks/useReveal";
+import { Counter } from "@/components/ui/Counter";
+
+/**
+ * Parse a stat value string into Counter props.
+ * Returns null for non-numeric values like "1m 52s"
+ * that should be rendered as static text.
+ */
+function toCounter(
+  value: string
+): { target: number; suffix: string } | null {
+  // Time durations e.g. "1m 52s" — display as static text
+  if (/\dm\s?\d+s/.test(value)) return null;
+
+  // Percentage e.g. "91%"
+  if (value.endsWith("%")) {
+    return { target: Number.parseFloat(value), suffix: "%" };
+  }
+
+  // Number with word suffix e.g. "20 hrs"
+  const match = value.match(/^([\d.]+)\s*(.+)$/);
+  if (match) {
+    return {
+      target: Number.parseFloat(match[1]),
+      suffix: ` ${match[2]}`,
+    };
+  }
+
+  return null;
+}
+
+/**
+ * IspNumbers — Section 5: Statistical proof.
+ *
+ * Three big animated stats with Counter for numeric values
+ * and static text for compound values like "1m 52s".
+ * Animates on scroll reveal. Supporting copy line below.
+ */
+export function IspNumbers() {
+  const ref = useReveal<HTMLElement>();
+  const { sectionHeading, stats, supportingCopy } = NUMBERS_DATA;
+
+  return (
+    <section
+      ref={ref}
+      className="border-t border-primary-100/50 bg-white py-24 md:py-32"
+    >
+      <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+        {/* Section heading */}
+        <h2 className="reveal text-center font-[var(--font-heading)] text-[clamp(28px,4vw,48px)] font-semibold leading-[1.08] tracking-[-0.025em] text-primary-950">
+          {sectionHeading}
+        </h2>
+
+        {/* 3 stats — responsive grid */}
+        <div className="reveal mt-12 grid gap-10 md:grid-cols-3 md:gap-0">
+          {stats.map((stat, i) => {
+            const counterProps = toCounter(stat.value);
+
+            return (
+              <div
+                key={stat.label}
+                className={`flex flex-col items-center text-center ${
+                  i !== 0 ? "md:border-l md:border-primary-100" : ""
+                } px-4 md:px-10`}
+              >
+                {/* Animated number or static text */}
+                <div className="font-[var(--font-heading)] text-[clamp(48px,8vw,80px)] font-semibold leading-none tracking-[-0.04em] text-primary-950 tabular-nums">
+                  {counterProps ? (
+                    <Counter
+                      target={counterProps.target}
+                      suffix={counterProps.suffix}
+                    />
+                  ) : (
+                    <span>{stat.value}</span>
+                  )}
+                </div>
+
+                {/* Label */}
+                <p className="mt-3 max-w-[220px] text-[14px] leading-[1.6] text-foreground/60">
+                  {stat.label}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Supporting copy */}
+        <div className="reveal mt-12 text-center">
+          <p className="text-[13px] leading-[1.7] text-foreground/45">
+            {supportingCopy.join("  ·  ")}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
