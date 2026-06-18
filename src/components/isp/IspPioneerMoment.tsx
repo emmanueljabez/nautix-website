@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "@/components/ui/ArrowRight";
 import { PIONEER_MOMENT_DATA } from "@/lib/isp-data";
 import { useReveal } from "@/hooks/useReveal";
 
@@ -10,19 +9,6 @@ const BOOK_DEMO_URL =
 
 /**
  * IspPioneerMoment — Section 4: The most important section after Hero.
- *
- * Two-column layout:
- *   Left  — technical timeline with 5 timestamped steps +
- *           summary callout (total time, agents, result).
- *   Right — static WhatsApp conversation recreation with
- *           charcoal customer bubbles and purple AI bubbles,
- *           each with realistic timestamps.
- *
- * CTA centered below both columns:
- *   "See this working on your network — Book a demo"
- *
- * Specificity converts: "48.2 Mbps", "David", exact timestamps.
- * These read as real — never use vague approximations.
  */
 export function IspPioneerMoment() {
   const ref = useReveal<HTMLElement>();
@@ -37,11 +23,11 @@ export function IspPioneerMoment() {
   return (
     <section
       ref={ref}
-      className="relative border-t border-black/5 bg-white py-24 md:py-32"
+      className="relative border-t border-primary-100/50 bg-white py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* ── Section heading ── */}
-        <h2 className="reveal font-[var(--font-heading)] text-[clamp(28px,3.8vw,52px)] font-semibold leading-[1.08] tracking-[-0.025em] text-neutral-900 md:text-center">
+        <h2 className="reveal font-[var(--font-heading)] text-[clamp(28px,3.8vw,52px)] font-semibold leading-[1.08] tracking-[-0.025em] text-primary-950 md:text-center">
           {sectionHeading}
         </h2>
 
@@ -52,51 +38,41 @@ export function IspPioneerMoment() {
               ═══════════════════════════════════════════ */}
 
           <div>
-            {/* "What just happened:" label */}
-            <h3 className="font-[var(--font-heading)] text-[20px] font-semibold tracking-[-0.015em] text-neutral-900">
+            <h3 className="font-[var(--font-heading)] text-[20px] font-semibold tracking-[-0.015em] text-primary-950">
               {leftColumn.heading}
             </h3>
 
             {/* Timeline */}
             <div className="relative mt-8">
-              {/* Vertical line running behind all dots */}
               <div
                 aria-hidden
                 className="absolute left-[5px] top-1.5 h-[calc(100%-28px)] w-px bg-primary-100"
               />
 
               <div className="space-y-0">
-                {leftColumn.steps.map((step, i) => {
-                  const isLast = i === leftColumn.steps.length - 1;
-                  return (
-                    <div
-                      key={i}
-                      className="relative flex gap-5 pb-7 last:pb-0"
-                    >
-                      {/* Dot */}
-                      <span
-                        className={`relative z-10 mt-1.5 flex h-3 w-3 shrink-0 rounded-full ring-4 ${
-                          i === 0
-                            ? "bg-primary-600 ring-primary-100"
-                            : "bg-white ring-primary-100 border-2 border-primary-300"
-                        }`}
-                      />
+                {leftColumn.steps.map((step, i) => (
+                  <div
+                    key={i}
+                    className="relative flex gap-5 pb-7 last:pb-0"
+                  >
+                    <span
+                      className={`relative z-10 mt-1.5 flex h-3 w-3 shrink-0 rounded-full ring-4 ${
+                        i === 0
+                          ? "bg-primary-600 ring-primary-100"
+                          : "bg-white ring-primary-100 border-2 border-primary-300"
+                      }`}
+                    />
 
-                      {/* Content */}
-                      <div className="min-w-0 flex-1">
-                        {/* Timestamp */}
-                        <span className="font-mono text-[12px] font-bold uppercase tracking-[0.08em] text-primary-600">
-                          {step.time}
-                        </span>
-
-                        {/* Action */}
-                        <p className="mt-1 text-[14px] leading-[1.6] text-black/65">
-                          {step.action}
-                        </p>
-                      </div>
+                    <div className="min-w-0 flex-1">
+                      <span className="font-mono text-[12px] font-bold uppercase tracking-[0.08em] text-primary-600">
+                        {step.time}
+                      </span>
+                      <p className="mt-1 text-[14px] leading-[1.6] text-foreground/70">
+                        {step.action}
+                      </p>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -147,7 +123,7 @@ export function IspPioneerMoment() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="text-[13px] leading-[1.5] text-black/60">
+                  <span className="text-[13px] leading-[1.5] text-foreground/60">
                     Agents involved: {leftColumn.summary.agentsInvolved}
                   </span>
                 </li>
@@ -168,7 +144,7 @@ export function IspPioneerMoment() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="text-[13px] leading-[1.5] text-black/60">
+                  <span className="text-[13px] leading-[1.5] text-foreground/60">
                     {leftColumn.summary.result}
                   </span>
                 </li>
@@ -182,7 +158,7 @@ export function IspPioneerMoment() {
 
           <div className="lg:-mt-2">
             <div className="overflow-hidden rounded-3xl border border-black/10 shadow-[0_20px_60px_-20px_rgba(11,11,14,0.18)]">
-              {/* WhatsApp header — authentic green */}
+              {/* WhatsApp header */}
               <div className="flex items-center gap-3 bg-[#075E54] px-4 py-3">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20 text-[14px] font-semibold text-white">
                   D
@@ -197,7 +173,7 @@ export function IspPioneerMoment() {
                 </div>
               </div>
 
-              {/* Chat body — WhatsApp wallpaper bg */}
+              {/* Chat body — WhatsApp wallpaper */}
               <div
                 className="space-y-3 p-4"
                 style={{
@@ -225,7 +201,7 @@ export function IspPioneerMoment() {
                         {msg.time}
                       </span>
 
-                                                                 {/* Bubble */}
+                      {/* Bubble */}
                       <div
                         className={`max-w-[84%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-[1.45] ${
                           isCustomer
@@ -252,23 +228,23 @@ export function IspPioneerMoment() {
         </div>
 
         {/* ── CTA below both columns ── */}
-        <div className="reveal mt-14 flex flex-col items-center gap-3 md:mt-20">
+        <div className="reveal mt-14 flex flex-col items-center md:mt-20">
           <Link
             href={BOOK_DEMO_URL}
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-7 py-4 text-[15px] font-semibold text-white shadow-lg transition-shadow hover:shadow-xl"
-            style={{
-              background:
-                "linear-gradient(92deg,#7C3AED 0%,#EC4899 100%)",
-              backgroundSize: "200% auto",
-              animation: "gradient-shift 6s ease-in-out infinite",
-            }}
+            className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-[15px] font-semibold text-white shadow-md transition-colors hover:bg-primary-800"
           >
-            <span>{cta}</span>
-            <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+            <span className="flex flex-col items-center text-center leading-[1.4]">
+            <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold">
+               {cta}
+               <i
+                 className="fs-8 unicon-arrow-up-right fw-bold"
+                 aria-hidden="true"
+               />
+              </span> 
+              <span className="text-[16px] font-semibold">{ctaSub}</span>
+            </span>
+            
           </Link>
-          <span className="text-[13px] text-black/45">
-            {ctaSub}
-          </span>
         </div>
       </div>
     </section>

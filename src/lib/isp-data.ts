@@ -103,7 +103,7 @@ export const HERO_DATA: IspHeroData = {
     { icon: "\uD83D\uDCCB", text: "Splynx integration" },
     { icon: "\uD83D\uDCAC", text: "WhatsApp + Instagram + Facebook" },
   ],
-  primaryCta: "Book a 15-minute live demo",
+  primaryCta: "Book a 15-minute live Demo",
   secondaryCta: "Or watch a 60-second demo video",
 };
 
@@ -282,7 +282,7 @@ export const PIONEER_MOMENT_DATA: IspPioneerMomentData = {
     ],
   },
   cta: "See this working on your network",
-  ctaSub: "Book a demo",
+  ctaSub: "Book a Demo",
 };
 
 // ---------------------------------------------------------------------------

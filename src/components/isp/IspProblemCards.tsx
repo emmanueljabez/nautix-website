@@ -23,7 +23,7 @@ export function IspProblemCards() {
   return (
     <section
       ref={ref}
-      className="relative border-t border-black/5 bg-white py-24 md:py-32"
+       className="relative border-t border-primary-100/50 bg-white py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* Section heading */}

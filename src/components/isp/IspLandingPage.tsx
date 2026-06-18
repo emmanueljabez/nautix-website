@@ -3,16 +3,17 @@
 /**
  * IspLandingPage — orchestrator for the ISP landing page at nautix.io/isp.
  *
- * Section 1: Hero with CSS-based WhatsApp chat animation.
+ * Page intro (PricingPage-style): pill label + heading + subheading
+ * Section 1: Hero with CSS‑based WhatsApp chat animation.
  * Section 2: Problem validation (pain cards).
+ * Section 3: Capabilities (6-card 2×3 grid).
+ * Section 4: Pioneer Moment (timeline + chat recreation).
  * Future sections scaffolded as placeholders.
  */
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { AnimStyles } from "@/components/ui/AnimStyles";
-import { ArrowRight } from "@/components/ui/ArrowRight";
-import { Pill } from "@/components/ui/Pill";
 import { IspProblemCards } from "@/components/isp/IspProblemCards";
 import { IspCapabilities } from "@/components/isp/IspCapabilities";
 import { IspPioneerMoment } from "@/components/isp/IspPioneerMoment";
@@ -60,7 +61,7 @@ const CHAT_MSGS: ChatMsg[] = [
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  Chat Animation — 6-second looping WhatsApp conversation                   */
+/*  Chat Animation — 6‑second looping WhatsApp conversation                   */
 /* -------------------------------------------------------------------------- */
 
 function ChatAnimation() {
@@ -74,7 +75,6 @@ function ChatAnimation() {
         window.setTimeout(r, ms);
       });
 
-    // ——— DOM helpers ———
     function addBubble(msg: ChatMsg, parent: HTMLDivElement) {
       const isCustomer = msg.sender === "customer";
 
@@ -84,7 +84,6 @@ function ChatAnimation() {
       }`;
       wrapper.style.animation = "msg-in 0.5s ease both";
 
-      // Bubble
       const bubble = document.createElement("div");
       bubble.className = `max-w-[88%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-[1.45] ${
         isCustomer
@@ -97,7 +96,6 @@ function ChatAnimation() {
       }
       bubble.textContent = msg.text;
 
-      // Timestamp — sits BELOW the bubble on the white chat background
       const timeEl = document.createElement("span");
       timeEl.className =
         "mt-1 text-[10px] tracking-[0.04em] text-black/45";
@@ -133,44 +131,37 @@ function ChatAnimation() {
       if (el) el.remove();
     }
 
-    // ——— Sequence ———
     let mounted = true;
 
     const sequence = async () => {
       const el = containerRef.current;
       if (!el) return;
-      el.innerHTML = ""; // reset
+      el.innerHTML = "";
 
       if (!activeRef.current || !mounted) return;
       await delay(100);
 
-      // 1) Customer message — 11:47 PM
       if (!activeRef.current) return;
       addBubble(CHAT_MSGS[0], el);
       await delay(1000);
 
-      // 2) Typing dots
       if (!activeRef.current) return;
       addTyping(el);
       await delay(900);
 
-      // 3) AI reply 1 — 11:48 PM
       if (!activeRef.current) return;
       removeTyping(el);
       addBubble(CHAT_MSGS[1], el);
       await delay(900);
 
-      // 4) AI reply 2 — 11:49 PM
       if (!activeRef.current) return;
       addBubble(CHAT_MSGS[2], el);
       await delay(900);
 
-      // 5) Customer ack — 11:49 PM
       if (!activeRef.current) return;
       addBubble(CHAT_MSGS[3], el);
       await delay(1600);
 
-      // Loop
       if (activeRef.current) sequence();
     };
 
@@ -182,9 +173,9 @@ function ChatAnimation() {
     };
   }, []);
 
-    return (
+  return (
     <div className="relative overflow-hidden rounded-3xl shadow-[0_20px_60px_-20px_rgba(11,11,14,0.2)] ring-1 ring-black/5">
-      {/* WhatsApp header — authentic green */}
+      {/* WhatsApp header */}
       <div className="flex items-center gap-3 bg-[#075E54] px-4 py-3">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-[13px] font-semibold text-white">
           D
@@ -197,7 +188,7 @@ function ChatAnimation() {
         </div>
       </div>
 
-      {/* Chat body — WhatsApp wallpaper bg */}
+      {/* Chat body — WhatsApp wallpaper */}
       <div
         className="p-3 md:p-4"
         style={{
@@ -206,9 +197,7 @@ function ChatAnimation() {
             "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c9bc' fill-opacity='0.28'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
         }}
       >
-        {/* Message container */}
         <div ref={containerRef} className="min-h-[180px] space-y-2.5">
-          {/* Initial fallback shown before JS hydrates */}
           <div className="flex h-[120px] items-center justify-center text-[12px] text-black/30">
             <span className="animate-pulse">Waiting for message…</span>
           </div>
@@ -222,21 +211,50 @@ function ChatAnimation() {
       </noscript>
     </div>
   );
-    
-
-  
 }
+
+/* -------------------------------------------------------------------------- */
+/*  Page Intro — PricingPage-style 3‑part header above the hero              */
+/* -------------------------------------------------------------------------- */
+
+function PageIntro() {
+  return (
+    <section className="bg-white pb-0 pt-16 md:pt-20">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+        <div className="mx-auto max-w-[780px] text-center">
+          {/* Pill label — "For ISPs" inside border rounded-pill */}
+          <div className="inline-block rounded-full border border-primary/20 px-4 py-1">
+            <p className="title tg-element-title mb-0">For ISPs</p>
+          </div>
+
+          {/* Heading */}
+          <h2 className="title tg-element-title mb-0 mt-2 md:mt-3">
+            Run your ISP —{" "}
+            <span className="px-1">automatically.</span>
+          </h2>
+
+          {/* Subheading */}
+          <p className="title tg-element-title mb-0 mt-2 md:mt-3">
+            Stop losing subscribers to 11pm WhatsApp messages.
+            Automate billing, outages, and support — across every
+            channel.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+    
 
 /* -------------------------------------------------------------------------- */
 /*  Hero Section                                                              */
 /* -------------------------------------------------------------------------- */
 
 function HeroSection() {
-  const { headline, subheadline, credibilityChips, primaryCta, secondaryCta } =
-    HERO_DATA;
+  const { headline, subheadline, primaryCta, secondaryCta } = HERO_DATA;
 
   return (
-    <section className="relative overflow-hidden bg-[#FAF8F5] pb-20 pt-20 md:pb-32 md:pt-28">
+    <section className="relative overflow-hidden bg-white pb-20 pt-10 md:pb-32 md:pt-16">
       {/* Mesh backdrop */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div
@@ -261,42 +279,30 @@ function HeroSection() {
         <div className="grid items-center gap-12 md:grid-cols-[1.2fr_1fr]">
           {/* ── Left: copy ── */}
           <div>
-            <h1 className="font-[var(--font-heading)] text-[clamp(34px,5.6vw,72px)] font-semibold leading-[0.98] tracking-[-0.035em] text-neutral-900">
+            <h1 className="font-[var(--font-heading)] text-[clamp(34px,5.6vw,72px)] font-semibold leading-[0.98] tracking-[-0.035em] text-primary-950">
               {headline}
             </h1>
 
-            <p className="mt-6 max-w-[600px] text-[17px] leading-[1.6] text-black/65 md:text-[18px]">
+            <p className="mt-6 max-w-[600px] text-[17px] leading-[1.6] text-foreground/70 md:text-[18px]">
               {subheadline}
             </p>
-
-            {/* Credibility chips (3 pills) */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              {credibilityChips.map((chip) => (
-                <Pill key={chip.text}>
-                  {chip.icon} {chip.text}
-                </Pill>
-              ))}
-            </div>
 
             {/* CTAs */}
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href={BOOK_DEMO_URL}
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-7 py-4 text-[15px] font-semibold text-white shadow-lg transition-shadow hover:shadow-xl"
-                style={{
-                  background:
-                    "linear-gradient(92deg,#7C3AED 0%,#EC4899 100%)",
-                  backgroundSize: "200% auto",
-                  animation: "gradient-shift 6s ease-in-out infinite",
-                }}
+                className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-[15px] font-semibold text-white shadow-md transition-colors hover:bg-primary-800"
               >
                 <span>{primaryCta}</span>
-                <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
+                <i
+                  className="fs-8 unicon-arrow-up-right fw-bold"
+                  aria-hidden="true"
+                />
               </Link>
 
               <Link
                 href="#"
-                className="inline-flex items-center gap-2 text-[14px] font-medium text-black/50 underline underline-offset-4 decoration-black/20 transition hover:text-black/80 hover:decoration-black/40"
+                className="inline-flex items-center gap-2 text-[14px] font-medium text-foreground/50 underline underline-offset-4 decoration-black/20 transition hover:text-foreground/80 hover:decoration-black/40"
               >
                 <svg
                   width="16"
@@ -329,9 +335,9 @@ function HeroSection() {
 
 function PlaceholderSection({ label }: { label: string }) {
   return (
-    <section className="border-t border-black/5 bg-[#FAF8F5] py-24">
+    <section className="border-t border-primary-100/50 bg-white py-24">
       <div className="mx-auto max-w-[1280px] px-6 text-center md:px-10">
-        <p className="font-[var(--font-heading)] text-2xl text-black/30">
+        <p className="font-[var(--font-heading)] text-2xl text-foreground/30">
           {label}
         </p>
       </div>
@@ -345,12 +351,13 @@ function PlaceholderSection({ label }: { label: string }) {
 
 export function IspLandingPage() {
   return (
-    <main className="min-h-screen bg-[#FAF8F5] text-neutral-900">
+    <main className="min-h-screen bg-white text-foreground">
       <AnimStyles />
+      <PageIntro />
       <HeroSection />
       <IspProblemCards />
       <IspCapabilities />
-       <IspPioneerMoment />
+      <IspPioneerMoment />
       <PlaceholderSection label="Section 5 — Numbers" />
       <PlaceholderSection label="Section 6 — Integration" />
       <PlaceholderSection label="Section 7 — Pilot Offer" />
