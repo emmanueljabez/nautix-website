@@ -22,6 +22,7 @@ import { IspIntegration } from "@/components/isp/IspIntegration";
 import { IspPilotOffer } from "@/components/isp/IspPilotOffer";
 import { IspFaq } from "@/components/isp/IspFaq";
 import { IspTestimonial } from "@/components/isp/IspTestimonial";
+import { IspFinalCta } from "@/components/isp/IspFinalCta";
 import { HERO_DATA } from "@/lib/isp-data";
 
 const BOOK_DEMO_URL =
@@ -335,22 +336,6 @@ function HeroSection() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Future sections — placeholder                                             */
-/* -------------------------------------------------------------------------- */
-
-function PlaceholderSection({ label }: { label: string }) {
-  return (
-    <section className="border-t border-primary-100/50 bg-white py-24">
-      <div className="mx-auto max-w-[1280px] px-6 text-center md:px-10">
-        <p className="font-[var(--font-heading)] text-2xl text-foreground/30">
-          {label}
-        </p>
-      </div>
-    </section>
-  );
-}
-
-/* -------------------------------------------------------------------------- */
 /*  Page                                                                      */
 /* -------------------------------------------------------------------------- */
 
@@ -368,7 +353,7 @@ export function IspLandingPage() {
       <IspPilotOffer />
       <IspFaq />
       <IspTestimonial />
-      <PlaceholderSection label="Section 10 — Final CTA" />
+      <IspFinalCta />
     </main>
   );
 }
