@@ -21,6 +21,7 @@ import { IspNumbers } from "@/components/isp/IspNumbers";
 import { IspIntegration } from "@/components/isp/IspIntegration";
 import { IspPilotOffer } from "@/components/isp/IspPilotOffer";
 import { IspFaq } from "@/components/isp/IspFaq";
+import { IspTestimonial } from "@/components/isp/IspTestimonial";
 import { HERO_DATA } from "@/lib/isp-data";
 
 const BOOK_DEMO_URL =
@@ -366,7 +367,7 @@ export function IspLandingPage() {
       <IspIntegration />
       <IspPilotOffer />
       <IspFaq />
-      <PlaceholderSection label="Section 9 — Testimonial" />
+      <IspTestimonial />
       <PlaceholderSection label="Section 10 — Final CTA" />
     </main>
   );
