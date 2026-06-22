@@ -4,6 +4,7 @@ import type { LandingPageData } from "@/lib/seo-pages";
 import { PAGE_DATA } from "@/lib/live-system-diagnosis-data";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
+import { Counter } from "@/components/ui/Counter";
 
 interface ProductLiveSystemDiagnosisProps {
   data: LandingPageData;
@@ -282,6 +283,96 @@ export function ProductLiveSystemDiagnosis({
                 </p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/*  INDUSTRY TABLE                                                    */}
+      {/* ================================================================= */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-4">
+              {D.industryTable.heading}
+            </h2>
+            <p className="font-[var(--font-sans)] text-lg text-neutral-600 max-w-2xl mx-auto">
+              {D.industryTable.subhead}
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse rounded-2xl overflow-hidden border border-neutral-200">
+              <thead>
+                <tr className="bg-neutral-50">
+                  <th className="font-[var(--font-heading)] font-bold text-sm text-[#7C3AED] uppercase tracking-[0.08em] text-left py-4 px-6 w-[30%]">
+                    Industry
+                  </th>
+                  <th className="font-[var(--font-heading)] font-bold text-sm text-[#7C3AED] uppercase tracking-[0.08em] text-left py-4 px-6">
+                    How they use it
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {D.industryTable.rows.map((row, i) => (
+                  <tr
+                    key={row.vertical}
+                    className={`${
+                      i % 2 === 0 ? "bg-white" : "bg-neutral-50/50"
+                    } hover:bg-purple-50/30 transition-colors`}
+                  >
+                    <td className="border-b border-neutral-100 py-4 px-6">
+                      <span className="font-[var(--font-heading)] font-bold text-sm text-[#171717]">
+                        {row.vertical}
+                      </span>
+                    </td>
+                    <td className="border-b border-neutral-100 py-4 px-6">
+                      <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed">
+                        {row.howTheyUseIt}
+                      </p>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/*  OUTCOMES                                                          */}
+      {/* ================================================================= */}
+      <section className="py-20 lg:py-28 bg-white/50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
+            {D.outcomes.heading}
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {D.outcomes.stats.map((stat) => {
+              const numeric = parseInt(stat.value, 10);
+              const isNumeric = !isNaN(numeric);
+
+              return (
+                <div key={stat.label} className="text-center">
+                  <div className="font-[var(--font-heading)] text-4xl font-bold text-[#7C3AED] mb-2">
+                    {!isNumeric ? (
+                      <span>{stat.value}</span>
+                    ) : stat.value.endsWith("%") ? (
+                      <>
+                        <Counter target={numeric} />
+                        %
+                      </>
+                    ) : (
+                      <Counter target={numeric} />
+                    )}
+                  </div>
+                  <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed max-w-xs mx-auto">
+                    {stat.label}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
