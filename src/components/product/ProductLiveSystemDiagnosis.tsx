@@ -226,6 +226,65 @@ export function ProductLiveSystemDiagnosis({
           </div>
         </div>
       </section>
+
+      {/* ================================================================= */}
+      {/*  HOW IT WORKS                                                      */}
+      {/* ================================================================= */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-4">
+              {D.howItWorks.heading}
+            </h2>
+            <p className="font-[var(--font-sans)] text-lg text-neutral-600 max-w-2xl mx-auto">
+              {D.howItWorks.subhead}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {D.howItWorks.steps.map((s) => (
+              <article key={s.stepNumber} className="relative text-center group">
+                <span className="block text-6xl font-bold text-neutral-100 select-none mb-[-0.5em] leading-none">
+                  0{s.stepNumber}
+                </span>
+                <h3 className="font-[var(--font-heading)] font-bold text-lg text-[#171717] mb-2 relative">
+                  {s.title}
+                </h3>
+                <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed">
+                  {s.detail}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/*  CAPABILITIES                                                      */}
+      {/* ================================================================= */}
+      <section className="py-20 lg:py-28 bg-white/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
+            {D.capabilities.heading}
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {D.capabilities.cards.map((c) => (
+              <article
+                key={c.title}
+                className="bg-[#fdfcfa] border border-neutral-200 rounded-2xl p-6 hover:border-purple-200 hover:shadow-md transition-all duration-300"
+              >
+                <h3 className="font-[var(--font-heading)] font-bold text-lg text-[#171717] mb-2">
+                  {c.title}
+                </h3>
+                <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed">
+                  {c.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
