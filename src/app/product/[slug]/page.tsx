@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LandingSectionPage } from "@/components/seo/LandingSectionPage";
-import { LiveSystemDiagnosisPage } from "@/components/product/LiveSystemDiagnosisPage";
+import { ProductLiveSystemDiagnosis } from "@/components/product/ProductLiveSystemDiagnosis";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   DEFAULT_PRIMARY_CTA,
@@ -58,7 +58,7 @@ export default async function ProductPage({ params }: PageProps) {
   }
 
   if (slug === "live-system-diagnosis") {
-    return <LiveSystemDiagnosisPage />;
+    return <ProductLiveSystemDiagnosis data={page} />;
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([
