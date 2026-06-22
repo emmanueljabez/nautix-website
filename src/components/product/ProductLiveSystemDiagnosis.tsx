@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import type { LandingPageData } from "@/lib/seo-pages";
 import { PAGE_DATA } from "@/lib/live-system-diagnosis-data";
+import { buildFaqSchema } from "@/lib/seo";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { Counter } from "@/components/ui/Counter";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 interface ProductLiveSystemDiagnosisProps {
   data: LandingPageData;
@@ -376,6 +379,107 @@ export function ProductLiveSystemDiagnosis({
           </div>
         </div>
       </section>
+
+      {/* ================================================================= */}
+      {/*  FAQ                                                                */}
+      {/* ================================================================= */}
+      <FaqSection />
+
+      {/* ================================================================= */}
+      {/*  FINAL CTA                                                          */}
+      {/* ================================================================= */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#7C3AED] to-[#EC4899] rounded-3xl p-10 md:p-16 text-center shadow-2xl shadow-purple-500/20">
+            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-white mb-4">
+              {D.finalCta.heading}
+            </h2>
+            <p className="font-[var(--font-sans)] text-lg text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
+              {D.finalCta.subhead}
+            </p>
+
+            <div className="flex flex-wrap gap-3 justify-center mb-6">
+              <a
+                href={D.finalCta.primaryCta.href}
+                className="inline-flex items-center justify-center rounded-full bg-white text-[#7C3AED] hover:bg-neutral-100 px-6 py-2.5 text-sm font-semibold transition-all shadow-md"
+              >
+                {D.finalCta.primaryCta.label}
+              </a>
+              <a
+                href={D.finalCta.secondaryCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 px-6 py-2.5 text-sm font-semibold transition-all"
+              >
+                {D.finalCta.secondaryCta.label}
+              </a>
+            </div>
+
+            <p className="font-[var(--font-sans)] text-sm text-white/50">
+              {D.finalCta.reassurance}
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  FAQ accordion                                                             */
+/* -------------------------------------------------------------------------- */
+
+function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="py-20 lg:py-28">
+      <JsonLd data={buildFaqSchema([...D.faq.items])} />
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-12">
+          {D.faq.heading}
+        </h2>
+
+        <dl>
+          {D.faq.items.map((item, i) => (
+            <div
+              key={item.question}
+              className="border-b border-neutral-200 last:border-b-0"
+            >
+              <dt>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOpenIndex((prev) => (prev === i ? null : i))
+                  }
+                  className="w-full cursor-pointer font-[var(--font-heading)] font-bold text-lg text-[#171717] flex justify-between items-center py-4 text-left gap-4 hover:text-[#7C3AED] transition-colors"
+                  aria-expanded={openIndex === i}
+                >
+                  <span>{item.question}</span>
+                  <span
+                    className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
+                      openIndex === i
+                        ? "bg-[#7C3AED] text-white rotate-45"
+                        : "bg-purple-50 text-[#7C3AED]"
+                    }`}
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
+                </button>
+              </dt>
+              <dd
+                className={`font-[var(--font-sans)] text-neutral-600 leading-relaxed overflow-hidden transition-all duration-300 ${
+                  openIndex === i ? "max-h-[500px] pb-4 opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <p>{item.answer}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
   );
 }
