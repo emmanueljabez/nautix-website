@@ -206,6 +206,7 @@ export function ProductLiveSystemDiagnosis({
         .reveal-section:nth-child(6) { transition-delay: 0.5s; }
         .reveal-section:nth-child(7) { transition-delay: 0.6s; }
         .reveal-section:nth-child(8) { transition-delay: 0.7s; }
+        .reveal-section:nth-child(9) { transition-delay: 0.8s; }
       `}</style>
       {/* ================================================================= */}
       {/*  HERO                                                              */}
@@ -228,13 +229,13 @@ export function ProductLiveSystemDiagnosis({
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
                   href={D.hero.primaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] hover:from-[#6D28D9] hover:to-[#DB2777] shadow-lg shadow-purple-500/25 text-white px-6 py-2.5 text-sm font-semibold transition-all"
+                  className="inline-flex items-center justify-center rounded-full bg-white text-[#7C3AED] border-0 hover:bg-gray-100 px-6 py-2.5 text-sm font-semibold transition-all shadow-md"
                 >
                   {D.hero.primaryCta.label}
                 </a>
                 <a
                   href={D.hero.secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full bg-white border border-neutral-200 text-neutral-700 hover:bg-neutral-50 px-6 py-2.5 text-sm font-semibold transition-all"
+                  className="inline-flex items-center justify-center rounded-full bg-[#e2fe5e] text-gray-900 border-0 hover:bg-[#d4f04f] px-6 py-2.5 text-sm font-semibold transition-all shadow-md"
                 >
                   {D.hero.secondaryCta.label}
                 </a>
@@ -434,35 +435,65 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  FINAL CTA                                                          */}
       {/* ================================================================= */}
-      <section className="reveal-section py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#7C3AED] to-[#EC4899] rounded-3xl p-10 md:p-16 text-center shadow-2xl shadow-purple-500/20">
-            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-white mb-4">
+      <section className="reveal-section nautix-final-cta-section bg-[#fdfcfa]">
+        <div
+          className="nautix-final-cta-shell"
+          style={{
+            background:
+              "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
+            boxShadow: "0 32px 70px rgba(65, 16, 95, 0.22)",
+          }}
+        >
+          <img
+            className="nautix-final-cta-decor nautix-final-cta-decor--left"
+            src="/wp-content/uploads/2025/05/green-stars.svg"
+            width={55}
+            height={50}
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            className="nautix-final-cta-decor nautix-final-cta-decor--right"
+            src="/wp-content/uploads/2025/05/green-star.svg"
+            width={19}
+            height={30}
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          />
+          <div
+            className="nautix-final-cta-content"
+            style={{
+              background:
+                "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
+              borderRadius: "inherit",
+            }}
+          >
+            <h2 className="nautix-final-cta-title mb-0">
               {D.finalCta.heading}
             </h2>
-            <p className="font-[var(--font-sans)] text-lg text-white/80 max-w-xl mx-auto mb-8 leading-relaxed">
+            <p className="nautix-final-cta-copy mb-0">
               {D.finalCta.subhead}
             </p>
-
-            <div className="flex flex-wrap gap-3 justify-center mb-6">
+            <div className="nautix-final-cta-actions">
               <a
+                className="nautix-final-cta-button nautix-final-cta-button--primary"
                 href={D.finalCta.primaryCta.href}
-                className="inline-flex items-center justify-center rounded-full bg-white text-[#7C3AED] hover:bg-neutral-100 px-6 py-2.5 text-sm font-semibold transition-all shadow-md"
               >
                 {D.finalCta.primaryCta.label}
               </a>
               <a
+                className="nautix-final-cta-button nautix-final-cta-button--secondary"
                 href={D.finalCta.secondaryCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 text-white hover:bg-white/10 px-6 py-2.5 text-sm font-semibold transition-all"
               >
                 {D.finalCta.secondaryCta.label}
               </a>
             </div>
-
-            <p className="font-[var(--font-sans)] text-sm text-white/50">
-              {D.finalCta.reassurance}
+            <p className="nautix-final-cta-note mb-0">
+              14-day pilot - If Nautix does not work the way we showed you, you do not pay for that period.
             </p>
           </div>
         </div>
@@ -479,7 +510,7 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="reveal-section py-20 lg:py-28">
+    <section className="reveal-section py-20 lg:py-28 bg-[#fdfcfa]">
       <JsonLd data={buildFaqSchema([...D.faq.items])} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
