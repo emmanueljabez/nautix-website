@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { LandingPageData } from "@/lib/seo-pages";
 import { PAGE_DATA } from "@/lib/live-system-diagnosis-data";
 import { buildFaqSchema } from "@/lib/seo";
@@ -14,6 +14,30 @@ interface ProductLiveSystemDiagnosisProps {
 }
 
 const D = PAGE_DATA;
+
+function useScrollReveal() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
+    );
+
+    const sections = document.querySelectorAll(".reveal-section");
+    sections.forEach((el) => observer.observe(el));
+
+    return () => {
+      sections.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
+  }, []);
+}
 
 /* -------------------------------------------------------------------------- */
 /*  Hero visual — chat → lookup → system → answer                             */
@@ -159,12 +183,34 @@ function HeroVisual() {
 export function ProductLiveSystemDiagnosis({
   data,
 }: ProductLiveSystemDiagnosisProps) {
+  useScrollReveal();
+
   return (
     <div className="min-h-screen bg-[#fdfcfa]">
+      <style>{`
+        .reveal-section {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-section.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .reveal-section:nth-child(2) { transition-delay: 0.1s; }
+        .reveal-section:nth-child(3) { transition-delay: 0.2s; }
+        .reveal-section:nth-child(4) { transition-delay: 0.3s; }
+        .reveal-section:nth-child(5) { transition-delay: 0.4s; }
+        .reveal-section:nth-child(6) { transition-delay: 0.5s; }
+        .reveal-section:nth-child(7) { transition-delay: 0.6s; }
+        .reveal-section:nth-child(8) { transition-delay: 0.7s; }
+      `}</style>
       {/* ================================================================= */}
       {/*  HERO                                                              */}
       {/* ================================================================= */}
-      <section className="relative overflow-hidden">
+      <section className="reveal-section relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
@@ -204,7 +250,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  PROBLEM                                                           */}
       {/* ================================================================= */}
-      <section className="py-20 lg:py-28 bg-white/50">
+      <section className="reveal-section py-20 lg:py-28 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
             {D.problem.heading}
@@ -234,7 +280,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  HOW IT WORKS                                                      */}
       {/* ================================================================= */}
-      <section className="py-20 lg:py-28">
+      <section className="reveal-section py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-4">
@@ -266,7 +312,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  CAPABILITIES                                                      */}
       {/* ================================================================= */}
-      <section className="py-20 lg:py-28 bg-white/50">
+      <section className="reveal-section py-20 lg:py-28 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
             {D.capabilities.heading}
@@ -293,7 +339,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  INDUSTRY TABLE                                                    */}
       {/* ================================================================= */}
-      <section className="py-20 lg:py-28">
+      <section className="reveal-section py-20 lg:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-4">
@@ -345,7 +391,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  OUTCOMES                                                          */}
       {/* ================================================================= */}
-      <section className="py-20 lg:py-28 bg-white/50">
+      <section className="reveal-section py-20 lg:py-28 bg-white/50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
             {D.outcomes.heading}
@@ -388,7 +434,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  FINAL CTA                                                          */}
       {/* ================================================================= */}
-      <section className="py-20 lg:py-28">
+      <section className="reveal-section py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#7C3AED] to-[#EC4899] rounded-3xl p-10 md:p-16 text-center shadow-2xl shadow-purple-500/20">
             <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-white mb-4">
@@ -433,7 +479,7 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 lg:py-28">
+    <section className="reveal-section py-20 lg:py-28">
       <JsonLd data={buildFaqSchema([...D.faq.items])} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
