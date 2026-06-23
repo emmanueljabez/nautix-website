@@ -7,13 +7,18 @@ import { useReveal } from "@/hooks/useReveal";
  * Brand colours for integration logo badges.
  * Replace these with <img> tags when actual logo assets exist.
  */
-const LOGO_COLORS: Record<string, { bg: string; text: string }> = {
-  SmartOLT:           { bg: "#E8F0FE", text: "#1A73E8" },
-  Splynx:             { bg: "#F1F5F9", text: "#334155" },
-  "M-Pesa Daraja":    { bg: "#E6F4EA", text: "#1E8E3E" },
-  "WhatsApp Business": { bg: "#E6F7EC", text: "#075E54" },
-  "Meta/Instagram":    { bg: "#FCE7F3", text: "#BE185D" },
-};
+/**
+ * Partner logos for the integration strip.
+ * Uses the exact same structure as CLIENT_LOGOS in HomepageEnhanced.
+ */
+const PARTNER_LOGOS = [
+  { src: "/nautix-partners/smart-olt.png", alt: "SmartOLT" },
+  { src: "/nautix-partners/splynx-logo.png", alt: "Splynx" },
+  { src: "/nautix-partners/m-pesa-daraja.png", alt: "M-Pesa Daraja" },
+  { src: "/nautix-partners/whatsapp-business.png", alt: "WhatsApp Business" },
+  { src: "/nautix-partners/meta-logo.png", alt: "Meta/Instagram" },
+] as const;
+
 
 /**
  * Icon mapping for architecture boxes.
@@ -21,15 +26,15 @@ const LOGO_COLORS: Record<string, { bg: string; text: string }> = {
  */
 const BOX_ICONS: Record<string, { icon: string; alt: string }> = {
   "Subscriber Message": {
-    icon: "/wp-content/uploads/2025/05/icon-02.svg",
+    icon: "/wp-content/uploads/2025/04/icon-07.svg",
     alt: "Message channels icon",
   },
   Nautix: {
-    icon: "/wp-content/uploads/2025/04/icon-07.svg",
+    icon: "/nautix-logo.png",
     alt: "AI operations icon",
   },
   "Your Stack": {
-    icon: "/wp-content/uploads/2025/05/icon-03.svg",
+    icon: "/wp-content/uploads/2025/05/icon-02.svg",
     alt: "System stack icon",
   },
 };
@@ -128,8 +133,24 @@ export function IspIntegration() {
   >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* ── Section heading ── */}
-        <h2 className="reveal text-center font-[var(--font-heading)] text-[clamp(28px,4vw,48px)] font-semibold leading-[1.08] tracking-[-0.025em] text-primary-950">
-          {sectionHeading}
+                <h2 className="reveal text-center"
+          style={{
+            fontFamily: '"Sharp Grotesk", Sans-serif',
+            fontSize: "clamp(2rem, 5vw, 3rem)",
+            lineHeight: "1.1em",
+            letterSpacing: "-0.06rem",
+          }}
+        >
+          Connects to the systems{" "}
+          <span
+            style={{
+              background: "#E2FF5E",
+              color: "#16404B",
+              boxShadow: "inset 0 0 0 1px rgba(34,48,63,0.06)",
+            }}
+          >
+            you already run.
+          </span>
         </h2>
 
         {/* ── Architecture diagram ── */}
@@ -233,31 +254,31 @@ export function IspIntegration() {
           </div>
         </div>
 
-        {/* ── Integration logo strip ── */}
-        <div className="reveal mt-14">
-          <div className="rounded-2xl border border-primary-100 bg-primary-50/20 px-4 py-6">
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              {integrationLogos.map((name) => {
-                const c = LOGO_COLORS[name] ?? {
-                  bg: "#F1F5F9",
-                  text: "#334155",
-                };
+                {/* ── Integration logo strip ── */}
+        <div className="reveal" style={{ marginTop: 40 }}>
+          <div className="nautix-client-marquee">
+            <div className="nautix-client-logo-row" aria-label="Integration partners" style={{ display: "flex", gap: 20, alignItems: "center", justifyContent: "center", flexWrap: "nowrap" }}>
+              {PARTNER_LOGOS.map((logo) => {
+                // Larger sizes for specific partner logos
+                const isLarge = logo.alt === "SmartOLT";
+                const isSmall = logo.alt === "Splynx";
+                const logoSize = isLarge ? { height: 52, width: "auto", maxHeight: 52 } : isSmall ? { height: 28, width: "auto", maxHeight: 28 } : { height: 40, width: "auto", maxHeight: 40 };
                 return (
-                  <span
-                    key={name}
-                    className="inline-flex items-center rounded-full px-4 py-2 text-[12px] font-semibold tracking-[0.04em] shadow-sm transition-shadow hover:shadow-md"
-                    style={{
-                      backgroundColor: c.bg,
-                      color: c.text,
-                    }}
-                  >
-                    {name}
-                  </span>
+                  <div key={logo.alt} className="brand-item text-center">
+                    <img
+                      className="brand-item-image nautix-client-logo"
+                      src={logo.src}
+                      loading="lazy"
+                      alt={logo.alt}
+                      style={logoSize}
+                    />
+                  </div>
                 );
               })}
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

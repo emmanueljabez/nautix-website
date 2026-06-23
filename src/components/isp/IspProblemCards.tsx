@@ -27,8 +27,24 @@ export function IspProblemCards() {
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* Section heading */}
-        <h2 className="reveal font-[var(--font-heading)] text-[clamp(28px,4vw,56px)] font-semibold leading-[1.05] tracking-[-0.025em] text-neutral-900">
-          {sectionHeading}
+        <h2 className="reveal text-center"
+          style={{
+            fontFamily: '"Sharp Grotesk", Sans-serif',
+            fontSize: "clamp(2rem, 5vw, 3rem)",
+            lineHeight: "1.1em",
+            letterSpacing: "-0.06rem",
+          }}
+        >
+          Built for the way{" "}
+          <span
+            style={{
+              background: "#E2FF5E",
+              color: "#16404B",
+              boxShadow: "inset 0 0 0 1px rgba(34,48,63,0.06)",
+            }}
+          >
+            ISPs actually run.
+          </span>
         </h2>
 
         {/* 3-card responsive grid */}

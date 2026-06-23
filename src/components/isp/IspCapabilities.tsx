@@ -32,23 +32,40 @@ export function IspCapabilities() {
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* Section heading */}
         <div className="reveal">
-          <h2 className="font-[var(--font-heading)] text-[clamp(28px,4vw,56px)] font-semibold leading-[1.05] tracking-[-0.025em] text-neutral-900">
-            {sectionHeading}
-          </h2>
+      <h2
+            style={{
+              fontFamily: '"Sharp Grotesk", Sans-serif',
+              fontSize: "clamp(2rem, 5vw, 3rem)",
+              lineHeight: "1.1em",
+              letterSpacing: "-0.06rem",
+              textAlign: "center",
+            }}
+          >
+            Six ways Nautix runs your ISP {"\u2014"}{" "}
+            <span
+              style={{
+                background: "#E2FF5E",
+                color: "#16404B",
+                boxShadow: "inset 0 0 0 1px rgba(34,48,63,0.06)",
+              }}
+            >
+              automatically.
+            </span>
+    </h2>
           <p className="mt-4 max-w-[720px] text-[15px] leading-[1.6] text-black/60 md:text-[16px]">
             {sectionSubhead}
           </p>
         </div>
 
         {/* 2×3 grid: 2 columns on md+, 1 column on mobile */}
-        <div className="reveal mt-12 grid gap-5 md:grid-cols-2">
+        <div className="reveal mt-12 grid gap-4 md:grid-cols-3">
           {cards.map((card, i) => {
             const isExpanded = expandedIndex === i;
 
             return (
-              <div
+                <div
                 key={card.title}
-                className={`group relative flex cursor-pointer flex-col rounded-3xl border bg-white p-6 text-left transition-all duration-300 md:p-8 ${
+                className={`group relative flex cursor-pointer flex-col rounded-[20px] border bg-white p-5 text-left transition-all duration-300 ${
                   isExpanded
                     ? "border-primary-300 shadow-lg shadow-primary-100/50 ring-1 ring-primary-200"
                     : "border-black/10 hover:-translate-y-0.5 hover:shadow-lg"
@@ -66,32 +83,52 @@ export function IspCapabilities() {
               >
                 {/* ── Icon + Title + Description ── */}
                 <div className="flex items-start gap-4">
-                  {/* Icon container — subtle purple/pink gradient bg */}
+                  {/* Icon container — matches WORKFLOW_CARDS exactly */}
                   <span
-                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-[22px] leading-none"
+                    className="shrink-0 text-[20px] leading-none"
                     style={{
-                      background:
-                        "linear-gradient(135deg, rgba(124,58,237,0.1), rgba(236,72,153,0.08))",
+                      width: 48,
+                      height: 48,
+                      borderRadius: 12,
+                      background: "rgba(126,16,162,0.08)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
                     {card.icon}
                   </span>
 
                   <div className="min-w-0 flex-1">
-                    {/* Title */}
-                    <h3 className="font-[var(--font-heading)] text-[18px] font-semibold leading-[1.3] tracking-[-0.01em] text-neutral-900 md:text-[20px]">
+                    {/* Title — matches WORKFLOW_CARDS exactly */}
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-heading), sans-serif",
+                        fontSize: 18,
+                        fontWeight: 600,
+                        margin: "0 0 8px",
+                        color: "#171717",
+                      }}
+                    >
                       {card.title}
                     </h3>
 
-                    {/* Description */}
-                    <p className="mt-2 text-[14px] leading-[1.6] text-black/60">
+                    {/* Description — matches WORKFLOW_CARDS exactly */}
+                    <p
+                      style={{
+                        margin: 0,
+                        color: "rgba(23,23,23,0.68)",
+                        fontSize: 15,
+                        lineHeight: 1.55,
+                      }}
+                    >
                       {card.description}
                     </p>
                   </div>
                 </div>
 
                 {/* ── Outcome line — visually distinct ── */}
-                <div className="mt-5 flex items-start gap-2 border-t border-black/10 pt-4">
+                <div className="mt-3 flex items-start gap-2 border-t border-black/10 pt-3">
                   <span className="mt-px shrink-0 text-[13px] text-primary-600">
                     →
                   </span>
@@ -101,7 +138,7 @@ export function IspCapabilities() {
                 </div>
 
                 {/* ── Expand affordance ── */}
-                <div className="mt-3 flex items-center gap-1.5 text-[11px] text-black/35 transition-colors group-hover:text-black/55">
+                <div className="mt-2 flex items-center gap-1.5 text-[11px] text-black/35 transition-colors group-hover:text-black/55">
                   <svg
                     width="10"
                     height="10"
@@ -124,8 +161,7 @@ export function IspCapabilities() {
 
                 {/* ── Expanded detail panel ── */}
                 {isExpanded && (
-                  <div
-                    className="mt-3 rounded-2xl bg-primary-50/40 p-5"
+                  <div className="mt-2 rounded-2xl bg-primary-50/40 p-4"
                     style={{ animation: "msg-in 0.35s ease both" }}
                   >
                     <p className="text-[13px] leading-[1.7] text-primary-800">

@@ -1,12 +1,12 @@
-﻿"use client";
+"use client";
 
 /**
- * IspLandingPage — orchestrator for the ISP landing page at nautix.io/isp.
+ * IspLandingPage orchestrator for the ISP landing page at nautix.io/isp.
  *
  * Page intro (PricingPage-style): pill label + heading + subheading
- * Section 1: Hero with CSS‑based WhatsApp chat animation.
+ * Section 1: Hero with CSS-based WhatsApp chat animation.
  * Section 2: Problem validation (pain cards).
- * Section 3: Capabilities (6-card 2×3 grid).
+ * Section 3: Capabilities (6-card 2?3 grid).
  * Section 4: Pioneer Moment (timeline + chat recreation).
  * Future sections scaffolded as placeholders.
  */
@@ -43,31 +43,31 @@ const CHAT_MSGS: ChatMsg[] = [
   {
     id: "c1",
     sender: "customer",
-    text: "My internet has been down since 10pm 😤",
+    text: "My internet has been down since 10pm \uD83D\uDE24",
     time: "11:47 PM",
   },
   {
     id: "a1",
     sender: "ai",
-    text: "Hi David — I can see your router lost connection at 10:58pm. Rebooting now 🔧",
+    text: "Hi David \u2014 I can see your router lost connection at 10:58pm. Rebooting now \uD83D\uDD27",
     time: "11:48 PM",
   },
   {
     id: "a2",
     sender: "ai",
-    text: "Done ✅ Internet restored. Signal strong at 48 Mbps. All good?",
+    text: "Done \u2705 Internet restored. Signal strong at 48 Mbps. All good?",
     time: "11:49 PM",
   },
   {
     id: "c2",
     sender: "customer",
-    text: "Wow that was fast 🙏",
+    text: "Wow that was fast \uD83D\uDE4F",
     time: "11:49 PM",
   },
 ];
 
 /* -------------------------------------------------------------------------- */
-/*  Chat Animation — 6‑second looping WhatsApp conversation                   */
+/*  Chat Animation 6-second looping WhatsApp conversation                   */
 /* -------------------------------------------------------------------------- */
 
 function ChatAnimation() {
@@ -97,8 +97,7 @@ function ChatAnimation() {
           : "rounded-tr-sm text-white"
       }`;
       if (!isCustomer) {
-        bubble.style.background =
-          "linear-gradient(135deg,#7C3AED,#EC4899)";
+        bubble.style.background = "#7e10a2";
       }
       bubble.textContent = msg.text;
 
@@ -194,7 +193,7 @@ function ChatAnimation() {
         </div>
       </div>
 
-      {/* Chat body — WhatsApp wallpaper */}
+      {/* Chat body WhatsApp wallpaper */}
       <div
         className="p-3 md:p-4"
         style={{
@@ -205,7 +204,7 @@ function ChatAnimation() {
       >
         <div ref={containerRef} className="min-h-[180px] space-y-2.5">
           <div className="flex h-[120px] items-center justify-center text-[12px] text-black/30">
-            <span className="animate-pulse">Waiting for message…</span>
+            <span className="animate-pulse">Waiting for message?</span>
           </div>
         </div>
       </div>
@@ -220,29 +219,58 @@ function ChatAnimation() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Page Intro — PricingPage-style 3‑part header above the hero              */
+/*  Page Intro PricingPage-style 3-part header above the hero              */
 /* -------------------------------------------------------------------------- */
 
 function PageIntro() {
   return (
-    <section className="bg-white pb-0 pt-16 md:pt-20">
+   <section className="bg-white pb-0 pt-32 md:pt-[130px]">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         <div className="mx-auto max-w-[780px] text-center">
-          {/* Pill label — "For ISPs" inside border rounded-pill */}
-          <div className="inline-block rounded-full border border-primary/20 px-4 py-1">
-            <p className="title tg-element-title mb-0">For ISPs</p>
+          {/* Pill exact PricingPage structure */}
+           <div className="elementor-element elementor-element-704d07e border rounded-pill !w-fit mx-auto animejs-disable elementor-widget elementor-widget-tg-heading"
+            data-id="704d07e"
+            data-element_type="widget"
+          >
+            <div className="elementor-widget-container" style={{ padding: "0.25rem 1rem" }}>
+                             <p
+    className="title tg-element-title mb-0"
+    style={{
+      fontFamily: '"Mabry Pro", Sans-serif',
+      fontSize: "0.875rem",
+      fontWeight: 700,
+      color: "#16404B",
+    }}
+  >ISPs</p>
+            </div>
           </div>
 
-          {/* Heading */}
-          <h2 className="title tg-element-title mb-0 mt-2 md:mt-3">
-            Run your ISP —{" "}
-            <span className="px-1">automatically.</span>
+          {/* Heading matches PricingPage h2 */}
+          <h2
+            className="title tg-element-title mb-0 mt-2 md:mt-3"
+            style={{
+              fontFamily: '"Sharp Grotesk", Sans-serif',
+              fontSize: "clamp(2rem, 5vw, 3rem)",
+              lineHeight: "1.1em",
+              letterSpacing: "-0.06rem",
+              whiteSpace: "nowrap",
+            }}
+          >
+                        <span style={{ color: "#091624" }}>
+              Run your ISP {"\u2014"}
+            </span>{" "}
+            <span
+              className="px-1"
+              style={{ background: "#E2FF5E", color: "#16404B" }}
+            >
+              automatically.
+            </span>
           </h2>
 
-          {/* Subheading */}
+          {/* Subheading matches PricingPage p */}
           <p className="title tg-element-title mb-0 mt-2 md:mt-3">
             Stop losing subscribers to 11pm WhatsApp messages.
-            Automate billing, outages, and support — across every
+            Automate billing, outages, and support across every
             channel.
           </p>
         </div>
@@ -250,6 +278,7 @@ function PageIntro() {
     </section>
   );
 }
+     
     
 
 /* -------------------------------------------------------------------------- */
@@ -283,7 +312,7 @@ function HeroSection() {
 
       <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
         <div className="grid items-center gap-12 md:grid-cols-[1.2fr_1fr]">
-          {/* ── Left: copy ── */}
+          {/* -- Left: copy -- */}
           <div>
             <h1 className="font-[var(--font-heading)] text-[clamp(34px,5.6vw,72px)] font-semibold leading-[0.98] tracking-[-0.035em] text-primary-950">
               {headline}
@@ -297,9 +326,9 @@ function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href={BOOK_DEMO_URL}
-                className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-[15px] font-semibold text-white shadow-md transition-colors hover:bg-primary-800"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-primary-800"
               >
-                <span>{primaryCta}</span>
+               <span style={{ fontSize: 13, fontWeight: 600 }}>{primaryCta}</span>
                 <i
                   className="fs-8 unicon-arrow-up-right fw-bold"
                   aria-hidden="true"
@@ -308,7 +337,7 @@ function HeroSection() {
 
               <Link
                 href="#"
-                className="inline-flex items-center gap-2 text-[14px] font-medium text-foreground/50 underline underline-offset-4 decoration-black/20 transition hover:text-foreground/80 hover:decoration-black/40"
+                className="inline-flex items-center gap-2 text-sm font-bold text-foreground/50 underline underline-offset-4 decoration-black/20 transition hover:text-foreground/80 hover:decoration-black/40"
               >
                 <svg
                   width="16"
@@ -325,7 +354,7 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* ── Right: WhatsApp chat animation ── */}
+          {/* -- Right: WhatsApp chat animation -- */}
           <div className="w-full max-w-[440px] md:ml-auto">
             <ChatAnimation />
           </div>
