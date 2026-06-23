@@ -26,11 +26,14 @@ function useScrollReveal() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" },
+      { rootMargin: "-60px", threshold: 0.08 },
     );
 
-    const sections = document.querySelectorAll(".reveal-section");
-    sections.forEach((el) => observer.observe(el));
+    const sections = document.querySelectorAll<HTMLElement>(".reveal-section");
+    sections.forEach((n, i) => {
+      n.style.animationDelay = `${i * 80}ms`;
+      observer.observe(n);
+    });
 
     return () => {
       sections.forEach((el) => observer.unobserve(el));
@@ -188,25 +191,17 @@ export function ProductLiveSystemDiagnosis({
   return (
     <div className="min-h-screen bg-[#fdfcfa]">
       <style>{`
+        @keyframes reveal-fade-up {
+          from { opacity: 0; transform: translateY(18px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
         .reveal-section {
           opacity: 0;
-          transform: translateY(30px);
-          transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
         .reveal-section.is-visible {
-          opacity: 1;
-          transform: translateY(0);
+          animation: reveal-fade-up 0.75s cubic-bezier(.22,.61,.36,1) forwards;
         }
-
-        .reveal-section:nth-child(2) { transition-delay: 0.1s; }
-        .reveal-section:nth-child(3) { transition-delay: 0.2s; }
-        .reveal-section:nth-child(4) { transition-delay: 0.3s; }
-        .reveal-section:nth-child(5) { transition-delay: 0.4s; }
-        .reveal-section:nth-child(6) { transition-delay: 0.5s; }
-        .reveal-section:nth-child(7) { transition-delay: 0.6s; }
-        .reveal-section:nth-child(8) { transition-delay: 0.7s; }
-        .reveal-section:nth-child(9) { transition-delay: 0.8s; }
       `}</style>
       {/* ================================================================= */}
       {/*  HERO                                                              */}
