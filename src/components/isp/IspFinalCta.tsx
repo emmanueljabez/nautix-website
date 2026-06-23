@@ -48,7 +48,7 @@ export function IspFinalCta() {
           {/* Primary — same as hero button */}
           <Link
             href={BOOK_DEMO_URL}
-            className="inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-[15px] font-semibold text-white shadow-md transition-colors hover:bg-primary-800"
+            className="inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-primary-800"
           >
             <span>{primaryCta}</span>
             <i
@@ -62,7 +62,7 @@ export function IspFinalCta() {
             href={`https://wa.me/${waNumber}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-4 text-[15px] font-medium text-white/80 transition-colors hover:border-white/35 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-bold text-white/80 transition-colors hover:border-white/35 hover:text-white"
           >
             <svg
               width="18"

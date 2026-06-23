@@ -104,7 +104,7 @@ export const HERO_DATA: IspHeroData = {
     { icon: "\uD83D\uDCAC", text: "WhatsApp + Instagram + Facebook" },
   ],
   primaryCta: "Book a 15-minute live Demo",
-  secondaryCta: "Or watch a 60-second demo video",
+  secondaryCta: "Or watch a 60-second Demo video",
 };
 
 // ---------------------------------------------------------------------------
@@ -472,7 +472,7 @@ export const FINAL_CTA_DATA: IspFinalCtaData = {
     "See Nautix working on your actual network.",
   subheadline:
     "Book a 15-minute live demo. We connect to your Splynx account, pull a real subscriber record, and show every Nautix function on your data. No slides. No mockups.",
-  primaryCta: "Book a 15-min demo",
+  primaryCta: "Book a 15-min emo",
   secondaryCta: "WhatsApp us instead",
   secondaryCtaNumber: "+254 720 482 575",
   riskReversal: [

@@ -50,8 +50,24 @@ export function IspNumbers() {
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* Section heading */}
-        <h2 className="reveal text-center font-[var(--font-heading)] text-[clamp(28px,4vw,48px)] font-semibold leading-[1.08] tracking-[-0.025em] text-primary-950">
-          {sectionHeading}
+                <h2 className="reveal text-center"
+          style={{
+            fontFamily: '"Sharp Grotesk", Sans-serif',
+            fontSize: "clamp(2rem, 5vw, 3rem)",
+            lineHeight: "1.1em",
+            letterSpacing: "-0.06rem",
+          }}
+        >
+          Real numbers from a 1,200-subscriber WISP {"\u2014"} {" "}
+          <span
+            style={{
+              background: "#E2FF5E",
+              color: "#16404B",
+              boxShadow: "inset 0 0 0 1px rgba(34,48,63,0.06)",
+            }}
+          >
+          Month 1.
+          </span>
         </h2>
 
         {/* 3 stats — responsive grid */}

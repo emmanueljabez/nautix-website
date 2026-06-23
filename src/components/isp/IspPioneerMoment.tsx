@@ -27,9 +27,43 @@ export function IspPioneerMoment() {
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
         {/* ── Section heading ── */}
-        <h2 className="reveal font-[var(--font-heading)] text-[clamp(28px,3.8vw,52px)] font-semibold leading-[1.08] tracking-[-0.025em] text-primary-950 md:text-center">
-          {sectionHeading}
-        </h2>
+        
+              <div className="reveal">
+          <h2
+            style={{
+              fontFamily: '"Sharp Grotesk", Sans-serif',
+              fontSize: "clamp(2rem, 5vw, 3rem)",
+              lineHeight: "1.1em",
+              letterSpacing: "-0.06rem",
+              textAlign: "center",
+            }}
+          >
+            11:47pm. Subscriber loses internet. Fixed by 11:49pm.
+          </h2>
+          <p
+            style={{
+              fontFamily: '"Sharp Grotesk", Sans-serif',
+              fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
+              lineHeight: "1.1em",
+              letterSpacing: "-0.06rem",
+              textAlign: "center",
+              marginTop: 8,
+            }}
+          >
+            <span
+              style={{
+                background: "#E2FF5E",
+                color: "#16404B",
+                boxShadow: "inset 0 0 0 1px rgba(34,48,63,0.06)",
+                borderRadius: 999,
+                display: "inline-block",
+                padding: "0.08em 0.34em 0.14em",
+              }}
+            >
+              No agent involved.
+            </span>
+          </p>
+        </div>
 
         {/* ── Two-column grid ── */}
         <div className="reveal mt-14 grid gap-16 lg:grid-cols-[1fr_440px]">
@@ -210,10 +244,7 @@ export function IspPioneerMoment() {
                         }`}
                         style={
                           !isCustomer
-                            ? {
-                                background:
-                                  "linear-gradient(135deg,#7C3AED,#EC4899)",
-                              }
+                            ? { background: "#7e10a2" }
                             : undefined
                         }
                       >
@@ -231,7 +262,7 @@ export function IspPioneerMoment() {
         <div className="reveal mt-14 flex flex-col items-center md:mt-20">
           <Link
             href={BOOK_DEMO_URL}
-            className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-[15px] font-semibold text-white shadow-md transition-colors hover:bg-primary-800"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-primary-800"
           >
             <span className="flex flex-col items-center text-center leading-[1.4]">
             <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold">

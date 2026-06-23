@@ -96,7 +96,7 @@ export function IspPilotOffer() {
         <div className="reveal mt-10">
           <Link
             href={BOOK_DEMO_URL}
-            className="inline-flex items-center gap-2 rounded-full px-9 py-5 text-[17px] font-semibold shadow-2xl transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-full px-9 py-5 text-sm font-bold shadow-2xl transition-transform hover:scale-105"
             style={{
               background:
                 "linear-gradient(135deg, #F59E0B 0%, #D97706 100%)",
