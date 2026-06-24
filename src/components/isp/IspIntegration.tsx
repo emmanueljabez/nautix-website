@@ -257,7 +257,7 @@ export function IspIntegration() {
                 {/* ── Integration logo strip ── */}
         <div className="reveal" style={{ marginTop: 40 }}>
           <div className="nautix-client-marquee">
-            <div className="nautix-client-logo-row" aria-label="Integration partners" style={{ display: "flex", gap: 20, alignItems: "center", justifyContent: "center", flexWrap: "nowrap" }}>
+            <div className="nautix-client-logo-row" aria-label="Integration partners" style={{ display: "flex", gap: 110, alignItems: "center", justifyContent: "center", flexWrap: "nowrap" }}>
               {PARTNER_LOGOS.map((logo) => {
                 // Larger sizes for specific partner logos
                 const isLarge = logo.alt === "SmartOLT";

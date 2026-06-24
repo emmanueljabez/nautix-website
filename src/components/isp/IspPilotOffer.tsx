@@ -73,7 +73,7 @@ export function IspPilotOffer() {
         <div className="relative mx-auto max-w-[780px] px-6 pb-20 pt-16 text-center text-white md:pb-28 md:pt-24">
          {/* ── Main heading ── */}
         <h2 className="reveal font-[var(--font-heading)] text-[clamp(36px,5vw,60px)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">Free 30-day pilot.</h2>
-<p className="reveal mt-3 text-[20px] font-semibold leading-[1.4] text-white/70 whitespace-nowrap md:text-[24px]">Full integration. &nbsp; &nbsp;No commitment.</p>
+<p className="reveal mt-3 text-[20px] font-semibold leading-[1.05] text-white whitespace-nowrap md:text-[24px]">Full integration. &nbsp; &nbsp;No commitment.</p>
         {/* ── Subheadline ── */}
         <p className="reveal mx-auto mt-5 max-w-[640px] text-[16px] leading-[1.7] text-white/75 md:text-[17px]">
           {subheadline}
@@ -103,12 +103,12 @@ export function IspPilotOffer() {
               color: "#1a0a2e",
             }}
           >
-            → &nbsp;{cta}
+          <span className="text-[16px] font-semibold"> → &nbsp;{cta}</span>
           </Link>
         </div>
 
         {/* ── Scarcity line ── */}
-         <p className="reveal mt-6 text-[13px] tracking-[0.03em] text-white/40">
+         <p className="reveal mt-6 text-[13px] tracking-[0.03em] text-white">
           {scarcityLine}
         </p>
       </div>
