@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { LandingPageData } from "@/lib/seo-pages";
 import { PAGE_DATA } from "@/lib/omnichannel-inbox-data";
+import { FinalCtaSection } from "@/components/homepage/FinalCtaSection";
 import { buildFaqSchema } from "@/lib/seo";
 import { Counter } from "@/components/ui/Counter";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -165,7 +166,7 @@ export function ProductOmnichannelInbox({
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <style>{`
         @keyframes reveal-fade-up {
           from { opacity: 0; transform: translateY(18px); }
@@ -414,20 +415,28 @@ export function ProductOmnichannelInbox({
           font-size: 16px;
           line-height: 1.6;
         }
-
+     
+        .oi-problem .nautix-section-title-line {
+        max-width: none;
+        white-space: nowrap;
+      }
         .oi-problem .nautix-section-title-focus,
-        .oi-industry .nautix-section-title-focus {
-          background: #e2fe5e;
-          color: #22303f;
-          box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
-        }
+.oi-industry .nautix-section-title-focus {
+  background: #e2fe5e;
+  color: #22303f;
+  box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
+}
       `}</style>
 
       {/* HERO */}
       <section className="reveal-section relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[130px] pb-20 lg:pt-[130px] lg:pb-28">
           <div className="flex justify-center mb-8">
-            <span className="inline-flex items-center px-3 py-1 rounded-full border border-primary/25 bg-primary/5 text-primary text-sm font-semibold">{D.hero.eyebrow}</span>
+            <span className="border rounded-pill inline-flex items-center" style={{ padding: "0.25rem 1rem" }}>
+  <p className="mb-0" style={{ color: "#16404B", fontFamily: '"Mabry Pro", Sans-serif', fontSize: "0.875rem", fontWeight: 700, textAlign: "center" }}>
+    {D.hero.eyebrow}
+  </p>
+</span>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -462,7 +471,7 @@ export function ProductOmnichannelInbox({
       </section>
 
       {/* PROBLEM */}
-      <section className="oi-problem reveal-section py-20 lg:py-28 bg-background">
+      <section className="oi-problem reveal-section py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="nautix-section-title mb-0">
@@ -477,9 +486,20 @@ export function ProductOmnichannelInbox({
                 key={pain.title}
                 className="bg-white border border-black/5 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300"
               >
-                <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary font-bold text-sm mb-4">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                <div
+                style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: 14,
+                  background: "rgba(126,16,162,0.08)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 16,
+                }}
+              >
+  <img src={pain.icon} alt={pain.title} loading="lazy" style={{ width: 26, height: 26 }} />
+</div>
                 <h3 className="font-[var(--font-heading)] font-bold text-lg text-foreground mb-2">
                   {pain.title}
                 </h3>
@@ -533,16 +553,30 @@ export function ProductOmnichannelInbox({
       {/* CAPABILITIES */}
       <section className="reveal-section py-20 lg:py-28 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-white mb-14">
-            {D.capabilities.heading}
+                    <h2 className="nautix-section-title mb-12" style={{ color: "#fff", textAlign: "center" }}>
+            What the <span className="px-1" style={{ color: "#16404B", backgroundColor: "#E2FF5E" }}>inbox</span> does
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {D.capabilities.cards.map((c) => (
-              <article
+                            <article
                 key={c.title}
                 className="bg-white border border-white/20 rounded-2xl p-6 hover:border-white/40 hover:shadow-lg transition-all duration-300"
               >
+                <div
+                  style={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: 12,
+                    background: "rgba(126,16,162,0.08)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: 16,
+                  }}
+                >
+                  <img src={c.icon} alt={c.title} loading="lazy" style={{ width: 26, height: 26 }} />
+                </div>
                 <h3 className="font-[var(--font-heading)] font-bold text-lg text-foreground mb-2">
                   {c.title}
                 </h3>
@@ -556,7 +590,7 @@ export function ProductOmnichannelInbox({
       </section>
 
       {/* INDUSTRY TABLE */}
-      <section className="oi-industry reveal-section py-20 lg:py-28">
+      <section className="oi-industry reveal-section py-20 lg:py-28 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="nautix-section-title mb-0">
@@ -568,7 +602,8 @@ export function ProductOmnichannelInbox({
             </p>
           </div>
 
-          <div className="overflow-x-auto">
+            <div className="overflow-x-auto">
+            <div className="border rounded-2xl overflow-hidden">
             <table className="uc-table uc-table-divider">
               <thead className="table-head sticky-top z-1 bg-white">
                 <tr className="table-row border-white">
@@ -596,12 +631,13 @@ export function ProductOmnichannelInbox({
                       </div>
                     </th>
                     <td>
-                      <span className="text-dark text-opacity-70">{row.howTheyUseIt}</span>
+                      <span className="text-dark">{row.howTheyUseIt}</span>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </div>
       </section>
@@ -669,70 +705,9 @@ export function ProductOmnichannelInbox({
       {/* FAQ */}
       <FaqSection />
 
-      {/* FINAL CTA */}
-      <section className="reveal-section nautix-final-cta-section bg-background">
-        <div
-          className="nautix-final-cta-shell"
-          style={{
-            background:
-              "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
-            boxShadow: "0 32px 70px rgba(65, 16, 95, 0.22)",
-          }}
-        >
-          <img
-            className="nautix-final-cta-decor nautix-final-cta-decor--left"
-            src="/wp-content/uploads/2025/05/green-stars.svg"
-            width={55}
-            height={50}
-            loading="lazy"
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            className="nautix-final-cta-decor nautix-final-cta-decor--right"
-            src="/wp-content/uploads/2025/05/green-star.svg"
-            width={19}
-            height={30}
-            loading="lazy"
-            alt=""
-            aria-hidden="true"
-          />
-          <div
-            className="nautix-final-cta-content"
-            style={{
-              background:
-                "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
-              borderRadius: "inherit",
-            }}
-          >
-            <h2 className="nautix-final-cta-title mb-0">
-              {D.finalCta.heading}
-            </h2>
-            <p className="nautix-final-cta-copy mb-0">
-              {D.finalCta.subhead}
-            </p>
-            <div className="nautix-final-cta-actions">
-              <a
-                className="nautix-final-cta-button nautix-final-cta-button--primary"
-                href={D.finalCta.primaryCta.href}
-              >
-                {D.finalCta.primaryCta.label}
-              </a>
-              <a
-                className="nautix-final-cta-button nautix-final-cta-button--secondary"
-                href={D.finalCta.secondaryCta.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {D.finalCta.secondaryCta.label}
-              </a>
-            </div>
-            <p className="nautix-final-cta-note mb-0">
-              {D.finalCta.reassurance}
-            </p>
-          </div>
-        </div>
-      </section>
+       <FinalCtaSection />
+           
+        
     </div>
   );
 }
