@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -324,6 +324,35 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "ai support analytics",
       "conversation performance dashboard",
       "whatsapp support reporting",
+    ],
+  },
+  "omnichannel-inbox": {
+    slug: "omnichannel-inbox",
+    path: "/product/omnichannel-inbox",
+    title: "Omnichannel Inbox for WhatsApp, Instagram & Facebook | Nautix",
+    description:
+      "Unify WhatsApp, Instagram, Facebook, and webchat into one shared team inbox. Never miss a customer message again. Built for African businesses.",
+    heading: "Every customer conversation, in one place.",
+    subheading:
+      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox — so nothing slips through, and your whole team works from the same screen.",
+    highlights: [
+      "Unified queue across WhatsApp, Instagram, Facebook, and webchat — sorted, tagged, and searchable.",
+      "Team assignment with full visibility on who's handling what and what's unassigned.",
+      "Internal notes for private team communication that customers never see.",
+      "Tags and labels to categorise conversations by type, priority, or status.",
+      "Full-text search to find any past conversation in seconds.",
+      "Response tracking to see how fast your team responds and spot backlogs.",
+    ],
+    outcomes: [
+      "Zero missed messages — every channel in one queue.",
+      "3× faster response times with shared team visibility.",
+      "100% conversation history retained across channels.",
+    ],
+    keywords: [
+      "omnichannel inbox",
+      "WhatsApp shared inbox",
+      "unified customer inbox",
+      "multi-channel messaging",
     ],
   },
 };
