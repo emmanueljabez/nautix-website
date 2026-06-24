@@ -6,7 +6,6 @@ import { PAGE_DATA } from "@/lib/live-system-diagnosis-data";
 import { buildFaqSchema } from "@/lib/seo";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
-import { Counter } from "@/components/ui/Counter";
 import { JsonLd } from "@/components/seo/JsonLd";
 
 interface ProductLiveSystemDiagnosisProps {
@@ -48,132 +47,68 @@ function useScrollReveal() {
 
 function HeroVisual() {
   return (
-    <div className="relative flex flex-col items-center gap-0 w-full max-w-[480px] mx-auto lg:mx-0">
-      {/* Step labels */}
-      <div className="flex items-center justify-between w-full text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-400 mb-2 px-4">
-        <span>Customer asks</span>
-        <span>Nautix looks up</span>
-        <span>Real answer</span>
-      </div>
-
-      {/* Visual row */}
-      <div className="flex items-center gap-3 w-full">
-        {/* Customer bubble */}
-        <div className="flex-1 bg-white border border-neutral-200 rounded-2xl rounded-bl-md p-4 shadow-sm">
-          <p className="text-[13px] text-neutral-600 leading-snug">
-            &ldquo;Did my payment go through?&rdquo;
-          </p>
-          <div className="flex items-center gap-1.5 mt-2">
-            <span className="w-5 h-5 rounded-full bg-neutral-100 flex items-center justify-center text-[10px]">
-              ?
-            </span>
-            <span className="text-[10px] text-neutral-400">11:47 pm</span>
+    <div className="relative w-full max-w-[460px] mx-auto lg:mx-0">
+      {/* Chat window mockup */}
+      <div className="bg-white rounded-2xl border border-neutral-200 shadow-xl overflow-hidden">
+        {/* Chat header */}
+        <div className="bg-gradient-to-r from-[#7C3AED] to-[#EC4899] px-4 py-3 flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">
+            N
+          </div>
+          <div>
+            <p className="text-white text-sm font-semibold leading-tight">Nautix Support</p>
+            <p className="text-white/70 text-[11px] leading-tight">Online now</p>
           </div>
         </div>
 
-        {/* Arrow 1 */}
-        <svg
-          className="shrink-0 text-[#7C3AED]/40"
-          width="28"
-          height="20"
-          viewBox="0 0 28 20"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M2 10h18m0 0l-5-5m5 5l-5 5"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M16 4l4 6-4 6"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity="0.5"
-          />
-        </svg>
+        {/* Chat body */}
+        <div className="p-4 space-y-3 bg-neutral-50/50 min-h-[220px]">
+          {/* User message */}
+          <div className="flex justify-end">
+            <div className="bg-[#7C3AED] text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%] shadow-sm">
+              <p className="text-[13px] leading-snug">Did my payment go through?</p>
+              <span className="text-[10px] text-white/60 mt-1 block text-right">11:47 pm</span>
+            </div>
+          </div>
 
-        {/* Database / system icon */}
-        <div className="shrink-0 flex flex-col items-center gap-1">
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#7C3AED] to-[#EC4899] flex items-center justify-center shadow-lg shadow-purple-500/25">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <ellipse cx="12" cy="6" rx="8" ry="3" stroke="#fff" strokeWidth="1.8" />
-              <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" stroke="#fff" strokeWidth="1.8" />
-              <path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" stroke="#fff" strokeWidth="1.8" opacity="0.6" />
+          {/* Bot "looking up" indicator */}
+          <div className="flex justify-start">
+            <div className="bg-white border border-neutral-200 rounded-full px-3 py-1.5 flex items-center gap-2 shadow-sm">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7C3AED] opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#7C3AED]" />
+              </span>
+              <span className="text-[11px] font-semibold text-[#7C3AED] uppercase tracking-wider">
+                Data Lookup
+              </span>
+            </div>
+          </div>
+
+          {/* Bot response */}
+          <div className="flex justify-start">
+            <div className="bg-white border border-neutral-200 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] shadow-sm">
+              <p className="text-[13px] text-neutral-700 leading-snug">
+                Yes — received at <span className="font-semibold text-[#7C3AED]">2:14pm</span>. Your account is active.
+              </p>
+              <div className="flex items-center gap-1.5 mt-2">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M2.5 6l2.5 2.5 4.5-5" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="text-[10px] text-neutral-400">11:48 pm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Chat input bar */}
+        <div className="px-4 py-3 border-t border-neutral-100 bg-white flex items-center gap-2">
+          <span className="text-neutral-300 text-sm">Type a message...</span>
+          <div className="ml-auto w-7 h-7 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] flex items-center justify-center">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 6h6m0 0L5.5 3.5M8 6l-2.5 2.5" stroke="#fff" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
-          <span className="text-[9px] font-semibold text-neutral-400 uppercase tracking-wider">
-            Systems
-          </span>
         </div>
-
-        {/* Arrow 2 */}
-        <svg
-          className="shrink-0 text-[#7C3AED]/40"
-          width="28"
-          height="20"
-          viewBox="0 0 28 20"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M2 10h18m0 0l-5-5m5 5l-5 5"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M16 4l4 6-4 6"
-            stroke="currentColor"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity="0.5"
-          />
-        </svg>
-
-        {/* Answer bubble */}
-        <div className="flex-1 bg-gradient-to-br from-[#7C3AED] to-[#EC4899] rounded-2xl rounded-br-md p-4 shadow-lg shadow-purple-500/20">
-          <p className="text-[13px] text-white/90 leading-snug">
-            &ldquo;Yes — received at 2:14pm. Your account is active.&rdquo;
-          </p>
-          <div className="flex items-center gap-1.5 mt-2">
-            <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2.5 6l2.5 2.5 4.5-5"
-                  stroke="#fff"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-            <span className="text-[10px] text-white/60">11:48 pm</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Connecting line underneath */}
-      <div className="relative w-full h-0 mt-0">
-        <div className="absolute left-[10%] right-[10%] top-0 h-px bg-gradient-to-r from-transparent via-[#7C3AED]/25 to-transparent" />
       </div>
     </div>
   );
@@ -237,6 +172,13 @@ export function ProductLiveSystemDiagnosis({
               </div>
             </div>
 
+            {/* Dashboard screenshot */}
+            <img
+              src="/images/dashboard-full.png.png"
+              alt="Nautix dashboard showing total messages and live delivery rates"
+              className="w-full max-w-[540px] lg:max-w-none h-auto rounded-xl shadow-2xl border border-gray-200"
+            />
+
             {/* Right: visual */}
             <HeroVisual />
           </div>
@@ -287,19 +229,35 @@ export function ProductLiveSystemDiagnosis({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {D.howItWorks.steps.map((s) => (
-              <article key={s.stepNumber} className="relative text-center group">
-                <span className="block text-6xl font-bold text-neutral-100 select-none mb-[-0.5em] leading-none">
-                  0{s.stepNumber}
-                </span>
-                <h3 className="font-[var(--font-heading)] font-bold text-lg text-[#171717] mb-2 relative">
-                  {s.title}
-                </h3>
-                <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed">
-                  {s.detail}
-                </p>
-              </article>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 max-w-4xl mx-auto">
+            {D.howItWorks.steps.map((s, idx) => (
+              <div key={s.stepNumber} className="flex items-center w-full md:w-auto">
+                {/* Step card */}
+                <div className="flex flex-col items-center text-center gap-3 bg-white rounded-2xl border border-neutral-200 p-5 w-full md:w-48 shadow-sm hover:shadow-md hover:border-purple-200 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#EC4899] flex items-center justify-center shadow-md shadow-purple-500/20">
+                    <span className="text-white font-bold text-sm">
+                      {s.stepNumber}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-[var(--font-heading)] font-bold text-sm text-[#171717] mb-1">
+                      {s.title}
+                    </h3>
+                    <p className="font-[var(--font-sans)] text-xs text-neutral-500 leading-relaxed max-w-[180px]">
+                      {s.detail}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Connecting arrow (hidden on last item + mobile) */}
+                {idx < D.howItWorks.steps.length - 1 && (
+                  <div className="hidden md:flex items-center justify-center w-10 shrink-0">
+                    <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+                      <path d="M1 7h14m0 0L11.5 3.5M15 7l-3.5 3.5" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5" />
+                    </svg>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         </div>
@@ -310,9 +268,18 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       <section className="reveal-section py-20 lg:py-28 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
+          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-2">
             {D.capabilities.heading}
           </h2>
+
+          {/* Dashboard screenshot */}
+          <div className="max-w-5xl mx-auto mb-10">
+            <img
+              src="/images/dashboard-diagnosis.png"
+              alt="Nautix full dashboard overview"
+              className="w-full rounded-xl shadow-lg border border-gray-200"
+            />
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {D.capabilities.cards.map((c) => (
@@ -336,7 +303,7 @@ export function ProductLiveSystemDiagnosis({
       {/*  INDUSTRY TABLE                                                    */}
       {/* ================================================================= */}
       <section className="reveal-section py-20 lg:py-28">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-4">
               {D.industryTable.heading}
@@ -346,40 +313,45 @@ export function ProductLiveSystemDiagnosis({
             </p>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full border-collapse rounded-2xl overflow-hidden border border-neutral-200">
-              <thead>
-                <tr className="bg-neutral-50">
-                  <th className="font-[var(--font-heading)] font-bold text-sm text-[#7C3AED] uppercase tracking-[0.08em] text-left py-4 px-6 w-[30%]">
-                    Industry
-                  </th>
-                  <th className="font-[var(--font-heading)] font-bold text-sm text-[#7C3AED] uppercase tracking-[0.08em] text-left py-4 px-6">
-                    How they use it
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {D.industryTable.rows.map((row, i) => (
-                  <tr
-                    key={row.vertical}
-                    className={`${
-                      i % 2 === 0 ? "bg-white" : "bg-neutral-50/50"
-                    } hover:bg-purple-50/30 transition-colors`}
-                  >
-                    <td className="border-b border-neutral-100 py-4 px-6">
-                      <span className="font-[var(--font-heading)] font-bold text-sm text-[#171717]">
-                        {row.vertical}
-                      </span>
-                    </td>
-                    <td className="border-b border-neutral-100 py-4 px-6">
-                      <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed">
-                        {row.howTheyUseIt}
-                      </p>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {D.industryTable.rows.map((row) => {
+              const imageMap: Record<string, string> = {
+                ISPs: "/images/isps.jpg",
+                "Real Estate": "/images/real-estate.jpg",
+                "E-commerce": "/images/ecommerce2.avif",
+                "Finance / SACCOs": "/images/finance.png",
+              };
+
+              return (
+                <article
+                  key={row.vertical}
+                  className="group bg-white rounded-2xl shadow-sm border border-neutral-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 overflow-hidden flex flex-col"
+                >
+                  {/* Image block with gradient overlay */}
+                  <div className="relative w-full h-48 overflow-hidden rounded-t-2xl">
+                    <img
+                      src={imageMap[row.vertical]}
+                      alt={row.vertical}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  {/* Content block */}
+                  <div className="p-5 flex flex-col gap-2 flex-1">
+                    <span className="self-start inline-block bg-[#f3e8ff] text-[#7C3AED] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                      {row.vertical}
+                    </span>
+                    <h3 className="font-[var(--font-heading)] font-bold text-base text-[#171717] leading-tight">
+                      {row.vertical}
+                    </h3>
+                    <p className="font-[var(--font-sans)] text-[13px] text-neutral-600 leading-relaxed">
+                      {row.howTheyUseIt}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -393,31 +365,37 @@ export function ProductLiveSystemDiagnosis({
             {D.outcomes.heading}
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {D.outcomes.stats.map((stat) => {
-              const numeric = parseInt(stat.value, 10);
-              const isNumeric = !isNaN(numeric);
-
-              return (
-                <div key={stat.label} className="text-center">
-                  <div className="font-[var(--font-heading)] text-4xl font-bold text-[#7C3AED] mb-2">
-                    {!isNumeric ? (
-                      <span>{stat.value}</span>
-                    ) : stat.value.endsWith("%") ? (
-                      <>
-                        <Counter target={numeric} />
-                        %
-                      </>
-                    ) : (
-                      <Counter target={numeric} />
-                    )}
-                  </div>
-                  <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed max-w-xs mx-auto">
-                    {stat.label}
-                  </p>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+              <img
+                src="/images/dashboard-metric-delivery.png.png"
+                alt="Real-time delivery accuracy dashboard metric"
+                className="w-full rounded-lg"
+              />
+              <p className="text-center text-sm text-gray-500 mt-2 font-[var(--font-sans)]">
+                Real-time delivery accuracy
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+              <img
+                src="/images/dashboard-metric-response.png.png"
+                alt="Instant response times dashboard metric"
+                className="w-full rounded-lg"
+              />
+              <p className="text-center text-sm text-gray-500 mt-2 font-[var(--font-sans)]">
+                Instant response times
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+              <img
+                src="/images/dashboard-metric-automation.png.png"
+                alt="Full automation visibility dashboard metric"
+                className="w-full rounded-lg"
+              />
+              <p className="text-center text-sm text-gray-500 mt-2 font-[var(--font-sans)]">
+                Full automation visibility
+              </p>
+            </div>
           </div>
         </div>
       </section>
