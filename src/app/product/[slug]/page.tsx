@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LandingSectionPage } from "@/components/seo/LandingSectionPage";
+import { ProductOmnichannelInbox } from "@/components/product/ProductOmnichannelInbox";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   DEFAULT_PRIMARY_CTA,
@@ -40,12 +41,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     });
   }
 
-  return buildMetadata({
+    const metadata = buildMetadata({
     title: page.title,
     description: page.description,
     path: page.path,
     keywords: [...page.keywords],
   });
+
+if (slug === "omnichannel-inbox") {
+    metadata.openGraph = {
+      ...metadata.openGraph,
+      title: "One Inbox for Every Customer Conversation \u2014 Nautix",
+      description:
+        "WhatsApp, Instagram, Facebook and webchat in a single shared inbox.",
+    };
+    metadata.twitter = {
+      ...metadata.twitter,
+      title: "One Inbox for Every Customer Conversation \u2014 Nautix",
+      description:
+        "WhatsApp, Instagram, Facebook and webchat in a single shared inbox.",
+    };
+}
+
+  return metadata;
 }
 
 export default async function ProductPage({ params }: PageProps) {
@@ -54,6 +72,10 @@ export default async function ProductPage({ params }: PageProps) {
 
   if (!page) {
     notFound();
+  }
+
+  if (slug === "omnichannel-inbox") {
+    return <ProductOmnichannelInbox data={page} />;
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([
