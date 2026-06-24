@@ -149,7 +149,10 @@ export function ProductLiveSystemDiagnosis({
               <Pill>{D.hero.eyebrow}</Pill>
 
               <h1 className="font-[var(--font-heading)] font-bold text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] text-[#091624] leading-[1.05]">
-                {D.hero.h1}
+                Real answers, pulled from{" "}
+                <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-sm text-[#22303f]">
+                  your real systems.
+                </span>
               </h1>
 
               <p className="font-[var(--font-sans)] text-lg text-neutral-600 leading-relaxed max-w-xl">
@@ -172,15 +175,17 @@ export function ProductLiveSystemDiagnosis({
               </div>
             </div>
 
-            {/* Dashboard screenshot */}
+            {/* Right: visual */}
+            <HeroVisual />
+          </div>
+
+          {/* Dashboard screenshot — full width below */}
+          <div className="max-w-5xl mx-auto mt-16">
             <img
               src="/images/dashboard-full.png.png"
               alt="Nautix dashboard showing total messages and live delivery rates"
-              className="w-full max-w-[540px] lg:max-w-none h-auto rounded-xl shadow-2xl border border-gray-200"
+              className="w-full rounded-xl shadow-2xl border border-gray-200"
             />
-
-            {/* Right: visual */}
-            <HeroVisual />
           </div>
         </div>
       </section>
@@ -190,8 +195,11 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       <section className="reveal-section py-20 lg:py-28 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
-            {D.problem.heading}
+          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-14">
+            A reply that isn&rsquo;t real{" "}
+            <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
+              is worse than no reply.
+            </span>
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -221,10 +229,13 @@ export function ProductLiveSystemDiagnosis({
       <section className="reveal-section py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-4">
-              {D.howItWorks.heading}
+            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-0">
+              It checks.{" "}
+              <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
+                It doesn&rsquo;t guess.
+              </span>
             </h2>
-            <p className="font-[var(--font-sans)] text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="font-[var(--font-sans)] text-lg text-neutral-600 max-w-2xl mx-auto mt-4">
               {D.howItWorks.subhead}
             </p>
           </div>
@@ -268,8 +279,11 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       <section className="reveal-section py-20 lg:py-28 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-2">
-            {D.capabilities.heading}
+          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-8">
+            What live diagnosis{" "}
+            <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
+              does
+            </span>
           </h2>
 
           {/* Dashboard screenshot */}
@@ -305,10 +319,13 @@ export function ProductLiveSystemDiagnosis({
       <section className="reveal-section py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-4">
-              {D.industryTable.heading}
+            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-0">
+              Live answers, from{" "}
+              <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
+                whatever systems you run.
+              </span>
             </h2>
-            <p className="font-[var(--font-sans)] text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="font-[var(--font-sans)] text-lg text-neutral-600 max-w-2xl mx-auto mt-4">
               {D.industryTable.subhead}
             </p>
           </div>
@@ -361,8 +378,11 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       <section className="reveal-section py-20 lg:py-28 bg-white/50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-14">
-            {D.outcomes.heading}
+          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-10">
+            What live diagnosis{" "}
+            <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
+              delivers
+            </span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -487,8 +507,11 @@ function FaqSection() {
       <JsonLd data={buildFaqSchema([...D.faq.items])} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl font-bold tracking-[-0.03em] text-[#171717] mb-12">
-          {D.faq.heading}
+        <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-10">
+          Common{" "}
+          <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
+            questions
+          </span>
         </h2>
 
         <dl>
