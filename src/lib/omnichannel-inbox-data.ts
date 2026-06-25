@@ -185,7 +185,7 @@ export const PAGE_DATA = {
     primaryCta: { label: "Book a demo", href: DEMO_EMAIL_URL },
     secondaryCta: {
       label: "WhatsApp us: +254 762 758 987",
-      href: "https://wa.me/254720482575",
+      href: "https://wa.me/254762758987",
     },
     reassurance: "No credit card \u00B7 30-day free pilot \u00B7 Cancel anytime",
   },

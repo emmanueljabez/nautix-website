@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution", "lead-qualification-engine"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -411,6 +411,36 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "AI customer resolution",
       "automated issue resolution",
       "end-to-end automation",
+    ],
+  },
+  "lead-qualification-engine": {
+    slug: "lead-qualification-engine",
+    path: "/product/lead-qualification-engine",
+    title: "Automated Lead Qualification Engine for WhatsApp | Nautix",
+    description:
+      "Qualify, score, and route every inbound lead automatically \u2014 24/7. Hand your sales team only the leads worth their time, fully briefed. Built for African businesses.",
+    heading: "Qualified leads. Not just inquiries.",
+    subheading:
+      "Most inquiries aren't ready to buy \u2014 and your team wastes hours finding out which ones are. Nautix asks the right questions, scores every lead, and hands your sales team only the ones worth pursuing, with the full picture attached.",
+    highlights: [
+      "Smart questioning that gathers budget, need, timeline, and fit conversationally.",
+      "Lead scoring against your criteria so your team knows who to call first.",
+      "Intelligent routing by type, territory, or value to the right person or team.",
+      "Full lead briefs with all qualification context \u2014 no re-asking required.",
+      "24/7 qualification so leads are never left waiting, day or night.",
+      "CRM-ready output with all fields populated for seamless pipeline flow.",
+    ],
+    outcomes: [
+      "100% of leads qualified before reaching your team.",
+      "2\u00d7 more sales time spent on real opportunities.",
+      "24/7 qualification so no hot lead ever waits.",
+    ],
+    keywords: [
+      "lead qualification",
+      "lead scoring",
+      "automated lead qualification",
+      "WhatsApp lead capture",
+      "lead routing",
     ],
   },
 };
