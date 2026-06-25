@@ -6,6 +6,7 @@ import { ProductCommentMonitoring } from "@/components/product/ProductCommentMon
 import { ProductAutonomousResolution } from "@/components/product/ProductAutonomousResolution";
 import { ProductLeadQualificationEngine } from "@/components/product/ProductLeadQualificationEngine";
 import { ProductInChatPaymentClose } from "@/components/product/ProductInChatPaymentClose";
+import { ProductFullPaymentLoop } from "@/components/product/ProductFullPaymentLoop";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   DEFAULT_PRIMARY_CTA,
@@ -127,6 +128,21 @@ if (slug === "omnichannel-inbox") {
     };
   }
 
+  if (slug === "full-payment-loop") {
+    metadata.openGraph = {
+      ...metadata.openGraph,
+      title: "The Whole Payment Loop, Automated — Nautix",
+      description:
+        "Request, collect, verify, reconcile, and record — every payment, end to end.",
+    };
+    metadata.twitter = {
+      ...metadata.twitter,
+      title: "The Whole Payment Loop, Automated — Nautix",
+      description:
+        "Request, collect, verify, reconcile, and record — every payment, end to end.",
+    };
+  }
+
   return metadata;
 }
 
@@ -156,6 +172,10 @@ export default async function ProductPage({ params }: PageProps) {
 
   if (slug === "in-chat-payment-close") {
     return <ProductInChatPaymentClose data={page} />;
+  }
+
+  if (slug === "full-payment-loop") {
+    return <ProductFullPaymentLoop data={page} />;
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([

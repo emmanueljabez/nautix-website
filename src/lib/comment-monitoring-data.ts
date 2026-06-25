@@ -87,7 +87,7 @@ export const PAGE_DATA = {
       {
         icon: "/nautix-icons/cm-target.svg",
         title: "Intent detection",
-        body: "Distinguishes buyers, questions, complaints, and spam â€” and handles each the right way.",
+        body: "Distinguishes buyers, questions, complaints, and spam - and handles each the right way.",
       },
       {
         icon: "/nautix-icons/cm-chat.svg",
@@ -107,7 +107,7 @@ export const PAGE_DATA = {
       {
         icon: "/nautix-icons/cm-link.svg",
         title: "Comment-to-DM capture",
-        body: "Turns a public commenter into a private lead in your inbox â€” where you can actually sell.",
+        body: "Turns a public commenter into a private lead in your inbox - where you can actually sell.",
       },
     ],
   },
@@ -119,7 +119,7 @@ export const PAGE_DATA = {
       {
         vertical: "ISPs",
         howTheyUseIt:
-          "Comments asking 'do you cover my area?' on a coverage-expansion post get an instant reply and a coverage check â€” turning curiosity into a new connection.",
+          "Comments asking 'do you cover my area?' on a coverage-expansion post get an instant reply and a coverage check  — turning curiosity into a new connection.",
       },
       {
         vertical: "Real Estate",
@@ -129,12 +129,12 @@ export const PAGE_DATA = {
       {
         vertical: "E-commerce",
         howTheyUseIt:
-          "'How much?' and 'do you deliver to...?' under a product ad get an instant reply and a path to purchase â€” capturing impulse buyers in the comments.",
+          "'How much?' and 'do you deliver to...?' under a product ad get an instant reply and a path to purchase - capturing impulse buyers in the comments.",
       },
       {
         vertical: "Finance / SACCOs",
         howTheyUseIt:
-          "Questions about loan products or membership under an awareness post get accurate answers and a private follow-up â€” protecting trust while capturing interest.",
+          "Questions about loan products or membership under an awareness post get accurate answers and a private follow-up - protecting trust while capturing interest.",
       },
     ],
   },
