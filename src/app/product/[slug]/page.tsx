@@ -4,6 +4,7 @@ import { LandingSectionPage } from "@/components/seo/LandingSectionPage";
 import { ProductOmnichannelInbox } from "@/components/product/ProductOmnichannelInbox";
 import { ProductCommentMonitoring } from "@/components/product/ProductCommentMonitoring";
 import { ProductAutonomousResolution } from "@/components/product/ProductAutonomousResolution";
+import { ProductLeadQualificationEngine } from "@/components/product/ProductLeadQualificationEngine";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   DEFAULT_PRIMARY_CTA,
@@ -95,6 +96,21 @@ if (slug === "omnichannel-inbox") {
     };
   }
 
+  if (slug === "lead-qualification-engine") {
+    metadata.openGraph = {
+      ...metadata.openGraph,
+      title: "Qualified Leads, Not Just Inquiries \u2014 Nautix",
+      description:
+        "Automatically qualify, score, and route every inbound lead, around the clock.",
+    };
+    metadata.twitter = {
+      ...metadata.twitter,
+      title: "Qualified Leads, Not Just Inquiries \u2014 Nautix",
+      description:
+        "Automatically qualify, score, and route every inbound lead, around the clock.",
+    };
+  }
+
   return metadata;
 }
 
@@ -116,6 +132,10 @@ export default async function ProductPage({ params }: PageProps) {
 
   if (slug === "autonomous-resolution") {
     return <ProductAutonomousResolution data={page} />;
+  }
+
+  if (slug === "lead-qualification-engine") {
+    return <ProductLeadQualificationEngine data={page} />;
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([

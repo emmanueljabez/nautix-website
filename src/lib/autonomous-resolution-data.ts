@@ -112,7 +112,7 @@ export const PAGE_DATA = {
     ],
   },
   industryTable: {
-    heading: "Real resolution. In every industry.",
+    heading: "Real resolution. in every industry.",
     subhead:
       "Whatever 'fixing it' means for your business, Nautix does the actual work.",
     rows: [
