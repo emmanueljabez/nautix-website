@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution", "lead-qualification-engine", "in-chat-payment-close"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution", "lead-qualification-engine", "in-chat-payment-close", "full-payment-loop"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -471,6 +471,37 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "WhatsApp payment",
       "M-Pesa in chat",
       "conversational checkout",
+    ],
+  },
+  "full-payment-loop": {
+    slug: "full-payment-loop",
+    path: "/product/full-payment-loop",
+    title: "Full Payment Loop — Request to Reconciliation | Nautix",
+    description:
+      "Close the entire payment loop automatically: request, collect, verify, reconcile, and update records — no manual steps. Built for African businesses on mobile money.",
+    heading: "From request to reconciled — automatically.",
+    subheading:
+      "Taking the payment is only half the job. Nautix closes the entire loop — requesting, collecting, verifying, reconciling, and updating your records — so money owed becomes money received and properly accounted for, with zero manual steps.",
+    highlights: [
+      "Automated payment requests sent at the right time.",
+      "Real-time verification that payment genuinely arrived.",
+      "Automatic reconciliation matching payments to records.",
+      "System and book updates the moment payment is confirmed.",
+      "Exception flagging for mismatches and partial payments.",
+      "Full visibility across the entire payment loop.",
+    ],
+    outcomes: [
+      "Zero manual reconciliation for routine payments.",
+      "100% of payments verified before being marked settled.",
+      "Real-time records, always accurate and up to date.",
+    ],
+    keywords: [
+      "payment reconciliation",
+      "automated payment loop",
+      "end-to-end payments",
+      "payment automation",
+      "mobile money reconciliation",
+      "full payment loop",
     ],
   },
 };
