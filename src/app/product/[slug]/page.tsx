@@ -5,6 +5,7 @@ import { ProductOmnichannelInbox } from "@/components/product/ProductOmnichannel
 import { ProductCommentMonitoring } from "@/components/product/ProductCommentMonitoring";
 import { ProductAutonomousResolution } from "@/components/product/ProductAutonomousResolution";
 import { ProductLeadQualificationEngine } from "@/components/product/ProductLeadQualificationEngine";
+import { ProductInChatPaymentClose } from "@/components/product/ProductInChatPaymentClose";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   DEFAULT_PRIMARY_CTA,
@@ -99,15 +100,30 @@ if (slug === "omnichannel-inbox") {
   if (slug === "lead-qualification-engine") {
     metadata.openGraph = {
       ...metadata.openGraph,
-      title: "Qualified Leads, Not Just Inquiries \u2014 Nautix",
+      title: "Qualified Leads, Not Just Inquiries — Nautix",
       description:
         "Automatically qualify, score, and route every inbound lead, around the clock.",
     };
     metadata.twitter = {
       ...metadata.twitter,
-      title: "Qualified Leads, Not Just Inquiries \u2014 Nautix",
+      title: "Qualified Leads, Not Just Inquiries — Nautix",
       description:
         "Automatically qualify, score, and route every inbound lead, around the clock.",
+    };
+  }
+
+  if (slug === "in-chat-payment-close") {
+    metadata.openGraph = {
+      ...metadata.openGraph,
+      title: "Close the Sale in the Chat — Nautix",
+      description:
+        "Request payment, get paid, and confirm — all inside the conversation.",
+    };
+    metadata.twitter = {
+      ...metadata.twitter,
+      title: "Close the Sale in the Chat — Nautix",
+      description:
+        "Request payment, get paid, and confirm — all inside the conversation.",
     };
   }
 
@@ -136,6 +152,10 @@ export default async function ProductPage({ params }: PageProps) {
 
   if (slug === "lead-qualification-engine") {
     return <ProductLeadQualificationEngine data={page} />;
+  }
+
+  if (slug === "in-chat-payment-close") {
+    return <ProductInChatPaymentClose data={page} />;
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([
