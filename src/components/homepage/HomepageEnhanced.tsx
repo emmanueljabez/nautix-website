@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { HOMEPAGE_FAQS } from "@/lib/faq-data";
 
 /* --------------------------------------------------------------------------
- * HomepageEnhanced — the live Nautix homepage.
+ * HomepageEnhanced â€” the live Nautix homepage.
  *
  *   - IntersectionObserver-based reveals on each section
  *   - Typed hero word rotator
@@ -213,7 +213,7 @@ const STEPS = [
     n: "03",
     title: "Launch and iterate",
     copy: "The agent goes live. You review real conversations, refine logic, and expand scope as confidence grows.",
-    stat: "2 – 5 days",
+    stat: "2 â€“ 5 days",
     statLabel: "to first resolution",
     kind: "launch",
   },
@@ -337,7 +337,7 @@ function EnhancementStyles() {
         animation: he-blink 1.05s steps(2) infinite;
       }
 
-      /* Hero typed word — match original homepage highlight (lime on navy) */
+      /* Hero typed word â€” match original homepage highlight (lime on navy) */
       .home-enhanced-root .animated-title {
         color: #22303f !important;
         background: #e2fe5e !important;
@@ -347,21 +347,21 @@ function EnhancementStyles() {
         color: #22303f !important;
       }
 
-      /* "Live in days" — apply the same lime highlight to the focus word */
+      /* "Live in days" â€” apply the same lime highlight to the focus word */
       .home-enhanced-root .he-steps .nautix-section-title-focus {
         background: #e2fe5e;
         color: #22303f;
         box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
       }
 
-      /* "Frequently asked questions" — lime highlight on the focus word */
+      /* "Frequently asked questions" â€” lime highlight on the focus word */
       .home-enhanced-root .he-faq .nautix-section-title-focus {
         background: #e2fe5e;
         color: #22303f;
         box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
       }
 
-      /* Hero headline — matches .nautix-section-title type style ("Everything you need to grow"),
+      /* Hero headline â€” matches .nautix-section-title type style ("Everything you need to grow"),
          just scaled up to hero proportions */
       .home-enhanced-root .hero-header .title.tg-element-title {
         font-family: "Sharp Grotesk", sans-serif;
@@ -516,7 +516,7 @@ function EnhancementStyles() {
         margin-bottom: 4px;
       }
 
-      /* Testimonial crossfade — grid stack so height = tallest testimonial */
+      /* Testimonial crossfade â€” grid stack so height = tallest testimonial */
       .home-enhanced-root .he-testimonial-stage {
         position: relative;
         display: grid;
@@ -936,7 +936,7 @@ function Hero() {
         aria-hidden="true"
         style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
       >
-        {/* 1. Megaphone — marketing / campaigns (matches the original marketing.svg) */}
+        {/* 1. Megaphone â€” marketing / campaigns (matches the original marketing.svg) */}
         <span className="he-shape he-shape--megaphone">
           <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="1" y="1" width="70" height="70" rx="20" fill="#fff" />
@@ -1036,7 +1036,7 @@ function Hero() {
           </svg>
         </span>
 
-        {/* 5. Donut chart — analytics/growth (paired with dashboard) */}
+        {/* 5. Donut chart â€” analytics/growth (paired with dashboard) */}
         <span className="he-shape he-shape--donut">
           <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="1" y="1" width="70" height="70" rx="20" fill="#fff" />
@@ -1420,7 +1420,7 @@ function IndustriesSection() {
                   gap: 6,
                 }}
               >
-                See {i.label} Demo <span aria-hidden="true">→</span>
+                See {i.label} Demo <span aria-hidden="true">â†’</span>
               </a>
             </div>
           </article>

@@ -83,7 +83,7 @@ function Nav() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Hero — mesh gradient, typing headline, orbiting channel chips             */
+/*  Hero â€” mesh gradient, typing headline, orbiting channel chips             */
 /* -------------------------------------------------------------------------- */
 
 const ROTATING_WORDS = ["leads.", "support.", "checkout.", "loyalty.", "renewals."];
@@ -165,7 +165,7 @@ function Hero() {
 
       <div className="relative mx-auto max-w-[1280px] px-6 pb-24 pt-24 md:px-10 md:pb-32 md:pt-32">
         <div className="reveal">
-          <Pill>New · Nautix 2.0 · AI agents that close</Pill>
+          <Pill>New Â· Nautix 2.0 Â· AI agents that close</Pill>
         </div>
 
         <h1 className="reveal mt-8 max-w-[1080px] font-[var(--font-heading)] text-[clamp(44px,8.4vw,120px)] font-semibold leading-[0.95] tracking-[-0.035em] text-neutral-900">
@@ -177,7 +177,7 @@ function Hero() {
 
         <p className="reveal mt-8 max-w-[580px] text-[18px] leading-[1.55] text-black/65">
           Nautix unifies WhatsApp, Instagram, and Facebook into one inbox run by
-          a grounded AI agent — and the humans it hands off to. Ship better
+          a grounded AI agent â€” and the humans it hands off to. Ship better
           conversations. Close more of them.
         </p>
 
@@ -262,7 +262,7 @@ function Hero() {
 /* -------------------------------------------------------------------------- */
 
 const LOGOS = [
-  "Kōbe Atelier","Lumen & Co.","Northwind","Harbor Goods","Maison Rive",
+  "KÅbe Atelier","Lumen & Co.","Northwind","Harbor Goods","Maison Rive",
   "Oslo Type","Verdant","Plein Air","Kite Club","Solstice","Pavilion","Roam",
 ];
 
@@ -302,14 +302,14 @@ function Stats() {
   const items = [
     { n: 72, suf: "%", l: "of tickets resolved without a human" },
     { n: 9,  suf: "s", l: "median first-response across every channel" },
-    { n: 3.4,suf: "×", l: "lift on qualified leads from social DMs" },
+    { n: 3.4,suf: "Ã—", l: "lift on qualified leads from social DMs" },
     { n: 24, suf: "/7", l: "multilingual coverage out of the box" },
   ];
   return (
     <section ref={ref} className="bg-[#FAF8F5] text-neutral-900">
       <div className="mx-auto max-w-[1280px] px-6 py-28 md:px-10 md:py-40">
         <h2 className="reveal max-w-[900px] font-[var(--font-heading)] text-[clamp(34px,5.2vw,72px)] font-semibold leading-[1.02] tracking-[-0.025em]">
-          Measured where it matters —{" "}
+          Measured where it matters â€”{" "}
           <span className="grad-text">in the inbox</span>, not the dashboard.
         </h2>
 
@@ -339,13 +339,13 @@ function Stats() {
 /* -------------------------------------------------------------------------- */
 
 const ACTIVITY_SEED = [
-  { ch: "WhatsApp", acc: "#25D366", name: "Anaïs L.", city: "Berlin", type: "Resolved", ms: 38 },
-  { ch: "Instagram", acc: "#E1306C", name: "@sofia.m", city: "Milan", type: "Converted · €180", ms: 52 },
+  { ch: "WhatsApp", acc: "#25D366", name: "AnaÃ¯s L.", city: "Berlin", type: "Resolved", ms: 38 },
+  { ch: "Instagram", acc: "#E1306C", name: "@sofia.m", city: "Milan", type: "Converted Â· â‚¬180", ms: 52 },
   { ch: "Messenger", acc: "#0084FF", name: "Paul V.", city: "Amsterdam", type: "Lead captured", ms: 21 },
   { ch: "WhatsApp", acc: "#25D366", name: "Kenji T.", city: "Tokyo", type: "Resolved", ms: 44 },
-  { ch: "Instagram", acc: "#E1306C", name: "@kai.reads", city: "Lagos", type: "Refund · issued", ms: 63 },
-  { ch: "Messenger", acc: "#0084FF", name: "Nina O.", city: "Lisbon", type: "Escalated · calmly", ms: 19 },
-  { ch: "WhatsApp", acc: "#25D366", name: "Yara D.", city: "São Paulo", type: "Converted · €62", ms: 31 },
+  { ch: "Instagram", acc: "#E1306C", name: "@kai.reads", city: "Lagos", type: "Refund Â· issued", ms: 63 },
+  { ch: "Messenger", acc: "#0084FF", name: "Nina O.", city: "Lisbon", type: "Escalated Â· calmly", ms: 19 },
+  { ch: "WhatsApp", acc: "#25D366", name: "Yara D.", city: "SÃ£o Paulo", type: "Converted Â· â‚¬62", ms: 31 },
   { ch: "Instagram", acc: "#E1306C", name: "@aurora.s", city: "Stockholm", type: "Resolved", ms: 40 },
 ];
 
@@ -388,20 +388,20 @@ function LiveActivity() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 </span>
-                Live · worldwide
+                Live Â· worldwide
               </div>
               <div className="mt-6 font-[var(--font-heading)] text-[clamp(40px,6vw,88px)] font-semibold leading-[0.98] tracking-[-0.035em] tabular-nums">
                 {count.toLocaleString()}
               </div>
               <p className="mt-2 text-[14px] text-white/65">
-                messages handled by Nautix today — and counting.
+                messages handled by Nautix today â€” and counting.
               </p>
             </div>
           </div>
 
           <div className="rounded-3xl border border-black/5 bg-[#FAF8F5] p-6">
             <div className="mb-4 flex items-center justify-between">
-              <div className="text-[11px] uppercase tracking-[0.2em] text-black/45">Resolutions · live</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-black/45">Resolutions Â· live</div>
               <div className="flex items-center gap-1.5 text-[11px] text-emerald-600">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 streaming
@@ -422,10 +422,10 @@ function LiveActivity() {
                   </span>
                   <div className="min-w-0 flex-1">
                     <div className="truncate text-[13px] font-medium text-neutral-900">
-                      {it.name} <span className="text-black/45">· {it.city}</span>
+                      {it.name} <span className="text-black/45">Â· {it.city}</span>
                     </div>
                     <div className="truncate text-[12px] text-black/55">
-                      {it.ch} · {it.type}
+                      {it.ch} Â· {it.type}
                     </div>
                   </div>
                   <div className="text-right text-[11px] text-black/45">
@@ -443,7 +443,7 @@ function LiveActivity() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Product — tabbed inbox dashboard                                          */
+/*  Product â€” tabbed inbox dashboard                                          */
 /* -------------------------------------------------------------------------- */
 
 type ChannelKey = "whatsapp" | "instagram" | "messenger";
@@ -463,16 +463,16 @@ const CHANNELS: Record<
     accent: "#25D366",
     dot: "#25D366",
     convo: [
-      { who: "c", text: "Hey — is the Lumen pendant still in stock in brass?" },
-      { who: "a", text: "Yes — 3 left in brushed brass. Want me to hold one while you checkout?" },
+      { who: "c", text: "Hey â€” is the Lumen pendant still in stock in brass?" },
+      { who: "a", text: "Yes â€” 3 left in brushed brass. Want me to hold one while you checkout?" },
       { who: "c", text: "Please. Ship to Berlin by Friday if possible." },
-      { who: "a", text: "Done — express to Berlin arrives Thu. Pay-by-link sent: pay.harbor.co/lumen-brass · €248", meta: "Resolved · 38s" },
+      { who: "a", text: "Done â€” express to Berlin arrives Thu. Pay-by-link sent: pay.harbor.co/lumen-brass Â· â‚¬248", meta: "Resolved Â· 38s" },
     ],
     inbox: [
-      { name: "Anaïs L.", preview: "Please. Ship to Berlin by Friday…", tag: "Commerce", time: "2m", unread: 0 },
+      { name: "AnaÃ¯s L.", preview: "Please. Ship to Berlin by Fridayâ€¦", tag: "Commerce", time: "2m", unread: 0 },
       { name: "Jonas R.", preview: "I need to change the delivery date", tag: "Support", time: "5m", unread: 2 },
-      { name: "Priya S.", preview: "Thanks for the update — works!", tag: "CSAT", time: "12m" },
-      { name: "Harbor PRO", preview: "Campaign reply · Spring drop", tag: "Lead", time: "18m" },
+      { name: "Priya S.", preview: "Thanks for the update â€” works!", tag: "CSAT", time: "12m" },
+      { name: "Harbor PRO", preview: "Campaign reply Â· Spring drop", tag: "Lead", time: "18m" },
     ],
   },
   instagram: {
@@ -480,14 +480,14 @@ const CHANNELS: Record<
     accent: "#E1306C",
     dot: "#E1306C",
     convo: [
-      { who: "c", text: "saw the story — are the raffia clutches restocked?" },
-      { who: "a", text: "Yep — the bone and olive variants landed this morning. Want me to send a preview link?" },
+      { who: "c", text: "saw the story â€” are the raffia clutches restocked?" },
+      { who: "a", text: "Yep â€” the bone and olive variants landed this morning. Want me to send a preview link?" },
       { who: "c", text: "the olive. and can u ship to milan" },
-      { who: "a", text: "Reserved · milan · €180. Tap to checkout ↗", meta: "Handoff skipped" },
+      { who: "a", text: "Reserved Â· milan Â· â‚¬180. Tap to checkout â†—", meta: "Handoff skipped" },
     ],
     inbox: [
       { name: "@sofia.m", preview: "the olive. and can u ship to milan", tag: "Commerce", time: "just now", unread: 1 },
-      { name: "@the_ateliers", preview: "collab inquiry — DM for brief", tag: "Partnership", time: "7m" },
+      { name: "@the_ateliers", preview: "collab inquiry â€” DM for brief", tag: "Partnership", time: "7m" },
       { name: "@kai.reads", preview: "returns portal link?", tag: "Support", time: "20m" },
       { name: "@aurora.studio", preview: "shoot dates?", tag: "Lead", time: "1h" },
     ],
@@ -497,14 +497,14 @@ const CHANNELS: Record<
     accent: "#0084FF",
     dot: "#0084FF",
     convo: [
-      { who: "c", text: "Hi, I clicked the ad for the weekend workshop — still open?" },
+      { who: "c", text: "Hi, I clicked the ad for the weekend workshop â€” still open?" },
       { who: "a", text: "Two seats left on Saturday. Want me to hold one under your name?" },
       { who: "c", text: "yes please, paul vermeer" },
-      { who: "a", text: "Held. Confirmation + calendar invite on the way. Paul · Sat 10:00", meta: "Lead captured" },
+      { who: "a", text: "Held. Confirmation + calendar invite on the way. Paul Â· Sat 10:00", meta: "Lead captured" },
     ],
     inbox: [
       { name: "Paul Vermeer", preview: "yes please, paul vermeer", tag: "Lead", time: "just now", unread: 1 },
-      { name: "Nina Okafor", preview: "Missed the class — credit note?", tag: "Support", time: "15m" },
+      { name: "Nina Okafor", preview: "Missed the class â€” credit note?", tag: "Support", time: "15m" },
       { name: "Leo Hahn", preview: "Gift voucher balance check", tag: "Commerce", time: "30m" },
       { name: "Sana Belkacem", preview: "Can you do corporate bookings?", tag: "Lead", time: "1h" },
     ],
@@ -521,11 +521,11 @@ function Dashboard({ channel }: { channel: ChannelKey }) {
           <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
           <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
           <span className="h-3 w-3 rounded-full bg-[#28C840]" />
-          <span className="ml-4 text-[12px] text-black/50">app.nautix.ai · inbox</span>
+          <span className="ml-4 text-[12px] text-black/50">app.nautix.ai Â· inbox</span>
         </div>
         <div className="flex items-center gap-2 text-[11px] text-black/45">
           <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-          Live · agent online
+          Live Â· agent online
         </div>
       </div>
 
@@ -560,7 +560,7 @@ function Dashboard({ channel }: { channel: ChannelKey }) {
         {/* thread list */}
         <div className="hidden border-r border-black/5 md:block">
           <div className="sticky top-0 flex items-center justify-between border-b border-black/5 bg-white/80 px-4 py-3 backdrop-blur">
-            <span className="font-medium text-neutral-900">{c.label} · open</span>
+            <span className="font-medium text-neutral-900">{c.label} Â· open</span>
             <span className="text-[11px] text-black/45">{c.inbox.length}</span>
           </div>
           <ul>
@@ -612,13 +612,13 @@ function Dashboard({ channel }: { channel: ChannelKey }) {
                   {c.inbox[0].name}
                 </div>
                 <div className="text-[11px] text-black/50">
-                  {c.label} · Grounded on · Catalog v4.2
+                  {c.label} Â· Grounded on Â· Catalog v4.2
                 </div>
               </div>
             </div>
             <div className="flex items-center gap-2 text-[11px]">
               <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-emerald-700">CSAT 4.9</span>
-              <span className="rounded-full bg-black/5 px-2 py-0.5 text-black/60">Lang · EN · DE</span>
+              <span className="rounded-full bg-black/5 px-2 py-0.5 text-black/60">Lang Â· EN Â· DE</span>
             </div>
           </div>
 
@@ -665,7 +665,7 @@ function Dashboard({ channel }: { channel: ChannelKey }) {
           <div className="border-t border-black/5 bg-white px-5 py-3">
             <div className="flex items-center gap-3">
               <div className="flex-1 rounded-full border border-black/10 bg-[#FAFAFA] px-4 py-2 text-[12px] text-black/40">
-                Nautix is composing a grounded reply…
+                Nautix is composing a grounded replyâ€¦
               </div>
               <button
                 className="flex h-8 w-8 items-center justify-center rounded-full text-white"
@@ -700,7 +700,7 @@ function Product() {
       <div className="mx-auto max-w-[1280px] px-6 py-28 md:px-10 md:py-40">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="reveal max-w-[720px]">
-            <Pill>One inbox · Every channel · One agent</Pill>
+            <Pill>One inbox Â· Every channel Â· One agent</Pill>
             <h2 className="mt-6 font-[var(--font-heading)] text-[clamp(32px,4.8vw,64px)] font-semibold leading-[1.05] tracking-[-0.025em] text-neutral-900">
               The inbox your ops team{" "}
               <span className="grad-text">wishes they&apos;d built.</span>
@@ -736,9 +736,9 @@ function Product() {
         {/* stat chips floating below dashboard */}
         <div className="reveal mt-8 grid gap-4 md:grid-cols-4">
           {[
-            { k: "Avg handle time", v: "38s", sub: "↓ 62% vs. baseline" },
+            { k: "Avg handle time", v: "38s", sub: "â†“ 62% vs. baseline" },
             { k: "Self-served", v: "74%", sub: "last 30 days" },
-            { k: "Conversion (DM→checkout)", v: "12.8%", sub: "↑ 3.1pp" },
+            { k: "Conversion (DMâ†’checkout)", v: "12.8%", sub: "â†‘ 3.1pp" },
             { k: "CSAT", v: "4.86 / 5", sub: "2,412 responses" },
           ].map((s) => (
             <div
@@ -767,13 +767,13 @@ function Product() {
 function AgentFlow() {
   const ref = useReveal<HTMLDivElement>();
   const nodes = [
-    { x: 60, y: 70,  w: 160, label: "Message in", sub: "WhatsApp · Instagram · FB" },
+    { x: 60, y: 70,  w: 160, label: "Message in", sub: "WhatsApp Â· Instagram Â· FB" },
     { x: 280, y: 30, w: 170, label: "Intent & PII detect", sub: "Guardrails" },
-    { x: 280, y: 120, w: 170, label: "Retrieval", sub: "Catalog · Policies · Orders" },
-    { x: 510, y: 75, w: 160, label: "Plan & act", sub: "Tools · side effects" },
+    { x: 280, y: 120, w: 170, label: "Retrieval", sub: "Catalog Â· Policies Â· Orders" },
+    { x: 510, y: 75, w: 160, label: "Plan & act", sub: "Tools Â· side effects" },
     { x: 740, y: 30, w: 150, label: "Reply", sub: "Grounded, on-brand" },
     { x: 740, y: 120, w: 150, label: "Handoff", sub: "Full context packet" },
-    { x: 960, y: 75, w: 160, label: "CRM + analytics", sub: "HubSpot · Mixpanel" },
+    { x: 960, y: 75, w: 160, label: "CRM + analytics", sub: "HubSpot Â· Mixpanel" },
   ];
   const edges = [
     ["0","1"], ["0","2"], ["1","3"], ["2","3"], ["3","4"], ["3","5"], ["4","6"], ["5","6"],
@@ -785,7 +785,7 @@ function AgentFlow() {
         <div className="reveal">
           <Pill>Under the hood</Pill>
           <h2 className="mt-6 max-w-[900px] font-[var(--font-heading)] text-[clamp(32px,4.8vw,64px)] font-semibold leading-[1.05] tracking-[-0.025em] text-neutral-900">
-            A proper agent graph — not a
+            A proper agent graph â€” not a
             <br />
             thousand-token prompt in a trench coat.
           </h2>
@@ -850,7 +850,7 @@ function AgentFlow() {
 
         <div className="reveal mt-12 grid gap-8 md:grid-cols-3">
           {[
-            { t: "Grounded by default", b: "Every reply carries citations against your own content. If it can’t cite, it escalates." },
+            { t: "Grounded by default", b: "Every reply carries citations against your own content. If it canâ€™t cite, it escalates." },
             { t: "Tool-using", b: "Takes payment, books couriers, updates CRM, books calendars. It acts, not just answers." },
             { t: "Observable", b: "Every step logged and replayable. Eval suite runs on real traffic before you flip the switch." },
           ].map((c) => (
@@ -885,7 +885,7 @@ function Features() {
         </div>
 
         <div className="reveal mt-14 grid auto-rows-[240px] grid-cols-1 gap-4 md:grid-cols-4">
-          {/* Large — live heatmap */}
+          {/* Large â€” live heatmap */}
           <div className="relative row-span-2 overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-[#FBF7FF] via-white to-[#FFF7FB] p-6 md:col-span-2">
             <Pill>Live dashboard</Pill>
             <div className="mt-4 font-[var(--font-heading)] text-[22px] font-semibold tracking-[-0.015em]">
@@ -923,10 +923,10 @@ function Features() {
           <div className="overflow-hidden rounded-3xl border border-black/5 bg-[#FAF8F5] p-6">
             <div className="font-[var(--font-heading)] text-[18px] font-semibold">Guardrails</div>
             <p className="mt-1 text-[13px] text-black/55">
-              PII redaction, profanity, brand tone, and refusal classes — enforced per-reply.
+              PII redaction, profanity, brand tone, and refusal classes â€” enforced per-reply.
             </p>
             <div className="mt-4 space-y-1.5 text-[11px]">
-              {["PII · redacted","Tone · friendly","Unsafe · blocked","Cite-or-escalate"].map((g) => (
+              {["PII Â· redacted","Tone Â· friendly","Unsafe Â· blocked","Cite-or-escalate"].map((g) => (
                 <div key={g} className="flex items-center justify-between rounded-md bg-white px-2.5 py-1.5">
                   <span className="text-black/70">{g}</span>
                   <span className="text-emerald-600">ok</span>
@@ -939,7 +939,7 @@ function Features() {
           <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-white p-6">
             <div className="font-[var(--font-heading)] text-[18px] font-semibold">52 languages</div>
             <p className="mt-1 text-[13px] text-black/55">
-              Detects, responds, and hands off — in the customer’s language.
+              Detects, responds, and hands off â€” in the customerâ€™s language.
             </p>
             <div className="mt-4 flex flex-wrap gap-1.5 text-[11px]">
               {["EN","DE","FR","ES","IT","PT","NL","AR","HE","JA","KO","ZH","HI","TH","TR","PL","SV","FI","DA","NO","EL"].map((l) => (
@@ -956,8 +956,8 @@ function Features() {
             </p>
             <div className="mt-4 rounded-xl bg-black/40 p-3 font-mono text-[11px] text-emerald-300">
               <div>$ nautix eval run --from=last-7d</div>
-              <div className="text-white/70">→ 12,418 convos · 98.4% pass</div>
-              <div className="text-white/50">→ 3 regressions · details ↗</div>
+              <div className="text-white/70">â†’ 12,418 convos Â· 98.4% pass</div>
+              <div className="text-white/50">â†’ 3 regressions Â· details â†—</div>
             </div>
           </div>
 
@@ -965,12 +965,12 @@ function Features() {
           <div className="overflow-hidden rounded-3xl border border-black/5 bg-gradient-to-br from-[#FDF2F8] to-white p-6 md:col-span-2">
             <div className="font-[var(--font-heading)] text-[18px] font-semibold">Human handoff in seconds</div>
             <p className="mt-1 max-w-[460px] text-[13px] text-black/55">
-              When Nautix hands off, your rep gets a one-paragraph brief, the customer profile, and three suggested next steps — before they&apos;ve read the thread.
+              When Nautix hands off, your rep gets a one-paragraph brief, the customer profile, and three suggested next steps â€” before they&apos;ve read the thread.
             </p>
             <div className="mt-5 grid grid-cols-3 gap-3 text-[11px]">
               {[
                 ["Brief","Customer wants brass pendant, DHL to Berlin by Thu."],
-                ["Profile","3 prior orders · VIP · Speaks DE · EN"],
+                ["Profile","3 prior orders Â· VIP Â· Speaks DE Â· EN"],
                 ["Next steps","Offer courier upgrade; bundle 2nd pendant at -10%"],
               ].map(([k,v]) => (
                 <div key={k} className="rounded-xl bg-white p-3 shadow-sm">
@@ -992,25 +992,25 @@ function Features() {
 
 const PLAYGROUND_PROMPTS: { q: string; a: string[] }[] = [
   {
-    q: "I ordered last Thursday — where's my package?",
+    q: "I ordered last Thursday â€” where's my package?",
     a: [
-      "Checking order #HG-10422 for you…",
-      "It's on the truck — DHL Express, out for delivery in Berlin today.",
+      "Checking order #HG-10422 for youâ€¦",
+      "It's on the truck â€” DHL Express, out for delivery in Berlin today.",
       "Tracking: DHL-XG8-7721. I'll ping you when it's scanned as delivered.",
     ],
   },
   {
     q: "Is the olive raffia clutch still in stock?",
     a: [
-      "One sec — checking Milan and Berlin warehouses…",
+      "One sec â€” checking Milan and Berlin warehousesâ€¦",
       "Yes, 7 left in olive. Want me to reserve one?",
-      "Tap to checkout · €180 · ships today ↗",
+      "Tap to checkout Â· â‚¬180 Â· ships today â†—",
     ],
   },
   {
     q: "Can I speak with someone about a corporate order?",
     a: [
-      "Happy to route you — how many units and what's your timeline?",
+      "Happy to route you â€” how many units and what's your timeline?",
       "Got it. Pulling in Sana from partnerships with your thread context.",
       "Sana will reply here in under 8 min (she's online).",
     ],
@@ -1052,7 +1052,7 @@ function Playground() {
             <span className="grad-text">No signup.</span>
           </h2>
           <p className="mt-4 max-w-[560px] text-[15px] text-black/60">
-            Pick a real customer prompt below — watch Nautix ground itself, call
+            Pick a real customer prompt below â€” watch Nautix ground itself, call
             tools, and respond like your best rep.
           </p>
         </div>
@@ -1081,8 +1081,8 @@ function Playground() {
             ))}
 
             <div className="mt-4 rounded-2xl border border-dashed border-black/15 bg-white/50 p-4 text-[12px] text-black/55">
-              Pro tip: Nautix does the same with your real data — catalog,
-              inventory, order graph, and CRM — the moment you connect them.
+              Pro tip: Nautix does the same with your real data â€” catalog,
+              inventory, order graph, and CRM â€” the moment you connect them.
             </div>
           </div>
 
@@ -1128,7 +1128,7 @@ function Playground() {
             </div>
             <div className="flex items-center gap-2 border-t border-black/5 bg-white px-4 py-3">
               <div className="flex-1 rounded-full border border-black/10 bg-[#FAFAFA] px-4 py-2 text-[12px] text-black/40">
-                Pick a prompt above to replay…
+                Pick a prompt above to replayâ€¦
               </div>
               <button
                 onClick={() => setPick((p) => (p + 1) % PLAYGROUND_PROMPTS.length)}
@@ -1159,7 +1159,7 @@ const COVERAGE = [
   { c: "Singapore", x: 760, y: 300 },
   { c: "Tokyo", x: 830, y: 200 },
   { c: "Sydney", x: 830, y: 360 },
-  { c: "São Paulo", x: 320, y: 330 },
+  { c: "SÃ£o Paulo", x: 320, y: 330 },
   { c: "New York", x: 260, y: 190 },
   { c: "Mexico City", x: 210, y: 250 },
 ];
@@ -1179,7 +1179,7 @@ function Globe() {
       <div className="mx-auto max-w-[1280px] px-6 py-28 md:px-10 md:py-40">
         <div className="grid gap-12 md:grid-cols-[1fr_1.3fr] md:items-center">
           <div className="reveal">
-            <Pill>Always on · Everywhere</Pill>
+            <Pill>Always on Â· Everywhere</Pill>
             <h2 className="mt-6 font-[var(--font-heading)] text-[clamp(32px,4.6vw,60px)] font-semibold leading-[1.05] tracking-[-0.025em] text-neutral-900">
               Global coverage,
               <br />
@@ -1187,7 +1187,7 @@ function Globe() {
             </h2>
             <p className="mt-4 max-w-[460px] text-[15px] text-black/60">
               Data residency in EU, US, and APAC. Edge endpoints in 14 regions.
-              Replies in 52 languages — honoring local date, currency, and tone
+              Replies in 52 languages â€” honoring local date, currency, and tone
               conventions.
             </p>
             <div className="mt-8 grid grid-cols-3 gap-4">
@@ -1379,7 +1379,7 @@ function ApiSnippet() {
               <span className="grad-text">Shipped in 7 lines.</span>
             </h2>
             <p className="mt-4 max-w-[460px] text-[15px] text-black/60">
-              Wrap your own UI around Nautix or call us from a backend — the
+              Wrap your own UI around Nautix or call us from a backend â€” the
               same agent graph, the same guardrails. SDKs for Node, Python, Go,
               Ruby, and plain HTTP.
             </p>
@@ -1421,14 +1421,14 @@ function ApiSnippet() {
                 onClick={copy}
                 className="flex items-center gap-1.5 rounded-md border border-white/15 bg-white/5 px-2.5 py-1 text-[11px] text-white/80 transition hover:text-white"
               >
-                {copied ? "Copied ✓" : "Copy"}
+                {copied ? "Copied âœ“" : "Copy"}
               </button>
             </div>
             <pre className="overflow-x-auto p-6 font-mono text-[13px] leading-[1.6] text-emerald-200">
               <code>{SNIPPETS[lang]}</code>
             </pre>
             <div className="flex items-center justify-between border-t border-white/10 px-4 py-3 text-[11px] text-white/45">
-              <span>200 · 142 ms · eu-central-1</span>
+              <span>200 Â· 142 ms Â· eu-central-1</span>
               <span>nautix-sdk @ 2.4.1</span>
             </div>
           </div>
@@ -1445,15 +1445,15 @@ function ApiSnippet() {
 const QUOTES = [
   {
     q: "We replaced four tools and a night-shift queue with Nautix. Our WhatsApp inbox went from a liability to our best-performing store.",
-    a: "Mira Ricci", r: "Director of CX · Maison Rive",
+    a: "Mira Ricci", r: "Director of CX Â· Maison Rive",
   },
   {
     q: "The eval suite is the only reason we let an agent touch checkout. We ship changes twice a week and never regress.",
-    a: "Omar Diallo", r: "Head of Ops · Harbor Goods",
+    a: "Omar Diallo", r: "Head of Ops Â· Harbor Goods",
   },
   {
-    q: "Nautix hands off like our best senior rep — full context, suggested next step, calm tone. Our team actually likes the AI.",
-    a: "Priya Shah", r: "VP Support · Solstice",
+    q: "Nautix hands off like our best senior rep â€” full context, suggested next step, calm tone. Our team actually likes the AI.",
+    a: "Priya Shah", r: "VP Support Â· Solstice",
   },
 ];
 
@@ -1520,20 +1520,20 @@ function Pricing() {
   const ref = useReveal<HTMLDivElement>();
   const plans = [
     {
-      name: "Starter", price: "€0", sub: "14-day trial",
+      name: "Starter", price: "â‚¬0", sub: "14-day trial",
       feats: ["1 channel","500 AI conversations","Email support","Standard guardrails"],
       cta: "Start free",
       highlight: false,
     },
     {
-      name: "Growth", price: "€490", sub: "per month · billed annually",
-      feats: ["All channels","10,000 AI conversations","Shared Slack room","Eval suite · basic","CRM sync"],
+      name: "Growth", price: "â‚¬490", sub: "per month Â· billed annually",
+      feats: ["All channels","10,000 AI conversations","Shared Slack room","Eval suite Â· basic","CRM sync"],
       cta: "Book a demo",
       highlight: true,
     },
     {
       name: "Scale", price: "Custom", sub: "tailored to your ops",
-      feats: ["Unlimited AI conversations","SSO · SCIM · audit log","Dedicated SRE","Eval suite · enterprise","Private deployment"],
+      feats: ["Unlimited AI conversations","SSO Â· SCIM Â· audit log","Dedicated SRE","Eval suite Â· enterprise","Private deployment"],
       cta: "Talk to sales",
       highlight: false,
     },
@@ -1624,7 +1624,7 @@ const FAQ = [
   { q: "Can we keep our existing helpdesk?", a: "Yes. Nautix plugs into Zendesk, Intercom, HubSpot, Gorgias, and Freshdesk. Conversations flow both ways." },
   { q: "How does Nautix stay on-brand?", a: "A brand tone profile is learned from your existing content and enforced via guardrails on every reply, with per-team overrides." },
   { q: "What about security and compliance?", a: "SOC 2 Type II, GDPR, CCPA. Data residency in EU or US. PII redaction and fine-grained audit logs by default." },
-  { q: "Can we try it on real traffic safely?", a: "Shadow mode runs the agent in parallel and shows you what it would have said — no customer impact until you flip the switch." },
+  { q: "Can we try it on real traffic safely?", a: "Shadow mode runs the agent in parallel and shows you what it would have said â€” no customer impact until you flip the switch." },
 ];
 
 function Faq() {
@@ -1736,7 +1736,7 @@ function FinalCta() {
               </Link>
             </div>
             <p className="mt-6 text-[12px] text-black/50">
-              14-day free trial · No card required · Setup in under an hour
+              14-day free trial Â· No card required Â· Setup in under an hour
             </p>
           </div>
         </div>
@@ -1782,8 +1782,8 @@ function Footer() {
           ))}
         </div>
         <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-black/10 pt-8 text-[12px] text-black/45">
-          <div>© {new Date().getFullYear()} Nautix, Inc.</div>
-          <div>Berlin · Lagos · Singapore</div>
+          <div>Â© {new Date().getFullYear()} Nautix, Inc.</div>
+          <div>Berlin Â· Lagos Â· Singapore</div>
         </div>
       </div>
     </footer>

@@ -68,7 +68,7 @@ function HeroVisual() {
           </div>
           <div>
             <p className="text-sm font-semibold text-foreground m-0">Nautix</p>
-            <p className="text-xs text-foreground/50 m-0">Sponsored · 1h</p>
+            <p className="text-xs text-foreground/50 m-0">Sponsored Â· 1h</p>
           </div>
         </div>
 
@@ -78,14 +78,14 @@ function HeroVisual() {
         </p>
 
         <div className="rounded-lg bg-gray-50 border border-gray-100 h-24 flex items-center justify-center text-foreground/40 text-xs">
-          📷 Ad creative
+          ðŸ“· Ad creative
         </div>
 
         {/* Stats row */}
         <div className="flex items-center gap-5 mt-3 text-xs text-foreground/50">
-          <span>❤️ 47</span>
-          <span>💬 23</span>
-          <span>↗️ 12</span>
+          <span>â¤ï¸ 47</span>
+          <span>ðŸ’¬ 23</span>
+          <span>â†—ï¸ 12</span>
         </div>
 
         {/* Comments */}
@@ -160,7 +160,7 @@ function HeroVisual() {
           <div className="flex-1">
             <p className="text-xs text-foreground/70 m-0">
               @John Thanks for asking! We do cover most areas in Nairobi. I have
-              sent you a DM with the coverage map — check your requests. 🚀
+              sent you a DM with the coverage map â€” check your requests. ðŸš€
             </p>
           </div>
         </div>
@@ -261,7 +261,7 @@ function ProblemIcon({ kind }: { kind: string }) {
 
 
 function StepIcon({ kind }: { kind: string }) {
-  // Eye — monitoring / watching
+  // Eye â€” monitoring / watching
   if (kind === "eye") {
     return (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -276,7 +276,7 @@ function StepIcon({ kind }: { kind: string }) {
       </svg>
     );
   }
-  // Target / crosshair — intent detection
+  // Target / crosshair â€” intent detection
   if (kind === "target") {
     return (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -287,7 +287,7 @@ function StepIcon({ kind }: { kind: string }) {
       </svg>
     );
   }
-  // Chat bubble with arrow — reply / DM
+  // Chat bubble with arrow â€” reply / DM
   if (kind === "reply") {
     return (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -302,7 +302,7 @@ function StepIcon({ kind }: { kind: string }) {
       </svg>
     );
   }
-  // Person — routing to a human
+  // Person â€” routing to a human
   return (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -459,7 +459,7 @@ export function ProductCommentMonitoring({
           margin-bottom: 14px;
         }
 
-        /* Step number badge — left corner */
+        /* Step number badge â€” left corner */
         .cm-how .cm-step-badge {
           display: inline-flex;
           align-items: center;
@@ -477,7 +477,7 @@ export function ProductCommentMonitoring({
           z-index: 2;
         }
 
-                /* Icon — above the badge, pushed to the right */
+                /* Icon â€” above the badge, pushed to the right */
         .cm-how .cm-step-icon {
           display: inline-flex;
           align-items: center;
@@ -997,7 +997,7 @@ export function ProductCommentMonitoring({
             </h2>
             <p className="nautix-final-cta-copy mb-0">
               See how comment monitoring catches every buying question and
-              complaint on your posts and ads — and handles them before they are
+              complaint on your posts and ads â€” and handles them before they are
               missed.
             </p>
             <div className="nautix-final-cta-actions">
@@ -1015,7 +1015,7 @@ export function ProductCommentMonitoring({
               </a>
             </div>
             <p className="nautix-final-cta-note mb-0">
-              No credit card · 30-day free pilot · Cancel anytime
+              No credit card Â· 30-day free pilot Â· Cancel anytime
             </p>
           </div>
         </div>
@@ -1034,14 +1034,14 @@ export function ProductCommentMonitoring({
             >
               Omnichannel Inbox
             </Link>
-            <span className="text-foreground/20">·</span>
+            <span className="text-foreground/20">Â·</span>
             <Link
               href="/product/ai-resolution"
               className="text-sm text-primary hover:text-primary-700 transition-colors underline underline-offset-4"
             >
               Instant Auto-Response
             </Link>
-            <span className="text-foreground/20">·</span>
+            <span className="text-foreground/20">Â·</span>
             <Link
               href="/product/channels-inbox"
               className="text-sm text-primary hover:text-primary-700 transition-colors underline underline-offset-4"

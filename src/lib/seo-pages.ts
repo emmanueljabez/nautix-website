@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -334,9 +334,9 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "Unify WhatsApp, Instagram, Facebook, and webchat into one shared team inbox. Never miss a customer message again. Built for African businesses.",
     heading: "Every customer conversation, in one place.",
     subheading:
-      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox — so nothing slips through, and your whole team works from the same screen.",
+      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox â€” so nothing slips through, and your whole team works from the same screen.",
     highlights: [
-      "Unified queue across WhatsApp, Instagram, Facebook, and webchat — sorted, tagged, and searchable.",
+      "Unified queue across WhatsApp, Instagram, Facebook, and webchat â€” sorted, tagged, and searchable.",
       "Team assignment with full visibility on who's handling what and what's unassigned.",
       "Internal notes for private team communication that customers never see.",
       "Tags and labels to categorise conversations by type, priority, or status.",
@@ -344,8 +344,8 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "Response tracking to see how fast your team responds and spot backlogs.",
     ],
     outcomes: [
-      "Zero missed messages — every channel in one queue.",
-      "3× faster response times with shared team visibility.",
+      "Zero missed messages â€” every channel in one queue.",
+      "3Ã— faster response times with shared team visibility.",
       "100% conversation history retained across channels.",
     ],
     keywords: [
@@ -363,7 +363,7 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "Catch and respond to every comment on your Instagram and Facebook posts and ads automatically. Turn public comments into leads and resolve complaints fast.",
     heading: "Every comment is a customer. Catch them all.",
     subheading:
-      "The comments under your posts and ads are full of buyers, questions, and complaints — in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
+      "The comments under your posts and ads are full of buyers, questions, and complaints â€” in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
     highlights: [
       "Real-time watching of every comment on every post and ad.",
       "Intent detection that distinguishes buyers, questions, complaints, and spam.",
@@ -382,6 +382,35 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "auto reply comments",
       "Instagram comment automation",
       "Facebook comment management",
+    ],
+  },
+  "autonomous-resolution": {
+    slug: "autonomous-resolution",
+    path: "/product/autonomous-resolution",
+    title: "Autonomous Resolution \u2014 AI That Acts, Not Just Replies | Nautix",
+    description:
+      "Nautix does not just respond \u2014 it resolves. It takes the real action that fixes a customer problem end to end, automatically. Built for African businesses.",
+    heading: "Resolves. Does not just respond.",
+    subheading:
+      "A chatbot acknowledges the problem. Nautix solves it. It takes the real action \u2014 restoring a service, processing a request, completing a task \u2014 end to end, without waking a single team member.",
+    highlights: [
+      "End-to-end action that fixes the real problem \u2014 not just a message about it.",
+      "Understands what the customer truly needs resolved, even with imperfect phrasing.",
+      "Diagnoses against live systems to understand what is wrong and what will fix it.",
+      "Takes the real action directly in your systems with the guardrails you set.",
+      "Smart escalation that hands off with full context when a human is needed.",
+      "Complete logging of every action so your team has full visibility.",
+    ],
+    outcomes: [
+      "60-70% of routine issues resolved without a human.",
+      "Typical end-to-end resolution time under 2 minutes.",
+      "24/7 resolution \u2014 not just responses \u2014 around the clock.",
+    ],
+    keywords: [
+      "autonomous resolution",
+      "AI customer resolution",
+      "automated issue resolution",
+      "end-to-end automation",
     ],
   },
 };

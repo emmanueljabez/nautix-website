@@ -12,7 +12,7 @@ import { Counter } from "@/components/ui/Counter";
 function toCounter(
   value: string
 ): { target: number; suffix: string } | null {
-  // Time durations e.g. "1m 52s" — display as static text
+  // Time durations e.g. "1m 52s" â€” display as static text
   if (/\dm\s?\d+s/.test(value)) return null;
 
   // Percentage e.g. "91%"
@@ -33,7 +33,7 @@ function toCounter(
 }
 
 /**
- * IspNumbers — Section 5: Statistical proof.
+ * IspNumbers â€” Section 5: Statistical proof.
  *
  * Three big animated stats with Counter for numeric values
  * and static text for compound values like "1m 52s".
@@ -70,7 +70,7 @@ export function IspNumbers() {
           </span>
         </h2>
 
-        {/* 3 stats — responsive grid */}
+        {/* 3 stats â€” responsive grid */}
         <div className="reveal mt-12 grid gap-10 md:grid-cols-3 md:gap-0">
           {stats.map((stat, i) => {
             const counterProps = toCounter(stat.value);
@@ -116,7 +116,7 @@ export function IspNumbers() {
         {/* Supporting copy */}
         <div className="reveal mt-12 text-center">
            <p className="text-[13px] leading-[1.7] text-neutral-900/55">
-            {supportingCopy.join("  ·  ")}
+            {supportingCopy.join("  Â·  ")}
           </p>
         </div>
       </div>

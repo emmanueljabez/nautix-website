@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { LandingSectionPage } from "@/components/seo/LandingSectionPage";
 import { ProductOmnichannelInbox } from "@/components/product/ProductOmnichannelInbox";
 import { ProductCommentMonitoring } from "@/components/product/ProductCommentMonitoring";
+import { ProductAutonomousResolution } from "@/components/product/ProductAutonomousResolution";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   DEFAULT_PRIMARY_CTA,
@@ -64,7 +65,22 @@ if (slug === "omnichannel-inbox") {
     };
 }
 
-if (slug === "comment-monitoring") {
+  if (slug === "autonomous-resolution") {
+    metadata.openGraph = {
+      ...metadata.openGraph,
+      title: "Resolves, Not Just Responds \u2014 Nautix",
+      description:
+        "AI that takes the real action to resolve a customer's problem end to end.",
+    };
+    metadata.twitter = {
+      ...metadata.twitter,
+      title: "Resolves, Not Just Responds \u2014 Nautix",
+      description:
+        "AI that takes the real action to resolve a customer's problem end to end.",
+    };
+  }
+
+  if (slug === "comment-monitoring") {
     metadata.openGraph = {
       ...metadata.openGraph,
       title: "Never Miss a Comment Again \u2014 Nautix",
@@ -77,7 +93,7 @@ if (slug === "comment-monitoring") {
       description:
         "Monitor and respond to every comment on your posts and ads, automatically.",
     };
-}
+  }
 
   return metadata;
 }
@@ -96,6 +112,10 @@ export default async function ProductPage({ params }: PageProps) {
 
   if (slug === "comment-monitoring") {
     return <ProductCommentMonitoring data={page} />;
+  }
+
+  if (slug === "autonomous-resolution") {
+    return <ProductAutonomousResolution data={page} />;
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([
