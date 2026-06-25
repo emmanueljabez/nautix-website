@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution", "lead-qualification-engine"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution", "lead-qualification-engine", "in-chat-payment-close"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -418,21 +418,21 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
     path: "/product/lead-qualification-engine",
     title: "Automated Lead Qualification Engine for WhatsApp | Nautix",
     description:
-      "Qualify, score, and route every inbound lead automatically \u2014 24/7. Hand your sales team only the leads worth their time, fully briefed. Built for African businesses.",
+      "Qualify, score, and route every inbound lead automatically — 24/7. Hand your sales team only the leads worth their time, fully briefed. Built for African businesses.",
     heading: "Qualified leads. Not just inquiries.",
     subheading:
-      "Most inquiries aren't ready to buy \u2014 and your team wastes hours finding out which ones are. Nautix asks the right questions, scores every lead, and hands your sales team only the ones worth pursuing, with the full picture attached.",
+      "Most inquiries aren't ready to buy — and your team wastes hours finding out which ones are. Nautix asks the right questions, scores every lead, and hands your sales team only the ones worth pursuing, with the full picture attached.",
     highlights: [
       "Smart questioning that gathers budget, need, timeline, and fit conversationally.",
       "Lead scoring against your criteria so your team knows who to call first.",
       "Intelligent routing by type, territory, or value to the right person or team.",
-      "Full lead briefs with all qualification context \u2014 no re-asking required.",
+      "Full lead briefs with all qualification context — no re-asking required.",
       "24/7 qualification so leads are never left waiting, day or night.",
       "CRM-ready output with all fields populated for seamless pipeline flow.",
     ],
     outcomes: [
       "100% of leads qualified before reaching your team.",
-      "2\u00d7 more sales time spent on real opportunities.",
+      "2× more sales time spent on real opportunities.",
       "24/7 qualification so no hot lead ever waits.",
     ],
     keywords: [
@@ -441,6 +441,36 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "automated lead qualification",
       "WhatsApp lead capture",
       "lead routing",
+    ],
+  },
+  "in-chat-payment-close": {
+    slug: "in-chat-payment-close",
+    path: "/product/in-chat-payment-close",
+    title: "Close Sales In-Chat with M-Pesa & Mobile Money | Nautix",
+    description:
+      "Close the sale right inside the conversation — request, pay, and confirm without sending customers away. Capture the buying moment. Built for African businesses.",
+    heading: "Close the sale before the moment cools.",
+    subheading:
+      "When a customer is ready to buy, every extra step loses them. Nautix closes the sale right inside the chat — requests payment, takes it via mobile money, and confirms — capturing the buying moment exactly where it happens.",
+    highlights: [
+      "Pay in the conversation — no redirects, no separate apps.",
+      "Mobile money native with M-Pesa built in.",
+      "Instant payment confirmation and sale closure.",
+      "Captures the buying moment before hesitation sets in.",
+      "Auto-receipts sent directly in the chat.",
+      "Secure and verified payment processing.",
+    ],
+    outcomes: [
+      "35% higher close rate vs sending payment links away.",
+      "Seconds from 'yes' to paid and confirmed.",
+      "Zero redirects, drop-off pages, or re-entered details.",
+    ],
+    keywords: [
+      "in-chat payment",
+      "close sale in chat",
+      "WhatsApp payment",
+      "M-Pesa in chat",
+      "conversational checkout",
     ],
   },
 };

@@ -80,32 +80,32 @@ export const PAGE_DATA = {
     heading: "What the qualification engine does",
     cards: [
       {
-        icon: "/nautix-icons/lqe-question.svg",
+        kind: "question",
         title: "Smart questioning",
         body: "Asks the right qualifying questions conversationally — never an interrogation.",
       },
       {
-        icon: "/nautix-icons/lqe-scoring.svg",
+        kind: "scoring",
         title: "Lead scoring",
         body: "Scores every lead against your criteria so your team knows who to call first.",
       },
       {
-        icon: "/nautix-icons/lqe-routing.svg",
+        kind: "routing",
         title: "Intelligent routing",
         body: "Sends each lead to the right person or team based on type, territory, or value.",
       },
       {
-        icon: "/nautix-icons/lqe-brief.svg",
+        kind: "brief",
         title: "Full lead briefs",
         body: "Your team receives every lead with all the context already gathered — no re-asking.",
       },
       {
-        icon: "/nautix-icons/lqe-clock.svg",
+        kind: "clock",
         title: "24/7 qualification",
         body: "Leads are qualified the moment they arrive, day or night — never left waiting.",
       },
       {
-        icon: "/nautix-icons/lqe-crm.svg",
+        kind: "crm",
         title: "CRM-ready",
         body: "Qualified leads flow into your CRM or pipeline with all fields populated.",
       },
