@@ -7,7 +7,7 @@ export const PAGE_DATA = {
     h1: "Every customer conversation, in one place.",
     subhead:
       "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox — so nothing slips through, and your whole team works from the same screen.",
-    primaryCta: { label: "Book a demo", href: DEMO_EMAIL_URL },
+    primaryCta: { label: "Book a Demo", href: DEMO_EMAIL_URL },
     secondaryCta: { label: "See it in action", href: "#how-it-works" },
   },
   problem: {
@@ -177,5 +177,16 @@ export const PAGE_DATA = {
           "No. Customers continue messaging you exactly as they do now — on WhatsApp, Instagram, or Facebook. Nautix simply organises everything behind the scenes for your team.",
       },
     ],
+  },
+  finalCta: {
+    heading: "Bring every conversation into one place.",
+    subhead:
+      "See how the omnichannel inbox unifies your WhatsApp, Instagram, Facebook, and webchat into a single screen your whole team can work from.",
+    primaryCta: { label: "Book a demo", href: DEMO_EMAIL_URL },
+    secondaryCta: {
+      label: "WhatsApp us: +254 762 758 987",
+      href: "https://wa.me/254720482575",
+    },
+    reassurance: "No credit card \u00B7 30-day free pilot \u00B7 Cancel anytime",
   },
 };

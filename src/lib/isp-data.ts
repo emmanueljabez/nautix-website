@@ -103,7 +103,7 @@ export const HERO_DATA: IspHeroData = {
     { icon: "\uD83D\uDCCB", text: "Splynx integration" },
     { icon: "\uD83D\uDCAC", text: "WhatsApp + Instagram + Facebook" },
   ],
-  primaryCta: "Book a 15-minute live Demo",
+  primaryCta: "Book a Demo",
   secondaryCta: "Or watch a 60-second Demo video",
 };
 
@@ -281,7 +281,7 @@ export const PIONEER_MOMENT_DATA: IspPioneerMomentData = {
       },
     ],
   },
-  cta: "See this working on your network",
+  // cta: "See this working on your network",
   ctaSub: "Book a Demo",
 };
 
@@ -472,9 +472,9 @@ export const FINAL_CTA_DATA: IspFinalCtaData = {
     "See Nautix working on your actual network.",
   subheadline:
     "Book a 15-minute live demo. We connect to your Splynx account, pull a real subscriber record, and show every Nautix function on your data. No slides. No mockups.",
-  primaryCta: "Book a 15-min emo",
+  primaryCta: "Book a Demo",
   secondaryCta: "WhatsApp us instead",
-  secondaryCtaNumber: "+254 720 482 575",
+  secondaryCtaNumber: "+254 762 758 987",
   riskReversal: [
     "No credit card. No commitment.",
     "30-day free pilot if you decide to proceed.",

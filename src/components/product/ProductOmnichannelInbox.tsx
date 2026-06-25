@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import type { LandingPageData } from "@/lib/seo-pages";
 import { PAGE_DATA } from "@/lib/omnichannel-inbox-data";
-import { FinalCtaSection } from "@/components/homepage/FinalCtaSection";
 import { buildFaqSchema } from "@/lib/seo";
 import { Counter } from "@/components/ui/Counter";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -449,16 +448,17 @@ export function ProductOmnichannelInbox({
                 {D.hero.subhead}
               </p>
 
-              <div className="flex flex-wrap gap-3 pt-2">
+              <div className=" flex gap-3 pt-2">
                 <a
                   href={D.hero.primaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold bg-primary text-white hover:bg-primary-700 transition-colors"
+                  className="group inline-flex items-center gap-2 rounded-full bg-primary-700 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-bold text-white shadow-md transition-colors hover:bg-primary-800"
                 >
-                  {D.hero.primaryCta.label}
+                  <span className="text-[16px] font-semibold">{D.hero.primaryCta.label}</span>
+                  <i className="fs-8 unicon-arrow-up-right fw-bold" aria-hidden="true" />
                 </a>
                 <a
                   href={D.hero.secondaryCta.href}
-                  className="inline-flex items-center justify-center rounded-full border border-primary/25 text-primary hover:bg-primary/5 px-6 py-3 text-base font-semibold transition-all"
+                  className="inline-flex items-center justify-center rounded-full border border-primary/25 text-primary hover:bg-primary/5 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-semibold transition-all"
                 >
                   {D.hero.secondaryCta.label}
                 </a>
@@ -705,7 +705,70 @@ export function ProductOmnichannelInbox({
       {/* FAQ */}
       <FaqSection />
 
-       <FinalCtaSection />
+            {/* FINAL CTA */}
+      <section className="nautix-final-cta-section">
+        <div
+          className="nautix-final-cta-shell"
+          style={{
+            background:
+              "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
+            boxShadow: "0 32px 70px rgba(65, 16, 95, 0.22)",
+          }}
+        >
+          <img
+            className="nautix-final-cta-decor nautix-final-cta-decor--left"
+            src="/wp-content/uploads/2025/05/green-stars.svg"
+            width={55}
+            height={50}
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            className="nautix-final-cta-decor nautix-final-cta-decor--right"
+            src="/wp-content/uploads/2025/05/green-star.svg"
+            width={19}
+            height={30}
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          />
+          <div
+            className="nautix-final-cta-content"
+            style={{
+              background:
+                "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
+              borderRadius: "inherit",
+            }}
+          >
+            <h2 className="nautix-final-cta-title mb-0">
+              {D.finalCta.heading}
+            </h2>
+            <p className="nautix-final-cta-copy mb-0">
+              {D.finalCta.subhead}
+            </p>
+            <div className="nautix-final-cta-actions">
+              <a
+                className="nautix-final-cta-button nautix-final-cta-button--primary"
+                href={D.finalCta.primaryCta.href}
+              >
+                {D.finalCta.primaryCta.label}
+              </a>
+              <a
+                className="nautix-final-cta-button nautix-final-cta-button--secondary"
+                href={D.finalCta.secondaryCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {D.finalCta.secondaryCta.label}
+              </a>
+            </div>
+            <p className="nautix-final-cta-note mb-0">
+              {D.finalCta.reassurance}
+            </p>
+          </div>
+        </div>
+      </section>
            
         
     </div>

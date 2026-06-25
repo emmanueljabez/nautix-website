@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -353,6 +353,35 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "WhatsApp shared inbox",
       "unified customer inbox",
       "multi-channel messaging",
+    ],
+  },
+  "comment-monitoring": {
+    slug: "comment-monitoring",
+    path: "/product/comment-monitoring",
+    title: "Social Comment Monitoring & Auto-Reply | Nautix",
+    description:
+      "Catch and respond to every comment on your Instagram and Facebook posts and ads automatically. Turn public comments into leads and resolve complaints fast.",
+    heading: "Every comment is a customer. Catch them all.",
+    subheading:
+      "The comments under your posts and ads are full of buyers, questions, and complaints — in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
+    highlights: [
+      "Real-time watching of every comment on every post and ad.",
+      "Intent detection that distinguishes buyers, questions, complaints, and spam.",
+      "Public reply or move to private DM to close the sale or resolve the issue.",
+      "Reputation protection that flags negative comments before they sit unaddressed.",
+      "Spam filtering that keeps your comments clean automatically.",
+      "Comment-to-DM capture that turns public commenters into private leads.",
+    ],
+    outcomes: [
+      "100% of comments monitored and triaged.",
+      "30%+ more leads captured from ad comments.",
+      "Complaints addressed in minutes, not hours.",
+    ],
+    keywords: [
+      "comment monitoring",
+      "auto reply comments",
+      "Instagram comment automation",
+      "Facebook comment management",
     ],
   },
 };

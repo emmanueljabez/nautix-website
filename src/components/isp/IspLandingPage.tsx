@@ -22,7 +22,7 @@ import { IspIntegration } from "@/components/isp/IspIntegration";
 import { IspPilotOffer } from "@/components/isp/IspPilotOffer";
 import { IspFaq } from "@/components/isp/IspFaq";
 import { IspTestimonial } from "@/components/isp/IspTestimonial";
-import { FinalCtaSection } from "@/components/homepage/FinalCtaSection";
+import { IspFinalCta } from "@/components/isp/IspFinalCta";
 import { HERO_DATA } from "@/lib/isp-data";
 
 const BOOK_DEMO_URL =
@@ -326,7 +326,7 @@ function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href={BOOK_DEMO_URL}
-                className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-primary-800"
+                                className="group inline-flex items-center gap-2 rounded-full bg-primary-700 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-bold text-white shadow-md transition-colors hover:bg-primary-800"
               >
                <span className="text-[16px] font-semibold">{primaryCta}</span>
                 <i
@@ -382,7 +382,7 @@ export function IspLandingPage() {
       <IspPilotOffer />
       <IspFaq />
       <IspTestimonial />
-      <FinalCtaSection />
+      <IspFinalCta />
     </main>
   );
 }
