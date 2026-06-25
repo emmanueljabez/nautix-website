@@ -15,6 +15,16 @@ import { useReveal } from "@/hooks/useReveal";
  * The high-level scan is enough to convince — expansion
  * provides deeper context for the sceptical technical reader.
  */
+const CAPABILITY_ICONS: Record<string, string> = {
+  "Technical Support": "/nautix-icons/icon-tech.svg",
+  "Billing & Collections": "/nautix-icons/icon-billing.svg",
+  "Proactive Outage Alerts": "/nautix-icons/icon-alert.svg",
+  "Lead Capture": "/nautix-icons/icon-target.svg",
+  "Subscriber Onboarding": "/nautix-icons/icon-onboarding.svg",
+  "Daily Operations Report": "/nautix-icons/icon-report.svg",
+};
+
+
 export function IspCapabilities() {
   const ref = useReveal<HTMLElement>();
   const { sectionHeading, sectionSubhead, cards } = CAPABILITIES_DATA;
@@ -96,7 +106,11 @@ export function IspCapabilities() {
                       justifyContent: "center",
                     }}
                   >
-                    {card.icon}
+                    <img
+                      src={CAPABILITY_ICONS[card.title]}
+                      alt={card.title}
+                      style={{ width: 24, height: 24 }}
+                    />
                   </span>
 
                   <div className="min-w-0 flex-1">

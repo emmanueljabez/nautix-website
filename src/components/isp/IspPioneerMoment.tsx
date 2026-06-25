@@ -262,19 +262,13 @@ export function IspPioneerMoment() {
         <div className="reveal mt-14 flex flex-col items-center md:mt-20">
           <Link
             href={BOOK_DEMO_URL}
-            className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-primary-800"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary-700 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-bold text-white shadow-md transition-colors hover:bg-primary-800"
           >
-            <span className="flex flex-col items-center text-center leading-[1.4]">
-            <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold">
-               {cta}
-               <i
-                 className="fs-8 unicon-arrow-up-right fw-bold"
-                 aria-hidden="true"
-               />
-              </span> 
-              <span className="text-[16px] font-semibold">{ctaSub}</span>
-            </span>
-            
+          <span className="text-[16px] font-semibold">{ctaSub}</span>
+          <i
+            className="fs-8 unicon-arrow-up-right fw-bold"
+            aria-hidden="true"
+          />
           </Link>
         </div>
       </div>

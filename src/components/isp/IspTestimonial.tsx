@@ -94,7 +94,7 @@ export function IspTestimonial() {
         {/* ── Integration logo strip ── */}
         <div className="reveal" style={{ marginTop: 40 }}>
           <div className="nautix-client-marquee">
-            <div className="nautix-client-logo-row" aria-label="Integration partners" style={{ display: "flex", gap: 20, alignItems: "center", justifyContent: "center", flexWrap: "nowrap" }}>
+            <div className="nautix-client-logo-row" aria-label="Integration partners" style={{ display: "flex", gap: 95, alignItems: "center", justifyContent: "center", flexWrap: "nowrap" }}>
               {PARTNER_LOGOS.map((logo) => {
                 const isLarge = logo.alt === "SmartOLT";
                 const isSmall = logo.alt === "Splynx";

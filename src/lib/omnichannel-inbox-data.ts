@@ -3,32 +3,36 @@ const DEMO_EMAIL_URL =
 
 export const PAGE_DATA = {
   hero: {
-    eyebrow: "OMNICHANNEL INBOX",
+    eyebrow: "Omnichannel Inbox", 
     h1: "Every customer conversation, in one place.",
     subhead:
       "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox — so nothing slips through, and your whole team works from the same screen.",
-    primaryCta: { label: "Book a demo", href: DEMO_EMAIL_URL },
+    primaryCta: { label: "Book a Demo", href: DEMO_EMAIL_URL },
     secondaryCta: { label: "See it in action", href: "#how-it-works" },
   },
   problem: {
     heading: "Messages everywhere. Answers nowhere.",
     painPoints: [
-      {
-        title: "Messages scattered across apps",
-        detail:
-          "Your team toggles between WhatsApp Web, Instagram, Facebook Pages, and email all day — and still misses things.",
-      },
-      {
-        title: "No shared visibility",
-        detail:
-          "Two team members reply to the same customer. Or worse, nobody does, because each assumed the other had it.",
-      },
-      {
-        title: "Context lost between channels",
-        detail:
-          "A customer who DM'd on Instagram last week messages on WhatsApp today — and your team has no memory of the first conversation.",
-      },
-    ],
+  {
+    icon: "/nautix-icons/oi-msg-scattered.svg",
+    title: "Messages scattered across apps",
+    detail:
+      "Your team toggles between WhatsApp Web, Instagram, Facebook Pages, and email all day — and still misses things.",
+  },
+  {
+    icon: "/nautix-icons/oi-no-visibility.svg",
+    title: "No shared visibility",
+    detail:
+      "Two team members reply to the same customer. Or worse, nobody does, because each assumed the other had it.",
+  },
+  {
+    icon: "/nautix-icons/oi-context-lost.svg",
+    title: "Context lost between channels",
+    detail:
+      "A customer who DM'd on Instagram last week messages on WhatsApp today — and your team has no memory of the first conversation.",
+  },
+],
+   
   },
   howItWorks: {
     heading: "One inbox. Every channel. Full context.",
@@ -75,29 +79,35 @@ export const PAGE_DATA = {
   },
   capabilities: {
     heading: "What the inbox does",
-    cards: [
+        cards: [
       {
-        title: "\u{1F4E5} Unified queue",
+        icon: "/nautix-icons/oi-inbox.svg",
+        title: "Unified queue",
         body: "WhatsApp, Instagram, Facebook, and webchat in one stream — sorted, tagged, and searchable.",
       },
       {
-        title: "\u{1F465} Team assignment",
+        icon: "/nautix-icons/oi-team.svg",
+        title: "Team assignment",
         body: "Route conversations to the right person. See who's online, who's handling what, and what's unassigned.",
       },
       {
-        title: "\u{1F4DD} Internal notes",
+        icon: "/nautix-icons/oi-notes.svg",
+        title: "Internal notes",
         body: "Leave private notes on any conversation that only your team can see — never the customer.",
       },
       {
-        title: "\u{1F3F7}\uFE0F Tags & labels",
+        icon: "/nautix-icons/oi-tags.svg",
+        title: "Tags & labels",
         body: "Categorise conversations by type, priority, or status so nothing important gets buried.",
       },
       {
-        title: "\u{1F50D} Full-text search",
+        icon: "/nautix-icons/oi-search.svg",
+        title: "Full-text search",
         body: "Find any past conversation by customer name, keyword, or channel in seconds.",
       },
       {
-        title: "\u23F1\uFE0F Response tracking",
+        icon: "/nautix-icons/oi-tracking.svg",
+        title: "Response tracking",
         body: "See how fast your team responds, where the backlog is, and which conversations are waiting too long.",
       },
     ],
@@ -174,7 +184,7 @@ export const PAGE_DATA = {
       "See how the omnichannel inbox unifies your WhatsApp, Instagram, Facebook, and webchat into a single screen your whole team can work from.",
     primaryCta: { label: "Book a demo", href: DEMO_EMAIL_URL },
     secondaryCta: {
-      label: "WhatsApp us: +254 720 482 575",
+      label: "WhatsApp us: +254 762 758 987",
       href: "https://wa.me/254720482575",
     },
     reassurance: "No credit card \u00B7 30-day free pilot \u00B7 Cancel anytime",

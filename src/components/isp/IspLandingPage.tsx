@@ -326,9 +326,9 @@ function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
                 href={BOOK_DEMO_URL}
-                className="group inline-flex items-center gap-2 rounded-full bg-primary-700 px-7 py-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-primary-800"
+                                className="group inline-flex items-center gap-2 rounded-full bg-primary-700 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-bold text-white shadow-md transition-colors hover:bg-primary-800"
               >
-               <span style={{ fontSize: 13, fontWeight: 600 }}>{primaryCta}</span>
+               <span className="text-[16px] font-semibold">{primaryCta}</span>
                 <i
                   className="fs-8 unicon-arrow-up-right fw-bold"
                   aria-hidden="true"
@@ -349,7 +349,7 @@ function HeroSection() {
                 >
                   <path d="M6 4v8l6-4-6-4Z" />
                 </svg>
-                {secondaryCta}
+              <span className="text-[16px] font-semibold">  {secondaryCta}</span>
               </Link>
             </div>
           </div>
