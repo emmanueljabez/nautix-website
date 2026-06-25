@@ -6,7 +6,7 @@ export const PAGE_DATA = {
     eyebrow: "Omnichannel Inbox", 
     h1: "Every customer conversation, in one place.",
     subhead:
-      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox — so nothing slips through, and your whole team works from the same screen.",
+      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox â€” so nothing slips through, and your whole team works from the same screen.",
     primaryCta: { label: "Book a Demo", href: DEMO_EMAIL_URL },
     secondaryCta: { label: "See it in action", href: "#how-it-works" },
   },
@@ -17,7 +17,7 @@ export const PAGE_DATA = {
     icon: "/nautix-icons/oi-msg-scattered.svg",
     title: "Messages scattered across apps",
     detail:
-      "Your team toggles between WhatsApp Web, Instagram, Facebook Pages, and email all day — and still misses things.",
+      "Your team toggles between WhatsApp Web, Instagram, Facebook Pages, and email all day â€” and still misses things.",
   },
   {
     icon: "/nautix-icons/oi-no-visibility.svg",
@@ -29,7 +29,7 @@ export const PAGE_DATA = {
     icon: "/nautix-icons/oi-context-lost.svg",
     title: "Context lost between channels",
     detail:
-      "A customer who DM'd on Instagram last week messages on WhatsApp today — and your team has no memory of the first conversation.",
+      "A customer who DM'd on Instagram last week messages on WhatsApp today â€” and your team has no memory of the first conversation.",
   },
 ],
    
@@ -52,7 +52,7 @@ export const PAGE_DATA = {
         stepNumber: 2,
         title: "Messages unify automatically",
         detail:
-          "Every incoming message — regardless of channel — lands in one shared inbox, tagged by source and customer.",
+          "Every incoming message â€” regardless of channel â€” lands in one shared inbox, tagged by source and customer.",
         stat: "1 inbox",
         statLabel: "all channels",
         kind: "train",
@@ -83,7 +83,7 @@ export const PAGE_DATA = {
       {
         icon: "/nautix-icons/oi-inbox.svg",
         title: "Unified queue",
-        body: "WhatsApp, Instagram, Facebook, and webchat in one stream — sorted, tagged, and searchable.",
+        body: "WhatsApp, Instagram, Facebook, and webchat in one stream â€” sorted, tagged, and searchable.",
       },
       {
         icon: "/nautix-icons/oi-team.svg",
@@ -93,7 +93,7 @@ export const PAGE_DATA = {
       {
         icon: "/nautix-icons/oi-notes.svg",
         title: "Internal notes",
-        body: "Leave private notes on any conversation that only your team can see — never the customer.",
+        body: "Leave private notes on any conversation that only your team can see â€” never the customer.",
       },
       {
         icon: "/nautix-icons/oi-tags.svg",
@@ -120,31 +120,31 @@ export const PAGE_DATA = {
       {
         vertical: "ISPs",
         howTheyUseIt:
-          "Subscriber support requests from WhatsApp, outage complaints from Facebook, and new-line inquiries from Instagram — all in one queue, routed to the right technician or sales rep.",
+          "Subscriber support requests from WhatsApp, outage complaints from Facebook, and new-line inquiries from Instagram â€” all in one queue, routed to the right technician or sales rep.",
       },
       {
         vertical: "Real Estate",
         howTheyUseIt:
-          "Property inquiries from Instagram ads, viewing requests on WhatsApp, and tenant maintenance issues from Facebook — unified so no hot lead or urgent repair is missed.",
+          "Property inquiries from Instagram ads, viewing requests on WhatsApp, and tenant maintenance issues from Facebook â€” unified so no hot lead or urgent repair is missed.",
       },
       {
         vertical: "E-commerce",
         howTheyUseIt:
-          "Order questions, delivery follow-ups, and product inquiries across every social channel — consolidated so your team answers fast and closes more sales.",
+          "Order questions, delivery follow-ups, and product inquiries across every social channel â€” consolidated so your team answers fast and closes more sales.",
       },
       {
         vertical: "Finance / SACCOs",
         howTheyUseIt:
-          "Member inquiries, loan questions, and account requests from every channel — organised, assigned, and answered with full member history attached.",
+          "Member inquiries, loan questions, and account requests from every channel â€” organised, assigned, and answered with full member history attached.",
       },
     ],
   },
   outcomes: {
     heading: "What unifying your inbox delivers",
     stats: [
-      { value: "0", label: "Missed messages — every channel in one queue" },
+      { value: "0", label: "Missed messages â€” every channel in one queue" },
       {
-        value: "3×",
+        value: "3Ã—",
         label: "Faster response times with shared team visibility",
       },
       {
@@ -159,7 +159,7 @@ export const PAGE_DATA = {
       {
         question: "Which channels can I connect?",
         answer:
-          "WhatsApp Business, Instagram, Facebook Messenger, and your website's webchat. We add new channels regularly — ask us about any specific platform you need.",
+          "WhatsApp Business, Instagram, Facebook Messenger, and your website's webchat. We add new channels regularly â€” ask us about any specific platform you need.",
       },
       {
         question: "Can my whole team use the same inbox?",
@@ -174,7 +174,7 @@ export const PAGE_DATA = {
       {
         question: "Do customers know they're talking through Nautix?",
         answer:
-          "No. Customers continue messaging you exactly as they do now — on WhatsApp, Instagram, or Facebook. Nautix simply organises everything behind the scenes for your team.",
+          "No. Customers continue messaging you exactly as they do now â€” on WhatsApp, Instagram, or Facebook. Nautix simply organises everything behind the scenes for your team.",
       },
     ],
   },

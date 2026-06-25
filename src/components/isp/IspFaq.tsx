@@ -5,12 +5,12 @@ import { FAQ_DATA } from "@/lib/isp-data";
 import { useReveal } from "@/hooks/useReveal";
 
 /**
- * IspFaq — Section 8: Objection handling.
+ * IspFaq â€” Section 8: Objection handling.
  *
  * Five-question accordion with the exact HomepageEnhanced
- * FaqSection styling — border dividers, 32 px purple chevrons
- * that rotate 45° on open, lime-highlighted focus word,
- * and max‑height animation on answers.
+ * FaqSection styling â€” border dividers, 32 px purple chevrons
+ * that rotate 45Â° on open, lime-highlighted focus word,
+ * and maxâ€‘height animation on answers.
  */
 export function IspFaq() {
   const ref = useReveal<HTMLDivElement>();
@@ -20,7 +20,7 @@ export function IspFaq() {
   return (
     <section ref={ref} className="border-t border-primary-100/50 bg-white">
       <div className="mx-auto max-w-[880px] px-6 py-24 md:py-32">
-        {/* ── Heading — matches nautix-section-title pattern ── */}
+        {/* â”€â”€ Heading â€” matches nautix-section-title pattern â”€â”€ */}
      {/* <div className="reveal text-center">
            <h2 className="nautix-section-title mb-0 whitespace-nowrap"> */}
            <div className="reveal">
@@ -47,7 +47,7 @@ export function IspFaq() {
           </h2>
         </div>
 
-        {/* ── FAQ items ── */}
+        {/* â”€â”€ FAQ items â”€â”€ */}
         <ul className="reveal" style={{ listStyle: "none", padding: 0, margin: "32px 0 0" }}>
           {questions.map((faq, idx) => {
             const isOpen = open === idx;
@@ -87,7 +87,7 @@ export function IspFaq() {
                 >
                   <span>{faq.question}</span>
 
-                  {/* Chevron — matches he-faq-chevron */}
+                  {/* Chevron â€” matches he-faq-chevron */}
                   <span
                     aria-hidden
                     className="shrink-0"
@@ -114,7 +114,7 @@ export function IspFaq() {
                   </span>
                 </button>
 
-                {/* Answer body — matches he-faq-body */}
+                {/* Answer body â€” matches he-faq-body */}
                 <div
                   style={{
                     overflow: "hidden",

@@ -8,7 +8,7 @@ const BOOK_DEMO_URL =
   "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
 
 /**
- * IspPioneerMoment — Section 4: The most important section after Hero.
+ * IspPioneerMoment â€” Section 4: The most important section after Hero.
  */
 export function IspPioneerMoment() {
   const ref = useReveal<HTMLElement>();
@@ -26,7 +26,7 @@ export function IspPioneerMoment() {
       className="relative border-t border-primary-100/50 bg-white py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
-        {/* ── Section heading ── */}
+        {/* â”€â”€ Section heading â”€â”€ */}
         
               <div className="reveal">
           <h2
@@ -65,11 +65,11 @@ export function IspPioneerMoment() {
           </p>
         </div>
 
-        {/* ── Two-column grid ── */}
+        {/* â”€â”€ Two-column grid â”€â”€ */}
         <div className="reveal mt-14 grid gap-16 lg:grid-cols-[1fr_440px]">
-          {/* ═══════════════════════════════════════════
-              LEFT COLUMN — Technical timeline
-              ═══════════════════════════════════════════ */}
+          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+              LEFT COLUMN â€” Technical timeline
+              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
 
           <div>
             <h3 className="font-[var(--font-heading)] text-[20px] font-semibold tracking-[-0.015em] text-primary-950">
@@ -110,7 +110,7 @@ export function IspPioneerMoment() {
               </div>
             </div>
 
-            {/* ── Summary callout ── */}
+            {/* â”€â”€ Summary callout â”€â”€ */}
             <div
               className="mt-8 rounded-2xl p-5"
               style={{
@@ -186,9 +186,9 @@ export function IspPioneerMoment() {
             </div>
           </div>
 
-          {/* ═══════════════════════════════════════════
-              RIGHT COLUMN — WhatsApp chat recreation
-              ═══════════════════════════════════════════ */}
+          {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+              RIGHT COLUMN â€” WhatsApp chat recreation
+              â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
 
           <div className="lg:-mt-2">
             <div className="overflow-hidden rounded-3xl border border-black/10 shadow-[0_20px_60px_-20px_rgba(11,11,14,0.18)]">
@@ -207,7 +207,7 @@ export function IspPioneerMoment() {
                 </div>
               </div>
 
-              {/* Chat body — WhatsApp wallpaper */}
+              {/* Chat body â€” WhatsApp wallpaper */}
               <div
                 className="space-y-3 p-4"
                 style={{
@@ -258,7 +258,7 @@ export function IspPioneerMoment() {
           </div>
         </div>
 
-        {/* ── CTA below both columns ── */}
+        {/* â”€â”€ CTA below both columns â”€â”€ */}
         <div className="reveal mt-14 flex flex-col items-center md:mt-20">
           <Link
             href={BOOK_DEMO_URL}

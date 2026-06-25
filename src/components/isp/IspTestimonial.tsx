@@ -13,7 +13,7 @@ const PARTNER_LOGOS = [
 ] as const;
 
 /**
- * IspTestimonial — Section 9: Social proof.
+ * IspTestimonial â€” Section 9: Social proof.
  *
  * One pull quote with attribution + context, followed by
  * a horizontal integration logo strip. Uses the exact
@@ -31,8 +31,8 @@ export function IspTestimonial() {
       className="border-t border-primary-100/50 bg-white"
     >
       <div style={{ maxWidth: 980, margin: "0 auto", padding: "80px 24px" }}>
-        {/* ── Heading — matches nautix-testimonials-heading ── */}
-                {/* ── Heading ── */}
+        {/* â”€â”€ Heading â€” matches nautix-testimonials-heading â”€â”€ */}
+                {/* â”€â”€ Heading â”€â”€ */}
         <h2 className="reveal" style={{
           fontFamily: '"Sharp Grotesk", Sans-serif',
           fontSize: "clamp(2rem, 5vw, 3rem)",
@@ -52,7 +52,7 @@ export function IspTestimonial() {
           </span>
         </h2>
 
-        {/* ── Quote ── */}
+        {/* â”€â”€ Quote â”€â”€ */}
         <div className="reveal" style={{ marginTop: 40 }}>
           <figure style={{ margin: 0 }}>
             <blockquote
@@ -77,7 +77,7 @@ export function IspTestimonial() {
               }}
             >
               <span style={{ fontWeight: 600, color: "#171717" }}>
-                — {attribution}
+                â€” {attribution}
               </span>
               <span
                 style={{
@@ -91,7 +91,7 @@ export function IspTestimonial() {
           </figure>
         </div>
 
-        {/* ── Integration logo strip ── */}
+        {/* â”€â”€ Integration logo strip â”€â”€ */}
         <div className="reveal" style={{ marginTop: 40 }}>
           <div className="nautix-client-marquee">
             <div className="nautix-client-logo-row" aria-label="Integration partners" style={{ display: "flex", gap: 95, alignItems: "center", justifyContent: "center", flexWrap: "nowrap" }}>

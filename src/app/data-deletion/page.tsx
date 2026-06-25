@@ -101,7 +101,7 @@ export default function DataDeletionPage() {
       <LegalCard title="Data Export Before Deletion">
         <p>Before requesting deletion, you may want to export your data. To do this:</p>
         <ul>
-          <li>Go to <strong>Settings → Security → Data &amp; Privacy</strong></li>
+          <li>Go to <strong>Settings â†’ Security â†’ Data &amp; Privacy</strong></li>
           <li>Click <strong>&quot;Export My Data&quot;</strong> (if available)</li>
           <li>You will receive a download link via email within 48 hours</li>
         </ul>
