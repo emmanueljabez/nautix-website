@@ -1,26 +1,69 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import type { LandingPageData } from "@/lib/seo-pages";
 import { PAGE_DATA } from "@/lib/proactive-alerts-data";
+import { buildFaqSchema } from "@/lib/seo";
 import { Pill } from "@/components/ui/Pill";
+import { Counter } from "@/components/ui/Counter";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 interface ProductProactiveAlertsProps {
   data: LandingPageData;
 }
 
 const D = PAGE_DATA;
-const BOOK_DEMO_URL =
-  "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
+
+function useScrollReveal() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "-60px", threshold: 0.08 },
+    );
+
+    const sections = document.querySelectorAll<HTMLElement>(".reveal-section");
+    sections.forEach((n, i) => {
+      n.style.animationDelay = `${i * 80}ms`;
+      observer.observe(n);
+    });
+
+    return () => {
+      sections.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
+  }, []);
+}
 
 export function ProductProactiveAlerts({
   data,
 }: ProductProactiveAlertsProps) {
+  useScrollReveal();
+
   return (
     <div className="min-h-screen bg-white">
+      <style>{`
+        @keyframes reveal-fade-up {
+          from { opacity: 0; transform: translateY(18px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .reveal-section {
+          opacity: 0;
+        }
+        .reveal-section.is-visible {
+          animation: reveal-fade-up 0.75s cubic-bezier(.22,.61,.36,1) forwards;
+        }
+      `}</style>
       {/* ================================================================= */}
       {/*  HERO                                                              */}
       {/* ================================================================= */}
-      <section className="relative overflow-hidden">
+      <section className="reveal-section relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
@@ -68,7 +111,7 @@ export function ProductProactiveAlerts({
       {/* ================================================================= */}
       {/*  PROBLEM                                                           */}
       {/* ================================================================= */}
-      <section className="py-14 lg:py-20 bg-white/50">
+      <section className="reveal-section py-14 lg:py-20 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-10">
             {D.problem.heading}
@@ -98,7 +141,7 @@ export function ProductProactiveAlerts({
       {/* ================================================================= */}
       {/*  HOW IT WORKS                                                      */}
       {/* ================================================================= */}
-      <section className="py-14 lg:py-20">
+      <section className="reveal-section py-14 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-0">
@@ -130,7 +173,7 @@ export function ProductProactiveAlerts({
       {/* ================================================================= */}
       {/*  CAPABILITIES                                                      */}
       {/* ================================================================= */}
-      <section className="py-14 lg:py-20 bg-white/50">
+      <section className="reveal-section py-14 lg:py-20 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-10">
             {D.capabilities.heading}
@@ -153,6 +196,216 @@ export function ProductProactiveAlerts({
           </div>
         </div>
       </section>
+
+      {/* ================================================================= */}
+      {/*  INDUSTRY TABLE                                                    */}
+      {/* ================================================================= */}
+      <section className="reveal-section py-14 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-0">
+              {D.industryTable.heading}
+            </h2>
+            <p className="font-[var(--font-sans)] text-lg text-neutral-600 max-w-2xl mx-auto mt-4">
+              {D.industryTable.subhead}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {D.industryTable.rows.map((row) => (
+              <article
+                key={row.vertical}
+                className="group bg-white rounded-2xl shadow-sm border border-neutral-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 overflow-hidden flex flex-col"
+              >
+                <div className="relative w-full h-48 overflow-hidden rounded-t-2xl">
+                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#7C3AED] to-[#EC4899] text-white font-bold text-xl text-center px-3">
+                    {row.vertical}
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col gap-2 flex-1">
+                  <span className="self-start inline-block bg-[#f3e8ff] text-[#7C3AED] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                    {row.vertical}
+                  </span>
+                  <h3 className="font-[var(--font-heading)] font-bold text-base text-[#171717] leading-tight">
+                    {row.vertical}
+                  </h3>
+                  <p className="font-[var(--font-sans)] text-[13px] text-neutral-600 leading-relaxed">
+                    {row.howTheyUseIt}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/*  OUTCOMES                                                          */}
+      {/* ================================================================= */}
+      <section className="reveal-section py-14 lg:py-20 bg-white/50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-10">
+            {D.outcomes.heading}
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {D.outcomes.stats.map((stat) => {
+              const isFifty = stat.value === "50%";
+
+              return (
+                <div key={stat.label} className="text-center">
+                  <div className="font-[var(--font-heading)] text-4xl font-bold text-[#7C3AED] mb-2">
+                    {isFifty ? (
+                      <>
+                        <Counter target={50} />
+                        %
+                      </>
+                    ) : (
+                      <span>{stat.value}</span>
+                    )}
+                  </div>
+                  <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed max-w-xs mx-auto">
+                    {stat.label}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/*  FAQ                                                                */}
+      {/* ================================================================= */}
+      <FaqSection />
+
+      {/* ================================================================= */}
+      {/*  FINAL CTA                                                          */}
+      {/* ================================================================= */}
+      <section className="reveal-section nautix-final-cta-section">
+        <div
+          className="nautix-final-cta-shell"
+          style={{
+            background:
+              "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
+            boxShadow: "0 32px 70px rgba(65, 16, 95, 0.22)",
+          }}
+        >
+          <img
+            className="nautix-final-cta-decor nautix-final-cta-decor--left"
+            src="/wp-content/uploads/2025/05/green-stars.svg"
+            width={55}
+            height={50}
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            className="nautix-final-cta-decor nautix-final-cta-decor--right"
+            src="/wp-content/uploads/2025/05/green-star.svg"
+            width={19}
+            height={30}
+            loading="lazy"
+            alt=""
+            aria-hidden="true"
+          />
+          <div
+            className="nautix-final-cta-content"
+            style={{
+              background:
+                "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
+              borderRadius: "inherit",
+            }}
+          >
+            <h2 className="nautix-final-cta-title mb-0">
+              {D.finalCta.heading}
+            </h2>
+            <p className="nautix-final-cta-copy mb-0">
+              {D.finalCta.subhead}
+            </p>
+            <div className="nautix-final-cta-actions">
+              <a
+                className="nautix-final-cta-button nautix-final-cta-button--primary"
+                href={D.finalCta.primaryCta.href}
+              >
+                {D.finalCta.primaryCta.label}
+              </a>
+              <a
+                className="nautix-final-cta-button nautix-final-cta-button--secondary"
+                href={D.finalCta.secondaryCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {D.finalCta.secondaryCta.label}
+              </a>
+            </div>
+            <p className="nautix-final-cta-note mb-0">
+              {D.finalCta.reassurance}
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/*  FAQ accordion                                                             */
+/* -------------------------------------------------------------------------- */
+
+function FaqSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="reveal-section py-14 lg:py-20 bg-white">
+      <JsonLd data={buildFaqSchema([...D.faq.items])} />
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-10">
+          {D.faq.heading}
+        </h2>
+
+        <dl>
+          {D.faq.items.map((item, i) => (
+            <div
+              key={item.question}
+              className="border-b border-neutral-200 last:border-b-0"
+            >
+              <dt>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setOpenIndex((prev) => (prev === i ? null : i))
+                  }
+                  className="w-full cursor-pointer font-[var(--font-heading)] font-bold text-lg text-[#171717] flex justify-between items-center py-4 text-left gap-4 hover:text-[#7C3AED] transition-colors"
+                  aria-expanded={openIndex === i}
+                >
+                  <span>{item.question}</span>
+                  <span
+                    className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300 ${
+                      openIndex === i
+                        ? "bg-[#7C3AED] text-white rotate-45"
+                        : "bg-purple-50 text-[#7C3AED]"
+                    }`}
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
+                </button>
+              </dt>
+              <dd
+                className={`font-[var(--font-sans)] text-neutral-600 leading-relaxed overflow-hidden transition-all duration-300 ${
+                  openIndex === i
+                    ? "max-h-[500px] pb-4 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <p>{item.answer}</p>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
   );
 }
