@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "live-system-diagnosis"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -324,6 +324,36 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "ai support analytics",
       "conversation performance dashboard",
       "whatsapp support reporting",
+    ],
+  },
+  "live-system-diagnosis": {
+    slug: "live-system-diagnosis",
+    path: "/product/live-system-diagnosis",
+    title: "Live System Diagnosis & Real-Time Lookups | Nautix",
+    description:
+      "Nautix connects to your billing, inventory, and account systems to answer customer questions with real, live data — not canned replies. Built for African businesses.",
+    heading: "Real answers, pulled from your real systems.",
+    subheading:
+      "Generic chatbots guess. Nautix connects to your actual systems — billing, accounts, inventory, network — and looks up the true, current answer to a customer's question while the conversation is still live.",
+    highlights: [
+      "Connects to your systems — billing, inventory, network, and accounting",
+      "Real-time lookups — every answer pulled live, no stale data",
+      "Read-only by default — looks up without writing or modifying data",
+      "Full audit trail — every lookup logged for visibility and accountability",
+      "Customer matching — identifies the right record using phone, account ID, or order reference",
+      "Your data stays put — read live on demand, governed by your security rules",
+    ],
+    outcomes: [
+      "Answers pulled from live systems, not scripts",
+      "Zero manual lookups for routine status questions",
+      "100% of lookups logged for full auditability",
+    ],
+    keywords: [
+      "live system diagnosis",
+      "real-time lookup",
+      "system integration",
+      "account lookup",
+      "automated diagnosis",
     ],
   },
 };
