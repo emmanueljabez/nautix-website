@@ -7,6 +7,7 @@ import { buildFaqSchema } from "@/lib/seo";
 import { Button } from "@/components/ui/Button";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { DashboardShowcase } from "@/components/product/DashboardShowcase";
 
 interface ProductLiveSystemDiagnosisProps {
   data: LandingPageData;
@@ -15,7 +16,10 @@ interface ProductLiveSystemDiagnosisProps {
 const D = PAGE_DATA;
 
 function useScrollReveal() {
-  useEffect(() => {
+
+/* -------------------------------------------------------------------------- */
+/*  Page                                                                      */
+/* -------------------------------------------------------------------------- */  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -42,78 +46,6 @@ function useScrollReveal() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Hero visual — chat → lookup → system → answer                             */
-/* -------------------------------------------------------------------------- */
-
-function HeroVisual() {
-  return (
-    <div className="relative w-full max-w-[460px] mx-auto lg:mx-0">
-      {/* Chat window mockup */}
-      <div className="bg-white rounded-2xl border border-neutral-200 shadow-xl overflow-hidden">
-        {/* Chat header */}
-        <div className="bg-gradient-to-r from-[#7C3AED] to-[#EC4899] px-4 py-3 flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">
-            N
-          </div>
-          <div>
-            <p className="text-white text-sm font-semibold leading-tight">Nautix Support</p>
-            <p className="text-white/70 text-[11px] leading-tight">Online now</p>
-          </div>
-        </div>
-
-        {/* Chat body */}
-        <div className="p-4 space-y-3 bg-neutral-50/50 min-h-[220px]">
-          {/* User message */}
-          <div className="flex justify-end">
-            <div className="bg-[#7C3AED] text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%] shadow-sm">
-              <p className="text-[13px] leading-snug">Did my payment go through?</p>
-              <span className="text-[10px] text-white/60 mt-1 block text-right">11:47 pm</span>
-            </div>
-          </div>
-
-          {/* Bot "looking up" indicator */}
-          <div className="flex justify-start">
-            <div className="bg-white border border-neutral-200 rounded-full px-3 py-1.5 flex items-center gap-2 shadow-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7C3AED] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#7C3AED]" />
-              </span>
-              <span className="text-[11px] font-semibold text-[#7C3AED] uppercase tracking-wider">
-                Data Lookup
-              </span>
-            </div>
-          </div>
-
-          {/* Bot response */}
-          <div className="flex justify-start">
-            <div className="bg-white border border-neutral-200 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[85%] shadow-sm">
-              <p className="text-[13px] text-neutral-700 leading-snug">
-                Yes — received at <span className="font-semibold text-[#7C3AED]">2:14pm</span>. Your account is active.
-              </p>
-              <div className="flex items-center gap-1.5 mt-2">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2.5 6l2.5 2.5 4.5-5" stroke="#7C3AED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <span className="text-[10px] text-neutral-400">11:48 pm</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Chat input bar */}
-        <div className="px-4 py-3 border-t border-neutral-100 bg-white flex items-center gap-2">
-          <span className="text-neutral-300 text-sm">Type a message...</span>
-          <div className="ml-auto w-7 h-7 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] flex items-center justify-center">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M2 6h6m0 0L5.5 3.5M8 6l-2.5 2.5" stroke="#fff" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 /* -------------------------------------------------------------------------- */
 /*  Page                                                                      */
 /* -------------------------------------------------------------------------- */
@@ -124,7 +56,7 @@ export function ProductLiveSystemDiagnosis({
   useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-[#fdfcfa]">
+    <div className="min-h-screen bg-white">
       <style>{`
         @keyframes reveal-fade-up {
           from { opacity: 0; transform: translateY(18px); }
@@ -142,7 +74,7 @@ export function ProductLiveSystemDiagnosis({
       {/*  HERO                                                              */}
       {/* ================================================================= */}
       <section className="reveal-section relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: text */}
             <div className="flex flex-col gap-6">
@@ -175,17 +107,37 @@ export function ProductLiveSystemDiagnosis({
               </div>
             </div>
 
-            {/* Right: visual */}
-            <HeroVisual />
+            {/* Right: dashboard metrics showcase */}
+            <DashboardShowcase />
           </div>
 
-          {/* Dashboard screenshot — full width below */}
-          <div className="max-w-5xl mx-auto mt-16">
-            <img
-              src="/images/dashboard-full.png.png"
-              alt="Nautix dashboard showing total messages and live delivery rates"
-              className="w-full rounded-xl shadow-2xl border border-gray-200"
-            />
+          {/* Product demo video */}
+          <div
+            className="reveal-section"
+            style={{ maxWidth: 1000, margin: "48px auto 0" }}
+          >
+            <div
+              style={{
+                position: "relative",
+                borderRadius: 20,
+                overflow: "hidden",
+                border: "1px solid rgba(23,23,23,0.08)",
+                boxShadow:
+                  "0 30px 60px -30px rgba(126,16,162,0.25), 0 10px 30px -15px rgba(0,0,0,0.18)",
+                background: "#000",
+              }}
+            >
+              <video
+                preload="auto"
+                autoPlay
+                playsInline
+                muted
+                loop
+                poster="/nautix-media/home-hero-0419-poster.jpg"
+                src="/nautix-media/home-hero-0419-optimized.mp4"
+                style={{ display: "block", width: "100%", height: "auto" }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -193,9 +145,9 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  PROBLEM                                                           */}
       {/* ================================================================= */}
-      <section className="reveal-section py-20 lg:py-28 bg-white/50">
+      <section className="reveal-section py-14 lg:py-20 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-14">
+          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-10">
             A reply that isn&rsquo;t real{" "}
             <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
               is worse than no reply.
@@ -226,9 +178,9 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  HOW IT WORKS                                                      */}
       {/* ================================================================= */}
-      <section className="reveal-section py-20 lg:py-28">
+      <section className="reveal-section py-14 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-0">
               It checks.{" "}
               <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
@@ -277,38 +229,43 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  CAPABILITIES                                                      */}
       {/* ================================================================= */}
-      <section className="reveal-section py-20 lg:py-28 bg-white/50">
+      <section className="reveal-section py-20 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-8">
-            What live diagnosis{" "}
-            <span className="inline-block bg-[#e2fe5e] px-2 py-0.5 rounded-md text-gray-900">
-              does
-            </span>
-          </h2>
+          <div
+            className="rounded-[28px] px-10 py-16 md:py-20"
+            style={{
+              background:
+                "linear-gradient(145deg, #7e10a2 0%, #651082 54%, #2b1539 100%)",
+            }}
+          >
+            <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center">
+              Live answers, powered by{" "}
+              <span className="inline-block bg-[#e2fe5e] px-2 rounded-sm text-gray-900">
+                your live systems.
+              </span>
+            </h2>
+            <p className="font-[var(--font-sans)] text-base md:text-lg text-[#cbd5e1] max-w-3xl mx-auto text-center mt-4">
+              Nautix bridges the gap between your customer conversations and your actual business systems—billing, inventory, and network. It looks up the real, current answer in real time, so your customers never have to wait for a manual check.
+            </p>
 
-          {/* Dashboard screenshot */}
-          <div className="max-w-5xl mx-auto mb-10">
-            <img
-              src="/images/dashboard-diagnosis.png"
-              alt="Nautix full dashboard overview"
-              className="w-full rounded-xl shadow-lg border border-gray-200"
-            />
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {D.capabilities.cards.map((c) => (
-              <article
-                key={c.title}
-                className="bg-[#fdfcfa] border border-neutral-200 rounded-2xl p-6 hover:border-purple-200 hover:shadow-md transition-all duration-300"
-              >
-                <h3 className="font-[var(--font-heading)] font-bold text-lg text-[#171717] mb-2">
-                  {c.title}
-                </h3>
-                <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed">
-                  {c.body}
-                </p>
-              </article>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mt-12">
+              {D.capabilities.cards.map((c) => (
+                <article
+                  key={c.title}
+                  className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col gap-4"
+                >
+                  <div className="w-10 h-10 bg-[#f3e8ff] text-[#7C3AED] rounded-lg flex items-center justify-center font-bold text-lg shrink-0">
+                    <span>{c.title[0]}</span>
+                  </div>
+                  <h3 className="font-[var(--font-heading)] text-xl font-bold text-gray-900">
+                    {c.title}
+                  </h3>
+                  <p className="font-[var(--font-sans)] text-gray-600 text-sm leading-relaxed">
+                    {c.body}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -316,7 +273,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  INDUSTRY TABLE                                                    */}
       {/* ================================================================= */}
-      <section className="reveal-section py-20 lg:py-28">
+      <section className="reveal-section py-14 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-0">
@@ -376,7 +333,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  OUTCOMES                                                          */}
       {/* ================================================================= */}
-      <section className="reveal-section py-20 lg:py-28 bg-white/50">
+      <section className="reveal-section py-14 lg:py-20 bg-white/50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-10">
             What live diagnosis{" "}
@@ -428,7 +385,7 @@ export function ProductLiveSystemDiagnosis({
       {/* ================================================================= */}
       {/*  FINAL CTA                                                          */}
       {/* ================================================================= */}
-      <section className="reveal-section nautix-final-cta-section bg-[#fdfcfa]">
+      <section className="reveal-section nautix-final-cta-section bg-white">
         <div
           className="nautix-final-cta-shell"
           style={{
@@ -503,7 +460,7 @@ function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="reveal-section py-20 lg:py-28 bg-[#fdfcfa]">
+    <section className="reveal-section pt-14 lg:pt-20 pb-6 lg:pb-10 bg-white">
       <JsonLd data={buildFaqSchema([...D.faq.items])} />
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
