@@ -14,6 +14,13 @@ interface ProductProactiveAlertsProps {
 
 const D = PAGE_DATA;
 
+const IMAGE_MAP: Record<string, string> = {
+  ISPs: "/nautix-industries/isps.jpg",
+  "Real Estate": "/nautix-industries/real-estate.jpg",
+  "E-commerce": "/nautix-industries/ecommerce.jpg",
+  "Finance / SACCOs": "/nautix-industries/finance.jpg",
+};
+
 function useScrollReveal() {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -97,12 +104,31 @@ export function ProductProactiveAlerts({
               </div>
             </div>
 
-            {/* Right: placeholder visual */}
-            <div className="h-64 bg-gray-100 border-2 border-dashed border-neutral-300 rounded-xl flex items-center justify-center">
-              <span className="text-sm text-neutral-400 font-medium text-center px-4">
-                Outbound alert mockup<br />
-                (System event → Customer message)
-              </span>
+            {/* Right: trust bar + channel badges */}
+            <div className="flex flex-col gap-8">
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-neutral-600">
+                  Trusted by{" "}
+                  <span className="font-semibold text-[#7C3AED]">leading teams</span>{" "}
+                  across industries
+                </span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-medium text-neutral-500 tracking-wider uppercase">Channels:</span>
+                <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-semibold border border-green-200">WhatsApp</span>
+                <span className="px-3 py-1 bg-pink-50 text-pink-700 rounded-full text-xs font-semibold border border-pink-200">Instagram</span>
+                <span className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold border border-blue-200">Facebook</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-xs text-neutral-500">via</span>
+                  <span className="px-2 py-0.5 bg-purple-50 text-[#7C3AED] rounded text-[10px] font-semibold uppercase tracking-wider">System events</span>
+                  <span className="text-xs text-neutral-400">→</span>
+                  <span className="px-2 py-0.5 bg-purple-50 text-[#7C3AED] rounded text-[10px] font-semibold uppercase tracking-wider">Personal message</span>
+                  <span className="text-xs text-neutral-400">→</span>
+                  <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-[10px] font-semibold uppercase tracking-wider">Customer reassured</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -111,7 +137,7 @@ export function ProductProactiveAlerts({
       {/* ================================================================= */}
       {/*  PROBLEM                                                           */}
       {/* ================================================================= */}
-      <section className="reveal-section py-14 lg:py-20 bg-white/50">
+      <section className="reveal-section py-14 lg:py-20 bg-red-50/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold text-center text-[#171717] mb-10">
             {D.problem.heading}
@@ -218,9 +244,11 @@ export function ProductProactiveAlerts({
                 className="group bg-white rounded-2xl shadow-sm border border-neutral-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 overflow-hidden flex flex-col"
               >
                 <div className="relative w-full h-48 overflow-hidden rounded-t-2xl">
-                  <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#7C3AED] to-[#EC4899] text-white font-bold text-xl text-center px-3">
-                    {row.vertical}
-                  </div>
+                  <img
+                    src={IMAGE_MAP[row.vertical]}
+                    alt={row.vertical}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
                 <div className="p-5 flex flex-col gap-2 flex-1">
                   <span className="self-start inline-block bg-[#f3e8ff] text-[#7C3AED] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
@@ -242,7 +270,7 @@ export function ProductProactiveAlerts({
       {/* ================================================================= */}
       {/*  OUTCOMES                                                          */}
       {/* ================================================================= */}
-      <section className="reveal-section py-14 lg:py-20 bg-white/50">
+      <section className="reveal-section py-14 lg:py-20 bg-emerald-50/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-[var(--font-heading)] text-center text-3xl md:text-4xl lg:text-5xl font-bold text-[#171717] mb-10">
             {D.outcomes.heading}
