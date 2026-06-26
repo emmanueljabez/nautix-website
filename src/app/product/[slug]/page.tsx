@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LandingSectionPage } from "@/components/seo/LandingSectionPage";
+import { ProductProactiveAlerts } from "@/components/product/ProductProactiveAlerts";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   DEFAULT_PRIMARY_CTA,
@@ -54,6 +55,10 @@ export default async function ProductPage({ params }: PageProps) {
 
   if (!page) {
     notFound();
+  }
+
+  if (slug === "proactive-alerts") {
+    return <ProductProactiveAlerts data={page} />;
   }
 
   const breadcrumbSchema = buildBreadcrumbSchema([
