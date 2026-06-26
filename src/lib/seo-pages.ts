@@ -214,7 +214,13 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics"] as const;
+export const PRODUCT_SLUGS = [
+  "channels-inbox",
+  "ai-resolution",
+  "payments",
+  "analytics",
+  "proactive-alerts",
+] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -324,6 +330,36 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "ai support analytics",
       "conversation performance dashboard",
       "whatsapp support reporting",
+    ],
+  },
+  "proactive-alerts": {
+    slug: "proactive-alerts",
+    path: "/product/proactive-alerts",
+    title: "Proactive Customer Alerts & Notifications | Nautix",
+    description:
+      "Detect issues and events in your systems and message customers first — before they complain. Turn problems into trust with proactive alerts. Built for African businesses.",
+    heading: "The best message is the one they never had to send.",
+    subheading:
+      "When something happens — an outage, a payment due, an order shipped, a status change — Nautix detects it in your systems and reaches out to the customer first. Before the complaint. Before the worry. Before they have to ask.",
+    highlights: [
+      "Event detection — monitors your systems and triggers the right message automatically",
+      "Precise targeting — messages only the affected customers, never spammy blasts",
+      "Personalised messages — each alert tailored with name, details, and specifics",
+      "Two-way follow-up — Nautix answers customer replies automatically",
+      "Perfect timing — alerts go out at the right moment, not too early or late",
+      "Delivery tracking — full visibility on who was alerted, opened, and responded",
+    ],
+    outcomes: [
+      "Fewer inbound complaints during incidents",
+      "You tell them — before they find out",
+      "Measurably higher trust and retention",
+    ],
+    keywords: [
+      "proactive alerts",
+      "customer notifications",
+      "proactive support",
+      "automated alerts",
+      "outage notifications",
     ],
   },
 };
