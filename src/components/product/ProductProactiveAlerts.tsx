@@ -7,6 +7,19 @@ import { buildFaqSchema } from "@/lib/seo";
 import { Pill } from "@/components/ui/Pill";
 import { Counter } from "@/components/ui/Counter";
 import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  Eye,
+  Users,
+  Send,
+  MessageCircle,
+  Activity,
+  Crosshair,
+  UserCheck,
+  RefreshCw,
+  Clock,
+  BarChart3,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface ProductProactiveAlertsProps {
   data: LandingPageData;
@@ -15,11 +28,27 @@ interface ProductProactiveAlertsProps {
 const D = PAGE_DATA;
 
 const IMAGE_MAP: Record<string, string> = {
-  ISPs: "/nautix-industries/isps.jpg",
+  ISPs: "/images/network%20outage.avif",
   "Real Estate": "/nautix-industries/real-estate.jpg",
   "E-commerce": "/nautix-industries/ecommerce.jpg",
-  "Finance / SACCOs": "/nautix-industries/finance.jpg",
+  "Finance / SACCOs": "/images/Professional%20at%20desk.jpg",
 };
+
+const STEP_ICONS: LucideIcon[] = [Eye, Users, Send, MessageCircle];
+const STEP_IMAGES = [
+  "/images/watches%20for%20event2.avif",
+  "/images/Team%20celebrating%20dashboard.jpg",
+  "/images/Notification%20on%20smartphone.jpg",
+  "/images/finance.png.webp",
+];
+const CAP_ICONS: LucideIcon[] = [
+  Activity,
+  Crosshair,
+  UserCheck,
+  RefreshCw,
+  Clock,
+  BarChart3,
+];
 
 function useScrollReveal() {
   useEffect(() => {
@@ -72,7 +101,7 @@ export function ProductProactiveAlerts({
       {/* ================================================================= */}
       <section className="reveal-section relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left: text */}
             <div className="flex flex-col gap-6">
               <Pill>{D.hero.eyebrow}</Pill>
@@ -105,7 +134,7 @@ export function ProductProactiveAlerts({
             </div>
 
             {/* Right: trust bar + channel badges */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col items-start justify-between gap-2 md:gap-3 self-stretch">
               <div className="flex items-center gap-2">
                 <span className="text-sm text-neutral-600">
                   Trusted by{" "}
@@ -127,8 +156,13 @@ export function ProductProactiveAlerts({
                   <span className="px-2 py-0.5 bg-purple-50 text-[#7C3AED] rounded text-[10px] font-semibold uppercase tracking-wider">Personal message</span>
                   <span className="text-xs text-neutral-400">→</span>
                   <span className="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-[10px] font-semibold uppercase tracking-wider">Customer reassured</span>
-                </div>
               </div>
+              <img
+                src="/images/Support%20team%20workspace.jpg"
+                alt="Support team collaborating on customer conversations"
+                className="w-full h-auto max-h-[300px] object-cover rounded-xl shadow-lg"
+              />
+            </div>
             </div>
           </div>
         </div>
@@ -178,20 +212,36 @@ export function ProductProactiveAlerts({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {D.howItWorks.steps.map((s) => (
-              <article key={s.stepNumber} className="relative text-center group">
-                <span className="block text-6xl font-bold text-neutral-100 select-none mb-[-0.5em] leading-none">
-                  0{s.stepNumber}
-                </span>
-                <h3 className="font-[var(--font-heading)] font-bold text-lg text-[#171717] mb-2 relative">
-                  {s.title}
-                </h3>
-                <p className="font-[var(--font-sans)] text-sm text-neutral-600 leading-relaxed">
-                  {s.detail}
-                </p>
-              </article>
-            ))}
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {D.howItWorks.steps.map((s, idx) => {
+              const Icon = STEP_ICONS[idx];
+              const stepImage = STEP_IMAGES[idx];
+              return (
+                <article
+                  key={s.stepNumber}
+                  className="group bg-white rounded-2xl shadow-sm border border-neutral-200 hover:shadow-xl hover:border-purple-200 transition-all duration-300 overflow-hidden flex flex-col"
+                >
+                  <div className="relative w-full h-44 overflow-hidden rounded-t-2xl">
+                    <img
+                      src={stepImage}
+                      alt={s.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-5 flex flex-col items-center text-center gap-3 flex-1">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#EC4899] flex items-center justify-center shadow-md shadow-purple-500/20 -mt-9 relative z-10 ring-4 ring-white">
+                      <Icon size={18} strokeWidth={2} color="#fff" />
+                    </div>
+                    <h3 className="font-[var(--font-heading)] font-bold text-base text-[#171717]">
+                      {s.title}
+                    </h3>
+                    <p className="font-[var(--font-sans)] text-[13px] text-neutral-600 leading-relaxed">
+                      {s.detail}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -206,11 +256,16 @@ export function ProductProactiveAlerts({
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {D.capabilities.cards.map((c) => (
+            {D.capabilities.cards.map((c, idx) => {
+              const Icon = CAP_ICONS[idx];
+              return (
               <article
                 key={c.title}
                 className="bg-white border border-neutral-200 rounded-2xl p-6 hover:border-purple-200 hover:shadow-md transition-all duration-300"
               >
+                <div className="w-10 h-10 bg-[#f3e8ff] text-[#7C3AED] rounded-lg flex items-center justify-center mb-4">
+                  <Icon size={20} strokeWidth={2} />
+                </div>
                 <h3 className="font-[var(--font-heading)] font-bold text-lg text-[#171717] mb-2">
                   {c.title}
                 </h3>
@@ -218,7 +273,8 @@ export function ProductProactiveAlerts({
                   {c.body}
                 </p>
               </article>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
