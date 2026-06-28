@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "nurture-sequence"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -297,6 +297,34 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "whatsapp payment automation",
       "chat checkout automation",
       "payment confirmation workflow",
+    ],
+  },
+  "nurture-sequence": {
+    slug: "nurture-sequence",
+    path: "/product/nurture-sequence",
+    title: "Automated Lead Nurture Sequences on WhatsApp | Nautix",
+    description:
+      "Keep every lead warm with timely, personal, automated follow-up until they're ready to buy. Recover lost sales and never forget a follow-up. Built for African businesses.",
+    heading: "The follow-up your team always forgets.",
+    subheading:
+      "Most leads aren't ready to buy the first time they reach out. And most businesses never follow up. Nautix stays in the conversation — with timely, personal, automated messages that keep every lead warm until the moment they're ready.",
+    highlights: [
+      "Multi-step follow-up that runs on its own, timed perfectly for each lead.",
+      "Each message uses the lead's name, interest, and context — never generic blasts.",
+      "Sequences adapt based on how the lead responds — engaged leads get a different path.",
+      "The moment a lead shows real intent, they're routed to your team to close.",
+    ],
+    outcomes: [
+      "More leads converted with systematic follow-up.",
+      "Zero forgotten follow-ups — every lead is nurtured.",
+      "Re-engagement that recovers lost sales.",
+    ],
+    keywords: [
+      "nurture sequence",
+      "lead nurturing",
+      "automated follow-up",
+      "drip campaign",
+      "WhatsApp follow up",
     ],
   },
   analytics: {
