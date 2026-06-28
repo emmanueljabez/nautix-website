@@ -195,6 +195,9 @@ function ProblemSection() {
     <section className="py-24 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-4xl">
+          <p className="text-primary text-sm font-semibold uppercase tracking-wide mb-3">
+            WHY THIS FEATURE EXISTS
+          </p>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-6 font-heading">
             The fortune is in the follow-up. You&apos;re leaving it there.
           </h2>
@@ -206,9 +209,9 @@ function ProblemSection() {
             the door because nobody followed up.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded-2xl border border-red-100 bg-red-50/50 p-7">
-              <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center mb-4 text-lg">
-                &#9888;
+            <div className="group rounded-2xl border border-red-100 bg-gradient-to-b from-red-50/60 to-white p-7 hover:shadow-lg transition-shadow">
+              <div className="w-11 h-11 rounded-xl bg-red-100 flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-red-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-3 font-heading">
                 Follow-up falls through the cracks
@@ -218,9 +221,9 @@ function ProblemSection() {
                 &apos;maybe later&apos; leads get forgotten entirely.
               </p>
             </div>
-            <div className="rounded-2xl border border-amber-100 bg-amber-50/50 p-7">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center mb-4 text-lg">
-                &#x26A0;
+            <div className="group rounded-2xl border border-amber-100 bg-gradient-to-b from-amber-50/60 to-white p-7 hover:shadow-lg transition-shadow">
+              <div className="w-11 h-11 rounded-xl bg-amber-100 flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-amber-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" /></svg>
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-3 font-heading">
                 One touch is rarely enough
@@ -230,9 +233,9 @@ function ProblemSection() {
                 businesses only make first contact.
               </p>
             </div>
-            <div className="rounded-2xl border border-orange-100 bg-orange-50/50 p-7">
-              <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center mb-4 text-lg">
-                &#x26A0;
+            <div className="group rounded-2xl border border-orange-100 bg-gradient-to-b from-orange-50/60 to-white p-7 hover:shadow-lg transition-shadow">
+              <div className="w-11 h-11 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
+                <svg className="w-5 h-5 text-orange-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-3 font-heading">
                 Manual follow-up doesn&apos;t scale
@@ -256,24 +259,36 @@ function HowItWorksSection() {
       title: "Lead enters a sequence",
       detail:
         "When a lead isn't ready, Nautix enrols them in the right nurture sequence for their situation.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /></svg>
+      ),
     },
     {
       num: "02",
       title: "Sends timely, personal messages",
       detail:
         "Over days or weeks, it sends helpful, personalised follow-ups — not spam, but relevant nudges.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+      ),
     },
     {
       num: "03",
       title: "Adapts to their response",
       detail:
         "If the lead engages, replies, or shows buying signals, the sequence adapts or hands off to your team.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+      ),
     },
     {
       num: "04",
       title: "Converts or recycles",
       detail:
         "When the lead is ready, it's routed to sales. If they go cold, they're kept for future re-engagement.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+      ),
     },
   ];
 
@@ -289,10 +304,13 @@ function HowItWorksSection() {
             message — until they convert or opt out.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {steps.map((step) => (
             <div key={step.title} className="relative">
-              <span className="block text-6xl font-bold text-primary/15 mb-4 font-heading">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center mb-5 text-primary">
+                {step.icon}
+              </div>
+              <span className="block text-5xl font-bold text-primary/10 mb-3 font-heading">
                 {step.num}
               </span>
               <h3 className="text-lg font-semibold text-neutral-900 mb-2 font-heading">
@@ -301,11 +319,9 @@ function HowItWorksSection() {
               <p className="text-neutral-600 text-sm leading-relaxed">
                 {step.detail}
               </p>
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-[calc(100%+0.5rem)] w-8 border-t-2 border-dashed border-primary/20" />
-              )}
             </div>
           ))}
+          <div className="hidden lg:block absolute top-7 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20" />
         </div>
       </div>
     </section>
@@ -315,32 +331,32 @@ function HowItWorksSection() {
 function CapabilitiesSection() {
   const cards = [
     {
-      emoji: "📨",
+      icon: "📨",
       title: "Automated sequences",
       body: "Multi-step follow-up that runs on its own, timed perfectly for each lead.",
     },
     {
-      emoji: "✍️",
+      icon: "✍️",
       title: "Personalised messages",
       body: "Each message uses the lead's name, interest, and context — never generic blasts.",
     },
     {
-      emoji: "🔄",
+      icon: "🔄",
       title: "Behaviour-based",
       body: "Sequences adapt based on how the lead responds — engaged leads get a different path than quiet ones.",
     },
     {
-      emoji: "🤝",
+      icon: "🤝",
       title: "Seamless handoff",
       body: "The moment a lead shows real intent, they're routed to your team to close.",
     },
     {
-      emoji: "🛑",
+      icon: "🛑",
       title: "Smart stopping",
       body: "Knows when to stop — respects opt-outs and never over-messages.",
     },
     {
-      emoji: "♻️",
+      icon: "♻️",
       title: "Re-engagement",
       body: "Cold leads can be revived later with fresh sequences, recovering otherwise-lost sales.",
     },
@@ -354,13 +370,15 @@ function CapabilitiesSection() {
             What the nurture sequence does
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {cards.map((card) => (
             <div
               key={card.title}
-              className="rounded-2xl border border-neutral-200 bg-white p-7 hover:shadow-md hover:border-primary/30 transition-all"
+              className="group rounded-2xl border border-neutral-200 bg-white p-7 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-200"
             >
-              <div className="text-2xl mb-3">{card.emoji}</div>
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center mb-4 text-xl group-hover:scale-110 transition-transform">
+                {card.icon}
+              </div>
               <h3 className="text-lg font-semibold text-neutral-900 mb-2 font-heading">
                 {card.title}
               </h3>
@@ -381,21 +399,25 @@ function IndustriesSection() {
       name: "ISPs",
       detail:
         "A prospect outside current coverage, or one still deciding, gets periodic check-ins and offers — so when they're ready (or coverage reaches them), Nautix is the first they hear from.",
+      icon: "📡",
     },
     {
       name: "Real Estate",
       detail:
         "A buyer not ready today gets nurtured with new matching listings, price updates, and gentle check-ins — staying engaged through a months-long decision.",
+      icon: "🏠",
     },
     {
       name: "E-commerce",
       detail:
         "A shopper who didn't complete a purchase gets a timely nudge, a reminder, or an offer — recovering carts and converting hesitation into a sale.",
+      icon: "🛒",
     },
     {
       name: "Finance / SACCOs",
       detail:
         "A member who inquired about a loan but didn't proceed gets helpful follow-ups about eligibility and benefits — converting interest into applications over time.",
+      icon: "🏦",
     },
   ];
 
@@ -415,11 +437,16 @@ function IndustriesSection() {
           {industries.map((ind) => (
             <div
               key={ind.name}
-              className="rounded-2xl border border-neutral-200 bg-white p-7"
+              className="group rounded-2xl border border-neutral-200 bg-white p-7 hover:shadow-lg hover:border-primary/20 hover:-translate-y-0.5 transition-all duration-200"
             >
-              <h3 className="text-lg font-semibold text-primary mb-3 font-heading">
-                {ind.name}
-              </h3>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-50 to-primary-100 flex items-center justify-center text-lg group-hover:scale-110 transition-transform">
+                  {ind.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-neutral-900 font-heading">
+                  {ind.name}
+                </h3>
+              </div>
               <p className="text-neutral-600 text-sm leading-relaxed">
                 {ind.detail}
               </p>
@@ -455,10 +482,13 @@ function OutcomesSection() {
             What consistent follow-up delivers
           </h2>
         </div>
-        <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
+        <div className="grid sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {stats.map((stat) => (
-            <div key={stat.label}>
-              <div className="text-5xl md:text-6xl font-bold text-primary mb-3 font-heading">
+            <div
+              key={stat.label}
+              className="text-center p-8 rounded-2xl border border-neutral-100 bg-gradient-to-b from-neutral-50/50 to-white"
+            >
+              <div className="text-5xl md:text-6xl font-bold text-primary mb-4 font-heading">
                 {stat.value}
               </div>
               <p className="text-neutral-600 text-sm leading-relaxed">
@@ -467,7 +497,7 @@ function OutcomesSection() {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-neutral-400 mt-8">
+        <p className="text-center text-xs text-neutral-400 mt-10">
           Illustrative benchmarks — to be replaced with real numbers from case
           studies as they come in.
         </p>
@@ -483,16 +513,23 @@ function FaqSection() {
         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-12 text-center font-heading">
           Common questions
         </h2>
-        <dl className="space-y-6">
+        <dl className="space-y-4">
           {FAQ_ITEMS.map((faq) => (
             <div
               key={faq.question}
-              className="rounded-2xl border border-neutral-200 bg-white p-6"
+              className="rounded-2xl border border-neutral-200 bg-white p-6 hover:border-primary/20 transition-colors"
             >
-              <dt className="text-lg font-semibold text-neutral-900 mb-2 font-heading">
-                {faq.question}
+              <dt className="flex items-start gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                </span>
+                <span className="text-lg font-semibold text-neutral-900 font-heading">
+                  {faq.question}
+                </span>
               </dt>
-              <dd className="text-neutral-600 leading-relaxed">{faq.answer}</dd>
+              <dd className="mt-3 ml-9 text-neutral-600 leading-relaxed">
+                {faq.answer}
+              </dd>
             </div>
           ))}
         </dl>
