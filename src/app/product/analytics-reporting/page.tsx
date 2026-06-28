@@ -230,7 +230,7 @@ export default function AnalyticsReportingPage() {
       <JsonLd data={faqSchema} />
       <JsonLd data={softwareSchema} />
 
-      <main className="bg-background">
+      <main className="bg-[#fdfcfa]">
         {/* ================================================================
         Section 1 — Hero
         ================================================================ */}
@@ -242,7 +242,7 @@ export default function AnalyticsReportingPage() {
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary-700 text-xs font-semibold tracking-[0.15em] uppercase">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary-200 bg-primary-50 text-primary-700 text-xs font-semibold tracking-[0.15em] uppercase">
                 Analytics &amp; Reporting
               </span>
 
@@ -250,7 +250,7 @@ export default function AnalyticsReportingPage() {
                 Run your operation on facts, not feelings.
               </h1>
 
-              <p className="text-lg md:text-xl text-foreground/65 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Every conversation, resolution, lead, and payment becomes clear, visible data.
                 Nautix gives you live dashboards and a daily summary that lands on your phone
                 before your day begins — so you always know exactly how your operation is
@@ -275,7 +275,7 @@ export default function AnalyticsReportingPage() {
                 </a>
                 <a
                   href={DEMO_URL}
-                  className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold border border-primary/25 text-primary-700 hover:bg-primary-50 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold border border-primary-200 text-primary-700 hover:bg-primary-50 transition-colors"
                 >
                   See it in action
                 </a>
@@ -349,7 +349,7 @@ export default function AnalyticsReportingPage() {
                       </svg>
                       <div>
                         <span className="text-sm font-semibold text-primary-800">Daily report arriving at 7am</span>
-                        <span className="text-xs text-primary-600/70 ml-2">Yesterday: 98% resolved, 47 new leads, KES 320K collected</span>
+                        <span className="text-xs text-primary-600 ml-2">Yesterday: 98% resolved, 47 new leads, KES 320K collected</span>
                       </div>
                     </div>
                   </div>
@@ -368,7 +368,7 @@ export default function AnalyticsReportingPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-primary-950 mb-5">
                 You can&apos;t improve what you can&apos;t see.
               </h2>
-              <p className="text-lg text-foreground/65 leading-relaxed max-w-3xl">
+              <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
                 Most businesses run customer operations blind. How fast does your team really
                 respond? How many issues get resolved without a human? Which leads convert? How
                 much is collected? The answers are buried across apps and spreadsheets, or simply
@@ -390,7 +390,7 @@ export default function AnalyticsReportingPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg font-semibold text-primary-950 mb-2">{point.title}</h3>
-                  <p className="text-sm text-foreground/60 leading-relaxed">{point.body}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{point.body}</p>
                 </div>
               ))}
             </div>
@@ -406,7 +406,7 @@ export default function AnalyticsReportingPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-primary-950 mb-4">
                 Everything measured. Everything visible.
               </h2>
-              <p className="text-lg text-foreground/65 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Nautix turns every interaction into insight — on a live dashboard and in a daily
                 report.
               </p>
@@ -420,7 +420,7 @@ export default function AnalyticsReportingPage() {
                       {s.step}
                     </span>
                     <h3 className="text-base font-semibold text-primary-950 mb-2">{s.title}</h3>
-                    <p className="text-sm text-foreground/60 leading-relaxed">{s.body}</p>
+                    <p className="text-sm text-gray-600 leading-relaxed">{s.body}</p>
                   </div>
                   {s.step !== "4" && (
                     <div className="hidden md:block absolute top-1/2 -right-3 z-10">
@@ -462,7 +462,7 @@ export default function AnalyticsReportingPage() {
                     {cap.icon}
                   </div>
                   <h3 className="text-lg font-semibold text-primary-950 mb-2">{cap.title}</h3>
-                  <p className="text-sm text-foreground/60 leading-relaxed">{cap.body}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{cap.body}</p>
                 </div>
               ))}
             </div>
@@ -478,7 +478,7 @@ export default function AnalyticsReportingPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-primary-950 mb-4">
                 Clear insight for every operation.
               </h2>
-              <p className="text-lg text-foreground/65 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Whatever you run, you see it clearly and decide with confidence.
               </p>
             </div>
@@ -490,7 +490,7 @@ export default function AnalyticsReportingPage() {
                   className="rounded-2xl border border-black/5 bg-white p-7 shadow-sm"
                 >
                   <h3 className="text-lg font-semibold text-primary-700 mb-3">{ind.name}</h3>
-                  <p className="text-sm text-foreground/60 leading-relaxed">{ind.body}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{ind.body}</p>
                 </div>
               ))}
             </div>
@@ -514,12 +514,12 @@ export default function AnalyticsReportingPage() {
                   <div className="text-4xl md:text-5xl font-bold text-primary-700 mb-3">
                     {stat.value}
                   </div>
-                  <p className="text-sm text-foreground/55 leading-relaxed">{stat.label}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{stat.label}</p>
                 </div>
               ))}
             </div>
 
-            <p className="text-center text-xs text-foreground/35 mt-10 max-w-md mx-auto">
+            <p className="text-center text-xs text-gray-400 mt-10 max-w-md mx-auto">
               Illustrative benchmarks. Real customer data from case studies will replace these
               figures as they become available. Never presented as verified.
             </p>
@@ -563,7 +563,7 @@ export default function AnalyticsReportingPage() {
                         />
                       </svg>
                     </summary>
-                    <div className="px-6 pb-5 text-sm text-foreground/60 leading-relaxed">
+                    <div className="px-6 pb-5 text-sm text-gray-600 leading-relaxed">
                       {faq.answer}
                     </div>
                   </details>
@@ -629,13 +629,13 @@ export default function AnalyticsReportingPage() {
         <section className="pb-20 md:pb-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <p className="text-sm text-foreground/40 mb-5">Related product pages</p>
+              <p className="text-sm text-gray-400 mb-5">Related product pages</p>
               <div className="flex flex-wrap items-center justify-center gap-3">
                 {relatedPages.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-black/10 text-sm text-foreground/60 hover:text-primary-700 hover:border-primary-200 transition-colors"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-black/10 text-sm text-gray-600 hover:text-primary-700 hover:border-primary-200 transition-colors"
                   >
                     {link.label}
                   </a>
