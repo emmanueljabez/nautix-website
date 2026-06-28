@@ -17,13 +17,31 @@ const WHATSAPP = "+254720482575";
 
 const PAGE = PRODUCT_PAGES["nurture-sequence" as ProductSlug];
 
-export const metadata: Metadata = buildMetadata({
+const OG_TITLE = "Follow Up With Every Lead, Automatically — Nautix";
+const OG_DESC =
+  "Personalised, automated nurture sequences that keep leads warm until they buy.";
+
+const baseMetadata = buildMetadata({
   title: PAGE.title,
   description: PAGE.description,
   path: PAGE.path,
   keywords: [...PAGE.keywords],
   image: "/icon.png",
 });
+
+export const metadata: Metadata = {
+  ...baseMetadata,
+  openGraph: {
+    ...baseMetadata.openGraph,
+    title: OG_TITLE,
+    description: OG_DESC,
+  },
+  twitter: {
+    ...baseMetadata.twitter,
+    title: OG_TITLE,
+    description: OG_DESC,
+  },
+};
 
 const FAQ_ITEMS = [
   {
@@ -63,32 +81,108 @@ const softwareSchema = buildSoftwareApplicationSchema({
 const faqSchema = buildFaqSchema(FAQ_ITEMS);
 
 function HeroSection() {
+  const messages = [
+    {
+      time: "Day 1 · 2h after inquiry",
+      text: "Hi Jane, thanks for your interest in our fibre packages! Let me know if you have any questions — I'm here to help.",
+      sent: true,
+    },
+    {
+      time: "Day 3 · 10:30 AM",
+      text: "Hey Jane, just checking in. Many of our customers love the 20Mbps plan for streaming and working from home. Want me to walk you through it?",
+      sent: true,
+    },
+    {
+      time: "Day 7 · 3:15 PM",
+      text: "Hi Jane! Quick update — we've just expanded coverage to your area. Still interested in getting connected? I can check availability for your exact address.",
+      sent: true,
+    },
+    {
+      time: "Day 14 · 9:00 AM",
+      text: "Yes please! Can we set up installation for next week?",
+      sent: false,
+      highlight: true,
+    },
+  ];
+
   return (
     <section className="relative pt-40 pb-24 overflow-hidden bg-gradient-to-b from-[#FAF8F5] to-white">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="max-w-4xl">
-          <span className="inline-flex items-center px-3 py-1 rounded-full border border-primary/25 bg-primary/5 text-primary text-sm font-semibold mb-6">
-            NURTURE SEQUENCE
-          </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 mb-6 font-heading">
-            {PAGE.heading}
-          </h1>
-          <p className="text-lg md:text-xl text-neutral-600 max-w-3xl mb-8 leading-relaxed">
-            {PAGE.subheading}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href={DEMO_URL}
-              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold bg-primary hover:bg-primary-700 text-white transition-colors"
-            >
-              Book a demo &rarr;
-            </a>
-            <a
-              href="#how-it-works"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold border border-neutral-300 text-neutral-700 hover:bg-neutral-50 transition-colors"
-            >
-              See it in action
-            </a>
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="inline-flex items-center px-3 py-1 rounded-full border border-primary/25 bg-primary/5 text-primary text-sm font-semibold mb-6">
+              NURTURE SEQUENCE
+            </span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 mb-6 font-heading">
+              {PAGE.heading}
+            </h1>
+            <p className="text-lg md:text-xl text-neutral-600 mb-8 leading-relaxed">
+              {PAGE.subheading}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={DEMO_URL}
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold bg-primary hover:bg-primary-700 text-white transition-colors"
+              >
+                Book a demo &rarr;
+              </a>
+              <a
+                href="#how-it-works"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold border border-neutral-300 text-neutral-700 hover:bg-neutral-50 transition-colors"
+              >
+                See it in action
+              </a>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-br from-primary-100/40 via-transparent to-transparent rounded-3xl blur-2xl" />
+            <div className="relative max-w-sm mx-auto bg-white rounded-2xl shadow-xl border border-neutral-200 overflow-hidden">
+              <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center text-white font-semibold text-sm">
+                  J
+                </div>
+                <div>
+                  <div className="text-white text-sm font-semibold">Jane</div>
+                  <div className="text-white/70 text-xs">Nurture Sequence</div>
+                </div>
+              </div>
+              <div className="p-4 space-y-4 bg-[#E5DDD5] min-h-[320px]">
+                {messages.map((msg, i) => (
+                  <div
+                    key={i}
+                    className={`flex ${msg.sent ? "justify-end" : "justify-start"}`}
+                  >
+                    <div
+                      className={`max-w-[85%] px-3 py-2 rounded-lg text-sm leading-relaxed ${
+                        msg.highlight
+                          ? "bg-[#DCF8C6] text-neutral-900"
+                          : msg.sent
+                            ? "bg-[#DCF8C6] text-neutral-900"
+                            : "bg-white text-neutral-900"
+                      }`}
+                    >
+                      {!msg.sent && (
+                        <div className="text-[10px] text-neutral-400 mb-1">
+                          {msg.time}
+                        </div>
+                      )}
+                      <p>{msg.text}</p>
+                      {msg.sent && (
+                        <div className="text-[10px] text-neutral-400 text-right mt-1">
+                          {msg.time}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="absolute -bottom-3 -left-3 bg-white rounded-full px-4 py-2 shadow-lg border border-neutral-200 text-xs font-medium text-neutral-600 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              Persistent but personal
+            </div>
           </div>
         </div>
       </div>
