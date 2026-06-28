@@ -645,13 +645,6 @@ export default function AnalyticsReportingPage() {
           </div>
         </section>
 
-        <footer className="border-t border-black/5 py-8">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-xs text-foreground/30">
-              nautix.io · hello@nautix.io · Built by operators, for operators.
-            </p>
-          </div>
-        </footer>
       </main>
     </>
   );
