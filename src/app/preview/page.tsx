@@ -120,7 +120,7 @@ export default function PreviewHome() {
                 href="#"
                 className="text-primary-600 font-medium hover:underline inline-flex items-center gap-1"
               >
-                Learn more <span aria-hidden="true">â†’</span>
+                Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
 
@@ -149,7 +149,7 @@ export default function PreviewHome() {
                 href="#"
                 className="text-primary-600 font-medium hover:underline inline-flex items-center gap-1"
               >
-                Learn more <span aria-hidden="true">â†’</span>
+                Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
 
@@ -178,7 +178,7 @@ export default function PreviewHome() {
                 href="#"
                 className="text-primary-600 font-medium hover:underline inline-flex items-center gap-1"
               >
-                Learn more <span aria-hidden="true">â†’</span>
+                Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -201,19 +201,19 @@ export default function PreviewHome() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-300">
-                    âœ“
+                    ✓
                   </div>
                   <span>Official WhatsApp Business API</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-300">
-                    âœ“
+                    ✓
                   </div>
                   <span>Instagram Direct Messages</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-300">
-                    âœ“
+                    ✓
                   </div>
                   <span>Facebook Messenger</span>
                 </li>

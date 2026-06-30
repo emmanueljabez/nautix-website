@@ -1,5 +1,5 @@
 /**
- * ISP Landing Page â€” Data Constants
+ * ISP Landing Page — Data Constants
  *
  * Comprehensive constants file for nautix.io/isp.
  * Follows the pattern of src/lib/faq-data.ts and src/lib/pricing-data.ts.
@@ -93,11 +93,11 @@ export interface IspHeroData {
   readonly secondaryCta: string;
 }
 
-/** Hero section â€” headline, subheadline, credibility chips, CTAs. */
+/** Hero section — headline, subheadline, credibility chips, CTAs. */
 export const HERO_DATA: IspHeroData = {
   headline: "Resolve ISP support issues in under 2 minutes. Automatically.",
   subheadline:
-    "Nautix is the WhatsApp AI operations layer for ISPs running Splynx and SmartOLT. It reboots ONUs, collects overdue M-Pesa payments, qualifies new leads, and sends proactive outage alerts â€” without a human agent.",
+    "Nautix is the WhatsApp AI operations layer for ISPs running Splynx and SmartOLT. It reboots ONUs, collects overdue M-Pesa payments, qualifies new leads, and sends proactive outage alerts — without a human agent.",
   credibilityChips: [
     { icon: "\uD83D\uDD01", text: "Connected to SmartOLT" },
     { icon: "\uD83D\uDCCB", text: "Splynx integration" },
@@ -116,7 +116,7 @@ export interface IspPainCardsData {
   readonly cards: readonly IspPainCard[];
 }
 
-/** Problem section â€” validates the ISP operator's pain with three cards. */
+/** Problem section — validates the ISP operator's pain with three cards. */
 export const PAIN_CARDS_DATA: IspPainCardsData = {
   sectionHeading: "Built for the way ISPs actually run.",
   cards: [
@@ -152,7 +152,7 @@ export interface IspCapabilitiesData {
   readonly cards: readonly IspCapabilityCard[];
 }
 
-/** Capabilities section â€” six cards in a 2Ã—3 grid. */
+/** Capabilities section — six cards in a 2Ã—3 grid. */
 export const CAPABILITIES_DATA: IspCapabilitiesData = {
   sectionHeading: "Six ways Nautix runs your ISP \u2014 automatically.",
   sectionSubhead:
@@ -216,7 +216,7 @@ export interface IspPioneerMomentData {
 }
 
 /**
- * Pioneer Moment section â€” the timestamped resolution story.
+ * Pioneer Moment section — the timestamped resolution story.
  * The single highest-converting section on the page.
  */
 export const PIONEER_MOMENT_DATA: IspPioneerMomentData = {
@@ -295,7 +295,7 @@ export interface IspNumbersData {
   readonly supportingCopy: readonly string[];
 }
 
-/** Numbers section â€” real statistics from a pilot ISP. */
+/** Numbers section — real statistics from a pilot ISP. */
 export const NUMBERS_DATA: IspNumbersData = {
   sectionHeading:
     "Real numbers from a 1,200-subscriber WISP \u2014 Month 1.",
@@ -331,7 +331,7 @@ export interface IspIntegrationData {
   readonly integrationLogos: readonly string[];
 }
 
-/** Integration section â€” architecture diagram + trust signals + logo strip. */
+/** Integration section — architecture diagram + trust signals + logo strip. */
 export const INTEGRATION_DATA: IspIntegrationData = {
   sectionHeading: "Connects to the systems you already run.",
   architectureBoxes: [
@@ -374,7 +374,7 @@ export interface IspPilotOfferData {
   readonly cta: string;
 }
 
-/** Pilot Offer section â€” free 30-day trial, risk reversal, conversion engine. */
+/** Pilot Offer section — free 30-day trial, risk reversal, conversion engine. */
 export const PILOT_OFFER_DATA: IspPilotOfferData = {
   sectionHeading:
     "Free 30-day pilot. Full integration. No commitment.",
@@ -398,7 +398,7 @@ export interface IspFaqData {
   readonly questions: readonly IspFaqItem[];
 }
 
-/** FAQ section â€” five objection-handling questions. */
+/** FAQ section — five objection-handling questions. */
 export const FAQ_DATA: IspFaqData = {
   sectionHeading: "Questions ISP operators ask before booking.",
   questions: [
@@ -436,7 +436,7 @@ export const FAQ_DATA: IspFaqData = {
 //  Section 9: Testimonial
 // ---------------------------------------------------------------------------
 
-/** Testimonial section â€” single pull quote with attribution and logo row. */
+/** Testimonial section — single pull quote with attribution and logo row. */
 export const TESTIMONIAL_DATA: IspTestimonialData = {
   sectionHeading: "Built for ISPs across East Africa.",
   quote:
@@ -466,7 +466,7 @@ export interface IspFinalCtaData {
   readonly riskReversal: readonly string[];
 }
 
-/** Final CTA section â€” last conversion attempt with two CTAs and risk reversal. */
+/** Final CTA section — last conversion attempt with two CTAs and risk reversal. */
 export const FINAL_CTA_DATA: IspFinalCtaData = {
   sectionHeading:
     "See Nautix working on your actual network.",

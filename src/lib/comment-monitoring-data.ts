@@ -6,7 +6,7 @@ export const PAGE_DATA = {
     eyebrow: "Comment Monitoring",
     h1: "Every comment is a customer. Catch them all.",
     subhead:
-      "The comments under your posts and ads are full of buyers, questions, and complaints â€” in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
+      "The comments under your posts and ads are full of buyers, questions, and complaints — in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
     primaryCta: { label: "Book a Demo", href: DEMO_EMAIL_URL },
     secondaryCta: { label: "See it in action", href: "#how-it-works" },
   },
@@ -51,7 +51,7 @@ export const PAGE_DATA = {
         stepNumber: 2,
         title: "Understands intent",
         detail:
-          "It tells a buying question from a complaint from a compliment from spam â€” and treats each appropriately.",
+          "It tells a buying question from a complaint from a compliment from spam — and treats each appropriately.",
         stat: "Intent",
         statLabel: "detection engine",
         kind: "target",
@@ -158,12 +158,12 @@ export const PAGE_DATA = {
       {
         question: "Which platforms does comment monitoring cover?",
         answer:
-          "Instagram and Facebook posts and ads. When someone comments, Nautix sees it, understands it, and responds or routes it â€” in real time.",
+          "Instagram and Facebook posts and ads. When someone comments, Nautix sees it, understands it, and responds or routes it — in real time.",
       },
       {
         question: "Can it move public commenters into private chats?",
         answer:
-          "Yes â€” this is one of its most valuable functions. A public 'how much?' can be answered in the thread and simultaneously invited into a private DM where you can actually close the sale.",
+          "Yes — this is one of its most valuable functions. A public 'how much?' can be answered in the thread and simultaneously invited into a private DM where you can actually close the sale.",
       },
       {
         question: "What about negative comments?",

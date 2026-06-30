@@ -5,14 +5,14 @@ import { CAPABILITIES_DATA } from "@/lib/isp-data";
 import { useReveal } from "@/hooks/useReveal";
 
 /**
- * IspCapabilities â€” Section 3: What Nautix Does.
+ * IspCapabilities — Section 3: What Nautix Does.
  *
  * Six capability cards in a 2Ã—3 responsive grid (2 columns Ã— 3 rows
  * on desktop, stacked on mobile). Each card has an icon, title,
  * description, and a visually distinct outcome line.
  *
  * Cards are clickable to expand more detail via accordion.
- * The high-level scan is enough to convince â€” expansion
+ * The high-level scan is enough to convince — expansion
  * provides deeper context for the sceptical technical reader.
  */
 const CAPABILITY_ICONS: Record<string, string> = {
@@ -91,9 +91,9 @@ export function IspCapabilities() {
                   }
                 }}
               >
-                {/* â”€â”€ Icon + Title + Description â”€â”€ */}
+                {/* —— Icon + Title + Description —— */}
                 <div className="flex items-start gap-4">
-                  {/* Icon container â€” matches WORKFLOW_CARDS exactly */}
+                  {/* Icon container — matches WORKFLOW_CARDS exactly */}
                   <span
                     className="shrink-0 text-[20px] leading-none"
                     style={{
@@ -114,7 +114,7 @@ export function IspCapabilities() {
                   </span>
 
                   <div className="min-w-0 flex-1">
-                    {/* Title â€” matches WORKFLOW_CARDS exactly */}
+                    {/* Title — matches WORKFLOW_CARDS exactly */}
                     <h3
                       style={{
                         fontFamily: "var(--font-heading), sans-serif",
@@ -127,7 +127,7 @@ export function IspCapabilities() {
                       {card.title}
                     </h3>
 
-                    {/* Description â€” matches WORKFLOW_CARDS exactly */}
+                    {/* Description — matches WORKFLOW_CARDS exactly */}
                     <p
                       style={{
                         margin: 0,
@@ -141,17 +141,17 @@ export function IspCapabilities() {
                   </div>
                 </div>
 
-                {/* â”€â”€ Outcome line â€” visually distinct â”€â”€ */}
+                {/* —— Outcome line — visually distinct —— */}
                 <div className="mt-3 flex items-start gap-2 border-t border-black/10 pt-3">
                   <span className="mt-px shrink-0 text-[13px] text-primary-600">
-                    â†’
+                    →
                   </span>
                   <span className="text-[13px] font-semibold leading-[1.5] text-primary-700">
                     {card.outcome}
                   </span>
                 </div>
 
-                {/* â”€â”€ Expand affordance â”€â”€ */}
+                {/* —— Expand affordance —— */}
                 <div className="mt-2 flex items-center gap-1.5 text-[11px] text-black/35 transition-colors group-hover:text-black/55">
                   <svg
                     width="10"
@@ -173,7 +173,7 @@ export function IspCapabilities() {
                   {isExpanded ? "Close detail" : "How it works"}
                 </div>
 
-                {/* â”€â”€ Expanded detail panel â”€â”€ */}
+                {/* —— Expanded detail panel —— */}
                 {isExpanded && (
                   <div className="mt-2 rounded-2xl bg-primary-50/40 p-4"
                     style={{ animation: "msg-in 0.35s ease both" }}
@@ -182,8 +182,8 @@ export function IspCapabilities() {
                       {card.description}
                     </p>
                     <p className="mt-3 text-[12px] leading-[1.6] text-primary-600/80">
-                      Nautix handles this endâ€‘toâ€‘end across WhatsApp,
-                      Instagram, and Facebook â€” 24 hours a day, without a
+                      Nautix handles this end→to→end across WhatsApp,
+                      Instagram, and Facebook — 24 hours a day, without a
                       human agent in the loop. Every interaction is logged,
                       every outcome tracked.
                     </p>

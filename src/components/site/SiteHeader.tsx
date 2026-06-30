@@ -654,7 +654,7 @@ export function SiteHeader() {
                               <li id="menu-item-6045" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6045 nav-item"><a title="Marketing" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>Marketing</a></li>
                               <li id="menu-item-6046" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6046 nav-item"><a title="Sales" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>Sales</a></li>
                               <li id="menu-item-6047" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6047 nav-item"><a title="Customer Support" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>Customer Support</a></li>
-                              <li id="menu-item-6048" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6048 nav-item"><a title="See full platform" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>See full platform â†’</a></li>
+                              <li id="menu-item-6048" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6048 nav-item"><a title="See full platform" href="/#solutions" className="dropdown-items" onClick={closeMobileMenu}>See full platform →</a></li>
                             </ul>
                           </li>
                           <li id="menu-item-5056" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-5056 nav-item">
@@ -673,7 +673,7 @@ export function SiteHeader() {
                               <li id="menu-item-6051" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6051 nav-item"><a title="Sales & Growth" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Sales &amp; Growth</a></li>
                               <li id="menu-item-6052" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6052 nav-item"><a title="Payments" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Payments</a></li>
                               <li id="menu-item-6053" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6053 nav-item"><a title="Analytics & Reporting" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Analytics &amp; Reporting</a></li>
-                              <li id="menu-item-6054" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6054 nav-item"><a title="See full platform" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>See full platform â†’</a></li>
+                              <li id="menu-item-6054" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6054 nav-item"><a title="See full platform" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>See full platform →</a></li>
                             </ul>
                           </li>
                           <li id="menu-item-6055" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children uc-parent menu-item-6055 nav-item">
@@ -691,7 +691,7 @@ export function SiteHeader() {
                               <li id="menu-item-6057" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6057 nav-item"><a title="Real Estate" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>Real Estate</a></li>
                               <li id="menu-item-6058" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6058 nav-item"><a title="Ecommerce" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>Ecommerce</a></li>
                               <li id="menu-item-6059" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6059 nav-item"><a title="Finance" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>Finance</a></li>
-                              <li id="menu-item-6060" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6060 nav-item"><a title="All industries" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>All industries â†’</a></li>
+                              <li id="menu-item-6060" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6060 nav-item"><a title="All industries" href="/#industries" className="dropdown-items" onClick={closeMobileMenu}>All industries →</a></li>
                             </ul>
                           </li>
                           <li id="menu-item-6062" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6062 nav-item"><a title="Pricing" href="/pricing" className="nav-links" onClick={closeMobileMenu}>Pricing</a></li>

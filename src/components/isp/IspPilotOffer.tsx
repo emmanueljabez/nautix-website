@@ -8,7 +8,7 @@ const BOOK_DEMO_URL =
   "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
 
 /**
- * Checkmark icon â€” white on purple.
+ * Checkmark icon — white on purple.
  */
 function CheckWhite() {
   return (
@@ -33,7 +33,7 @@ function CheckWhite() {
 }
 
 /**
- * IspPilotOffer â€” Section 7: Risk reversal.
+ * IspPilotOffer — Section 7: Risk reversal.
  *
  * Dark purple gradient background, white text, gold CTA,
  * checkmarked trust signals, subtle scarcity line.
@@ -71,15 +71,15 @@ export function IspPilotOffer() {
         />
       </div>
         <div className="relative mx-auto max-w-[780px] px-6 pb-20 pt-16 text-center text-white md:pb-28 md:pt-24">
-         {/* â”€â”€ Main heading â”€â”€ */}
+         {/* —— Main heading —— */}
         <h2 className="reveal font-[var(--font-heading)] text-[clamp(36px,5vw,60px)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">Free 30-day pilot.</h2>
 <p className="reveal mt-3 text-[20px] font-semibold leading-[1.05] text-white whitespace-nowrap md:text-[24px]">Full integration. &nbsp; &nbsp;No commitment.</p>
-        {/* â”€â”€ Subheadline â”€â”€ */}
+        {/* —— Subheadline —— */}
         <p className="reveal mx-auto mt-5 max-w-[640px] text-[16px] leading-[1.7] text-white/75 md:text-[17px]">
           {subheadline}
         </p>
 
-        {/* â”€â”€ Trust signals â”€â”€ */}
+        {/* —— Trust signals —— */}
         <div className="reveal mt-9 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           {trustSignals.map((signal) => (
             <div
@@ -92,7 +92,7 @@ export function IspPilotOffer() {
           ))}
         </div>
 
-        {/* â”€â”€ CTA â€” gold on purple â”€â”€ */}
+        {/* —— CTA — gold on purple —— */}
         <div className="reveal mt-10">
           <Link
             href={BOOK_DEMO_URL}
@@ -103,11 +103,11 @@ export function IspPilotOffer() {
               color: "#1a0a2e",
             }}
           >
-          <span className="text-[16px] font-semibold"> â†’ &nbsp;{cta}</span>
+          <span className="text-[16px] font-semibold"> → &nbsp;{cta}</span>
           </Link>
         </div>
 
-        {/* â”€â”€ Scarcity line â”€â”€ */}
+        {/* —— Scarcity line —— */}
          <p className="reveal mt-6 text-[13px] tracking-[0.03em] text-white">
           {scarcityLine}
         </p>

@@ -8,7 +8,7 @@ const BOOK_DEMO_URL =
   "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
 
 /**
- * IspPioneerMoment â€” Section 4: The most important section after Hero.
+ * IspPioneerMoment — Section 4: The most important section after Hero.
  */
 export function IspPioneerMoment() {
   const ref = useReveal<HTMLElement>();
@@ -26,7 +26,7 @@ export function IspPioneerMoment() {
       className="relative border-t border-primary-100/50 bg-white py-24 md:py-32"
     >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
-        {/* â”€â”€ Section heading â”€â”€ */}
+        {/* —— Section heading —— */}
         
               <div className="reveal">
           <h2
@@ -65,10 +65,10 @@ export function IspPioneerMoment() {
           </p>
         </div>
 
-        {/* â”€â”€ Two-column grid â”€â”€ */}
+        {/* —— Two-column grid —— */}
         <div className="reveal mt-14 grid gap-16 lg:grid-cols-[1fr_440px]">
           {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-              LEFT COLUMN â€” Technical timeline
+              LEFT COLUMN — Technical timeline
               â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
 
           <div>
@@ -110,7 +110,7 @@ export function IspPioneerMoment() {
               </div>
             </div>
 
-            {/* â”€â”€ Summary callout â”€â”€ */}
+            {/* —— Summary callout —— */}
             <div
               className="mt-8 rounded-2xl p-5"
               style={{
@@ -187,7 +187,7 @@ export function IspPioneerMoment() {
           </div>
 
           {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-              RIGHT COLUMN â€” WhatsApp chat recreation
+              RIGHT COLUMN — WhatsApp chat recreation
               â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
 
           <div className="lg:-mt-2">
@@ -207,7 +207,7 @@ export function IspPioneerMoment() {
                 </div>
               </div>
 
-              {/* Chat body â€” WhatsApp wallpaper */}
+              {/* Chat body — WhatsApp wallpaper */}
               <div
                 className="space-y-3 p-4"
                 style={{
@@ -258,7 +258,7 @@ export function IspPioneerMoment() {
           </div>
         </div>
 
-        {/* â”€â”€ CTA below both columns â”€â”€ */}
+        {/* —— CTA below both columns —— */}
         <div className="reveal mt-14 flex flex-col items-center md:mt-20">
           <Link
             href={BOOK_DEMO_URL}

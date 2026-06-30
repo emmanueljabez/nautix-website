@@ -93,7 +93,7 @@ function ChatAnimation() {
       const bubble = document.createElement("div");
       bubble.className = `max-w-[88%] rounded-2xl px-3.5 py-2.5 text-[13px] leading-[1.45] ${
         isCustomer
-          ? "rounded-tl-sm bg-neutral-900 text-white"
+          ? "rounded-tl-sm bg-[#DCF8C6] text-[#303030]"
           : "rounded-tr-sm text-white"
       }`;
       if (!isCustomer) {
@@ -178,44 +178,68 @@ function ChatAnimation() {
     };
   }, []);
 
-  return (
-    <div className="relative overflow-hidden rounded-3xl shadow-[0_20px_60px_-20px_rgba(11,11,14,0.2)] ring-1 ring-black/5">
-      {/* WhatsApp header */}
-      <div className="flex items-center gap-3 bg-[#075E54] px-4 py-3">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-[13px] font-semibold text-white">
-          D
-        </span>
-        <div className="min-w-0">
-          <div className="truncate text-[13px] font-medium leading-tight text-white">
-            David
-          </div>
-          <div className="text-[10px] leading-tight text-white/65">online</div>
-        </div>
-      </div>
 
-      {/* Chat body WhatsApp wallpaper */}
-      <div
-        className="p-3 md:p-4"
-        style={{
-          backgroundColor: "#E5DDD5",
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d2c9bc' fill-opacity='0.28'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
-        }}
-      >
-        <div ref={containerRef} className="min-h-[180px] space-y-2.5">
-          <div className="flex h-[120px] items-center justify-center text-[12px] text-black/30">
-            <span className="animate-pulse">Waiting for message?</span>
+  return (
+    <div className="relative mx-auto w-fit max-w-[330px]">
+      {/* ── Phone frame outer shell ── */}
+      <div className="relative rounded-[2.5rem] bg-[#2a2a2a] p-[6px] shadow-[0_16px_48px_-12px_rgba(0,0,0,0.35)] ring-1 ring-white/[0.03]">
+        {/* ── Phone screen ── */}
+        <div className="overflow-hidden rounded-[2.25rem] bg-black">
+          {/* Dynamic Island / notch */}
+          <div className="relative z-20 flex justify-center">
+            <div className="absolute top-0 flex h-[28px] w-[90px] items-center justify-center gap-[10px] rounded-b-[16px] bg-black">
+              <div className="h-[6px] w-[6px] rounded-full bg-[#222]" />
+              <div className="h-[4px] w-[30px] rounded-full bg-[#222]" />
+            </div>
+          </div>
+
+          {/* Content area — pushed down below notch */}
+          <div className="pt-[28px]">
+            {/* WhatsApp header */}
+            <div className="flex items-center gap-3 bg-[#075E54] px-4 py-3">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-[13px] font-semibold text-white">
+                D
+              </span>
+              <div className="min-w-0">
+                <div className="truncate text-[13px] font-medium leading-tight text-white">
+                  David
+                </div>
+                <div className="text-[10px] leading-tight text-white/65">
+                  online
+                </div>
+              </div>
+            </div>
+
+            {/* Chat body — WhatsApp wallpaper */}
+            <div
+              className="p-3 md:p-4"
+              style={{
+                backgroundColor: "#E5DDD5",
+                backgroundImage:"url(/nautix-partners/whatsapp-doodle-bg.png)",        
+  }}
+            >
+              <div ref={containerRef} className="min-h-[180px] space-y-2.5">
+                <div className="flex h-[120px] items-center justify-center text-[12px] text-black/30">
+                  <span className="animate-pulse">Waiting for message?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Home indicator */}
+          <div className="flex justify-center pb-[8px] pt-[4px]">
+            <div className="h-[4px] w-[100px] rounded-full bg-white/20" />
           </div>
         </div>
       </div>
 
       <noscript>
-        <div className="rounded-b-3xl bg-amber-50 p-3 text-[12px] text-amber-800">
+        <div className="mt-3 rounded-2xl bg-amber-50 p-3 text-center text-[12px] text-amber-800">
           Enable JavaScript to see the live chat demo.
         </div>
       </noscript>
     </div>
-  );
+  );      
 }
 
 /* -------------------------------------------------------------------------- */

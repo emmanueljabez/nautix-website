@@ -334,9 +334,9 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "Unify WhatsApp, Instagram, Facebook, and webchat into one shared team inbox. Never miss a customer message again. Built for African businesses.",
     heading: "Every customer conversation, in one place.",
     subheading:
-      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox â€” so nothing slips through, and your whole team works from the same screen.",
+      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox — so nothing slips through, and your whole team works from the same screen.",
     highlights: [
-      "Unified queue across WhatsApp, Instagram, Facebook, and webchat â€” sorted, tagged, and searchable.",
+      "Unified queue across WhatsApp, Instagram, Facebook, and webchat — sorted, tagged, and searchable.",
       "Team assignment with full visibility on who's handling what and what's unassigned.",
       "Internal notes for private team communication that customers never see.",
       "Tags and labels to categorise conversations by type, priority, or status.",
@@ -344,7 +344,7 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "Response tracking to see how fast your team responds and spot backlogs.",
     ],
     outcomes: [
-      "Zero missed messages â€” every channel in one queue.",
+      "Zero missed messages — every channel in one queue.",
       "3Ã— faster response times with shared team visibility.",
       "100% conversation history retained across channels.",
     ],
@@ -363,7 +363,7 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "Catch and respond to every comment on your Instagram and Facebook posts and ads automatically. Turn public comments into leads and resolve complaints fast.",
     heading: "Every comment is a customer. Catch them all.",
     subheading:
-      "The comments under your posts and ads are full of buyers, questions, and complaints â€” in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
+      "The comments under your posts and ads are full of buyers, questions, and complaints — in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
     highlights: [
       "Real-time watching of every comment on every post and ad.",
       "Intent detection that distinguishes buyers, questions, complaints, and spam.",

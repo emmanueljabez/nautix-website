@@ -56,7 +56,7 @@ export function LandingSectionPage({
               {page.highlights.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-foreground/80">
                   <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-bold">
-                    âœ“
+                    ✓
                   </span>
                   <span>{item}</span>
                 </li>
@@ -70,7 +70,7 @@ export function LandingSectionPage({
               {page.outcomes.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-foreground/80">
                   <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">
-                    â€¢
+                    •
                   </span>
                   <span>{item}</span>
                 </li>

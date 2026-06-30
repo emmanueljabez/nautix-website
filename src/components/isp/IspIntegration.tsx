@@ -110,7 +110,7 @@ function Checkmark() {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  IspIntegration â€” Section 6                                                */
+/*  IspIntegration — Section 6                                                */
 /* -------------------------------------------------------------------------- */
 
 export function IspIntegration() {
@@ -132,7 +132,7 @@ export function IspIntegration() {
   }}
   >
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
-        {/* â”€â”€ Section heading â”€â”€ */}
+        {/* —— Section heading —— */}
                 <h2 className="reveal text-center"
           style={{
             fontFamily: '"Sharp Grotesk", Sans-serif',
@@ -153,7 +153,7 @@ export function IspIntegration() {
           </span>
         </h2>
 
-        {/* â”€â”€ Architecture diagram â”€â”€ */}
+        {/* —— Architecture diagram —— */}
         <div className="reveal mt-14 flex flex-col items-center md:flex-row md:justify-center md:gap-0">
           {architectureBoxes.map((box, i) => {
             const boxIcon = BOX_ICONS[box.title] ?? {
@@ -176,7 +176,7 @@ export function IspIntegration() {
                     }}
                   />
 
-                  {/* Icon â€” matches WORKFLOW_CARDS pattern */}
+                  {/* Icon — matches WORKFLOW_CARDS pattern */}
                   <div
                       style={{
                       width: 48,
@@ -238,7 +238,7 @@ export function IspIntegration() {
           })}
         </div>
 
-        {/* â”€â”€ Trust signals â”€â”€ */}
+        {/* —— Trust signals —— */}
         <div className="reveal mx-auto mt-14 max-w-[680px]">
           <div className="rounded-2xl border border-primary-100 bg-primary-50/30 p-5 md:p-7">
             <ul className="space-y-4">
@@ -254,7 +254,7 @@ export function IspIntegration() {
           </div>
         </div>
 
-                {/* â”€â”€ Integration logo strip â”€â”€ */}
+                {/* —— Integration logo strip —— */}
         <div className="reveal" style={{ marginTop: 40 }}>
           <div className="nautix-client-marquee">
             <div className="nautix-client-logo-row" aria-label="Integration partners" style={{ display: "flex", gap: 110, alignItems: "center", justifyContent: "center", flexWrap: "nowrap" }}>

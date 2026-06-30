@@ -57,7 +57,7 @@ function renderHeading(heading: string) {
 function HeroVisual() {
   return (
     <div className="relative flex flex-col items-center w-full max-w-[480px] mx-auto lg:mx-0">
-      {/* Chatbot response card â€” the "respond" */}
+      {/* Chatbot response card — the "respond" */}
       <div className="w-full rounded-2xl border border-black/10 bg-white shadow-sm p-4">
         <div className="flex items-center gap-2 mb-3">
           <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-xs font-bold">
@@ -88,7 +88,7 @@ function HeroVisual() {
         </svg>
       </div>
 
-      {/* Nautix resolution card â€” the "resolve" */}
+      {/* Nautix resolution card — the "resolve" */}
       <div className="w-full rounded-2xl border border-green-300 bg-green-50/40 shadow-sm p-4">
         <div className="flex items-center gap-2 mb-3">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-bold">
@@ -102,7 +102,7 @@ function HeroVisual() {
             <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </div>
-            <p className="text-xs text-foreground/80 m-0">Service diagnosed â€” offline</p>
+            <p className="text-xs text-foreground/80 m-0">Service diagnosed — offline</p>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
@@ -119,7 +119,7 @@ function HeroVisual() {
         </div>
         <div className="mt-2 flex items-center gap-1.5 text-[10px] text-green-600">
           <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
-          Issue resolved â€” 47 seconds
+          Issue resolved — 47 seconds
         </div>
       </div>
     </div>
@@ -642,7 +642,7 @@ export function ProductAutonomousResolution({ data }: ProductAutonomousResolutio
               <span className="nautix-final-cta-focus">Start resolving.</span>
             </h2>
             <p className="nautix-final-cta-copy mb-0">
-              See how autonomous resolution takes the real action to fix customer problems end to end â€” without waking your team.
+              See how autonomous resolution takes the real action to fix customer problems end to end — without waking your team.
             </p>
             <div className="nautix-final-cta-actions">
               <a className="nautix-final-cta-button nautix-final-cta-button--primary" href={D.hero.primaryCta.href} style={{ minHeight: "3rem", minWidth: 0, padding: "0.85rem 1.35rem" }}>
@@ -653,7 +653,7 @@ export function ProductAutonomousResolution({ data }: ProductAutonomousResolutio
               </a>
             </div>
             <p className="nautix-final-cta-note mb-0">
-              No credit card Â· 30-day free pilot Â· Cancel anytime
+              No credit card · 30-day free pilot · Cancel anytime
             </p>
           </div>
         </div>
@@ -667,11 +667,11 @@ export function ProductAutonomousResolution({ data }: ProductAutonomousResolutio
             <a href="/product/comment-monitoring" className="text-sm text-primary hover:text-primary-700 transition-colors underline underline-offset-4">
               Live System Diagnosis
             </a>
-            <span className="text-foreground/20">Â·</span>
+            <span className="text-foreground/20">·</span>
             <a href="/product/ai-resolution" className="text-sm text-primary hover:text-primary-700 transition-colors underline underline-offset-4">
               Proactive Alerts
             </a>
-            <span className="text-foreground/20">Â·</span>
+            <span className="text-foreground/20">·</span>
             <a href="/product/channels-inbox" className="text-sm text-primary hover:text-primary-700 transition-colors underline underline-offset-4">
               Instant Auto-Response
             </a>

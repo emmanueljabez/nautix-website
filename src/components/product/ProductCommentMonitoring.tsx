@@ -59,59 +59,86 @@ function renderHeading(heading: string) {
 function HeroVisual() {
   return (
     <div className="relative flex flex-col items-center w-full max-w-[480px] mx-auto lg:mx-0">
-      {/* Social post card */}
-      <div className="w-full rounded-2xl border border-black/10 bg-white shadow-sm p-5">
-        {/* Post header */}
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#E4405F] to-[#FCAF45] flex items-center justify-center text-white text-sm font-bold">
-            N
+      {/* ── Instagram post card ── */}
+      <div className="w-full rounded-2xl border border-black/[0.06] bg-white shadow-sm overflow-hidden">
+        {/*
+          Header: avatar + username + Sponsored label + three-dot menu
+        */}
+        <div className="flex items-center px-4 py-[14px]">
+          <div className="relative w-8 h-8 shrink-0 mr-3">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#FCAF45] via-[#E4405F] to-[#833AB4]" />
+            <div className="absolute inset-[2px] rounded-full bg-white flex items-center justify-center">
+              <span className="text-[11px] font-bold text-[#262626]">I</span>
+            </div>
           </div>
-          <div>
-            <p className="text-sm font-semibold text-foreground m-0">Nautix</p>
-            <p className="text-xs text-foreground/50 m-0">Sponsored Â· 1h</p>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-1">
+              <span className="text-[14px] font-semibold text-[#262626] leading-tight">Internet Service</span>
+              <svg viewBox="0 0 24 24" className="w-[10px] h-[10px] fill-[#0095F6] shrink-0" aria-label="Verified"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg>
+            </div>
+            <p className="text-[12px] text-[#8E8E8E] m-0 leading-none mt-[1px]">Sponsored</p>
           </div>
+          <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#262626] shrink-0 -mr-1" aria-label="More options"><circle cx="12" cy="5" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="12" cy="19" r="1.5"/></svg>
         </div>
 
-        <p className="text-sm text-foreground mb-3">
-          Need faster internet? We are rolling out fibre in your area. Check
-          availability today.
-        </p>
+        {/*
+          Ad image
+        */}
+        <div className="w-full aspect-[16/9] overflow-hidden"><img src="/nautix-industries/faster-internet.jpg" alt="Faster internet ad creative" className="w-full h-full object-cover scale-125" /></div>
 
-        <div className="rounded-lg bg-gray-50 border border-gray-100 h-24 flex items-center justify-center text-foreground/40 text-xs">
-          ðŸ“· Ad creative
+        {/* Action bar: like | comment | repost | share  ---  save */}
+        <div className="flex items-center px-4 pt-3 pb-1">
+          <div className="flex items-center gap-3">
+            {/* Heart / Like */}
+            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-none stroke-[#262626] stroke-[1.5]" fill="none" aria-label="Like">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            {/* Comment bubble */}
+            <img src="/nautix-partners/comment.png" alt="Comment" className="w-5 h-5" />
+            {/* Repost / Reshare */}
+            <img src="/nautix-partners/repost.png" alt="Repost" className="w-5 h-5" />
+            {/* Share / Direct */}
+            <img src="/nautix-partners/share.png" alt="Share" className="w-5 h-5" />
+          </div>
+          {/* Save / Bookmark */}
+          <svg viewBox="0 0 24 24" className="w-5 h-5 ml-auto fill-none stroke-[#262626] stroke-[1.5]" fill="none" aria-label="Save">
+            <path d="M17 3H7c-1.05 0-2 .95-2 2v16l7-4 7 4V5c0-1.05-.95-2-2-2z"/>
+          </svg>
         </div>
 
-        {/* Stats row */}
-        <div className="flex items-center gap-5 mt-3 text-xs text-foreground/50">
-          <span>â¤ï¸ 47</span>
-          <span>ðŸ’¬ 23</span>
-          <span>â†—ï¸ 12</span>
+        {/*
+          Likes
+        */}
+        <div className="px-4 pt-1">
+          <p className="text-[14px] font-semibold text-[#262626] m-0" style={{fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"}}>47 likes</p>
         </div>
 
-        {/* Comments */}
-        <div className="mt-4 space-y-3 border-t border-gray-100 pt-3">
-          <div className="flex gap-2 items-start">
-            <div className="w-6 h-6 rounded-full bg-blue-100 flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-blue-700">
-              J
-            </div>
-            <div className="flex-1">
-              <p className="text-xs font-semibold m-0">John</p>
-              <p className="text-xs text-foreground m-0">
-                Do you cover my area?
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-2 items-start">
-            <div className="w-6 h-6 rounded-full bg-green-100 flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-green-700">
-              M
-            </div>
-            <div className="flex-1">
-              <p className="text-xs font-semibold m-0">Mary</p>
-              <p className="text-xs text-foreground m-0">
-                How much per month?
-              </p>
-            </div>
-          </div>
+        {/*
+          Caption
+        */}
+        <div className="px-4 pt-[2px]">
+          <p className="text-[14px] leading-[1.45] text-[#262626] m-0" style={{fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"}}>
+            <span className="font-semibold">Internet Service</span> Need faster internet? We are rolling out fibre in your area. Check availability today.
+          </p>
+        </div>
+
+        {/*
+          Comments
+        */}
+        <div className="px-4 pt-[2px] space-y-0">
+          <p className="text-[14px] text-[#262626] m-0 leading-[1.45]">
+            <span className="font-semibold" style={{fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"}}>John</span> Do you cover my area?
+          </p>
+          <p className="text-[14px] text-[#262626] m-0 leading-[1.45]">
+            <span className="font-semibold" style={{fontFamily:"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"}}>Mary</span> How much per month?
+          </p>
+        </div>
+
+        {/*
+          Timestamp
+        */}
+        <div className="px-4 pb-3 pt-[2px]">
+          <p className="text-[11px] tracking-[.03em] text-[#8E8E8E] m-0 leading-tight">1 hour ago</p>
         </div>
       </div>
 
@@ -160,7 +187,7 @@ function HeroVisual() {
           <div className="flex-1">
             <p className="text-xs text-foreground/70 m-0">
               @John Thanks for asking! We do cover most areas in Nairobi. I have
-              sent you a DM with the coverage map â€” check your requests. ðŸš€
+              sent you a DM with the coverage map — check your requests. 🚀
             </p>
           </div>
         </div>
@@ -261,7 +288,7 @@ function ProblemIcon({ kind }: { kind: string }) {
 
 
 function StepIcon({ kind }: { kind: string }) {
-  // Eye â€” monitoring / watching
+  // Eye — monitoring / watching
   if (kind === "eye") {
     return (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -276,7 +303,7 @@ function StepIcon({ kind }: { kind: string }) {
       </svg>
     );
   }
-  // Target / crosshair â€” intent detection
+  // Target / crosshair — intent detection
   if (kind === "target") {
     return (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -287,7 +314,7 @@ function StepIcon({ kind }: { kind: string }) {
       </svg>
     );
   }
-  // Chat bubble with arrow â€” reply / DM
+  // Chat bubble with arrow — reply / DM
   if (kind === "reply") {
     return (
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -302,7 +329,7 @@ function StepIcon({ kind }: { kind: string }) {
       </svg>
     );
   }
-  // Person â€” routing to a human
+  // Person — routing to a human
   return (
     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -459,7 +486,7 @@ export function ProductCommentMonitoring({
           margin-bottom: 14px;
         }
 
-        /* Step number badge â€” left corner */
+        /* Step number badge — left corner */
         .cm-how .cm-step-badge {
           display: inline-flex;
           align-items: center;
@@ -477,7 +504,7 @@ export function ProductCommentMonitoring({
           z-index: 2;
         }
 
-                /* Icon â€” above the badge, pushed to the right */
+                /* Icon — above the badge, pushed to the right */
         .cm-how .cm-step-icon {
           display: inline-flex;
           align-items: center;
@@ -997,7 +1024,7 @@ export function ProductCommentMonitoring({
             </h2>
             <p className="nautix-final-cta-copy mb-0">
               See how comment monitoring catches every buying question and
-              complaint on your posts and ads â€” and handles them before they are
+              complaint on your posts and ads — and handles them before they are
               missed.
             </p>
             <div className="nautix-final-cta-actions">
@@ -1015,7 +1042,7 @@ export function ProductCommentMonitoring({
               </a>
             </div>
             <p className="nautix-final-cta-note mb-0">
-              No credit card Â· 30-day free pilot Â· Cancel anytime
+              No credit card · 30-day free pilot · Cancel anytime
             </p>
           </div>
         </div>
@@ -1034,14 +1061,14 @@ export function ProductCommentMonitoring({
             >
               Omnichannel Inbox
             </Link>
-            <span className="text-foreground/20">Â·</span>
+            <span className="text-foreground/20">·</span>
             <Link
               href="/product/ai-resolution"
               className="text-sm text-primary hover:text-primary-700 transition-colors underline underline-offset-4"
             >
               Instant Auto-Response
             </Link>
-            <span className="text-foreground/20">Â·</span>
+            <span className="text-foreground/20">·</span>
             <Link
               href="/product/channels-inbox"
               className="text-sm text-primary hover:text-primary-700 transition-colors underline underline-offset-4"
