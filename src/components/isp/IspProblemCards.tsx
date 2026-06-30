@@ -4,12 +4,12 @@ import { PAIN_CARDS_DATA } from "@/lib/isp-data";
 import { useReveal } from "@/hooks/useReveal";
 
 /**
- * IspProblemCards â€” Section 2: Validate pain.
+ * IspProblemCards — Section 2: Validate pain.
  *
  * Three short cards. Each card has a time-anchor pill,
  * a headline, body copy, and a visually distinct cost line.
  *
- * The cost line is the part that converts â€” styled with purple
+ * The cost line is the part that converts — styled with purple
  * accent, a top border separator, and bold weight to draw the eye.
  *
  * Recognition test: after reading these three cards, the ISP
@@ -55,7 +55,7 @@ export function IspProblemCards() {
               className="group relative flex flex-col rounded-3xl border border-black/10 bg-[#FAF8F5] p-6 transition hover:-translate-y-0.5 hover:shadow-lg md:p-8"
               style={{ animationDelay: `${i * 80}ms` }}
             >
-              {/* Time anchor â€” prominent pill with live-indicator dot */}
+              {/* Time anchor — prominent pill with live-indicator dot */}
               <div className="mb-5 inline-flex items-center gap-2 self-start rounded-full border border-primary-200 bg-primary-50/60 px-3.5 py-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary-600" />
                 <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-primary-700">
@@ -73,10 +73,10 @@ export function IspProblemCards() {
                 {card.body}
               </p>
 
-              {/* Cost â€” visually distinct, the converting line */}
+              {/* Cost — visually distinct, the converting line */}
               <div className="mt-6 border-t border-black/10 pt-4">
                 <span className="text-[13px] font-semibold leading-[1.5] text-primary-700">
-                  â†’ {card.cost}
+                  → {card.cost}
                 </span>
               </div>
             </div>

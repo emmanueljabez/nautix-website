@@ -342,7 +342,7 @@ export function Homepage() {
                   <span className="nautix-industry-proof-label">In action</span>
                   <p className="nautix-industry-proof-copy mb-0">AI reboots an ONU remotely via SmartOLT and confirms resolution to the subscriber in under 3 minutes. No agent. No call.</p>
                 </div>
-                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20ISP%20Demo">See ISP Demo <span aria-hidden="true">â†’</span></a>
+                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20ISP%20Demo">See ISP Demo <span aria-hidden="true">→</span></a>
               </article>
               <article className="nautix-industry-card">
                 <figure className="nautix-industry-media m-0">
@@ -357,7 +357,7 @@ export function Homepage() {
                   <span className="nautix-industry-proof-label">In action</span>
                   <p className="nautix-industry-proof-copy mb-0">Instagram comment at 9:47pm, buyer qualified by AI, WhatsApp site visit booking confirmed at 9:55pm. Eight minutes. Zero agent involvement.</p>
                 </div>
-                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20Real%20Estate%20Demo">See Real Estate Demo <span aria-hidden="true">â†’</span></a>
+                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20Real%20Estate%20Demo">See Real Estate Demo <span aria-hidden="true">→</span></a>
               </article>
               <article className="nautix-industry-card">
                 <figure className="nautix-industry-media m-0">
@@ -372,7 +372,7 @@ export function Homepage() {
                   <span className="nautix-industry-proof-label">In action</span>
                   <p className="nautix-industry-proof-copy mb-0">Instagram video goes viral at midnight, Nautix handles every DM simultaneously, payments are collected, and confirmed orders are in by morning.</p>
                 </div>
-                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20Ecommerce%20Demo">See Ecommerce Demo <span aria-hidden="true">â†’</span></a>
+                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20Ecommerce%20Demo">See Ecommerce Demo <span aria-hidden="true">→</span></a>
               </article>
               <article className="nautix-industry-card">
                 <figure className="nautix-industry-media m-0">
@@ -387,7 +387,7 @@ export function Homepage() {
                   <span className="nautix-industry-proof-label">In action</span>
                   <p className="nautix-industry-proof-copy mb-0">A SACCO member checks loan eligibility in WhatsApp, gets the result in 30 seconds, and starts the application flow without visiting the branch.</p>
                 </div>
-                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20Finance%20Demo">See Finance Demo <span aria-hidden="true">â†’</span></a>
+                <a className="nautix-industry-link" href="mailto:support@nautix.io?subject=Show%20me%20the%20Nautix%20Finance%20Demo">See Finance Demo <span aria-hidden="true">→</span></a>
               </article>
             </div>
           </section>
@@ -410,7 +410,7 @@ export function Homepage() {
                       <div className="swiper-slide">
                         <div className="px-3 testimonial-item-box sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border hover:contrast-shadow-md hover:border-dark duration-150">
                           <div className="panel vstack items-start gap-2">
-                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">â€œBefore Nautix, outages and billing questions flooded our channels after hours. Now subscribers get instant updates, routine issues are resolved automatically, and agents only step in for exceptions.â€</p>
+                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">—Before Nautix, outages and billing questions flooded our channels after hours. Now subscribers get instant updates, routine issues are resolved automatically, and agents only step in for exceptions.—</p>
                           </div>
                           <div className="panel vstack justify-center gap-narrow mt-2">
                             <span className="fw-bold reviewer-name m-0">Martin Njau</span>
@@ -421,7 +421,7 @@ export function Homepage() {
                       <div className="swiper-slide">
                         <div className="px-3 testimonial-item-box sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border hover:contrast-shadow-md hover:border-dark duration-150">
                           <div className="panel vstack items-start gap-2">
-                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">â€œWe used to lose serious buyers overnight. Now every ad inquiry gets a response immediately, leads are qualified in chat, and our team wakes up to scheduled site visits.â€</p>
+                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">—We used to lose serious buyers overnight. Now every ad inquiry gets a response immediately, leads are qualified in chat, and our team wakes up to scheduled site visits.—</p>
                           </div>
                           <div className="panel vstack justify-center gap-narrow mt-2">
                             <span className="fw-bold reviewer-name m-0">Lorna K.</span>
@@ -432,7 +432,7 @@ export function Homepage() {
                       <div className="swiper-slide">
                         <div className="px-3 testimonial-item-box sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border hover:contrast-shadow-md hover:border-dark duration-150">
                           <div className="panel vstack items-start gap-2">
-                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">â€œWhen campaigns spike, our inbox no longer becomes a bottleneck. Nautix handles product questions, nudges buyers toward payment, and helps us convert demand while it is still warm.â€</p>
+                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">—When campaigns spike, our inbox no longer becomes a bottleneck. Nautix handles product questions, nudges buyers toward payment, and helps us convert demand while it is still warm.—</p>
                           </div>
                           <div className="panel vstack justify-center gap-narrow mt-2">
                             <span className="fw-bold reviewer-name m-0">Maya A.</span>
@@ -443,7 +443,7 @@ export function Homepage() {
                       <div className="swiper-slide">
                         <div className="px-3 testimonial-item-box sm:px-4 py-4 panel vstack justify-between gap-3 rounded-2 border hover:contrast-shadow-md hover:border-dark duration-150">
                           <div className="panel vstack items-start gap-2">
-                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">â€œMembers expect fast answers on balances, repayments, and eligibility. Nautix handles those conversations on WhatsApp with consistency, and our team only steps in when real judgment is needed.â€</p>
+                            <p className="fs-6 lg:fs-5 text-dark dark:text-white text-opacity-70">—Members expect fast answers on balances, repayments, and eligibility. Nautix handles those conversations on WhatsApp with consistency, and our team only steps in when real judgment is needed.—</p>
                           </div>
                           <div className="panel vstack justify-center gap-narrow mt-2">
                             <span className="fw-bold reviewer-name m-0">Peter O.</span>
