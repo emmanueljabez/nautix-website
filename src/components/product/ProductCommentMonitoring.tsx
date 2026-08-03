@@ -84,7 +84,7 @@ function HeroVisual() {
         {/*
           Ad image
         */}
-        <div className="w-full aspect-[16/9] overflow-hidden"><img src="/nautix-industries/faster-internet.jpg" alt="Faster internet ad creative" className="w-full h-full object-cover scale-125" /></div>
+        <div className="w-full aspect-[16/9] overflow-hidden"><img src="/nautix-isp/faster-internet.jpg" alt="Faster internet ad creative" className="w-full h-full object-cover scale-125" /></div>
 
         {/* Action bar: like | comment | repost | share  ---  save */}
         <div className="flex items-center px-4 pt-3 pb-1">

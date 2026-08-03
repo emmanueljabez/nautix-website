@@ -24,6 +24,15 @@ const CAPABILITY_ICONS: Record<string, string> = {
   "Daily Operations Report": "/nautix-icons/icon-report.svg",
 };
 
+const CAPABILITY_IMAGES: Record<string, string> = {
+  "Technical Support": "/nautix-isp/technical-support.png",
+  "Billing & Collections": "/nautix-isp/billing-and-collections.png",
+  "Proactive Outage Alerts": "/nautix-isp/proactive-outage-alerts.png",
+  "Lead Capture": "/nautix-isp/lead-capture.png",
+  "Subscriber Onboarding": "/nautix-isp/subscriber-onboarding.png",
+  "Daily Operations Report": "/nautix-isp/daily-operations-report.png",
+};
+
 
 export function IspCapabilities() {
   const ref = useReveal<HTMLElement>();
@@ -91,6 +100,15 @@ export function IspCapabilities() {
                   }
                 }}
               >
+                {/* —— Card image —— */}
+                <div className="-mx-5 -mt-5 mb-4 overflow-hidden rounded-t-[20px]">
+                  <img
+                    src={CAPABILITY_IMAGES[card.title]}
+                    alt={card.title}
+                    className="h-48 w-full object-cover"
+                  />
+                </div>
+
                 {/* —— Icon + Title + Description —— */}
                 <div className="flex items-start gap-4">
                   {/* Icon container — matches WORKFLOW_CARDS exactly */}

@@ -95,7 +95,7 @@ function FaqSection() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="oi-faq reveal-section" style={{ maxWidth: 880, margin: "0 auto", padding: "40px 24px 60px" }}>
+    <div className="oi-faq reveal-section" style={{ maxWidth: 880, margin: "0 auto", padding: "20px 24px 20px" }}>
       <JsonLd data={buildFaqSchema([...D.faq.items])} />
 
       <div className="nautix-industry-head">
@@ -226,7 +226,6 @@ export function ProductOmnichannelInbox({
           border-radius: 22px 22px 0 0;
         }
         .oi-how .he-step::after {
-          content: attr(data-ghost);
           position: absolute;
           top: -28px;
           right: -12px;
@@ -425,21 +424,60 @@ export function ProductOmnichannelInbox({
   color: #22303f;
   box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06);
 }
+              .oi-industry .he-industry-card {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+          padding: 0 0 28px;
+          border-radius: 22px;
+          background: #ffffff;
+          border: 1px solid rgba(23,23,23,0.07);
+          overflow: hidden;
+          transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .oi-industry .he-industry-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(126,16,162,0.22);
+          box-shadow: 0 28px 50px -30px rgba(126,16,162,0.28);
+        }
+        .oi-industry .he-industry-media {
+          position: relative;
+          aspect-ratio: 16 / 12;
+          overflow: hidden;
+        }
+        .oi-industry .he-industry-media img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.8s cubic-bezier(.22,.61,.36,1);
+        }
+        .oi-industry .he-industry-card:hover .he-industry-media img {
+          transform: scale(1.06);
+        }
+        .oi-industry .he-industry-label {
+          display: block;
+          font-family: var(--font-heading), sans-serif;
+          font-size: clamp(18px, 1.55vw, 22px);
+          font-weight: 700;
+          letter-spacing: -0.015em;
+          color: #7e10a2;
+          text-transform: none;
+          line-height: 1.15;
+          white-space: nowrap;
+        }
+        .oi-industry .he-industry-cta:hover {
+          text-decoration: underline;
+        }
+
       `}</style>
 
       {/* HERO */}
       <section className="reveal-section relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[130px] pb-20 lg:pt-[130px] lg:pb-28">
-          <div className="flex justify-center mb-8">
-            <span className="border rounded-pill inline-flex items-center" style={{ padding: "0.25rem 1rem" }}>
-  <p className="mb-0" style={{ color: "#16404B", fontFamily: '"Mabry Pro", Sans-serif', fontSize: "0.875rem", fontWeight: 700, textAlign: "center" }}>
-    {D.hero.eyebrow}
-  </p>
-</span>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="flex flex-col gap-6">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-14 lg:pt-20 lg:pb-14">
+      
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+            <div className="lg:col-span-2 flex flex-col gap-6">
               <h1 className="font-[var(--font-heading)] font-bold text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] text-primary-950 leading-[1.05]">
                 {D.hero.h1}
               </h1>
@@ -448,7 +486,9 @@ export function ProductOmnichannelInbox({
                 {D.hero.subhead}
               </p>
 
-              <div className=" flex gap-3 pt-2">
+
+
+              <div className="flex gap-3 pt-2">
                 <a
                   href={D.hero.primaryCta.href}
                   className="group inline-flex items-center gap-2 rounded-full bg-primary-700 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-bold text-white shadow-md transition-colors hover:bg-primary-800"
@@ -465,57 +505,121 @@ export function ProductOmnichannelInbox({
               </div>
             </div>
 
-            <HeroVisual />
+                           <div className="lg:col-span-3 w-full lg:mt-[45px]">
+              <div className="nautix-pillar-media-panel">
+                <div className="nautix-pillar-media" style={{ aspectRatio: "auto", overflow: "visible" }}>
+                  <img
+                    src="/nautix-product/Omnichannel Inbox/Nautix-Omnichannel-Inbox-Hero.jpg"
+                    alt="Nautix omnichannel inbox demo"
+                    loading="lazy"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </div>
+              </div>
+            </div>         
+              
           </div>
+
         </div>
       </section>
 
       {/* PROBLEM */}
-      <section className="oi-problem reveal-section py-20 lg:py-28 bg-white">
+     <section className="oi-problem reveal-section pb-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center  mb-8">
             <h2 className="nautix-section-title mb-0">
               <span className="nautix-section-title-line">{D.problem.heading.split(". ")[0] + "."}</span>
               <span className="nautix-section-title-focus">{D.problem.heading.split(". ").slice(1).join(". ")}</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {D.problem.painPoints.map((pain, i) => (
+          <div className="grid md:grid-cols-2 gap-2">
+                        {D.problem.painPoints.map((pain, i) => (
               <article
                 key={pain.title}
-                className="bg-white border border-black/5 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300"
+                               className={`bg-white border border-black/5 rounded-xl p-6 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 ${i === 2 ? "md:col-span-2 md:pb-0 md:pt-0 md:px-0" : ""}`}
               >
-                <div
-                style={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 14,
-                  background: "rgba(126,16,162,0.08)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 16,
-                }}
-              >
-  <img src={pain.icon} alt={pain.title} loading="lazy" style={{ width: 26, height: 26 }} />
-</div>
-                <h3 className="font-[var(--font-heading)] font-bold text-lg text-foreground mb-2">
-                  {pain.title}
-                </h3>
-                <p className="font-[var(--font-sans)] text-sm text-foreground/70 leading-relaxed">
-                  {pain.detail}
-                </p>
+                {i === 2 ? (
+                  /* Third card: image left, text right, full width */
+                  <div className="flex flex-col md:flex-row gap-6">
+                    <div className="-mx-6 -mt-6 md:mx-0 md:mt-0 md:w-1/2 overflow-hidden rounded-t-xl md:rounded-xl">
+                      <img
+                        src={`/nautix-product/Omnichannel Inbox/${pain.title.toLowerCase().replace(/\s+/g, "-")}.jpg`}
+                        alt={pain.title}
+                        className="h-40 md:h-64 w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-1/2 flex flex-col justify-start">
+                      <div
+                        style={{
+                          width: 48,
+                          height: 48,
+                          borderRadius: 14,
+                          background: "rgba(126,16,162,0.08)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          marginBottom: 16,
+                        }}
+                      >
+                        <img src={pain.icon} alt={pain.title} loading="lazy" style={{ width: 26, height: 26 }} />
+                      </div>
+                      <h3 className="font-[var(--font-heading)] font-bold text-lg text-foreground mb-2">
+                        {pain.title}
+                      </h3>
+                      <p className="font-[var(--font-sans)] text-sm text-foreground/70 leading-relaxed mt-2">
+                        {pain.detail}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  /* Cards 1 & 2: image top, text below */
+                  <>
+                    <div className="-mx-6 -mt-6 mb-5 overflow-hidden rounded-t-xl">
+                      <img
+                        src={`/nautix-product/Omnichannel Inbox/${pain.title.toLowerCase().replace(/\s+/g, "-")}.jpg`}
+                        alt={pain.title}
+                        className="h-40 w-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div
+                      style={{
+                        width: 48,
+                        height: 48,
+                        borderRadius: 14,
+                        background: "rgba(126,16,162,0.08)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: 16,
+                      }}
+                    >
+                      <img src={pain.icon} alt={pain.title} loading="lazy" style={{ width: 26, height: 26 }} />
+                    </div>
+                    <h3 className="font-[var(--font-heading)] font-bold text-lg text-foreground mb-2">
+                      {pain.title}
+                    </h3>
+                    <p className="font-[var(--font-sans)] text-sm text-foreground/70 leading-relaxed">
+                      {pain.detail}
+                    </p>
+                  </>
+                )}
               </article>
             ))}
+              
+
+            
+
           </div>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="oi-how reveal-section py-20 lg:py-28">
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px" }}>
-          <div className="nautix-pillars-head" style={{ textAlign: "center" }}>
+          {/* HOW IT WORKS */}
+     <section id="how-it-works" className="oi-how reveal-section pb-14">
+        <div style={{ maxWidth: 1288, margin: "0 auto", padding: "0 15px" }}>
+          <div className="nautix-pillars-head" style={{ textAlign: "center", marginBottom: 16 }}>
             <h2 className="nautix-section-title mb-0">
               <span className="nautix-section-title-line">{D.howItWorks.heading.split(". ")[0] + "."}</span>
               <span className="nautix-section-title-focus">{D.howItWorks.heading.split(". ").slice(1).join(". ")}</span>
@@ -525,125 +629,114 @@ export function ProductOmnichannelInbox({
             </p>
           </div>
 
-          <div className="he-steps-grid">
-            {D.howItWorks.steps.map((s) => (
-              <article
-                key={s.stepNumber}
-                className="he-step"
-                data-ghost={`0${s.stepNumber}`}
-              >
-                <div className="he-step-head">
-                  <span className="he-step-num">{String(s.stepNumber).padStart(2, "0")}</span>
-                  <span className="he-step-icon" aria-hidden="true">
-                    <StepIcon kind={s.kind} />
-                  </span>
-                </div>
-                <h3 className="he-step-title">{s.title}</h3>
-                <p className="he-step-copy">{s.detail}</p>
-                <div className="he-step-stat">
-                  <b>{s.stat}</b>
-                  <span>{s.statLabel}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+          <div className="nautix-pillar-panel" style={{ marginTop: 20 }}>
+            {/* Left: Image */}
+            <div className="nautix-pillar-media-panel">
+              <div className="nautix-pillar-media">
+                  <img
+                  src="/nautix-product/Omnichannel%20Inbox/Nautix-Omnichannel--How-It-Works.jpg"
+                  alt="How it works"
+                  loading="lazy"
+                  style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                />
+              </div>
+            </div>
 
-      {/* CAPABILITIES */}
-      <section className="reveal-section py-20 lg:py-28 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="nautix-section-title mb-12" style={{ color: "#fff", textAlign: "center" }}>
-            What the <span className="px-1" style={{ color: "#16404B", backgroundColor: "#E2FF5E" }}>inbox</span> does
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {D.capabilities.cards.map((c) => (
-                            <article
-                key={c.title}
-                className="bg-white border border-white/20 rounded-2xl p-6 hover:border-white/40 hover:shadow-lg transition-all duration-300"
-              >
-                <div
-                  style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: 12,
-                    background: "rgba(126,16,162,0.08)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: 16,
-                  }}
-                >
-                  <img src={c.icon} alt={c.title} loading="lazy" style={{ width: 26, height: 26 }} />
-                </div>
-                <h3 className="font-[var(--font-heading)] font-bold text-lg text-foreground mb-2">
-                  {c.title}
-                </h3>
-                <p className="font-[var(--font-sans)] text-sm text-foreground/70 leading-relaxed">
-                  {c.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* INDUSTRY TABLE */}
-      <section className="oi-industry reveal-section py-20 lg:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="nautix-section-title mb-0">
-              <span className="nautix-section-title-line">{D.industryTable.heading.split(".")[0] + "."}</span>
-              <span className="nautix-section-title-focus">{D.industryTable.heading.split(".").slice(1).join(".")}</span>
-            </h2>
-            <p className="fs-6 mt-2 text-dark text-opacity-70 max-w-2xl mx-auto">
-              {D.industryTable.subhead}
-            </p>
-          </div>
-
-            <div className="overflow-x-auto">
-            <div className="border rounded-2xl overflow-hidden">
-            <table className="uc-table uc-table-divider">
-              <thead className="table-head sticky-top z-1 bg-white">
-                <tr className="table-row border-white">
-                  <th className="table-header-cell w-1/3" scope="col">
-                    <div className="title">
-                      <span className="h6 fw-bold text-dark">Vertical</span>
-                    </div>
-                  </th>
-                  <th className="table-header-cell" scope="col">
-                    <div className="title">
-                      <span className="h6 fw-bold text-dark">How they use it</span>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="table-body">
-                {D.industryTable.rows.map((row, i) => (
-                  <tr
-                    key={row.vertical}
-                    className={`table-row ${i === 0 ? "border-white" : "border-gray-100"}`}
-                  >
-                    <th scope="row">
-                      <div className="hstack gap-1 justify-start">
-                        <span className="fs-5 fw-bold text-dark">{row.vertical}</span>
-                      </div>
-                    </th>
-                    <td>
-                      <span className="text-dark">{row.howTheyUseIt}</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            {/* Right: 4 step cards in 2x2 grid */}
+            <div className="grid grid-cols-2 gap-2">
+                {D.howItWorks.steps.map((s) => (
+               <article key={s.stepNumber} className="nautix-pillar-feature" style={{ minHeight: 0, padding: "0.6rem 1rem", gap: "0.3rem" }}>
+                  <span className="nautix-pillar-feature-kicker">{`STEP ${String(s.stepNumber).padStart(2, "0")}`}</span>
+                  <h4 className="nautix-pillar-feature-title mb-0">{s.title}</h4>
+                  <p className="nautix-pillar-feature-copy mb-0">{s.detail}</p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
       </section>
+            
+            
+         
+              
+      {/* CAPABILITIES */}
+     <section className="reveal-section pb-14 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="nautix-section-title mb-8" style={{ color: "#091624", textAlign: "center" }}>
+            What the <span className="px-1" style={{ color: "#16404B", backgroundColor: "#E2FF5E" }}>inbox</span> does
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            {/* Left: 6 cards in 3×2 grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {D.capabilities.cards.map((c, idx) => (
+                <article key={c.title} className="nautix-pillar-feature" style={{ minHeight: 0, padding: "0.6rem 0.9rem", gap: "0.2rem" }}>
+               <h4 className="nautix-pillar-feature-title mb-0">{c.title}</h4>
+<p className="nautix-pillar-feature-copy mb-0">{c.body}</p>  
+                </article>
+              ))}
+            </div>
+      
+
+            {/* Right: image */}
+            <div className="flex justify-center lg:justify-start">
+              <img
+                src="/nautix-product/Omnichannel Inbox/Nautix-Omnichannel--Key-Capabilities.png"
+                alt="Key capabilities overview"
+                className="w-full max-w-lg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+                    
+      
+
+            {/* INDUSTRIES */}
+     <section className="oi-industry reveal-section pb-14">
+        <div className="nautix-industry-head" style={{ maxWidth: 1288, margin: "0 auto", padding: "0 24px", textAlign: "center" }}>
+          <h2 className="nautix-section-title mb-0">
+            <span className="nautix-section-title-line">{D.industries.heading.split(".")[0] + "."}</span>
+            <span className="nautix-section-title-focus">{D.industries.heading.split(".").slice(1).join(".")}</span>
+          </h2>
+          <p className="nautix-section-copy mb-0" style={{ maxWidth: 620, margin: "12px auto 0" }}>
+            {D.industries.subhead}
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+           gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 24,
+            maxWidth: 1288,
+            margin: "32px auto 0",
+            padding: "0 24px",
+          }}
+        >
+          {D.industries.cards.map((i) => (
+                       <article key={i.label} className="he-industry-card" style={{ display: "flex", flexDirection: "column", gap: 8, padding: 24 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                <h3 className="he-industry-label" style={{ margin: 0, whiteSpace: "normal" }}>
+                  {i.label}
+                </h3>
+                <p style={{ margin: 0, color: "rgba(23,23,23,0.68)", fontSize: 14, lineHeight: 1.5 }}>
+                  {i.desc}
+                </p>
+              </div>
+              <div className="he-industry-media" style={{ borderRadius: 16 }}>
+                <img src={i.image} loading="lazy" alt={i.label} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+            
 
       {/* OUTCOMES */}
-      <section className="reveal-section bg-white border-t border-primary/[0.15] py-24 md:py-32">
+      <section className="reveal-section bg-white pb-6">
         <div className="mx-auto max-w-[1280px] px-6 md:px-10">
           <h2
             className="reveal text-center"
@@ -666,7 +759,7 @@ export function ProductOmnichannelInbox({
             </span>
           </h2>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-3 md:gap-0">
+          <div className="mt-8 grid gap-10 md:grid-cols-3 md:gap-0">
             {D.outcomes.stats.map((stat, i) => {
               const counterProps = toCounter(stat.value);
               return (
@@ -706,7 +799,7 @@ export function ProductOmnichannelInbox({
       <FaqSection />
 
             {/* FINAL CTA */}
-      <section className="nautix-final-cta-section">
+      <section className="nautix-final-cta-section" style={{ marginTop: "2rem" }}>
         <div
           className="nautix-final-cta-shell"
           style={{

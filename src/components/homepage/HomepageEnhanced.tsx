@@ -1186,7 +1186,7 @@ function PillarsSection() {
     >
       <div className="nautix-pillars-head">
         <h2 className="nautix-section-title mb-0 he-reveal">
-          <span className="nautix-section-title-line">Everything you need to grow</span>
+          <span className="nautix-section-title-line">76</span>
           <span className="nautix-section-title-focus">across marketing, sales, and support.</span>
         </h2>
         <p className="nautix-section-copy mb-0 he-reveal">
@@ -1776,3 +1776,5 @@ export function HomepageEnhanced() {
     </div>
   );
 }
+
+

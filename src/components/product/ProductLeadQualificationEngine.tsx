@@ -57,72 +57,13 @@ function renderHeading(heading: string) {
 
 function HeroVisual() {
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[480px] mx-auto lg:mx-0">
-      {/* Raw inquiry card */}
-      <div className="w-full rounded-2xl border border-black/10 bg-white shadow-sm p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold">
-            C
-          </div>
-          <span className="text-xs font-semibold text-foreground/60">Customer</span>
-          <span className="ml-auto text-[10px] text-foreground/40">09:14 AM</span>
-        </div>
-        <div className="rounded-lg bg-gray-50 border border-gray-100 p-3">
-          <p className="text-xs text-foreground/70 m-0">I&apos;m interested in your fibre packages. How much per month and do you cover Westlands?</p>
-        </div>
-        <div className="mt-2 flex items-center gap-1.5 text-[10px] text-amber-600">
-          <span className="inline-block w-2 h-2 rounded-full bg-amber-400" />
-          Raw inquiry — unqualified
-        </div>
-      </div>
-
-      {/* Arrow down */}
-      <div className="relative h-8 w-full">
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 32" fill="none" aria-hidden="true">
-          <path d="M160 4 Q200 28 240 4" stroke="url(#g-lqe-1)" strokeWidth="1.5" fill="none" strokeDasharray="4 3" />
-          <defs>
-            <linearGradient id="g-lqe-1" x1="0" y1="0" x2="0" y2="32">
-              <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.5" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* Qualified lead card */}
-      <div className="w-full rounded-2xl border border-green-300 bg-green-50/40 shadow-sm p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-bold">
-            N
-          </div>
-          <span className="text-xs font-semibold text-primary">Nautix Qualification</span>
-          <span className="ml-auto text-[10px] text-foreground/40">09:16 AM</span>
-        </div>
-        <div className="rounded-lg bg-white border border-primary/10 p-3 space-y-2">
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </div>
-            <p className="text-xs text-foreground/80 m-0">Location: Westlands — serviceable</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </div>
-            <p className="text-xs text-foreground/80 m-0">Budget &amp; timeline confirmed</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </div>
-            <p className="text-xs text-foreground/80 m-0">Lead score: 85 — routed to sales</p>
-          </div>
-        </div>
-        <div className="mt-2 flex items-center gap-1.5 text-[10px] text-green-600">
-          <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
-          Qualified &amp; routed — 2 min
-        </div>
-      </div>
+    <div className="-mt-6 w-full max-w-[480px] mx-auto lg:mx-0">
+      <img
+        src="/nautix-product/lead-qualification.png"
+        alt="Lead qualification illustration"
+        className="w-full h-auto"
+        loading="lazy"
+      />
     </div>
   );
 }
@@ -538,7 +479,7 @@ export function ProductLeadQualificationEngine({ data }: ProductLeadQualificatio
             </span>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="flex flex-col gap-6">
               <h1 className="font-[var(--font-heading)] font-bold text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] text-primary-950 leading-[1.05]">
                 {D.hero.h1}
@@ -546,6 +487,60 @@ export function ProductLeadQualificationEngine({ data }: ProductLeadQualificatio
               <p className="font-[var(--font-sans)] text-lg text-foreground/70 leading-relaxed max-w-xl">
                 {D.hero.subhead}
               </p>
+
+              {/* Customer */}
+              <div className="w-full max-w-[420px] rounded-2xl border border-black/10 bg-white shadow-sm p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-white text-xs font-bold">
+                    C
+                  </div>
+                  <span className="text-xs font-semibold text-foreground/60">Customer</span>
+                  <span className="ml-auto text-[10px] text-foreground/40">09:14 AM</span>
+                </div>
+                <div className="rounded-lg bg-gray-50 border border-gray-100 p-3">
+                  <p className="text-xs text-foreground/70 m-0">I&apos;m interested in your fibre packages. How much per month and do you cover Westlands?</p>
+                </div>
+                <div className="mt-2 flex items-center gap-1.5 text-[10px] text-amber-600">
+                  <span className="inline-block w-2 h-2 rounded-full bg-amber-400" />
+                  Raw inquiry — unqualified
+                </div>
+              </div>
+
+              {/* Nautix Qualification */}
+              <div className="w-full max-w-[420px] rounded-2xl border border-green-300 bg-green-50/40 shadow-sm p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-bold">
+                    N
+                  </div>
+                  <span className="text-xs font-semibold text-primary">Nautix Qualification</span>
+                  <span className="ml-auto text-[10px] text-foreground/40">09:16 AM</span>
+                </div>
+                <div className="rounded-lg bg-white border border-primary/10 p-3 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <p className="text-xs text-foreground/80 m-0">Location: Westlands — serviceable</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <p className="text-xs text-foreground/80 m-0">Budget &amp; timeline confirmed</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <p className="text-xs text-foreground/80 m-0">Lead score: 85 — routed to sales</p>
+                  </div>
+                </div>
+                <div className="mt-2 flex items-center gap-1.5 text-[10px] text-green-600">
+                  <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
+                  Qualified &amp; routed — 2 min
+                </div>
+              </div>
+
               <div className="flex flex-wrap gap-3 pt-2">
                 <a href={D.hero.primaryCta.href} className="group inline-flex items-center gap-2 rounded-full bg-primary-700 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-bold text-white shadow-md transition-colors hover:bg-primary-800">
                   <span className="text-[16px] font-semibold">{D.hero.primaryCta.label}</span>
