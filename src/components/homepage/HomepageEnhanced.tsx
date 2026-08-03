@@ -213,7 +213,7 @@ const STEPS = [
     n: "03",
     title: "Launch and iterate",
     copy: "The agent goes live. You review real conversations, refine logic, and expand scope as confidence grows.",
-    stat: "2 – 5 days",
+    stat: "2 — 5 days",
     statLabel: "to first resolution",
     kind: "launch",
   },
@@ -1186,7 +1186,7 @@ function PillarsSection() {
     >
       <div className="nautix-pillars-head">
         <h2 className="nautix-section-title mb-0 he-reveal">
-          <span className="nautix-section-title-line">Everything you need to grow</span>
+          <span className="nautix-section-title-line">76</span>
           <span className="nautix-section-title-focus">across marketing, sales, and support.</span>
         </h2>
         <p className="nautix-section-copy mb-0 he-reveal">
@@ -1776,3 +1776,5 @@ export function HomepageEnhanced() {
     </div>
   );
 }
+
+

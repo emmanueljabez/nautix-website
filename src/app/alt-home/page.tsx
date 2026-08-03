@@ -1,189 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { AnimStyles } from "@/components/ui/AnimStyles";
+import { ArrowRight } from "@/components/ui/ArrowRight";
+import { Counter } from "@/components/ui/Counter";
+import { Pill } from "@/components/ui/Pill";
+import { Wordmark } from "@/components/ui/Wordmark";
+import { useReveal } from "@/hooks/useReveal";
+import { useEffect, useState } from "react";
 
 const BOOK_DEMO_URL =
   "https://app.nautix.io/book/skVGGbpLujeMxRTL2JgwnzUut4AC3N-X/xU-NHVEi4rMuY9DlQZdvrHqnJkY-YVAp";
-
-/* -------------------------------------------------------------------------- */
-/*  Inline animation stylesheet                                               */
-/* -------------------------------------------------------------------------- */
-
-function AnimStyles() {
-  return (
-    <style>{`
-      @keyframes float-slow {
-        0%,100% { transform: translate(0,0) scale(1); }
-        50%     { transform: translate(30px,-20px) scale(1.05); }
-      }
-      @keyframes float-med {
-        0%,100% { transform: translate(0,0) scale(1); }
-        50%     { transform: translate(-40px,25px) scale(1.08); }
-      }
-      @keyframes float-fast {
-        0%,100% { transform: translate(0,0) scale(1); }
-        50%     { transform: translate(20px,30px) scale(0.96); }
-      }
-      @keyframes gradient-shift {
-        0%,100% { background-position: 0% 50%; }
-        50%     { background-position: 100% 50%; }
-      }
-      @keyframes marquee {
-        from { transform: translateX(0); }
-        to   { transform: translateX(-50%); }
-      }
-      @keyframes pulse-ring {
-        0%   { transform: scale(0.8); opacity: 0.6; }
-        100% { transform: scale(1.8); opacity: 0; }
-      }
-      @keyframes dash {
-        to { stroke-dashoffset: -400; }
-      }
-      @keyframes blink {
-        50% { opacity: 0; }
-      }
-      @keyframes msg-in {
-        0%   { opacity: 0; transform: translateY(6px) scale(0.98); }
-        100% { opacity: 1; transform: translateY(0) scale(1); }
-      }
-      @keyframes orbit {
-        from { transform: rotate(0deg) translateX(var(--r)) rotate(0deg); }
-        to   { transform: rotate(360deg) translateX(var(--r)) rotate(-360deg); }
-      }
-      @keyframes fade-up {
-        from { opacity: 0; transform: translateY(16px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-      .reveal { opacity: 0; }
-      .reveal.in { animation: fade-up 0.9s cubic-bezier(.22,.61,.36,1) forwards; }
-      .marquee-track { animation: marquee 38s linear infinite; }
-      .grad-text {
-        background: linear-gradient(92deg,#0B0B0E 0%,#7C3AED 45%,#EC4899 75%,#0B0B0E 100%);
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradient-shift 9s ease-in-out infinite;
-      }
-      .cursor::after {
-        content: "";
-        display: inline-block;
-        width: 3px; height: 0.9em;
-        margin-left: 4px;
-        background: #7C3AED;
-        vertical-align: -0.05em;
-        animation: blink 1s steps(2) infinite;
-      }
-    `}</style>
-  );
-}
-
-/* -------------------------------------------------------------------------- */
-/*  Primitives                                                                */
-/* -------------------------------------------------------------------------- */
-
-function Wordmark({ className = "" }: { className?: string }) {
-  return (
-    <span
-      className={`font-[var(--font-heading)] text-[20px] font-semibold tracking-[-0.02em] ${className}`}
-    >
-      nautix
-      <span className="ml-[2px] inline-block h-[6px] w-[6px] translate-y-[-10px] rounded-full bg-gradient-to-r from-[#7C3AED] to-[#EC4899] align-top" />
-    </span>
-  );
-}
-
-function Pill({ children, tone = "light" }: { children: React.ReactNode; tone?: "light" | "dark" }) {
-  const cls =
-    tone === "light"
-      ? "border-black/10 bg-white text-black/70"
-      : "border-white/15 bg-white/5 text-white/70";
-  return (
-    <span
-      className={`inline-flex items-center gap-2 rounded-full border ${cls} px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] backdrop-blur`}
-    >
-      <span className="relative flex h-1.5 w-1.5">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7C3AED] opacity-75" />
-        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#7C3AED]" />
-      </span>
-      {children}
-    </span>
-  );
-}
-
-function ArrowRight({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-      <path
-        d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-/* Hook: reveal-on-scroll */
-function useReveal<T extends HTMLElement>() {
-  const ref = useRef<T>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    el.querySelectorAll<HTMLElement>(".reveal").forEach((n) => io.observe(n));
-    return () => io.disconnect();
-  }, []);
-  return ref;
-}
-
-/* Animated counter */
-function Counter({ to, suffix = "", duration = 1600 }: { to: number; suffix?: string; duration?: number }) {
-  const [v, setV] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting && !started.current) {
-          started.current = true;
-          const start = performance.now();
-          const tick = (now: number) => {
-            const p = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - p, 3);
-            setV(to * eased);
-            if (p < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
-      });
-    });
-    io.observe(el);
-    return () => io.disconnect();
-  }, [to, duration]);
-  const display =
-    to % 1 === 0 ? Math.round(v).toString() : v.toFixed(1);
-  return (
-    <span ref={ref}>
-      {display}
-      {suffix}
-    </span>
-  );
-}
 
 /* -------------------------------------------------------------------------- */
 /*  Nav                                                                        */
@@ -435,7 +262,7 @@ function Hero() {
 /* -------------------------------------------------------------------------- */
 
 const LOGOS = [
-  "Kōbe Atelier","Lumen & Co.","Northwind","Harbor Goods","Maison Rive",
+  "KÅbe Atelier","Lumen & Co.","Northwind","Harbor Goods","Maison Rive",
   "Oslo Type","Verdant","Plein Air","Kite Club","Solstice","Pavilion","Roam",
 ];
 
@@ -475,7 +302,7 @@ function Stats() {
   const items = [
     { n: 72, suf: "%", l: "of tickets resolved without a human" },
     { n: 9,  suf: "s", l: "median first-response across every channel" },
-    { n: 3.4,suf: "×", l: "lift on qualified leads from social DMs" },
+    { n: 3.4,suf: "Ã—", l: "lift on qualified leads from social DMs" },
     { n: 24, suf: "/7", l: "multilingual coverage out of the box" },
   ];
   return (
@@ -494,7 +321,7 @@ function Stats() {
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="font-[var(--font-heading)] text-[64px] font-semibold leading-none tracking-[-0.04em] md:text-[80px]">
-                <Counter to={it.n} suffix={it.suf} />
+                <Counter target={it.n} suffix={it.suf} />
               </div>
               <p className="mt-5 max-w-[220px] text-[14px] leading-[1.5] text-black/60">
                 {it.l}
@@ -512,13 +339,13 @@ function Stats() {
 /* -------------------------------------------------------------------------- */
 
 const ACTIVITY_SEED = [
-  { ch: "WhatsApp", acc: "#25D366", name: "Anaïs L.", city: "Berlin", type: "Resolved", ms: 38 },
-  { ch: "Instagram", acc: "#E1306C", name: "@sofia.m", city: "Milan", type: "Converted · €180", ms: 52 },
+  { ch: "WhatsApp", acc: "#25D366", name: "AnaÃ¯s L.", city: "Berlin", type: "Resolved", ms: 38 },
+  { ch: "Instagram", acc: "#E1306C", name: "@sofia.m", city: "Milan", type: "Converted · →180", ms: 52 },
   { ch: "Messenger", acc: "#0084FF", name: "Paul V.", city: "Amsterdam", type: "Lead captured", ms: 21 },
   { ch: "WhatsApp", acc: "#25D366", name: "Kenji T.", city: "Tokyo", type: "Resolved", ms: 44 },
   { ch: "Instagram", acc: "#E1306C", name: "@kai.reads", city: "Lagos", type: "Refund · issued", ms: 63 },
   { ch: "Messenger", acc: "#0084FF", name: "Nina O.", city: "Lisbon", type: "Escalated · calmly", ms: 19 },
-  { ch: "WhatsApp", acc: "#25D366", name: "Yara D.", city: "São Paulo", type: "Converted · €62", ms: 31 },
+  { ch: "WhatsApp", acc: "#25D366", name: "Yara D.", city: "SÃ£o Paulo", type: "Converted · →62", ms: 31 },
   { ch: "Instagram", acc: "#E1306C", name: "@aurora.s", city: "Stockholm", type: "Resolved", ms: 40 },
 ];
 
@@ -639,10 +466,10 @@ const CHANNELS: Record<
       { who: "c", text: "Hey — is the Lumen pendant still in stock in brass?" },
       { who: "a", text: "Yes — 3 left in brushed brass. Want me to hold one while you checkout?" },
       { who: "c", text: "Please. Ship to Berlin by Friday if possible." },
-      { who: "a", text: "Done — express to Berlin arrives Thu. Pay-by-link sent: pay.harbor.co/lumen-brass · €248", meta: "Resolved · 38s" },
+      { who: "a", text: "Done — express to Berlin arrives Thu. Pay-by-link sent: pay.harbor.co/lumen-brass · →248", meta: "Resolved · 38s" },
     ],
     inbox: [
-      { name: "Anaïs L.", preview: "Please. Ship to Berlin by Friday…", tag: "Commerce", time: "2m", unread: 0 },
+      { name: "AnaÃ¯s L.", preview: "Please. Ship to Berlin by Friday…", tag: "Commerce", time: "2m", unread: 0 },
       { name: "Jonas R.", preview: "I need to change the delivery date", tag: "Support", time: "5m", unread: 2 },
       { name: "Priya S.", preview: "Thanks for the update — works!", tag: "CSAT", time: "12m" },
       { name: "Harbor PRO", preview: "Campaign reply · Spring drop", tag: "Lead", time: "18m" },
@@ -656,7 +483,7 @@ const CHANNELS: Record<
       { who: "c", text: "saw the story — are the raffia clutches restocked?" },
       { who: "a", text: "Yep — the bone and olive variants landed this morning. Want me to send a preview link?" },
       { who: "c", text: "the olive. and can u ship to milan" },
-      { who: "a", text: "Reserved · milan · €180. Tap to checkout ↗", meta: "Handoff skipped" },
+      { who: "a", text: "Reserved · milan · →180. Tap to checkout →", meta: "Handoff skipped" },
     ],
     inbox: [
       { name: "@sofia.m", preview: "the olive. and can u ship to milan", tag: "Commerce", time: "just now", unread: 1 },
@@ -911,7 +738,7 @@ function Product() {
           {[
             { k: "Avg handle time", v: "38s", sub: "↓ 62% vs. baseline" },
             { k: "Self-served", v: "74%", sub: "last 30 days" },
-            { k: "Conversion (DM→checkout)", v: "12.8%", sub: "↑ 3.1pp" },
+            { k: "Conversion (DM→checkout)", v: "12.8%", sub: "→ 3.1pp" },
             { k: "CSAT", v: "4.86 / 5", sub: "2,412 responses" },
           ].map((s) => (
             <div
@@ -1023,7 +850,7 @@ function AgentFlow() {
 
         <div className="reveal mt-12 grid gap-8 md:grid-cols-3">
           {[
-            { t: "Grounded by default", b: "Every reply carries citations against your own content. If it can’t cite, it escalates." },
+            { t: "Grounded by default", b: "Every reply carries citations against your own content. If it can→t cite, it escalates." },
             { t: "Tool-using", b: "Takes payment, books couriers, updates CRM, books calendars. It acts, not just answers." },
             { t: "Observable", b: "Every step logged and replayable. Eval suite runs on real traffic before you flip the switch." },
           ].map((c) => (
@@ -1112,7 +939,7 @@ function Features() {
           <div className="relative overflow-hidden rounded-3xl border border-black/5 bg-white p-6">
             <div className="font-[var(--font-heading)] text-[18px] font-semibold">52 languages</div>
             <p className="mt-1 text-[13px] text-black/55">
-              Detects, responds, and hands off — in the customer’s language.
+              Detects, responds, and hands off — in the customer→s language.
             </p>
             <div className="mt-4 flex flex-wrap gap-1.5 text-[11px]">
               {["EN","DE","FR","ES","IT","PT","NL","AR","HE","JA","KO","ZH","HI","TH","TR","PL","SV","FI","DA","NO","EL"].map((l) => (
@@ -1130,7 +957,7 @@ function Features() {
             <div className="mt-4 rounded-xl bg-black/40 p-3 font-mono text-[11px] text-emerald-300">
               <div>$ nautix eval run --from=last-7d</div>
               <div className="text-white/70">→ 12,418 convos · 98.4% pass</div>
-              <div className="text-white/50">→ 3 regressions · details ↗</div>
+              <div className="text-white/50">→ 3 regressions · details →</div>
             </div>
           </div>
 
@@ -1177,7 +1004,7 @@ const PLAYGROUND_PROMPTS: { q: string; a: string[] }[] = [
     a: [
       "One sec — checking Milan and Berlin warehouses…",
       "Yes, 7 left in olive. Want me to reserve one?",
-      "Tap to checkout · €180 · ships today ↗",
+      "Tap to checkout · →180 · ships today →",
     ],
   },
   {
@@ -1332,7 +1159,7 @@ const COVERAGE = [
   { c: "Singapore", x: 760, y: 300 },
   { c: "Tokyo", x: 830, y: 200 },
   { c: "Sydney", x: 830, y: 360 },
-  { c: "São Paulo", x: 320, y: 330 },
+  { c: "SÃ£o Paulo", x: 320, y: 330 },
   { c: "New York", x: 260, y: 190 },
   { c: "Mexico City", x: 210, y: 250 },
 ];
@@ -1693,13 +1520,13 @@ function Pricing() {
   const ref = useReveal<HTMLDivElement>();
   const plans = [
     {
-      name: "Starter", price: "€0", sub: "14-day trial",
+      name: "Starter", price: "→0", sub: "14-day trial",
       feats: ["1 channel","500 AI conversations","Email support","Standard guardrails"],
       cta: "Start free",
       highlight: false,
     },
     {
-      name: "Growth", price: "€490", sub: "per month · billed annually",
+      name: "Growth", price: "→490", sub: "per month · billed annually",
       feats: ["All channels","10,000 AI conversations","Shared Slack room","Eval suite · basic","CRM sync"],
       cta: "Book a demo",
       highlight: true,
@@ -1955,7 +1782,7 @@ function Footer() {
           ))}
         </div>
         <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-black/10 pt-8 text-[12px] text-black/45">
-          <div>© {new Date().getFullYear()} Nautix, Inc.</div>
+          <div>Â© {new Date().getFullYear()} Nautix, Inc.</div>
           <div>Berlin · Lagos · Singapore</div>
         </div>
       </div>

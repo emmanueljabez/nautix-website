@@ -284,8 +284,8 @@ export default function IspAfterHoursArticlePage() {
                 </ul>
 
                 <blockquote className="mt-6 rounded-2xl border-l-4 border-[#7e10a2] bg-white px-5 py-4 text-[15px] font-semibold italic leading-7 text-[#3e4558] shadow-[0_10px_30px_rgba(17,24,39,0.05)]">
-                  “Support teams don’t need more scripts. They need systems that resolve while the
-                  customer is still in conversation.”
+                  —Support teams don→t need more scripts. They need systems that resolve while the
+                  customer is still in conversation.—
                 </blockquote>
               </div>
 

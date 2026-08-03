@@ -13,6 +13,7 @@ const STATIC_ROUTES = [
   "",
   "/demo",
   "/features",
+  "/isp",
   "/resources/blog",
   "/resources/blog/the-buyer-who-almost-wasnt",
   "/resources/blog/your-internet-is-down-11pm",

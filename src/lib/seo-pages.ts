@@ -214,7 +214,7 @@ export const INDUSTRY_PAGES: Record<IndustrySlug, LandingPageData> = {
   },
 };
 
-export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics"] as const;
+export const PRODUCT_SLUGS = ["channels-inbox", "ai-resolution", "payments", "analytics", "omnichannel-inbox", "comment-monitoring", "autonomous-resolution", "lead-qualification-engine", "in-chat-payment-close", "full-payment-loop"] as const;
 export type ProductSlug = (typeof PRODUCT_SLUGS)[number];
 
 export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
@@ -324,6 +324,184 @@ export const PRODUCT_PAGES: Record<ProductSlug, LandingPageData> = {
       "ai support analytics",
       "conversation performance dashboard",
       "whatsapp support reporting",
+    ],
+  },
+  "omnichannel-inbox": {
+    slug: "omnichannel-inbox",
+    path: "/product/omnichannel-inbox",
+    title: "Omnichannel Inbox for WhatsApp, Instagram & Facebook | Nautix",
+    description:
+      "Unify WhatsApp, Instagram, Facebook, and webchat into one shared team inbox. Never miss a customer message again. Built for African businesses.",
+    heading: "Every customer conversation, in one place.",
+    subheading:
+      "Your customers message you on WhatsApp, Instagram, Facebook, and your website. Nautix brings every conversation into one shared inbox — so nothing slips through, and your whole team works from the same screen.",
+    highlights: [
+      "Unified queue across WhatsApp, Instagram, Facebook, and webchat — sorted, tagged, and searchable.",
+      "Team assignment with full visibility on who's handling what and what's unassigned.",
+      "Internal notes for private team communication that customers never see.",
+      "Tags and labels to categorise conversations by type, priority, or status.",
+      "Full-text search to find any past conversation in seconds.",
+      "Response tracking to see how fast your team responds and spot backlogs.",
+    ],
+    outcomes: [
+      "Zero missed messages — every channel in one queue.",
+      "3Ã— faster response times with shared team visibility.",
+      "100% conversation history retained across channels.",
+    ],
+    keywords: [
+      "omnichannel inbox",
+      "WhatsApp shared inbox",
+      "unified customer inbox",
+      "multi-channel messaging",
+    ],
+  },
+  "comment-monitoring": {
+    slug: "comment-monitoring",
+    path: "/product/comment-monitoring",
+    title: "Social Comment Monitoring & Auto-Reply | Nautix",
+    description:
+      "Catch and respond to every comment on your Instagram and Facebook posts and ads automatically. Turn public comments into leads and resolve complaints fast.",
+    heading: "Every comment is a customer. Catch them all.",
+    subheading:
+      "The comments under your posts and ads are full of buyers, questions, and complaints — in public, for everyone to see. Nautix monitors every comment and responds or routes it instantly, before it's missed or festers.",
+    highlights: [
+      "Real-time watching of every comment on every post and ad.",
+      "Intent detection that distinguishes buyers, questions, complaints, and spam.",
+      "Public reply or move to private DM to close the sale or resolve the issue.",
+      "Reputation protection that flags negative comments before they sit unaddressed.",
+      "Spam filtering that keeps your comments clean automatically.",
+      "Comment-to-DM capture that turns public commenters into private leads.",
+    ],
+    outcomes: [
+      "100% of comments monitored and triaged.",
+      "30%+ more leads captured from ad comments.",
+      "Complaints addressed in minutes, not hours.",
+    ],
+    keywords: [
+      "comment monitoring",
+      "auto reply comments",
+      "Instagram comment automation",
+      "Facebook comment management",
+    ],
+  },
+  "autonomous-resolution": {
+    slug: "autonomous-resolution",
+    path: "/product/autonomous-resolution",
+    title: "Autonomous Resolution \u2014 AI That Acts, Not Just Replies | Nautix",
+    description:
+      "Nautix does not just respond \u2014 it resolves. It takes the real action that fixes a customer problem end to end, automatically. Built for African businesses.",
+    heading: "Resolves. Does not just respond.",
+    subheading:
+      "A chatbot acknowledges the problem. Nautix solves it. It takes the real action \u2014 restoring a service, processing a request, completing a task \u2014 end to end, without waking a single team member.",
+    highlights: [
+      "End-to-end action that fixes the real problem \u2014 not just a message about it.",
+      "Understands what the customer truly needs resolved, even with imperfect phrasing.",
+      "Diagnoses against live systems to understand what is wrong and what will fix it.",
+      "Takes the real action directly in your systems with the guardrails you set.",
+      "Smart escalation that hands off with full context when a human is needed.",
+      "Complete logging of every action so your team has full visibility.",
+    ],
+    outcomes: [
+      "60-70% of routine issues resolved without a human.",
+      "Typical end-to-end resolution time under 2 minutes.",
+      "24/7 resolution \u2014 not just responses \u2014 around the clock.",
+    ],
+    keywords: [
+      "autonomous resolution",
+      "AI customer resolution",
+      "automated issue resolution",
+      "end-to-end automation",
+    ],
+  },
+  "lead-qualification-engine": {
+    slug: "lead-qualification-engine",
+    path: "/product/lead-qualification-engine",
+    title: "Automated Lead Qualification Engine for WhatsApp | Nautix",
+    description:
+      "Qualify, score, and route every inbound lead automatically — 24/7. Hand your sales team only the leads worth their time, fully briefed. Built for African businesses.",
+    heading: "Qualified leads. Not just inquiries.",
+    subheading:
+      "Most inquiries aren't ready to buy — and your team wastes hours finding out which ones are. Nautix asks the right questions, scores every lead, and hands your sales team only the ones worth pursuing, with the full picture attached.",
+    highlights: [
+      "Smart questioning that gathers budget, need, timeline, and fit conversationally.",
+      "Lead scoring against your criteria so your team knows who to call first.",
+      "Intelligent routing by type, territory, or value to the right person or team.",
+      "Full lead briefs with all qualification context — no re-asking required.",
+      "24/7 qualification so leads are never left waiting, day or night.",
+      "CRM-ready output with all fields populated for seamless pipeline flow.",
+    ],
+    outcomes: [
+      "100% of leads qualified before reaching your team.",
+      "2× more sales time spent on real opportunities.",
+      "24/7 qualification so no hot lead ever waits.",
+    ],
+    keywords: [
+      "lead qualification",
+      "lead scoring",
+      "automated lead qualification",
+      "WhatsApp lead capture",
+      "lead routing",
+    ],
+  },
+  "in-chat-payment-close": {
+    slug: "in-chat-payment-close",
+    path: "/product/in-chat-payment-close",
+    title: "Close Sales In-Chat with M-Pesa & Mobile Money | Nautix",
+    description:
+      "Close the sale right inside the conversation — request, pay, and confirm without sending customers away. Capture the buying moment. Built for African businesses.",
+    heading: "Close the sale before the moment cools.",
+    subheading:
+      "When a customer is ready to buy, every extra step loses them. Nautix closes the sale right inside the chat — requests payment, takes it via mobile money, and confirms — capturing the buying moment exactly where it happens.",
+    highlights: [
+      "Pay in the conversation — no redirects, no separate apps.",
+      "Mobile money native with M-Pesa built in.",
+      "Instant payment confirmation and sale closure.",
+      "Captures the buying moment before hesitation sets in.",
+      "Auto-receipts sent directly in the chat.",
+      "Secure and verified payment processing.",
+    ],
+    outcomes: [
+      "35% higher close rate vs sending payment links away.",
+      "Seconds from 'yes' to paid and confirmed.",
+      "Zero redirects, drop-off pages, or re-entered details.",
+    ],
+    keywords: [
+      "in-chat payment",
+      "close sale in chat",
+      "WhatsApp payment",
+      "M-Pesa in chat",
+      "conversational checkout",
+    ],
+  },
+  "full-payment-loop": {
+    slug: "full-payment-loop",
+    path: "/product/full-payment-loop",
+    title: "Full Payment Loop — Request to Reconciliation | Nautix",
+    description:
+      "Close the entire payment loop automatically: request, collect, verify, reconcile, and update records — no manual steps. Built for African businesses on mobile money.",
+    heading: "From request to reconciled — automatically.",
+    subheading:
+      "Taking the payment is only half the job. Nautix closes the entire loop — requesting, collecting, verifying, reconciling, and updating your records — so money owed becomes money received and properly accounted for, with zero manual steps.",
+    highlights: [
+      "Automated payment requests sent at the right time.",
+      "Real-time verification that payment genuinely arrived.",
+      "Automatic reconciliation matching payments to records.",
+      "System and book updates the moment payment is confirmed.",
+      "Exception flagging for mismatches and partial payments.",
+      "Full visibility across the entire payment loop.",
+    ],
+    outcomes: [
+      "Zero manual reconciliation for routine payments.",
+      "100% of payments verified before being marked settled.",
+      "Real-time records, always accurate and up to date.",
+    ],
+    keywords: [
+      "payment reconciliation",
+      "automated payment loop",
+      "end-to-end payments",
+      "payment automation",
+      "mobile money reconciliation",
+      "full payment loop",
     ],
   },
 };
