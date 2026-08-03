@@ -3,6 +3,12 @@
 import { PAIN_CARDS_DATA } from "@/lib/isp-data";
 import { useReveal } from "@/hooks/useReveal";
 
+const PAIN_IMAGES: Record<string, string> = {
+  "11pm": "/nautix-isp/11pm.png",
+  "12 hrs": "/nautix-isp/12hours.png",
+  "0 alerts": "/nautix-isp/0alerts.png",
+};
+
 /**
  * IspProblemCards — Section 2: Validate pain.
  *
@@ -55,6 +61,15 @@ export function IspProblemCards() {
               className="group relative flex flex-col rounded-3xl border border-black/10 bg-[#FAF8F5] p-6 transition hover:-translate-y-0.5 hover:shadow-lg md:p-8"
               style={{ animationDelay: `${i * 80}ms` }}
             >
+              {/* —— Card image —— */}
+              <div className="-mx-6 -mt-6 mb-5 overflow-hidden rounded-t-3xl md:-mx-8 md:-mt-8">
+                <img
+                  src={PAIN_IMAGES[card.timeAnchor]}
+                  alt={card.timeAnchor}
+                  className="h-48 w-full object-cover"
+                />
+              </div>
+
               {/* Time anchor — prominent pill with live-indicator dot */}
               <div className="mb-5 inline-flex items-center gap-2 self-start rounded-full border border-primary-200 bg-primary-50/60 px-3.5 py-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary-600" />

@@ -81,7 +81,6 @@ export const PAGE_DATA = {
     heading: "What the inbox does",
         cards: [
       {
-        icon: "/nautix-icons/oi-inbox.svg",
         title: "Unified queue",
         body: "WhatsApp, Instagram, Facebook, and webchat in one stream — sorted, tagged, and searchable.",
       },
@@ -112,30 +111,31 @@ export const PAGE_DATA = {
       },
     ],
   },
-  industryTable: {
+  industries: {
     heading: "One inbox. Every kind of business.",
     subhead:
       "However your customers reach you, they land in the same organised queue.",
-    rows: [
+    
+      cards: [
       {
-        vertical: "ISPs",
-        howTheyUseIt:
-          "Subscriber support requests from WhatsApp, outage complaints from Facebook, and new-line inquiries from Instagram — all in one queue, routed to the right technician or sales rep.",
+        image: "/nautix-product/Omnichannel%20Inbox/isps.png",
+        label: "ISPs ",
+        desc: "Subscriber support requests from WhatsApp, outage complaints from Facebook, and new-line inquiries from Instagram — all in one queue, routed to the right technician or sales rep.",
       },
       {
-        vertical: "Real Estate",
-        howTheyUseIt:
-          "Property inquiries from Instagram ads, viewing requests on WhatsApp, and tenant maintenance issues from Facebook — unified so no hot lead or urgent repair is missed.",
+        image: "/nautix-product/Omnichannel%20Inbox/real-estate.png",
+        label: "Real Estate",
+        desc: "Property inquiries from Instagram ads, viewing requests on WhatsApp, and tenant maintenance issues from Facebook — unified so no hot lead or urgent repair is missed.",
       },
       {
-        vertical: "E-commerce",
-        howTheyUseIt:
-          "Order questions, delivery follow-ups, and product inquiries across every social channel — consolidated so your team answers fast and closes more sales.",
+        image: "/nautix-product/Omnichannel%20Inbox/e-commerce.png",
+        label: "E-commerce",
+        desc: "Order questions, delivery follow-ups, and product inquiries across every social channel — consolidated so your team answers fast and closes more sales.",
       },
       {
-        vertical: "Finance / SACCOs",
-        howTheyUseIt:
-          "Member inquiries, loan questions, and account requests from every channel — organised, assigned, and answered with full member history attached.",
+        image: "/nautix-product/Omnichannel%20Inbox/finance-saccos.png",
+        label: "Finance / SACCOs",
+        desc: "Member inquiries, loan questions, and account requests from every channel — organised, assigned, and answered with full member history attached.",
       },
     ],
   },
@@ -144,7 +144,7 @@ export const PAGE_DATA = {
     stats: [
       { value: "0", label: "Missed messages — every channel in one queue" },
       {
-        value: "3Ã—",
+        value: "3×",
         label: "Faster response times with shared team visibility",
       },
       {

@@ -57,71 +57,12 @@ function renderHeading(heading: string) {
 function HeroVisual() {
   return (
     <div className="relative flex flex-col items-center w-full max-w-[480px] mx-auto lg:mx-0">
-      {/* Chatbot response card — the "respond" */}
-      <div className="w-full rounded-2xl border border-black/10 bg-white shadow-sm p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-xs font-bold">
-            B
-          </div>
-          <span className="text-xs font-semibold text-foreground/60">Typical Chatbot</span>
-          <span className="ml-auto text-[10px] text-foreground/40">10:23 AM</span>
-        </div>
-        <div className="rounded-lg bg-gray-50 border border-gray-100 p-3">
-          <p className="text-xs text-foreground/60 m-0">Thanks for reaching out! We have received your request and someone will look into it shortly.</p>
-        </div>
-        <div className="mt-2 flex items-center gap-1.5 text-[10px] text-red-500">
-          <span className="inline-block w-2 h-2 rounded-full bg-red-400" />
-          Problem not resolved
-        </div>
-      </div>
-
-      {/* Arrow down */}
-      <div className="relative h-8 w-full">
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 32" fill="none" aria-hidden="true">
-          <path d="M160 4 Q200 28 240 4" stroke="url(#g-ar-1)" strokeWidth="1.5" fill="none" strokeDasharray="4 3" />
-          <defs>
-            <linearGradient id="g-ar-1" x1="0" y1="0" x2="0" y2="32">
-              <stop offset="0%" stopColor="#7C3AED" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.5" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-
-      {/* Nautix resolution card — the "resolve" */}
-      <div className="w-full rounded-2xl border border-green-300 bg-green-50/40 shadow-sm p-4">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-bold">
-            N
-          </div>
-          <span className="text-xs font-semibold text-primary">Nautix Resolution</span>
-          <span className="ml-auto text-[10px] text-foreground/40">10:23 AM</span>
-        </div>
-        <div className="rounded-lg bg-white border border-primary/10 p-3 space-y-2">
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </div>
-            <p className="text-xs text-foreground/80 m-0">Service diagnosed — offline</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </div>
-            <p className="text-xs text-foreground/80 m-0">Device rebooted remotely</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </div>
-            <p className="text-xs text-foreground/80 m-0">Connection restored</p>
-          </div>
-        </div>
-        <div className="mt-2 flex items-center gap-1.5 text-[10px] text-green-600">
-          <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
-          Issue resolved — 47 seconds
-        </div>
-      </div>
+      <img
+        src="/nautix-product/autonomous-resolution.png"
+        alt="Autonomous resolution illustration"
+        className="w-full h-auto"
+        loading="lazy"
+      />
     </div>
   );
 }
@@ -464,7 +405,7 @@ export function ProductAutonomousResolution({ data }: ProductAutonomousResolutio
             </span>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div className="flex flex-col gap-6">
               <h1 className="font-[var(--font-heading)] font-bold text-4xl md:text-5xl lg:text-6xl tracking-[-0.04em] text-primary-950 leading-[1.05]">
                 {D.hero.h1}
@@ -472,6 +413,60 @@ export function ProductAutonomousResolution({ data }: ProductAutonomousResolutio
               <p className="font-[var(--font-sans)] text-lg text-foreground/70 leading-relaxed max-w-xl">
                 {D.hero.subhead}
               </p>
+
+              {/* Typical Chatbot */}
+              <div className="w-full max-w-[420px] rounded-2xl border border-black/10 bg-white shadow-sm p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-gray-600 text-xs font-bold">
+                    B
+                  </div>
+                  <span className="text-xs font-semibold text-foreground/60">Typical Chatbot</span>
+                  <span className="ml-auto text-[10px] text-foreground/40">10:23 AM</span>
+                </div>
+                <div className="rounded-lg bg-gray-50 border border-gray-100 p-3">
+                  <p className="text-xs text-foreground/60 m-0">Thanks for reaching out! We have received your request and someone will look into it shortly.</p>
+                </div>
+                <div className="mt-2 flex items-center gap-1.5 text-[10px] text-red-500">
+                  <span className="inline-block w-2 h-2 rounded-full bg-red-400" />
+                  Problem not resolved
+                </div>
+              </div>
+
+              {/* Nautix Resolution */}
+              <div className="w-full max-w-[420px] rounded-2xl border border-green-300 bg-green-50/40 shadow-sm p-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white text-xs font-bold">
+                    N
+                  </div>
+                  <span className="text-xs font-semibold text-primary">Nautix Resolution</span>
+                  <span className="ml-auto text-[10px] text-foreground/40">10:23 AM</span>
+                </div>
+                <div className="rounded-lg bg-white border border-primary/10 p-3 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <p className="text-xs text-foreground/80 m-0">Service diagnosed — offline</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <p className="text-xs text-foreground/80 m-0">Device rebooted remotely</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#16a34a" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    </div>
+                    <p className="text-xs text-foreground/80 m-0">Connection restored</p>
+                  </div>
+                </div>
+                <div className="mt-2 flex items-center gap-1.5 text-[10px] text-green-600">
+                  <span className="inline-block w-2 h-2 rounded-full bg-green-500" />
+                  Issue resolved — 47 seconds
+                </div>
+              </div>
+
               <div className="flex flex-wrap gap-3 pt-2">
                 <a href={D.hero.primaryCta.href} className="group inline-flex items-center gap-2 rounded-full bg-primary-700 min-h-12 px-[1.35rem] py-[0.85rem] text-base font-bold text-white shadow-md transition-colors hover:bg-primary-800">
                   <span className="text-[16px] font-semibold">{D.hero.primaryCta.label}</span>
