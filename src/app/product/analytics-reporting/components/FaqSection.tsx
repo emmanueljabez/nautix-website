@@ -17,17 +17,22 @@ export function FaqSection({ items }: FaqSectionProps) {
   return (
     <section className="bg-white border-b border-gray-200">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
-        <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-gray-900 text-center">
-          Common questions
+        <h2 className="nautix-section-title mb-0 text-center">
+          <span className="nautix-section-title-line">
+            Frequently asked
+          </span>
+          <span className="nautix-section-title-focus">
+            questions
+          </span>
         </h2>
-        <div className="mt-10 flex flex-col divide-y divide-black/10">
+        <div className="mt-6 flex flex-col divide-y divide-black/10">
           {items.map((item, index) => (
             <div key={index} className="py-4">
               <button
                 onClick={() => toggle(index)}
                 className="w-full flex items-center justify-between gap-4 text-left group"
               >
-                <span className="text-lg font-heading font-bold text-gray-900 group-hover:text-primary-700 transition-colors">
+                <span className="text-lg font-heading font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
                   {item.question}
                 </span>
                 <span
@@ -54,12 +59,12 @@ export function FaqSection({ items }: FaqSectionProps) {
               <div
                 className={`grid transition-all duration-300 ease-in-out ${
                   openIndex === index
-                    ? "grid-rows-[1fr] opacity-100 mt-3"
+                    ? "grid-rows-[1fr] opacity-100 mt-2"
                     : "grid-rows-[0fr] opacity-0"
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="text-sm font-medium text-gray-700 leading-relaxed pb-1">
+                  <p className="text-[15px] leading-relaxed text-[#5c6773] pb-1">
                     {item.answer}
                   </p>
                 </div>

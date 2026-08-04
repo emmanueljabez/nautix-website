@@ -22,27 +22,29 @@ export function ProblemSection() {
   return (
     <section className="bg-primary-50/50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="flex flex-col gap-4">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-gray-900">
-                You can&apos;t improve what you can&apos;t see.
-              </h2>
-              <p className="mt-2 text-lg font-medium text-gray-700">
-                Most teams running customer operations across WhatsApp,
-                Instagram, and Facebook have no single view of what is
-                happening. Data sits in scattered spreadsheets, agent
-                recollections, and platform inboxes that were never built for
-                reporting.
-              </p>
-            </div>
-            <div className="flex flex-col gap-3">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div className="flex flex-col gap-3">
+            <h2 className="nautix-section-title mb-0">
+              <span className="nautix-section-title-line">
+                You can&apos;t improve
+              </span>
+              <span className="nautix-section-title-focus">
+                what you can&apos;t see.
+              </span>
+            </h2>
+            <p className="nautix-section-copy mb-0">
+              Most teams running customer operations across WhatsApp, Instagram,
+              and Facebook have no single view of what is happening. Data sits in
+              scattered spreadsheets, agent recollections, and platform inboxes
+              that were never built for reporting.
+            </p>
+            <div className="flex flex-col gap-2 mt-1">
               {painPoints.map((point) => (
                 <div key={point.title}>
                   <h3 className="text-lg font-heading font-bold text-gray-900">
                     {point.title}
                   </h3>
-                  <p className="mt-0.5 text-sm font-medium text-gray-700 leading-relaxed">
+                  <p className="text-[15px] leading-relaxed text-[#5c6773]">
                     {point.description}
                   </p>
                 </div>

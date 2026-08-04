@@ -32,27 +32,33 @@ export function HowItWorksSection() {
     <section id="how-it-works" className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-          <div className="flex flex-col gap-2">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-gray-900">
-                Everything measured. Everything visible.
-              </h2>
-              <p className="mt-1 text-lg font-medium text-gray-700 max-w-lg">
-                From conversation to dashboard, here is how Nautix turns raw
-                activity into clear, actionable insight.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
+            <h2 className="nautix-section-title mb-0">
+              <span
+                className="nautix-section-title-line"
+                style={{ maxWidth: "none", margin: 0, whiteSpace: "nowrap" }}
+              >
+                Everything measured.
+              </span>
+              <span className="nautix-section-title-focus">
+                Everything visible.
+              </span>
+            </h2>
+            <p className="nautix-section-copy mb-0">
+              From conversation to dashboard, here is how Nautix turns raw
+              activity into clear, actionable insight.
+            </p>
+            <div className="flex flex-col gap-2 mt-1">
               {steps.map((step) => (
                 <div key={step.number} className="flex gap-3">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-700 text-white flex items-center justify-center text-xs font-bold">
                     {step.number}
                   </div>
                   <div>
-                    <h3 className="text-base font-heading font-bold text-gray-900">
+                    <h3 className="text-[17px] font-heading font-semibold text-gray-900">
                       {step.title}
                     </h3>
-                    <p className="text-sm font-medium text-gray-700 leading-relaxed">
+                    <p className="text-[15px] leading-relaxed text-[#5c6773]">
                       {step.description}
                     </p>
                   </div>

@@ -44,24 +44,27 @@ export function CapabilitiesSection() {
     <section className="bg-primary-50/50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-          <div className="flex flex-col gap-2">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-gray-900">
-                What analytics &amp; reporting does
-              </h2>
-              <p className="mt-1 text-lg font-medium text-gray-700">
-                Six core capabilities that turn raw conversation data into
-                clear, actionable insight for your entire operation.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-2">
+          <div className="flex flex-col gap-3">
+            <h2 className="nautix-section-title mb-0">
+              <span className="nautix-section-title-line">
+                What analytics &amp;
+              </span>
+              <span className="nautix-section-title-focus">
+                reporting does
+              </span>
+            </h2>
+            <p className="nautix-section-copy mb-0">
+              Six core capabilities that turn raw conversation data into clear,
+              actionable insight for your entire operation.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-2 mt-1">
               {capabilities.map((capability) => (
                 <div key={capability.title}>
-                  <div className="text-2xl">{capability.icon}</div>
-                  <h3 className="text-base font-heading font-bold text-gray-900">
+                  <div className="text-xl">{capability.icon}</div>
+                  <h3 className="text-[17px] font-heading font-semibold text-gray-900">
                     {capability.title}
                   </h3>
-                  <p className="text-sm font-medium text-gray-700 leading-relaxed">
+                  <p className="text-[15px] leading-relaxed text-[#5c6773]">
                     {capability.description}
                   </p>
                 </div>

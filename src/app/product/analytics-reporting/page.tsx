@@ -112,6 +112,21 @@ export default function AnalyticsReportingPage() {
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={faqSchema} />
       <main>
+        <style>{`
+          .nautix-section-title-line {
+            max-width: none !important;
+            margin: 0 !important;
+          }
+          .nautix-section-title-focus {
+            background: #e2fe5e !important;
+            color: #22303f !important;
+            box-shadow: inset 0 0 0 1px rgba(34, 48, 63, 0.06) !important;
+            margin: 0.05em 0 0 0 !important;
+          }
+          .nautix-hero-primary {
+            box-shadow: none !important;
+          }
+        `}</style>
         <HeroSection />
         <ProblemSection />
         <HowItWorksSection />

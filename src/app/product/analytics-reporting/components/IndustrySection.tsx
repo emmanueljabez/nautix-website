@@ -35,14 +35,21 @@ export function IndustrySection() {
   return (
     <section className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
-        <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-gray-900 text-center max-w-2xl mx-auto">
-          Clear insight for every operation.
-        </h2>
-        <p className="mt-2 text-lg font-medium text-gray-700 text-center max-w-2xl mx-auto">
-          Analytics that speak the language of your industry. Here is how teams
-          across different sectors use Nautix reporting to run tighter
-          operations.
-        </p>
+        <div className="text-center">
+          <h2 className="nautix-section-title mb-0">
+            <span className="nautix-section-title-line">
+              Clear insight
+            </span>
+            <span className="nautix-section-title-focus">
+              for every operation.
+            </span>
+          </h2>
+          <p className="nautix-section-copy mb-0">
+            Analytics that speak the language of your industry. Here is how
+            teams across different sectors use Nautix reporting to run tighter
+            operations.
+          </p>
+        </div>
         <div className="mt-6 grid sm:grid-cols-2 gap-4">
           {industries.map((industry) => (
             <div
@@ -59,11 +66,11 @@ export function IndustrySection() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6 flex flex-col gap-2">
-                <h3 className="text-xl font-heading font-bold text-gray-900">
+              <div className="p-5 flex flex-col gap-1">
+                <h3 className="text-lg font-heading font-bold text-gray-900">
                   {industry.name}
                 </h3>
-                <p className="text-sm font-medium text-gray-700 leading-relaxed">
+                <p className="text-[15px] leading-relaxed text-[#5c6773]">
                   {industry.description}
                 </p>
               </div>

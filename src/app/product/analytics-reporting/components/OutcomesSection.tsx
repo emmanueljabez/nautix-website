@@ -30,11 +30,18 @@ export function OutcomesSection() {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
-        <h2 className="text-3xl sm:text-4xl font-heading font-extrabold tracking-tight text-center max-w-2xl mx-auto">
-          What full visibility delivers
-        </h2>
-        <div className="mt-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="flex flex-col gap-8">
+        <div className="text-center">
+          <h2 className="nautix-section-title mb-0 text-white">
+            <span className="nautix-section-title-line text-white">
+              What full
+            </span>
+            <span className="nautix-section-title-focus">
+              visibility delivers
+            </span>
+          </h2>
+        </div>
+        <div className="mt-6 grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+          <div className="flex flex-col gap-5">
             {stats.map((stat) => (
               <div key={stat.value} className="flex flex-col gap-1">
                 <span className="text-4xl sm:text-5xl font-heading font-extrabold text-white">
@@ -43,7 +50,7 @@ export function OutcomesSection() {
                 <span className="text-lg font-heading font-bold text-white/90">
                   {stat.label}
                 </span>
-                <p className="text-sm font-medium text-white/70 leading-relaxed max-w-md">
+                <p className="text-[15px] leading-relaxed text-white/60 max-w-md">
                   {stat.description}
                 </p>
               </div>
