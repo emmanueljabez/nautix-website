@@ -8,70 +8,119 @@ interface FaqSectionProps {
 }
 
 export function FaqSection({ items }: FaqSectionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const toggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="bg-white border-b border-gray-200">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
-        <h2 className="nautix-section-title mb-0 text-center">
-          <span className="nautix-section-title-line">
-            Frequently asked
-          </span>
-          <span className="nautix-section-title-focus">
-            questions
-          </span>
+    <section className="border-t border-primary-100/50 bg-white">
+      <div className="mx-auto max-w-[880px] px-6 py-16 md:py-24">
+        <h2 className="nautix-section-title mb-0">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <span
+              className="nautix-section-title-line"
+              style={{ maxWidth: "none" }}
+            >
+              Frequently asked
+            </span>{" "}
+            <span
+              className="nautix-section-title-focus"
+              style={{
+                background: "#e2fe5e",
+                color: "#22303f",
+                boxShadow: "inset 0 0 0 1px rgba(34,48,63,0.06)",
+              }}
+            >
+              questions
+            </span>
+          </div>
         </h2>
-        <div className="mt-6 flex flex-col divide-y divide-black/10">
-          {items.map((item, index) => (
-            <div key={index} className="py-4">
-              <button
-                onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between gap-4 text-left group"
+
+        <ul style={{ listStyle: "none", padding: 0, margin: "32px 0 0" }}>
+          {items.map((item, idx) => {
+            const isOpen = open === idx;
+            const isLast = idx === items.length - 1;
+
+            return (
+              <li
+                key={idx}
+                style={{
+                  borderTop: "1px solid rgba(23,23,23,0.08)",
+                  padding: "18px 0",
+                  ...(isLast
+                    ? { borderBottom: "1px solid rgba(23,23,23,0.08)" }
+                    : {}),
+                }}
               >
-                <span className="text-lg font-heading font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
-                  {item.question}
-                </span>
-                <span
-                  className={`flex-shrink-0 w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 transition-transform duration-200 ${
-                    openIndex === index ? "rotate-45" : ""
-                  }`}
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpen(isOpen ? null : idx)}
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: 16,
+                    padding: "6px 0",
+                    border: 0,
+                    background: "transparent",
+                    cursor: "pointer",
+                    textAlign: "left",
+                    fontFamily: "var(--font-heading), sans-serif",
+                    fontSize: 20,
+                    fontWeight: 500,
+                    color: "#171717",
+                  }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                  <span>{item.question}</span>
+
+                  <span
+                    aria-hidden
+                    className="shrink-0"
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: 999,
+                      background: isOpen
+                        ? "#7e10a2"
+                        : "rgba(126,16,162,0.08)",
+                      color: isOpen ? "#fff" : "#7e10a2",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontWeight: 400,
+                      fontSize: 20,
+                      lineHeight: 1,
+                      transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+                      transition:
+                        "transform 0.3s ease, background 0.25s ease",
+                    }}
                   >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </button>
-              <div
-                className={`grid transition-all duration-300 ease-in-out ${
-                  openIndex === index
-                    ? "grid-rows-[1fr] opacity-100 mt-2"
-                    : "grid-rows-[0fr] opacity-0"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <p className="text-[15px] leading-relaxed text-[#5c6773] pb-1">
+                    +
+                  </span>
+                </button>
+
+                <div
+                  style={{
+                    overflow: "hidden",
+                    maxHeight: isOpen ? 400 : 0,
+                    transition: "max-height 0.35s ease",
+                  }}
+                >
+                  <p
+                    style={{
+                      margin: "10px 0 0",
+                      color: "rgba(23,23,23,0.72)",
+                      fontSize: 16,
+                      lineHeight: 1.6,
+                    }}
+                  >
                     {item.answer}
                   </p>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );
