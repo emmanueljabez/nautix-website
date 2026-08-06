@@ -371,7 +371,7 @@ export function SiteHeader() {
                                                         </a>
                                                       </li>
                                                       <li>
-                                                        <a className="hstack items-start gap-2" href="/#product">
+                                                        <a className="hstack items-start gap-2" href="/product/analytics-reporting">
                                                           <div className="cstack lexend-icon flex-auto min-w-32px h-32px rounded bg-tertiary">
                                                             <i className="icon-1 fw-bold text-primary genix unicon-chart-pie" aria-hidden="true" />
                                                           </div>
@@ -672,7 +672,7 @@ export function SiteHeader() {
                               <li id="menu-item-6050" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6050 nav-item"><a title="AI Resolution Engine" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>AI Resolution Engine</a></li>
                               <li id="menu-item-6051" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6051 nav-item"><a title="Sales & Growth" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Sales &amp; Growth</a></li>
                               <li id="menu-item-6052" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6052 nav-item"><a title="Payments" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Payments</a></li>
-                              <li id="menu-item-6053" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6053 nav-item"><a title="Analytics & Reporting" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>Analytics &amp; Reporting</a></li>
+                              <li id="menu-item-6053" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6053 nav-item"><a title="Analytics & Reporting" href="/product/analytics-reporting" className="dropdown-items" onClick={closeMobileMenu}>Analytics &amp; Reporting</a></li>
                               <li id="menu-item-6054" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-6054 nav-item"><a title="See full platform" href="/#product" className="dropdown-items" onClick={closeMobileMenu}>See full platform →</a></li>
                             </ul>
                           </li>
